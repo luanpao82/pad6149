@@ -130,6 +130,11 @@ summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-s
 details[open] summary::before{transform:rotate(90deg)}
 details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
 
+/* Download button */
+.dl-btn{display:inline-block;margin:var(--md) 0 var(--xl);padding:10px 24px;background:var(--nav-bg);color:var(--nav-text);font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:.03em;text-decoration:none;border-radius:var(--r);box-shadow:var(--shadow);transition:background .15s,transform .1s}
+.dl-btn:hover{background:#333;color:var(--nav-text);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.dl-btn::before{content:'↓ ';font-size:16px}
+
 /* Footer */
 footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
 
@@ -200,6 +205,8 @@ footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px so
   <div class="fact"><div class="fact-label">Format</div><div class="fact-value">Online (Webcourses)</div></div>
   <div class="fact"><div class="fact-label">Semester</div><div class="fact-value">Fall 2026</div></div>
 </div>
+
+<a href="PAD6149_Syllabus_Fall2026.pdf" class="dl-btn" download>Download Syllabus (PDF)</a>
 
 <h2>Course Philosophy</h2>
 <p>This course operates on a simple premise: <strong>the best way to learn nonprofit management is to do nonprofit management.</strong></p>
