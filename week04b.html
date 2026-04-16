@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4: Board Governance Policy – PAD 6149</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7;--text:#1C1917;--accent:#FFC904;--accent-dk:#D4A900;--accent-soft:rgba(255,201,4,.1);
+  --muted:#78716C;--border:#E7E5E4;--surface:#FFF;--surface-alt:#F5F5F0;
+  --nav-bg:#1C1917;--nav-text:#FAFAF7;
+  --success:#16A34A;--info:#2563EB;--danger:#DC2626;
+  --font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+  --w:760px;--sidebar:260px;
+  --xs:4px;--sm:8px;--md:16px;--lg:24px;--xl:32px;--2xl:48px;--3xl:64px;
+  --r:8px;--r-lg:12px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);
+  --shadow-md:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
+.brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
+  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
+  padding:var(--lg) 0 var(--xl);z-index:100;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
+}
+.sidebar::-webkit-scrollbar{width:5px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
+.sb-title{font-size:16px;font-weight:700;padding:0 var(--lg);margin-bottom:var(--md);line-height:1.35}
+.sb-section{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.3);padding:var(--lg) var(--lg) var(--sm);border-top:1px solid rgba(255,255,255,.06);margin-top:var(--sm)}
+.sb-section:first-of-type{border-top:none;margin-top:0}
+.sidebar a{display:flex;align-items:baseline;gap:4px;padding:8px var(--lg);color:rgba(250,250,247,.6);text-decoration:none;font-size:13.5px;line-height:1.4;border-left:3px solid transparent;transition:all .15s ease}
+.sidebar a:hover{background:rgba(255,255,255,.06);color:var(--nav-text);border-left-color:rgba(255,201,4,.3)}
+.sidebar a.active{background:rgba(255,201,4,.08);color:var(--accent);border-left-color:var(--accent);font-weight:500}
+.sidebar .wk{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.3);min-width:18px;flex-shrink:0}
+.sidebar a.active .wk{color:rgba(255,201,4,.5)}
+.sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
+.sidebar a.active .pts{color:rgba(255,201,4,.4)}
+
+/* Mobile toggle */
+.menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
+
+/* Main */
+.main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
+.content{max-width:var(--w);margin:0 auto}
+
+/* Hero */
+.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
+.hero .content{max-width:var(--w)}
+.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
+.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
+.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
+.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
+
+/* Typography */
+h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
+h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
+h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
+h4{font-size:16px;font-weight:700;margin-top:var(--lg);margin-bottom:var(--xs)}
+p{margin-bottom:var(--md)}
+ul,ol{margin-bottom:var(--md);padding-left:var(--lg)}
+li{margin-bottom:6px}
+li::marker{color:var(--muted)}
+a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
+a:hover{text-decoration-color:var(--accent);color:var(--text)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
+
+/* Key facts card */
+.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
+.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.fact:nth-child(3n){border-right:none}
+.fact:nth-last-child(-n+3){border-bottom:none}
+.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
+.fact-value{font-size:15px;font-weight:500}
+
+/* Tables */
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+thead{background:var(--nav-bg);color:var(--nav-text)}
+th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
+td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:top;background:var(--surface)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:var(--surface-alt)}
+tbody tr:hover td{background:var(--accent-soft)}
+.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
+.pts-col{font-family:var(--mono);text-align:center;font-weight:500}
+tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
+tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
+tfoot td{background:var(--surface-alt);font-weight:700}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
+.card:hover{box-shadow:var(--shadow)}
+.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
+
+/* Badge */
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
+.badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
+.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
+
+/* Competency table */
+.comp-table td:first-child{font-weight:600;width:38%}
+
+/* Steps */
+.steps{counter-reset:step;list-style:none;padding-left:0}
+.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
+.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+
+/* Grade grid */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
+.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
+.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
+.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Details / collapsible */
+details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
+summary:hover{background:var(--surface-alt)}
+summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
+
+/* Footer */
+footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
+
+/* Responsive */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%);transition:transform .25s ease}
+  .sidebar.open{transform:translateX(0)}
+  .menu-toggle{display:block}
+  .main{margin-left:0;padding:var(--2xl) var(--lg)}
+  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
+  .hero h1{font-size:32px}
+  footer{margin-left:0}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2n){border-right:none}
+  .fact:nth-child(3n){border-right:1px solid var(--border)}
+  .grade-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="brand-bar"></div>
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle menu">☰ Menu</button>
+
+<nav class="sidebar">
+  <div class="sb-brand">PAD 6149</div>
+  <div class="sb-title">Build Your Nonprofit</div>
+
+  <div class="sb-section">Course</div>
+  <a href="index.html">Overview</a>
+
+  <div class="sb-section">Service Learning</div>
+  <a href="week01.html"><span class="wk">01</span> Concept Statement <span class="pts">2</span></a>
+  <a href="week02.html"><span class="wk">02</span> Interview Plan <span class="pts">2</span></a>
+  <a href="week04a.html"><span class="wk">04</span> Mentor Interview Report <span class="pts">8</span></a>
+
+  <div class="sb-section">Capstone Project</div>
+  <a href="week03.html"><span class="wk">03</span> Build Your Website <span class="pts">3</span></a>
+  <a href="week04b.html" class="active"><span class="wk">04</span> Board Governance <span class="pts">8</span></a>
+  <a href="week05.html"><span class="wk">05</span> HR &amp; Volunteers <span class="pts">8</span></a>
+  <a href="week06.html"><span class="wk">06</span> Confirming Identity <span class="pts">3</span></a>
+  <a href="week07.html"><span class="wk">07</span> Financial Plan <span class="pts">3</span></a>
+  <a href="week08.html"><span class="wk">08</span> Fundraising Strategy <span class="pts">3</span></a>
+  <a href="week09.html"><span class="wk">09</span> Strategic Plan <span class="pts">10</span></a>
+  <a href="week10.html"><span class="wk">10</span> Program Evaluation <span class="pts">8</span></a>
+  <a href="week11.html"><span class="wk">11</span> Leadership Case Study <span class="pts">15</span></a>
+  <a href="week12.html"><span class="wk">12</span> AI Content &amp; Social <span class="pts">5</span></a>
+  <a href="week13.html"><span class="wk">13</span> Policy Advocacy <span class="pts">8</span></a>
+  <a href="week14.html"><span class="wk">14</span> Final Pitch Video <span class="pts">14</span></a>
+</nav>
+
+<main class="main">
+<div class="content">
+
+<p><span class="badge badge-gold">Week 4</span> <span class="badge">8 pts</span> <span class="badge badge-dark">NASPAA C4</span></p>
+<h1>Board Governance Policy</h1>
+<p style="font-size:15px;color:var(--muted);margin-bottom:var(--xl)">Due: September 14, 2026 &middot; 8 pts &middot; 5&ndash;7 pages<br>Source coursework: PAD 6237 &ndash; Ethics and Governance in Nonprofit Organizations (Governance Case Study)</p>
+
+<div class="card" style="border-left:4px solid #DC2626">
+  <h4 style="margin-top:0">This is one of two assignments due this week.</h4>
+  <p style="margin-bottom:0">The other is the <a href="week04a.html">Mentor Interview Report</a> (10 pts). Plan your time accordingly &mdash; this is 20% of your total grade in a single week.</p>
+</div>
+
+<hr>
+
+<h2>Deliverables</h2>
+<table>
+  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
+  <tbody>
+    <tr><td>Board Governance Policy</td><td>Webcourses &rarr; Assignments &rarr; Week 4</td><td>Word (.docx), 5&ndash;7 pages, double-spaced</td></tr>
+    <tr><td>Website update</td><td>Your live website</td><td>"Board / Leadership" page with summary + PDF download link</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>What Is This Assignment?</h2>
+<p>In PAD 6237, you conducted a <strong>Governance Case Study</strong> &mdash; you analyzed a real nonprofit's board structure, commended good practices, and made recommendations for improvement. That was about evaluating <em>someone else's</em> governance.</p>
+<p>Now you're on the other side. You're <strong>designing governance from scratch</strong> for the nonprofit you're building. The question isn't "what's wrong with their board?" &mdash; it's "what should <em>my</em> board look like, and why?"</p>
+<p>This assignment asks you to take what you learned in PAD 6237 and apply it to your own organization. You'll produce a formal Board Governance Policy Document, and then publish the key elements as a page on your website.</p>
+
+<hr>
+
+<h2>The Process: From Your PAD 6237 Work to Your New Organization</h2>
+<p>This is the core workflow for all Capstone Project deliverables &mdash; you'll repeat this pattern throughout the semester:</p>
+
+<h3>Step 1: Revisit Your Prior Coursework</h3>
+<p>Pull up your PAD 6237 Governance Case Study. Reread your analysis, your recommendations, and the governance principles you identified as best practices.</p>
+
+<h3>Step 2: Upload to <a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a> and Discuss</h3>
+<p>This is where AI becomes a genuine thinking partner &mdash; not a content generator.</p>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">Using <a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a> for This Assignment</h4>
+  <p><strong><a href="https://notebooklm.google.com" target="_blank">NotebookLM</a></strong> (<a href="https://notebooklm.google.com" target="_blank">notebooklm.google.com</a>) is different from <a href="https://chatgpt.com" target="_blank">ChatGPT</a> or <a href="https://claude.ai" target="_blank">Claude</a>. Instead of generating text from general knowledge, it works <em>from your own documents</em>. This makes it ideal for adapting your prior coursework.</p>
+  <p><strong>How to use it:</strong></p>
+  <ol>
+    <li>Go to <a href="https://notebooklm.google.com" target="_blank">notebooklm.google.com</a> (free with Google account)</li>
+    <li>Create a new notebook</li>
+    <li>Upload your <strong>PAD 6237 Governance Case Study</strong> (PDF or Google Doc)</li>
+    <li>Optionally upload: the <a href="https://boardsource.org" target="_blank">BoardSource</a> Handbook chapter on governance, Worth Ch. 4, or other relevant readings</li>
+    <li>Start a conversation with your sources:</li>
+  </ol>
+  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Based on my governance case study, what were the strongest governance
+practices I identified? How would I adapt those for a brand-new
+nonprofit serving Asian American and immigrant communities in Central
+Florida with a 9-member board?</pre>
+  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">In my case study, I recommended improvements to the organization's
+conflict of interest policy. Help me draft a conflict of interest
+policy for my new organization that incorporates those recommendations
+from the start.</pre>
+  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">What governance challenges might be unique to an organization where
+board members are also members of the community being served?
+How should the bylaws address this?</pre>
+  <p style="margin-bottom:0">The key advantage: <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a>'s responses are grounded in <em>your actual analysis</em>, not generic governance templates. It helps you build on your own intellectual work.</p>
+</div>
+
+<h3>Step 3: Draft Your Governance Policy</h3>
+<p>Using insights from your <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> discussion, draft the Board Governance Policy for your organization (see sections below).</p>
+
+<h3>Step 4: Update Your Website</h3>
+<p>Publish a summary of your governance structure as a "Board" or "Leadership" page on your nonprofit website.</p>
+
+<hr>
+
+<h2>What Do I Submit?</h2>
+<p>A <strong>5&ndash;7 page, double-spaced</strong> Board Governance Policy Document covering:</p>
+
+<h3>1. Board Mission and Role</h3>
+<ul>
+  <li>What is the board's purpose within your organization?</li>
+  <li>How does the board uphold public service values and the organization's mission?</li>
+  <li>Reference: How does this reflect what you learned about effective governance in PAD 6237?</li>
+</ul>
+
+<h3>2. Board Composition Policy</h3>
+<ul>
+  <li>Board size (typically 7&ndash;15 for a new nonprofit)</li>
+  <li>Term lengths and term limits</li>
+  <li>Diversity expectations &mdash; how will you ensure the board reflects the community you serve?</li>
+  <li>Recruitment strategy &mdash; where will you find board members?</li>
+</ul>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Board Composition</summary>
+  <div>
+    <p><strong>Board size:</strong> 9 members (expandable to 13)<br>
+    <strong>Term:</strong> 3 years, renewable once (6-year maximum)</p>
+    <p><strong>Composition priorities:</strong></p>
+    <ul>
+      <li>At least 3 members from the Asian American and immigrant community being served &mdash; including representation from East Asian, South Asian, and Southeast Asian backgrounds</li>
+      <li>At least 1 member with legal expertise (immigration law preferred)</li>
+      <li>At least 1 member with nonprofit financial management experience</li>
+      <li>At least 1 member with fundraising/development background</li>
+      <li>At least 1 member under 30 to ensure intergenerational perspective</li>
+      <li>Board must reflect the linguistic diversity of the community served &mdash; at minimum, Mandarin, Vietnamese, and Burmese/Karen language capacity across the full board</li>
+    </ul>
+    <p><strong>Recruitment strategy:</strong> Nominating committee will identify candidates through community partnerships, UCF alumni networks, local bar associations (for legal expertise), and direct outreach to community leaders.</p>
+    <p><em>Note: This composition plan was informed by my PAD 6237 case study, where I found that the organization I analyzed lacked meaningful representation from the community it served. That governance gap reduced trust and limited the board's ability to make culturally informed decisions. Asian Bridge Orlando's composition policy is designed to prevent that problem from the start.</em></p>
+  </div>
+</details>
+
+<h3>3. Committee Structure</h3>
+<ul>
+  <li>Standing committees (e.g., Executive, Finance, Fundraising/Development, Program, Governance/Nominating)</li>
+  <li>Each committee's purpose and membership expectations</li>
+</ul>
+
+<h3>4. Board Member Responsibilities</h3>
+<ul>
+  <li>Fiduciary duties (duty of care, duty of loyalty, duty of obedience)</li>
+  <li>Give/get policy &mdash; financial contribution expectations</li>
+  <li>Attendance and participation expectations</li>
+  <li>Ambassadorship &mdash; representing the organization in the community</li>
+</ul>
+
+<h3>5. Conflict of Interest Policy</h3>
+<ul>
+  <li>A full written policy (1&ndash;2 pages within the document)</li>
+  <li>Disclosure requirements</li>
+  <li>Procedures for handling conflicts</li>
+</ul>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Conflict of Interest Excerpt</summary>
+  <div>
+    <p><strong>Section 3: Disclosure Requirements</strong></p>
+    <p>Each board member shall annually sign a Conflict of Interest Disclosure Statement identifying any relationships, positions, or circumstances that could contribute to a conflict of interest, including but not limited to: (a) employment or consulting relationships with organizations that do business with Asian Bridge Orlando; (b) family relationships with staff, vendors, or major donors; (c) financial interests in entities that contract with the organization.</p>
+    <p><strong>Section 4: Community Member Board Service</strong></p>
+    <p>Because Asian Bridge Orlando's board intentionally includes members of the community being served, the organization acknowledges that some board members may also be recipients of organizational services. This dual relationship is permitted and encouraged as essential to mission-aligned governance. However, board members in this situation must recuse themselves from any vote directly affecting services they personally receive, and must disclose the relationship annually.</p>
+  </div>
+</details>
+
+<h3>6. Meeting Structure and Quorum Rules</h3>
+<ul>
+  <li>Meeting frequency (quarterly is standard; monthly for startups)</li>
+  <li>Quorum requirements</li>
+  <li>Procedures for remote participation and voting</li>
+</ul>
+
+<p>For Florida-specific governance requirements &mdash; including board composition rules, filing obligations, and annual report deadlines &mdash; check the <strong><a href="https://councilofnonprofits.org" target="_blank">National Council of Nonprofits</a></strong> (<a href="https://councilofnonprofits.org" target="_blank">councilofnonprofits.org</a>) state-by-state resource page and the <strong><a href="https://sunbiz.org" target="_blank">Florida Division of Corporations</a></strong> at <strong><a href="https://sunbiz.org" target="_blank">Sunbiz.org</a></strong>. Reviewing actual articles of incorporation filed by similar Florida nonprofits on <a href="https://sunbiz.org" target="_blank">Sunbiz</a> can help you understand the legal language and structure your governance document should reflect.</p>
+
+<hr>
+
+<h2>Website Update</h2>
+<p>Real nonprofit websites don't post their full governance policy documents online. What they do post: a clear, concise Leadership page that tells visitors who governs the organization and how. Your website should work the same way.</p>
+
+<p><strong>Add a "Board" or "Leadership" page with:</strong></p>
+<ul>
+  <li>A brief governance philosophy statement (2&ndash;3 sentences)</li>
+  <li>Board member names and bios (fictional for now &mdash; but write them as if they're real). Use <strong><a href="https://canva.com" target="_blank">Canva AI</a></strong> to create a clean board member profile grid with photo placeholders and bios</li>
+  <li>Committee structure (a simple list or table)</li>
+  <li>A "Download" link to the full Board Governance Policy (upload as PDF or link to a Google Doc)</li>
+</ul>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Board Page Structure</summary>
+  <div>
+    <p><strong>Page title:</strong> Our Leadership</p>
+    <p><strong>Intro paragraph:</strong><br>
+    "Asian Bridge Orlando is governed by a volunteer Board of Directors committed to representing the communities we serve. Our board includes professionals from the legal, nonprofit, and healthcare sectors alongside community leaders from Central Florida's diverse Asian American and immigrant populations."</p>
+    <p><strong>Board Members:</strong> <em>(listed with photo placeholder, name, title, 1-sentence bio)</em></p>
+    <ul>
+      <li>Jane Nguyen, Board Chair &mdash; Immigration attorney, 15 years of community advocacy</li>
+      <li>David Park, Treasurer &mdash; CPA with nonprofit financial management experience</li>
+      <li>Rina Gurung, Secretary &mdash; Bhutanese community organizer and former refugee</li>
+      <li><em>(etc.)</em></li>
+    </ul>
+    <p><strong>Committees:</strong> Executive &middot; Finance &middot; Programs &middot; Governance &amp; Nominating &middot; Fundraising</p>
+    <p><strong>Footer:</strong><br>
+    <a href="#">Download our full Board Governance Policy (PDF)</a></p>
+  </div>
+</details>
+
+<p><strong>How to do this efficiently:</strong></p>
+<ol>
+  <li>Write the full policy document in Word (your graded submission)</li>
+  <li>Save as PDF</li>
+  <li>Upload the PDF to your website (<a href="https://sites.google.com" target="_blank">Google Sites</a>: Insert &rarr; File; Wix: Add &rarr; Document)</li>
+  <li>Write the summary content directly on the web page (~15 minutes)</li>
+  <li>Link the PDF with a download button</li>
+</ol>
+
+<p>This is one deliverable in two formats &mdash; the academic version (Word, submitted to Webcourses) and the professional version (web summary + PDF download, on your site). This is exactly how you'd do it if this organization were real.</p>
+
+<hr>
+
+<h2>Useful AI &amp; Online Tools This Week</h2>
+<table>
+  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
+  <tbody>
+    <tr><td><strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong></td><td>Adapting your PAD 6237 case study</td><td>Upload your governance case study &rarr; have a grounded conversation about what worked, what didn't, and how to adapt for your org</td></tr>
+    <tr><td><strong><a href="https://boardsource.org" target="_blank">BoardSource</a></strong> (<a href="https://boardsource.org" target="_blank">boardsource.org</a>)</td><td>Governance best practices</td><td>Browse their free blog posts, articles, and infographics on board composition, fiduciary duties, and governance trends &mdash; useful for cross-referencing your AI drafts (note: some resources require membership; stick to free content)</td></tr>
+    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Drafting policy language</td><td>Use for specific sections: <em>"Draft a conflict of interest policy for a nonprofit where some board members are also community members being served"</em> &mdash; then customize</td></tr>
+    <tr><td><strong><a href="https://perplexity.ai" target="_blank">Perplexity.ai</a></strong></td><td>Researching governance models</td><td><em>"What governance models do immigrant-serving nonprofits in Florida typically use? What unique governance challenges do they face?"</em> &mdash; cited answers help you justify your design choices</td></tr>
+    <tr><td><strong><a href="https://canva.com" target="_blank">Canva AI</a></strong></td><td>Board member profile layouts</td><td>Create a clean board member grid for your website's Leadership page &mdash; use a template, add headshots and bios</td></tr>
+    <tr><td><strong><a href="https://councilofnonprofits.org" target="_blank">National Council of Nonprofits</a></strong> (<a href="https://councilofnonprofits.org" target="_blank">councilofnonprofits.org</a>)</td><td>State-specific governance requirements</td><td>Look up Florida-specific board requirements, filing obligations, and governance checklists</td></tr>
+    <tr><td><strong><a href="https://sunbiz.org" target="_blank">Florida Division of Corporations</a></strong> (<a href="https://sunbiz.org" target="_blank">sunbiz.org</a>)</td><td>Articles of incorporation templates</td><td>Review actual nonprofit articles of incorporation filed in Florida to understand the legal language and structure</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Grading Rubric (8 pts)</h2>
+<table>
+  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
+  <tbody>
+    <tr><td>Board composition and structure are well-designed and appropriate for the organization</td><td class="pts-col">2 pts</td></tr>
+    <tr><td>Committee structure and member responsibilities are clearly defined</td><td class="pts-col">2 pts</td></tr>
+    <tr><td>Conflict of interest policy is substantive and addresses organization-specific complexities</td><td class="pts-col">2 pts</td></tr>
+    <tr><td>Document demonstrates meaningful application of PAD 6237 learning to current governance design</td><td class="pts-col">2 pts</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Submission Details</h2>
+<ul>
+  <li><strong>Length:</strong> 5&ndash;7 pages (double-spaced, 12pt font)</li>
+  <li><strong>Format:</strong> Word (.docx)</li>
+  <li><strong>File name:</strong> <code>[YourLastName]_BoardGovernancePolicy.docx</code></li>
+  <li><strong>Submit to:</strong> Webcourses@UCF &rarr; Assignments &rarr; Week 4: Board Governance Policy</li>
+</ul>
+
+<hr>
+
+<h2>Video Demo: Using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> to Adapt Your Governance Case Study</h2>
+<p><em>Video coming soon.</em></p>
+
+<hr>
+
+<h2>Looking Ahead</h2>
+<p><strong>Next week (Week 5):</strong> HR &amp; Volunteer Management Plan (10 pts). Same process &mdash; you'll revisit your PAD 6417 HR Case Study and PAD 5145 Volunteer Case Study, upload them to <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a>, and adapt your learning for your organization. Your website gets a "Team" page and a "Get Involved" page.</p>
+
+</div>
+</main>
+
+<footer>
+  PAD 6149 &middot; School of Public Administration &middot; University of Central Florida &middot; Fall 2026
+</footer>
+
+<script>
+// Close mobile menu on nav click
+document.querySelectorAll('.sidebar a').forEach(a=>{
+  a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Build Your Nonprofit</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7;--text:#1C1917;--accent:#FFC904;--accent-dk:#D4A900;--accent-soft:rgba(255,201,4,.1);
+  --muted:#78716C;--border:#E7E5E4;--surface:#FFF;--surface-alt:#F5F5F0;
+  --nav-bg:#1C1917;--nav-text:#FAFAF7;
+  --success:#16A34A;--info:#2563EB;--danger:#DC2626;
+  --font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+  --w:760px;--sidebar:260px;
+  --xs:4px;--sm:8px;--md:16px;--lg:24px;--xl:32px;--2xl:48px;--3xl:64px;
+  --r:8px;--r-lg:12px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);
+  --shadow-md:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
+.brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
+  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
+  padding:var(--lg) 0 var(--xl);z-index:100;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
+}
+.sidebar::-webkit-scrollbar{width:5px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
+.sb-title{font-size:16px;font-weight:700;padding:0 var(--lg);margin-bottom:var(--md);line-height:1.35}
+.sb-section{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.3);padding:var(--lg) var(--lg) var(--sm);border-top:1px solid rgba(255,255,255,.06);margin-top:var(--sm)}
+.sb-section:first-of-type{border-top:none;margin-top:0}
+.sidebar a{display:flex;align-items:baseline;gap:4px;padding:8px var(--lg);color:rgba(250,250,247,.6);text-decoration:none;font-size:13.5px;line-height:1.4;border-left:3px solid transparent;transition:all .15s ease}
+.sidebar a:hover{background:rgba(255,255,255,.06);color:var(--nav-text);border-left-color:rgba(255,201,4,.3)}
+.sidebar a.active{background:rgba(255,201,4,.08);color:var(--accent);border-left-color:var(--accent);font-weight:500}
+.sidebar .wk{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.3);min-width:18px;flex-shrink:0}
+.sidebar a.active .wk{color:rgba(255,201,4,.5)}
+.sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
+.sidebar a.active .pts{color:rgba(255,201,4,.4)}
+
+/* Mobile toggle */
+.menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
+
+/* Main */
+.main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
+.content{max-width:var(--w);margin:0 auto}
+
+/* Hero */
+.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
+.hero .content{max-width:var(--w)}
+.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
+.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
+.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
+.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
+
+/* Typography */
+h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
+h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
+h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
+h4{font-size:16px;font-weight:700;margin-top:var(--lg);margin-bottom:var(--xs)}
+p{margin-bottom:var(--md)}
+ul,ol{margin-bottom:var(--md);padding-left:var(--lg)}
+li{margin-bottom:6px}
+li::marker{color:var(--muted)}
+a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
+a:hover{text-decoration-color:var(--accent);color:var(--text)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
+
+/* Key facts card */
+.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
+.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.fact:nth-child(3n){border-right:none}
+.fact:nth-last-child(-n+3){border-bottom:none}
+.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
+.fact-value{font-size:15px;font-weight:500}
+
+/* Tables */
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+thead{background:var(--nav-bg);color:var(--nav-text)}
+th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
+td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:top;background:var(--surface)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:var(--surface-alt)}
+tbody tr:hover td{background:var(--accent-soft)}
+.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
+.pts-col{font-family:var(--mono);text-align:center;font-weight:500}
+tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
+tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
+tfoot td{background:var(--surface-alt);font-weight:700}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
+.card:hover{box-shadow:var(--shadow)}
+.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
+
+/* Badge */
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
+.badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
+.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
+
+/* Competency table */
+.comp-table td:first-child{font-weight:600;width:38%}
+
+/* Steps */
+.steps{counter-reset:step;list-style:none;padding-left:0}
+.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
+.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+
+/* Grade grid */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
+.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
+.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
+.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Details / collapsible */
+details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
+summary:hover{background:var(--surface-alt)}
+summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
+
+/* Footer */
+footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
+
+/* Responsive */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%);transition:transform .25s ease}
+  .sidebar.open{transform:translateX(0)}
+  .menu-toggle{display:block}
+  .main{margin-left:0;padding:var(--2xl) var(--lg)}
+  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
+  .hero h1{font-size:32px}
+  footer{margin-left:0}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2n){border-right:none}
+  .fact:nth-child(3n){border-right:1px solid var(--border)}
+  .grade-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="brand-bar"></div>
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle menu">☰ Menu</button>
+
+<nav class="sidebar">
+  <div class="sb-brand">PAD 6149</div>
+  <div class="sb-title">Build Your Nonprofit</div>
+
+  <div class="sb-section">Course</div>
+  <a href="index.html" class="active">Overview</a>
+
+  <div class="sb-section">Service Learning</div>
+  <a href="week01.html"><span class="wk">01</span> Concept Statement <span class="pts">2</span></a>
+  <a href="week02.html"><span class="wk">02</span> Interview Plan <span class="pts">2</span></a>
+  <a href="week04a.html"><span class="wk">04</span> Mentor Interview Report <span class="pts">8</span></a>
+
+  <div class="sb-section">Capstone Project</div>
+  <a href="week03.html"><span class="wk">03</span> Build Your Website <span class="pts">3</span></a>
+  <a href="week04b.html"><span class="wk">04</span> Board Governance <span class="pts">8</span></a>
+  <a href="week05.html"><span class="wk">05</span> HR &amp; Volunteers <span class="pts">8</span></a>
+  <a href="week06.html"><span class="wk">06</span> Confirming Identity <span class="pts">3</span></a>
+  <a href="week07.html"><span class="wk">07</span> Financial Plan <span class="pts">3</span></a>
+  <a href="week08.html"><span class="wk">08</span> Fundraising Strategy <span class="pts">3</span></a>
+  <a href="week09.html"><span class="wk">09</span> Strategic Plan <span class="pts">10</span></a>
+  <a href="week10.html"><span class="wk">10</span> Program Evaluation <span class="pts">8</span></a>
+  <a href="week11.html"><span class="wk">11</span> Leadership Case Study <span class="pts">15</span></a>
+  <a href="week12.html"><span class="wk">12</span> AI Content &amp; Social <span class="pts">5</span></a>
+  <a href="week13.html"><span class="wk">13</span> Policy Advocacy <span class="pts">8</span></a>
+  <a href="week14.html"><span class="wk">14</span> Final Pitch Video <span class="pts">14</span></a>
+</nav>
+
+<main class="main">
+
+<div class="hero">
+<div class="content">
+  <span class="badge">Fall 2026</span> <span class="badge badge-muted">Online (W)</span>
+  <h1>Build Your Nonprofit</h1>
+  <p class="subtitle">PAD 6149 &middot; Nonprofit Administration &middot; Capstone Course</p>
+</div>
+</div>
+
+<div class="content">
+
+<div class="facts">
+  <div class="fact"><div class="fact-label">Professor</div><div class="fact-value">Dr. Seongho An</div></div>
+  <div class="fact"><div class="fact-label">Email</div><div class="fact-value">seongho.an@ucf.edu</div></div>
+  <div class="fact"><div class="fact-label">Office</div><div class="fact-value">DPAC Suite 448D</div></div>
+  <div class="fact"><div class="fact-label">Zoom Office Hours</div><div class="fact-value">Tue &amp; Thu 12–3 pm</div></div>
+  <div class="fact"><div class="fact-label">Format</div><div class="fact-value">Online (Webcourses)</div></div>
+  <div class="fact"><div class="fact-label">Semester</div><div class="fact-value">Fall 2026</div></div>
+</div>
+
+<h2>Course Philosophy</h2>
+<p>This course operates on a simple premise: <strong>the best way to learn nonprofit management is to do nonprofit management.</strong></p>
+<p>Rather than reading about organizations and reflecting on past assignments, you will spend the semester building a real nonprofit organization — developing its mission, board, staff plan, programs, budget, marketing identity, and advocacy strategy. Every module's readings and concepts connect directly to a deliverable that makes your organization more complete.</p>
+<p>You leave this course not just with a degree, but with a fully developed organizational blueprint — and in some cases, the beginnings of an organization you will actually launch.</p>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">AI as Professional Competency</h4>
+  <p style="margin-bottom:0">Nonprofit leaders today use AI tools to write grants, communicate with donors, analyze program data, and develop strategy. This course <strong>requires</strong> students to use AI tools — and to reflect critically on what AI can and cannot do in the service of a mission-driven organization. Each assignment page includes a "Useful AI &amp; Online Tools" table with specific free tools recommended for that week.</p>
+</div>
+
+<h2>Capstone Project</h2>
+<p>Each student designs and develops a complete nonprofit organization over 14 weeks, leveraging a variety of <strong>AI tools</strong> — from <a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a> and <a href="https://chatgpt.com" target="_blank">ChatGPT</a> to <a href="https://canva.com" target="_blank">Canva AI</a> and <a href="https://perplexity.ai" target="_blank">Perplexity</a> — to adapt prior MNM coursework into a fully operational organizational blueprint. Every assignment produces a document submitted to Webcourses and a corresponding page on the organization's website, culminating in a pitch-ready nonprofit with governance, staffing, programs, financials, and a public web presence.</p>
+
+<h3>How Your Website Grows Each Week</h3>
+<table>
+  <thead><tr><th>Week</th><th>Assignment</th><th>Pts</th><th>Website Page</th><th>Source</th></tr></thead>
+  <tbody>
+    <tr><td class="pts-col">3</td><td>Build Your Website</td><td class="pts-col">3</td><td>Site launch: Home + About Us</td><td>—</td></tr>
+    <tr><td class="pts-col">4</td><td>Board Governance Policy</td><td class="pts-col">8</td><td>Board / Leadership</td><td><a href="week04b.html">PAD 6237</a></td></tr>
+    <tr><td class="pts-col">5</td><td>HR &amp; Volunteer Plan</td><td class="pts-col">8</td><td>Our Team + Get Involved</td><td><a href="week05.html">PAD 6417</a>, <a href="week05.html">5145</a></td></tr>
+    <tr><td class="pts-col">6</td><td>Confirming Identity</td><td class="pts-col">3</td><td>Brand refresh + ED profile</td><td>—</td></tr>
+    <tr><td class="pts-col">7</td><td>Financial Plan</td><td class="pts-col">3</td><td>Transparency / Financials</td><td><a href="week07.html">PAD 6208</a></td></tr>
+    <tr><td class="pts-col">8</td><td>Fundraising Strategy</td><td class="pts-col">3</td><td>Donate / Support Us</td><td><a href="week08.html">PAD 5146</a></td></tr>
+    <tr><td class="pts-col">9</td><td>Strategic Plan</td><td class="pts-col">10</td><td>Our Strategy</td><td><a href="week09.html">PAD 6335</a></td></tr>
+    <tr><td class="pts-col">10</td><td>Program Evaluation</td><td class="pts-col">8</td><td>Programs</td><td><a href="week10.html">PAD 6327</a></td></tr>
+    <tr><td class="pts-col">11</td><td>Leadership Case Study</td><td class="pts-col">15</td><td>Our Approach</td><td>—</td></tr>
+    <tr><td class="pts-col">12</td><td>AI Content &amp; Social Media</td><td class="pts-col">5</td><td>Contact + LinkedIn</td><td>—</td></tr>
+    <tr><td class="pts-col">13</td><td>Policy Advocacy Plan</td><td class="pts-col">8</td><td>Advocacy / Take Action</td><td><a href="week13.html">PAD 6142</a>, <a href="week13.html">5146</a></td></tr>
+    <tr><td class="pts-col">14</td><td>Final Pitch Presentation</td><td class="pts-col">14</td><td>YouTube video on Home</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<h2>Course Schedule</h2>
+<table class="schedule-table">
+  <thead><tr><th>Week</th><th>Dates</th><th>Topic</th><th>Assignment Due</th><th>Pts</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Aug 24</td><td>Introduction &amp; Syllabus</td><td><a href="week01.html">Nonprofit Concept Statement</a></td><td class="pts-col">2</td></tr>
+    <tr><td>2</td><td>Aug 31</td><td>Understanding the Nonprofit Sector</td><td><a href="week02.html">Interview Plan</a></td><td class="pts-col">2</td></tr>
+    <tr><td>3</td><td>Sep 7</td><td>Cross-Sector Collaborations</td><td><a href="week03.html">Build Your Website</a></td><td class="pts-col">3</td></tr>
+    <tr><td>4</td><td>Sep 14</td><td>Boards &amp; Governance</td><td><a href="week04a.html">Mentor Interview Report</a> + <a href="week04b.html">Board Governance</a></td><td class="pts-col">16</td></tr>
+    <tr><td>5</td><td>Sep 21</td><td>Human Resources</td><td><a href="week05.html">HR &amp; Volunteer Plan</a></td><td class="pts-col">8</td></tr>
+    <tr><td>6</td><td>Sep 28</td><td>Marketing &amp; Identity</td><td><a href="week06.html">Confirming Identity</a></td><td class="pts-col">3</td></tr>
+    <tr><td>7</td><td>Oct 5</td><td>Financial Management</td><td><a href="week07.html">Financial Plan &amp; Budget</a></td><td class="pts-col">3</td></tr>
+    <tr><td>8</td><td>Oct 12</td><td>Resource Development</td><td><a href="week08.html">Fundraising Strategy</a></td><td class="pts-col">3</td></tr>
+    <tr><td>9</td><td>Oct 19</td><td>Strategic Planning</td><td><a href="week09.html">Strategic Plan</a></td><td class="pts-col">10</td></tr>
+    <tr><td>10</td><td>Oct 26</td><td>Performance Management</td><td><a href="week10.html">Program Evaluation Framework</a></td><td class="pts-col">8</td></tr>
+    <tr><td>11</td><td>Nov 2</td><td>Sustainability &amp; Leadership</td><td><a href="week11.html">Leadership Case Study</a></td><td class="pts-col">15</td></tr>
+    <tr><td>12</td><td>Nov 9</td><td>AI Content &amp; Social Media</td><td><a href="week12.html">AI Content Creation &amp; Social Media</a></td><td class="pts-col">5</td></tr>
+    <tr><td>13</td><td>Nov 16</td><td>Effectiveness &amp; Policy Advocacy</td><td><a href="week13.html">Policy Advocacy Plan</a></td><td class="pts-col">8</td></tr>
+    <tr class="break-row"><td>—</td><td>Nov 23–28</td><td colspan="3">Thanksgiving Break</td></tr>
+    <tr class="highlight"><td>14</td><td>Dec 3</td><td>Putting It Together</td><td><a href="week14.html">Final Pitch Presentation</a></td><td class="pts-col">14</td></tr>
+  </tbody>
+  <tfoot><tr><td colspan="4" style="text-align:right;font-weight:700">Total</td><td class="pts-col" style="font-weight:700">100</td></tr></tfoot>
+</table>
+
+<h2>Grading Scale</h2>
+<div class="grade-grid">
+  <div class="grade-card"><div class="letter">A</div><div class="range">100–93</div></div>
+  <div class="grade-card"><div class="letter">A−</div><div class="range">92–90</div></div>
+  <div class="grade-card"><div class="letter">B+</div><div class="range">89–87</div></div>
+  <div class="grade-card"><div class="letter">B</div><div class="range">86–83</div></div>
+  <div class="grade-card"><div class="letter">B−</div><div class="range">82–80</div></div>
+  <div class="grade-card"><div class="letter">C+</div><div class="range">79–77</div></div>
+  <div class="grade-card"><div class="letter">C</div><div class="range">76–73</div></div>
+  <div class="grade-card"><div class="letter">C−</div><div class="range">72–70</div></div>
+</div>
+
+<h2>NASPAA Competency Mapping</h2>
+<table class="comp-table">
+  <thead><tr><th>Competency</th><th>Capstone Assignment</th><th>Prior Coursework</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>C1:</strong> Lead and manage in a dynamic, mission-driven nonprofit sector</td>
+      <td><a href="week09.html">Strategic Plan (Wk 9)</a>, <a href="week11.html">Leadership Case Study (Wk 11)</a>, <a href="week14.html">Final Pitch (Wk 14)</a></td>
+      <td>PAD 6335 Strategic Plan, PAD 6149 Leadership Case Study</td>
+    </tr>
+    <tr>
+      <td><strong>C2:</strong> Analyze, synthesize, think critically, solve problems, and make decisions</td>
+      <td><a href="week10.html">Program Evaluation Framework (Wk 10)</a></td>
+      <td>PAD 6327 Program Evaluation Plan, PAD 5145 Volunteer Case Study</td>
+    </tr>
+    <tr>
+      <td><strong>C3:</strong> Communicate and interact productively with a diverse and changing workforce</td>
+      <td><a href="week05.html">HR &amp; Volunteer Plan (Wk 5)</a></td>
+      <td>PAD 6417 HR Case Study, PAD 6335 Stakeholder Analysis</td>
+    </tr>
+    <tr>
+      <td><strong>C4:</strong> Articulate and apply a public service perspective emphasizing civil society</td>
+      <td><a href="week04b.html">Board Governance Policy (Wk 4)</a></td>
+      <td>PAD 6237 Governance Case Study, PAD 5145 Volunteer Motivation Lit Review</td>
+    </tr>
+    <tr>
+      <td><strong>C5:</strong> Participate in and contribute to the policy process</td>
+      <td><a href="week13.html">Policy Advocacy Plan (Wk 13)</a></td>
+      <td>PAD 6142 Policy Advocacy Plan, PAD 5146 Policy Process Paper</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>AI Tools Policy</h2>
+<div class="card card-accent">
+  <h4 style="margin-top:0">Rules of Ethical AI Use</h4>
+  <ul>
+    <li>You must author, direct, critically evaluate, and take ownership of all AI-assisted work</li>
+    <li>Submitting raw AI output without your own analysis, judgment, and revision is academic dishonesty</li>
+    <li>AI-generated text that you adopt must be revised and integrated into your own voice</li>
+    <li>AI-generated images must be labeled as such when they could be mistaken for real photographs</li>
+  </ul>
+  <p style="margin-bottom:0"><strong>Free tools only.</strong> No paid subscriptions are required. Each assignment page includes a tools table listing specific free tools for that week.</p>
+</div>
+
+<details>
+  <summary>Course Policies</summary>
+  <div>
+    <h4>Late Work</h4>
+    <p>Late work may be accepted at the professor's discretion with a 10% deduction per day late (except University holidays). Emergencies can be discussed with the professor.</p>
+    <h4>Academic Honesty</h4>
+    <p>All work must be your own scholarly and creative efforts, per UCF's Golden Rule. Plagiarism, copying, and all other types of cheating will not be tolerated. Self-plagiarism — submitting work that is the same or substantially similar to work for which you have already gained university credit — also applies.</p>
+    <h4>Accessibility</h4>
+    <p>Students with disabilities who need accommodations must contact the professor at the beginning of the semester and be registered with Student Accessibility Services (Ferrell Commons 7F, Room 185, phone 407-823-2371).</p>
+    <h4>Writing &amp; APA Style</h4>
+    <p>Graduate-level writing proficiency is expected. All citations use APA 7th edition. Resources: <a href="https://guides.ucf.edu/apa" target="_blank">UCF Library APA Guide</a>.</p>
+  </div>
+</details>
+
+<details>
+  <summary>Required Textbooks</summary>
+  <div>
+    <ul>
+      <li>Hudson, Mike. 2005. <em>Managing at the Leading Edge.</em> San Francisco: Jossey-Bass.</li>
+      <li>Worth, Michael J. 2019. <em>Nonprofit Management: Principles and Practice.</em> Thousand Oaks: SAGE.</li>
+      <li>Rowe, G. &amp; Conway Dato-On. 2013. <em>Introduction to Non-Profit Management.</em> Thousand Oaks: SAGE.</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>Important Dates</summary>
+  <div>
+    <table>
+      <tbody>
+        <tr><td>August 24</td><td>First Day of Classes</td></tr>
+        <tr><td>September 7</td><td>Labor Day (no classes)</td></tr>
+        <tr><td>November 6</td><td>Withdrawal Deadline</td></tr>
+        <tr><td>November 11</td><td>Veterans Day</td></tr>
+        <tr><td>November 23–28</td><td>Thanksgiving Break</td></tr>
+        <tr><td>December 3</td><td>Last Day of Classes</td></tr>
+        <tr><td>December 5–11</td><td>Final Exam Period</td></tr>
+        <tr><td>December 15</td><td>Grades Due</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+</div>
+</main>
+
+<footer>
+  PAD 6149 &middot; School of Public Administration &middot; University of Central Florida &middot; Fall 2026
+</footer>
+
+<script>
+document.querySelectorAll('.sidebar a').forEach(a=>{
+  a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
+});
+</script>
+</body>
+</html>

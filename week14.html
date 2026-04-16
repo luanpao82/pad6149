@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 14: Final Pitch Presentation – PAD 6149</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7;--text:#1C1917;--accent:#FFC904;--accent-dk:#D4A900;--accent-soft:rgba(255,201,4,.1);
+  --muted:#78716C;--border:#E7E5E4;--surface:#FFF;--surface-alt:#F5F5F0;
+  --nav-bg:#1C1917;--nav-text:#FAFAF7;
+  --success:#16A34A;--info:#2563EB;--danger:#DC2626;
+  --font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+  --w:760px;--sidebar:260px;
+  --xs:4px;--sm:8px;--md:16px;--lg:24px;--xl:32px;--2xl:48px;--3xl:64px;
+  --r:8px;--r-lg:12px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);
+  --shadow-md:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
+.brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
+  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
+  padding:var(--lg) 0 var(--xl);z-index:100;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
+}
+.sidebar::-webkit-scrollbar{width:5px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
+.sb-title{font-size:16px;font-weight:700;padding:0 var(--lg);margin-bottom:var(--md);line-height:1.35}
+.sb-section{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.3);padding:var(--lg) var(--lg) var(--sm);border-top:1px solid rgba(255,255,255,.06);margin-top:var(--sm)}
+.sb-section:first-of-type{border-top:none;margin-top:0}
+.sidebar a{display:flex;align-items:baseline;gap:4px;padding:8px var(--lg);color:rgba(250,250,247,.6);text-decoration:none;font-size:13.5px;line-height:1.4;border-left:3px solid transparent;transition:all .15s ease}
+.sidebar a:hover{background:rgba(255,255,255,.06);color:var(--nav-text);border-left-color:rgba(255,201,4,.3)}
+.sidebar a.active{background:rgba(255,201,4,.08);color:var(--accent);border-left-color:var(--accent);font-weight:500}
+.sidebar .wk{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.3);min-width:18px;flex-shrink:0}
+.sidebar a.active .wk{color:rgba(255,201,4,.5)}
+.sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
+.sidebar a.active .pts{color:rgba(255,201,4,.4)}
+
+/* Mobile toggle */
+.menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
+
+/* Main */
+.main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
+.content{max-width:var(--w);margin:0 auto}
+
+/* Hero */
+.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
+.hero .content{max-width:var(--w)}
+.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
+.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
+.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
+.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
+
+/* Typography */
+h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
+h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
+h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
+h4{font-size:16px;font-weight:700;margin-top:var(--lg);margin-bottom:var(--xs)}
+p{margin-bottom:var(--md)}
+ul,ol{margin-bottom:var(--md);padding-left:var(--lg)}
+li{margin-bottom:6px}
+li::marker{color:var(--muted)}
+a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
+a:hover{text-decoration-color:var(--accent);color:var(--text)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
+
+/* Key facts card */
+.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
+.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.fact:nth-child(3n){border-right:none}
+.fact:nth-last-child(-n+3){border-bottom:none}
+.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
+.fact-value{font-size:15px;font-weight:500}
+
+/* Tables */
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+thead{background:var(--nav-bg);color:var(--nav-text)}
+th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
+td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:top;background:var(--surface)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:var(--surface-alt)}
+tbody tr:hover td{background:var(--accent-soft)}
+.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
+.pts-col{font-family:var(--mono);text-align:center;font-weight:500}
+tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
+tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
+tfoot td{background:var(--surface-alt);font-weight:700}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
+.card:hover{box-shadow:var(--shadow)}
+.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
+
+/* Badge */
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
+.badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
+.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
+
+/* Competency table */
+.comp-table td:first-child{font-weight:600;width:38%}
+
+/* Steps */
+.steps{counter-reset:step;list-style:none;padding-left:0}
+.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
+.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+
+/* Grade grid */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
+.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
+.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
+.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Details / collapsible */
+details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
+summary:hover{background:var(--surface-alt)}
+summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
+
+/* Footer */
+footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
+
+/* Responsive */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%);transition:transform .25s ease}
+  .sidebar.open{transform:translateX(0)}
+  .menu-toggle{display:block}
+  .main{margin-left:0;padding:var(--2xl) var(--lg)}
+  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
+  .hero h1{font-size:32px}
+  footer{margin-left:0}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2n){border-right:none}
+  .fact:nth-child(3n){border-right:1px solid var(--border)}
+  .grade-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="brand-bar"></div>
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle menu">☰ Menu</button>
+
+<nav class="sidebar">
+  <div class="sb-brand">PAD 6149</div>
+  <div class="sb-title">Build Your Nonprofit</div>
+
+  <div class="sb-section">Course</div>
+  <a href="index.html">Overview</a>
+
+  <div class="sb-section">Service Learning</div>
+  <a href="week01.html"><span class="wk">01</span> Concept Statement <span class="pts">2</span></a>
+  <a href="week02.html"><span class="wk">02</span> Interview Plan <span class="pts">2</span></a>
+  <a href="week04a.html"><span class="wk">04</span> Mentor Interview Report <span class="pts">8</span></a>
+
+  <div class="sb-section">Capstone Project</div>
+  <a href="week03.html"><span class="wk">03</span> Build Your Website <span class="pts">3</span></a>
+  <a href="week04b.html"><span class="wk">04</span> Board Governance <span class="pts">8</span></a>
+  <a href="week05.html"><span class="wk">05</span> HR &amp; Volunteers <span class="pts">8</span></a>
+  <a href="week06.html"><span class="wk">06</span> Confirming Identity <span class="pts">3</span></a>
+  <a href="week07.html"><span class="wk">07</span> Financial Plan <span class="pts">3</span></a>
+  <a href="week08.html"><span class="wk">08</span> Fundraising Strategy <span class="pts">3</span></a>
+  <a href="week09.html"><span class="wk">09</span> Strategic Plan <span class="pts">10</span></a>
+  <a href="week10.html"><span class="wk">10</span> Program Evaluation <span class="pts">8</span></a>
+  <a href="week11.html"><span class="wk">11</span> Leadership Case Study <span class="pts">15</span></a>
+  <a href="week12.html"><span class="wk">12</span> AI Content &amp; Social <span class="pts">5</span></a>
+  <a href="week13.html"><span class="wk">13</span> Policy Advocacy <span class="pts">8</span></a>
+  <a href="week14.html" class="active"><span class="wk">14</span> Final Pitch Video <span class="pts">14</span></a>
+</nav>
+
+<main class="main">
+<div class="content">
+
+<p><span class="badge badge-gold">Week 14</span> <span class="badge">14 pts</span></p>
+<h1>Final Pitch Presentation</h1>
+<p style="font-size:19px;color:var(--muted);margin-bottom:var(--xl)">Due: December 3, 2026 &middot; 5–8 minute video</p>
+
+<h2>Deliverables</h2>
+<table>
+  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
+  <tbody>
+    <tr><td>Pitch video (5–8 min)</td><td>YouTube (unlisted or public)</td><td>You must appear on camera and narrate in your own voice</td></tr>
+    <tr><td>YouTube link</td><td>Webcourses → Assignments → Week 14</td><td>URL to your video</td></tr>
+    <tr><td>Website update</td><td>Your live website</td><td>Embed or link YouTube video on your <strong>Home</strong> page</td></tr>
+  </tbody>
+</table>
+
+<h2>What Is This Assignment?</h2>
+<p>This is the culmination of 14 weeks of work. You've built a nonprofit from scratch — governance, staffing, budget, fundraising, programs, evaluation, strategy, advocacy, brand identity, and a full website. Now <strong>introduce it to the world.</strong></p>
+<p>Create a <strong>5–8 minute video</strong> presenting your nonprofit to stakeholders and the general public. Think of this as the video a funder watches before deciding to take a meeting, a community partner watches before signing an MOU, or a potential donor watches before writing a check. It's your organization's public introduction — and you are its face.</p>
+<p><strong>You must appear on camera and narrate in your own voice.</strong> This is not a slide deck with a voiceover. This is you, the Executive Director, personally presenting the organization you built. Stakeholders invest in people, not documents — they need to see and hear the leader.</p>
+<p>Beyond that, be creative. Use everything you've learned about AI content creation (<a href="week12.html">Week 12</a>), your website, and visual storytelling to make this compelling.</p>
+
+<hr>
+
+<h2>What Should the Video Cover?</h2>
+<p>Your video should walk the viewer through your organization as if they're encountering it for the first time. Cover these elements — but you decide the order, emphasis, and creative approach:</p>
+
+<h3>Required Elements</h3>
+<table>
+  <thead><tr><th>Element</th><th>What to Include</th><th>Time Guide</th></tr></thead>
+  <tbody>
+    <tr><td><strong>You</strong></td><td>Introduce yourself as the founding ED — who you are, why you care about this issue</td><td>30–60 sec</td></tr>
+    <tr><td><strong>The Problem</strong></td><td>What community need does your org address? Use data, stories, or both</td><td>45–60 sec</td></tr>
+    <tr><td><strong>The Organization</strong></td><td>Name, mission, vision — what you do and for whom</td><td>30–45 sec</td></tr>
+    <tr><td><strong>How You Work</strong></td><td>Your approach, programs, what makes you different (Our Approach, <a href="week11.html">Week 11</a>)</td><td>45–60 sec</td></tr>
+    <tr><td><strong>The Team &amp; Governance</strong></td><td>Board, staff structure, volunteer program — show you have organizational capacity</td><td>30–45 sec</td></tr>
+    <tr><td><strong>Financials &amp; Sustainability</strong></td><td>Budget overview, revenue strategy, transparency commitment</td><td>30–45 sec</td></tr>
+    <tr><td><strong>Impact &amp; Evaluation</strong></td><td>How you measure success, what outcomes you expect</td><td>30–45 sec</td></tr>
+    <tr><td><strong>Call to Action</strong></td><td>What do you want the viewer to do? (donate, volunteer, partner, learn more)</td><td>15–30 sec</td></tr>
+  </tbody>
+</table>
+
+<p>You don't need to follow this order. A compelling video might open with a story, weave in data, and close with a personal appeal. The structure is yours — just make sure all elements are covered.</p>
+
+<hr>
+
+<h2>Creative Approaches</h2>
+<p>This is not a PowerPoint presentation read aloud. Be creative. Here are some approaches that work:</p>
+<p><strong>Walk-and-talk:</strong> Film yourself in a location relevant to your mission and narrate as you walk. Cut between your narration and supporting visuals.</p>
+<p><strong>Website walkthrough + face camera:</strong> Alternate between screen recordings of your website (showing the pages you built) and face-to-camera segments where you explain the strategy behind each section.</p>
+<p><strong>Documentary style:</strong> Open with the problem (data, news clips, or your own narration), introduce your organization as the response, and close with your vision for the future.</p>
+<p><strong>Interview format:</strong> Have someone interview you about your nonprofit — or record yourself answering questions as if in a funder interview.</p>
+<p>Use <strong>AI-generated images and video clips</strong> (from <a href="week12.html">Week 12</a>) as B-roll — visuals that play while you narrate. Mix your face-to-camera segments with supporting visuals for a professional result.</p>
+
+<hr>
+
+<h2>Technical Requirements</h2>
+
+<h3>Recording</h3>
+<ul>
+  <li><strong>Your face and voice must appear in the video.</strong> Screen recordings, slideshows, and AI-generated narration alone do not meet the requirement.</li>
+  <li><strong>Length:</strong> 5–8 minutes. Under 5 is too rushed; over 8 loses the audience.</li>
+  <li><strong>Quality:</strong> You don't need professional equipment. A smartphone in a well-lit, quiet space is sufficient. Use a tripod or prop your phone at eye level.</li>
+</ul>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">Recording Tips</h4>
+  <ul>
+    <li><strong>Lighting:</strong> Face a window for natural light. Avoid overhead-only lighting (creates shadows).</li>
+    <li><strong>Audio:</strong> Record in a quiet space. If using a phone, stay within 2–3 feet of the microphone. Earbuds with a built-in mic improve audio quality significantly.</li>
+    <li><strong>Framing:</strong> Head and shoulders in frame, eyes at camera level. Leave a small space above your head.</li>
+    <li><strong>Background:</strong> Clean, uncluttered. A bookshelf, blank wall, or relevant setting works.</li>
+  </ul>
+</div>
+
+<h3>Editing</h3>
+<p>You don't need advanced editing skills. These free tools handle the basics:</p>
+<table>
+  <thead><tr><th>Tool</th><th>What It Does</th><th>How to Use It</th></tr></thead>
+  <tbody>
+    <tr><td><strong><a href="https://capcut.com" target="_blank">CapCut</a></strong> (<a href="https://capcut.com" target="_blank">capcut.com</a>)</td><td>Free video editor — trim, cut, add text, transitions, music</td><td>Import your clips → arrange on timeline → add text overlays and transitions → export as MP4</td></tr>
+    <tr><td><strong><a href="https://canva.com" target="_blank">Canva Video</a></strong> (<a href="https://canva.com" target="_blank">canva.com</a>)</td><td>Combine video clips with graphics and text</td><td>Upload your recordings → add title cards, brand graphics, and AI-generated images between segments</td></tr>
+    <tr><td><strong><a href="https://www.apple.com/imovie/" target="_blank">iMovie</a></strong> (Mac/iPhone)</td><td>Apple's free video editor</td><td>Combine clips, add transitions and music, export directly to YouTube</td></tr>
+    <tr><td><strong><a href="https://descript.com" target="_blank">Descript</a></strong> (<a href="https://descript.com" target="_blank">descript.com</a>)</td><td>AI-powered editor — edit video by editing text</td><td>Upload your recording → <a href="https://descript.com" target="_blank">Descript</a> transcribes it → delete words in the transcript to cut the video; free tier available</td></tr>
+    <tr><td><strong><a href="https://studio.youtube.com" target="_blank">YouTube Studio</a></strong> (<a href="https://studio.youtube.com" target="_blank">studio.youtube.com</a>)</td><td>Basic editing after upload</td><td>Trim start/end, add end screens, add subtitles</td></tr>
+  </tbody>
+</table>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">AI-Enhanced Editing</h4>
+  <p><strong><a href="https://descript.com" target="_blank">Descript</a></strong> is particularly powerful for this assignment. It transcribes your video and lets you edit by deleting text — remove "ums," cut rambling sections, and tighten your delivery without learning traditional video editing. The free tier includes 1 hour of transcription per month.</p>
+  <p style="margin-bottom:0">For audio quality, <a href="https://descript.com" target="_blank">Descript</a>'s <strong>Studio Sound</strong> feature (free tier) can reduce background noise and improve voice clarity — useful if you're recording in a less-than-ideal environment.</p>
+</div>
+
+<h3>Upload to YouTube</h3>
+<ol>
+  <li>Go to <strong><a href="https://studio.youtube.com" target="_blank">YouTube Studio</a></strong> (<a href="https://studio.youtube.com" target="_blank">studio.youtube.com</a>) → click "Create" → "Upload videos"</li>
+  <li>Upload your MP4 file</li>
+  <li>Title: <code>[Your Org Name] — Nonprofit Pitch Presentation</code></li>
+  <li>Description: Include your organization name, mission, and website URL</li>
+  <li>Visibility: <strong>Unlisted</strong> (only people with the link can view) or <strong>Public</strong> (your choice)</li>
+  <li>Copy the URL → submit to Webcourses</li>
+</ol>
+
+<h3>Add to Your Website</h3>
+<p>Embed or link your YouTube video on your <strong>Home page</strong>. This is the first thing a visitor sees — your face, your voice, your pitch. In <a href="https://sites.google.com" target="_blank">Google Sites</a>: Insert → YouTube → paste your video URL.</p>
+<p>This is the final piece of your website. After this, your homepage has: mission statement, hero image, and a video of the Executive Director presenting the organization. That's a real nonprofit homepage.</p>
+
+<hr>
+
+<h2>What Makes a Great Pitch Video?</h2>
+<table>
+  <thead><tr><th>Do</th><th>Don't</th></tr></thead>
+  <tbody>
+    <tr><td>Open with something compelling — a story, a statistic, a question</td><td>Open with "Hi, my name is... and for my class project..."</td></tr>
+    <tr><td>Speak naturally — conversational, not scripted-robotic</td><td>Read a script word-for-word while staring at a paper</td></tr>
+    <tr><td>Show passion for the mission — this should feel personal</td><td>Present like a detached book report</td></tr>
+    <tr><td>Use visuals — your website, AI images, data graphics, location footage</td><td>Talk to the camera for 8 minutes with nothing else on screen</td></tr>
+    <tr><td>End with a clear call to action</td><td>End by trailing off or saying "that's it"</td></tr>
+    <tr><td>Keep it under 8 minutes — tighter is better</td><td>Ramble past 10 minutes because you didn't edit</td></tr>
+  </tbody>
+</table>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando — Pitch Video Outline</summary>
+  <div>
+    <p><strong>[0:00–0:30] Hook:</strong> Face to camera in a community center. "85,000 people in Orange County can't fully communicate with their doctor, their child's teacher, or the social worker who's supposed to help them. Not because they don't want to — because services aren't available in their language."</p>
+    <p><strong>[0:30–1:30] The Problem:</strong> Narration over data graphics (<a href="https://canva.com" target="_blank">Canva</a>) and news article screenshots. Census data on LEP population growth. Brief clips from news coverage (referenced in Week 11 essay).</p>
+    <p><strong>[1:30–2:30] The Organization:</strong> Logo animation (<a href="https://canva.com" target="_blank">Canva</a>). Mission and vision. Quick website walkthrough showing homepage and About Us page.</p>
+    <p><strong>[2:30–3:30] How We Work:</strong> Face to camera explaining the 4 principles from Our Approach page. Cut to screen recording of the Programs page. Show the logic model.</p>
+    <p><strong>[3:30–4:30] The Team:</strong> Org chart graphic. Board composition highlights. Mention volunteer program. Show Team page on website.</p>
+    <p><strong>[4:30–5:30] Financials &amp; Sustainability:</strong> Budget pie chart. Revenue diversification strategy. Show Transparency page. "No single source exceeds 40% of our revenue — that's by design."</p>
+    <p><strong>[5:30–6:30] Impact &amp; Accountability:</strong> Program evaluation approach. Key metrics. "We publish our results because transparency builds the trust our community deserves."</p>
+    <p><strong>[6:30–7:00] Advocacy:</strong> Language Access Ordinance campaign. Show Take Action page. "We don't just serve families — we fight for the systems changes that make services accessible to everyone."</p>
+    <p><strong>[7:00–7:30] Call to Action:</strong> Face to camera, personal and direct. "If you believe every family deserves to be understood — regardless of the language they speak — I'd love to talk. Visit our website. Reach out. Let's build this bridge together."</p>
+    <p><strong>[7:30–8:00] Closing:</strong> Logo, website URL, contact info. Background music.</p>
+  </div>
+</details>
+
+<hr>
+
+<h2>Grading Rubric (14 pts)</h2>
+<table>
+  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
+  <tbody>
+    <tr><td>Presenter appears on camera and narrates in their own voice — delivery is confident, natural, and engaging</td><td class="pts-col">3 pts</td></tr>
+    <tr><td>Content covers all required elements (problem, mission, approach, team, financials, evaluation, advocacy, call to action)</td><td class="pts-col">4 pts</td></tr>
+    <tr><td>Video demonstrates genuine understanding of the organization built over 14 weeks — not surface-level, but substantive</td><td class="pts-col">3 pts</td></tr>
+    <tr><td>Production quality is professional — good lighting, clear audio, intentional editing, effective use of visuals</td><td class="pts-col">2 pts</td></tr>
+    <tr><td>Creative approach — video goes beyond a basic slide presentation; uses storytelling, location, visuals, or other creative elements</td><td class="pts-col">2 pts</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Submission Details</h2>
+<ul>
+  <li><strong>Length:</strong> 5–8 minutes</li>
+  <li><strong>Format:</strong> YouTube video (unlisted or public)</li>
+  <li><strong>Submit to:</strong> Webcourses → Assignments → Week 14 — paste your YouTube URL</li>
+  <li><strong>Due:</strong> December 3, 2026</li>
+</ul>
+
+<hr>
+
+<h2>Useful AI &amp; Online Tools This Week</h2>
+<table>
+  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
+  <tbody>
+    <tr><td><strong><a href="https://descript.com" target="_blank">Descript</a></strong> (<a href="https://descript.com" target="_blank">descript.com</a>)</td><td>AI video editing — edit by editing text</td><td>Upload your recording → edit the transcript to cut the video; <a href="https://descript.com" target="_blank">Studio Sound</a> improves audio quality; free tier: 1 hr/month</td></tr>
+    <tr><td><strong><a href="https://capcut.com" target="_blank">CapCut</a></strong> (<a href="https://capcut.com" target="_blank">capcut.com</a>)</td><td>Free video editor</td><td>Trim clips, add text overlays, transitions, and background music — intuitive timeline editor</td></tr>
+    <tr><td><strong><a href="https://canva.com" target="_blank">Canva Video</a></strong> (<a href="https://canva.com" target="_blank">canva.com</a>)</td><td>Title cards, data graphics, B-roll visuals</td><td>Create branded title cards, data graphics, and transition slides to insert between your camera segments</td></tr>
+    <tr><td><strong><a href="https://www.apple.com/imovie/" target="_blank">iMovie</a></strong> (Mac/iPhone)</td><td>Apple's free editor</td><td>Combine clips, add transitions and music; export directly to YouTube</td></tr>
+    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Script drafting and pitch refinement</td><td>Draft your pitch script, then practice and revise — AI can help tighten language and identify gaps in your argument</td></tr>
+    <tr><td><strong><a href="https://studio.youtube.com" target="_blank">YouTube Studio</a></strong> (<a href="https://studio.youtube.com" target="_blank">studio.youtube.com</a>)</td><td>Upload, basic editing, subtitles</td><td>Upload your final video, add auto-generated captions (review for accuracy), set visibility</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<div class="card card-accent" style="margin-top:var(--xl)">
+  <h2 style="margin-top:0;border:none;padding:0">A Final Note</h2>
+  <p>This video is the capstone of your capstone. Fourteen weeks ago, you had a one-page concept statement. Now you have a fully designed nonprofit with governance, staffing, a budget, programs, evaluation systems, an advocacy agenda, a brand, a website, and a strategic plan.</p>
+  <p>Whether or not this organization ever incorporates, you've demonstrated that you can <strong>build one from the ground up</strong> — and that's exactly what the MNM program prepared you to do.</p>
+  <p style="margin-bottom:0"><strong>Make it count.</strong></p>
+</div>
+
+</div>
+</main>
+
+<footer>
+  PAD 6149 &middot; School of Public Administration &middot; University of Central Florida &middot; Fall 2026
+</footer>
+
+<script>
+// Close mobile menu on nav click
+document.querySelectorAll('.sidebar a').forEach(a=>{
+  a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
+});
+</script>
+</body>
+</html>

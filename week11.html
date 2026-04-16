@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 11: Leadership Case Study – PAD 6149</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7;--text:#1C1917;--accent:#FFC904;--accent-dk:#D4A900;--accent-soft:rgba(255,201,4,.1);
+  --muted:#78716C;--border:#E7E5E4;--surface:#FFF;--surface-alt:#F5F5F0;
+  --nav-bg:#1C1917;--nav-text:#FAFAF7;
+  --success:#16A34A;--info:#2563EB;--danger:#DC2626;
+  --font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+  --w:760px;--sidebar:260px;
+  --xs:4px;--sm:8px;--md:16px;--lg:24px;--xl:32px;--2xl:48px;--3xl:64px;
+  --r:8px;--r-lg:12px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);
+  --shadow-md:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
+.brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
+  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
+  padding:var(--lg) 0 var(--xl);z-index:100;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
+}
+.sidebar::-webkit-scrollbar{width:5px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
+.sb-title{font-size:16px;font-weight:700;padding:0 var(--lg);margin-bottom:var(--md);line-height:1.35}
+.sb-section{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.3);padding:var(--lg) var(--lg) var(--sm);border-top:1px solid rgba(255,255,255,.06);margin-top:var(--sm)}
+.sb-section:first-of-type{border-top:none;margin-top:0}
+.sidebar a{display:flex;align-items:baseline;gap:4px;padding:8px var(--lg);color:rgba(250,250,247,.6);text-decoration:none;font-size:13.5px;line-height:1.4;border-left:3px solid transparent;transition:all .15s ease}
+.sidebar a:hover{background:rgba(255,255,255,.06);color:var(--nav-text);border-left-color:rgba(255,201,4,.3)}
+.sidebar a.active{background:rgba(255,201,4,.08);color:var(--accent);border-left-color:var(--accent);font-weight:500}
+.sidebar .wk{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.3);min-width:18px;flex-shrink:0}
+.sidebar a.active .wk{color:rgba(255,201,4,.5)}
+.sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
+.sidebar a.active .pts{color:rgba(255,201,4,.4)}
+
+/* Mobile toggle */
+.menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
+
+/* Main */
+.main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
+.content{max-width:var(--w);margin:0 auto}
+
+/* Hero */
+.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
+.hero .content{max-width:var(--w)}
+.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
+.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
+.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
+.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
+
+/* Typography */
+h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
+h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
+h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
+h4{font-size:16px;font-weight:700;margin-top:var(--lg);margin-bottom:var(--xs)}
+p{margin-bottom:var(--md)}
+ul,ol{margin-bottom:var(--md);padding-left:var(--lg)}
+li{margin-bottom:6px}
+li::marker{color:var(--muted)}
+a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
+a:hover{text-decoration-color:var(--accent);color:var(--text)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
+
+/* Key facts card */
+.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
+.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.fact:nth-child(3n){border-right:none}
+.fact:nth-last-child(-n+3){border-bottom:none}
+.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
+.fact-value{font-size:15px;font-weight:500}
+
+/* Tables */
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+thead{background:var(--nav-bg);color:var(--nav-text)}
+th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
+td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:top;background:var(--surface)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:var(--surface-alt)}
+tbody tr:hover td{background:var(--accent-soft)}
+.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
+.pts-col{font-family:var(--mono);text-align:center;font-weight:500}
+tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
+tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
+tfoot td{background:var(--surface-alt);font-weight:700}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
+.card:hover{box-shadow:var(--shadow)}
+.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
+
+/* Badge */
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
+.badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
+.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
+
+/* Competency table */
+.comp-table td:first-child{font-weight:600;width:38%}
+
+/* Steps */
+.steps{counter-reset:step;list-style:none;padding-left:0}
+.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
+.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+
+/* Grade grid */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
+.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
+.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
+.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Details / collapsible */
+details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
+summary:hover{background:var(--surface-alt)}
+summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
+
+/* Footer */
+footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
+
+/* Responsive */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%);transition:transform .25s ease}
+  .sidebar.open{transform:translateX(0)}
+  .menu-toggle{display:block}
+  .main{margin-left:0;padding:var(--2xl) var(--lg)}
+  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
+  .hero h1{font-size:32px}
+  footer{margin-left:0}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2n){border-right:none}
+  .fact:nth-child(3n){border-right:1px solid var(--border)}
+  .grade-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="brand-bar"></div>
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle menu">&#9776; Menu</button>
+
+<nav class="sidebar">
+  <div class="sb-brand">PAD 6149</div>
+  <div class="sb-title">Build Your Nonprofit</div>
+
+  <div class="sb-section">Course</div>
+  <a href="index.html">Overview</a>
+
+  <div class="sb-section">Service Learning</div>
+  <a href="week01.html"><span class="wk">01</span> Concept Statement <span class="pts">2</span></a>
+  <a href="week02.html"><span class="wk">02</span> Interview Plan <span class="pts">2</span></a>
+  <a href="week04a.html"><span class="wk">04</span> Mentor Interview Report <span class="pts">8</span></a>
+
+  <div class="sb-section">Capstone Project</div>
+  <a href="week03.html"><span class="wk">03</span> Build Your Website <span class="pts">3</span></a>
+  <a href="week04b.html"><span class="wk">04</span> Board Governance <span class="pts">8</span></a>
+  <a href="week05.html"><span class="wk">05</span> HR &amp; Volunteers <span class="pts">8</span></a>
+  <a href="week06.html"><span class="wk">06</span> Confirming Identity <span class="pts">3</span></a>
+  <a href="week07.html"><span class="wk">07</span> Financial Plan <span class="pts">3</span></a>
+  <a href="week08.html"><span class="wk">08</span> Fundraising Strategy <span class="pts">3</span></a>
+  <a href="week09.html"><span class="wk">09</span> Strategic Plan <span class="pts">10</span></a>
+  <a href="week10.html"><span class="wk">10</span> Program Evaluation <span class="pts">8</span></a>
+  <a href="week11.html" class="active"><span class="wk">11</span> Leadership Case Study <span class="pts">15</span></a>
+  <a href="week12.html"><span class="wk">12</span> AI Content &amp; Social <span class="pts">5</span></a>
+  <a href="week13.html"><span class="wk">13</span> Policy Advocacy <span class="pts">8</span></a>
+  <a href="week14.html"><span class="wk">14</span> Final Pitch Video <span class="pts">14</span></a>
+</nav>
+
+<main class="main">
+<div class="content">
+
+<p><span class="badge badge-gold">Week 11</span> <span class="badge">15 pts</span> <span class="badge badge-dark">NASPAA C1</span></p>
+<h1>Leadership Case Study</h1>
+<p style="font-size:15px;color:var(--muted)">Due: November 2, 2026 &middot; 2,000&ndash;2,500 words &middot; APA 7th edition references</p>
+
+<hr>
+
+<h2>Deliverables</h2>
+<table>
+  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
+  <tbody>
+    <tr><td>Leadership Case Study (essay)</td><td>Webcourses &rarr; Assignments &rarr; Week 11</td><td>Word (.docx), 2,000&ndash;2,500 words, double-spaced, APA 7th edition references</td></tr>
+    <tr><td>Website update</td><td>Your live website</td><td>&ldquo;Our Approach&rdquo; page with issue analysis, organizational principles, and partners</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>What Is This Assignment?</h2>
+<p>Nonprofit leaders don't operate in a vacuum. The challenges your organization faces &mdash; financial instability, rising demand, workforce shortages, shifting policy landscapes &mdash; are playing out in real time, in the news, in your community. The question is: <strong>does your organization understand these forces, and does it have a plan to navigate them?</strong></p>
+<p>This assignment asks you to find and analyze <strong>3&ndash;5 recent news articles</strong> about the issue your organization addresses, connect what the media is reporting to the reality on the ground in your community, and translate that analysis into an &ldquo;Our Approach&rdquo; page on your website.</p>
+<p>This is not a current events report. It's a <strong>leadership exercise</strong>: reading the landscape, identifying patterns, finding the gaps, and articulating how your organization responds. Funders, partners, and board members expect nonprofit leaders to be fluent in the public discourse around their issue &mdash; and to have a point of view.</p>
+<p>This is the largest single assignment in the course (15 pts). It requires analytical depth &mdash; not summary.</p>
+
+<hr>
+
+<h2>Step 1: Find Your Articles</h2>
+<p>Select <strong>3&ndash;5 news articles</strong> published within the past 2 years (2024&ndash;2026) that are directly related to the issue your organization addresses.</p>
+<p><strong>Article selection criteria:</strong></p>
+<table>
+  <thead><tr><th>Requirement</th><th>Details</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Recency</strong></td><td>Published 2024&ndash;2026</td></tr>
+    <tr><td><strong>Quantity</strong></td><td>Minimum 3, maximum 5</td></tr>
+    <tr><td><strong>Source quality</strong></td><td>Published journalism &mdash; newspapers, news websites, or sector media (<a href="https://nonprofitquarterly.org" target="_blank">Nonprofit Quarterly</a>, SSIR, Chronicle of Philanthropy). No blogs, social media posts, or opinion columns without editorial oversight</td></tr>
+    <tr><td><strong>Geographic mix</strong></td><td>At least 1 local/regional article (your city, county, or state) + at least 1 national article</td></tr>
+    <tr><td><strong>Topical range</strong></td><td>Articles should cover different dimensions of your issue &mdash; not 5 articles saying the same thing. Look for pieces covering funding, service delivery, policy, community impact, workforce, or advocacy</td></tr>
+  </tbody>
+</table>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">Finding Articles</h4>
+  <ul>
+    <li><strong><a href="https://www.perplexity.ai" target="_blank">Perplexity.ai</a></strong> &mdash; <em>&ldquo;What are the most significant news stories about [your issue] in [your area] from 2024 to 2026?&rdquo;</em> &mdash; cited sources let you go directly to the articles</li>
+    <li><strong><a href="https://news.google.com" target="_blank">Google News</a></strong> &mdash; search by topic + location + date range</li>
+    <li><strong><a href="https://nonprofitquarterly.org" target="_blank">Nonprofit Quarterly</a></strong> &mdash; sector-specific coverage with analytical depth</li>
+    <li><strong><a href="https://www.proquest.com" target="_blank">ProQuest Newsstand</a></strong> (via UCF Library) &mdash; full-text news database with advanced search</li>
+    <li><strong>Your local newspaper's website</strong> &mdash; Orlando Sentinel, South Florida Sun Sentinel, Tampa Bay Times, etc.</li>
+  </ul>
+</div>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Article Selection</summary>
+  <div>
+    <ol>
+      <li><strong>Local:</strong> &ldquo;Language barriers leave Orlando immigrant families struggling to access healthcare&rdquo; &mdash; <em>Orlando Sentinel</em>, March 2025. Investigative piece on translation failures at local hospitals.</li>
+      <li><strong>Local:</strong> &ldquo;Refugee families face enrollment confusion as Orange County schools lack bilingual support&rdquo; &mdash; <em>WFTV Orlando</em>, August 2025. Report on school registration barriers.</li>
+      <li><strong>National:</strong> &ldquo;Nonprofits serving immigrant communities face funding cliff as federal priorities shift&rdquo; &mdash; <em>Nonprofit Quarterly</em>, January 2025. Analysis of funding landscape changes.</li>
+      <li><strong>National:</strong> &ldquo;The growing demand for culturally responsive social services &mdash; and why supply isn't keeping up&rdquo; &mdash; <em>Stanford Social Innovation Review</em>, Fall 2024. Research-informed analysis.</li>
+      <li><strong>State:</strong> &ldquo;Florida's immigrant population grew 30% in a decade. Services haven't kept pace.&rdquo; &mdash; <em>Tampa Bay Times</em>, June 2025. Statewide data analysis.</li>
+    </ol>
+    <p style="margin-bottom:0"><em>These five articles cover different dimensions: healthcare access, education, funding, service models, and demographic change. Together, they paint a picture of the landscape Asian Bridge Orlando operates in.</em></p>
+  </div>
+</details>
+
+<hr>
+
+<h2>Part I: Essay (2,000&ndash;2,500 words)</h2>
+<p>Analyze your articles &mdash; not one by one, but <strong>as a body of evidence</strong> about the issue your organization addresses. Your essay should address five questions:</p>
+
+<h3>Question 1: What is happening?</h3>
+<p>What picture do your articles paint of the issue your organization addresses? Read across the articles for <strong>patterns</strong>: what themes keep appearing? What communities are most affected? What's getting worse, staying the same, or improving?</p>
+<p>This is pattern analysis, not summary. Don't write &ldquo;Article 1 says X, Article 2 says Y.&rdquo; Instead: &ldquo;Across five recent reports, three recurring themes emerge...&rdquo;</p>
+<p>Use local data from <strong><a href="https://censusreporter.org" target="_blank">Census Reporter</a></strong> and <strong><a href="https://www.socialexplorer.com" target="_blank">Social Explorer</a></strong> (UCF Library) to add quantitative context to the stories the articles tell.</p>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando</summary>
+  <div>
+    <p style="margin-bottom:0">&ldquo;Across five articles spanning 2024&ndash;2025, three patterns emerge in the landscape of immigrant services in Central Florida. First, language access failures are systemic &mdash; not isolated incidents but structural gaps in healthcare, education, and social services that disproportionately affect families with limited English proficiency. Second, demand for culturally responsive services is growing faster than the organizations designed to provide them. Third, funding &mdash; particularly federal funding &mdash; is increasingly uncertain, creating instability for the organizations that immigrant communities depend on.&rdquo;</p>
+  </div>
+</details>
+
+<h3>Question 2: Why is this happening?</h3>
+<p>What are the <strong>root causes</strong> of the challenges your articles describe? Are they primarily economic, political, demographic, or structural? Do the national articles and local articles point to the same causes, or does your community have unique factors?</p>
+<p>This is the analytical core of your essay. Integrate concepts from your MNM coursework &mdash; apply frameworks from PAD 6208 (financial management), PAD 6335 (strategic planning), PAD 6417 (HR management), PAD 6142 (nonprofit organizations), or other courses to analyze what's driving the problems.</p>
+<p>Use <strong><a href="https://scholar.google.com" target="_blank">Google Scholar</a></strong> to find academic research that deepens your analysis beyond what the news articles provide.</p>
+
+<h3>Question 3: Who is responding?</h3>
+<p>Identify <strong>at least two organizations in your community</strong> (nonprofits, funders, government agencies) that are addressing the challenges your articles describe. For each:</p>
+<ul>
+  <li>What strategies are they using?</li>
+  <li>Where are they succeeding?</li>
+  <li>Where are the gaps &mdash; what are they <em>not</em> doing or <em>unable</em> to do?</li>
+</ul>
+<p>Use <strong><a href="https://candid.org" target="_blank">Candid / GuideStar</a></strong> to research their financials and programs. Use <strong><a href="https://www.perplexity.ai" target="_blank">Perplexity.ai</a></strong> to find additional coverage of their work.</p>
+
+<h3>Question 4: What's missing?</h3>
+<p>This is the most important question. Based on your analysis of the articles and the organizations responding: <strong>what gap remains that your organization exists to fill?</strong></p>
+<p>The articles reveal what the media sees. Your job is to identify what the media &mdash; and the existing organizations &mdash; are <em>not</em> seeing. This is your organization's reason for being, grounded in evidence.</p>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando</summary>
+  <div>
+    <p style="margin-bottom:0">&ldquo;What none of these articles address is the diversity <em>within</em> the Asian American immigrant experience. Coverage treats 'immigrant services' as monolithic &mdash; or focuses exclusively on Hispanic/Latino populations. But a Korean-speaking professional family navigating healthcare has fundamentally different needs than a Burmese refugee family navigating the school system for the first time. The two local organizations serving this space &mdash; AARC and Catholic Charities &mdash; acknowledge the gap but lack the bilingual capacity across Asian languages to close it. Asian Bridge Orlando exists precisely in this space: culturally and linguistically specific navigation for a community that is growing, diverse, and largely invisible in the public discourse.&rdquo;</p>
+  </div>
+</details>
+
+<h3>Question 5: How will you lead through this?</h3>
+<p>Using your analysis, describe how <strong>you, as the Executive Director of your organization</strong>, would demonstrate innovative leadership to navigate the challenges your articles reveal.</p>
+<p>Connect this directly to your Strategic Plan (<a href="week09.html">Week 9</a>). What specific strategies from your plan are designed to address these realities? Where might your plan need to be adjusted based on what you've learned from your media analysis?</p>
+<p>This is not aspirational &mdash; it's operational. What will you actually <em>do</em>?</p>
+<p><strong>Citations:</strong> Cite all articles and other sources in <strong>APA 7th edition</strong> format. Include in-text citations throughout the essay and a full reference list at the end. The reference list does not count toward the word limit.</p>
+
+<hr>
+
+<h2>Website Update: &ldquo;Our Approach&rdquo; Page</h2>
+<p>The essay is your academic analysis. The website page is its <strong>public-facing translation</strong>. Add an &ldquo;Our Approach&rdquo; page that tells visitors: <em>we understand the landscape, we know the challenges, and here's how we work.</em></p>
+<p><strong>Your page should include four sections:</strong></p>
+
+<p><strong>1. &ldquo;The Issue&rdquo;</strong> &mdash; 2&ndash;3 sentences summarizing the problem your organization exists to solve, grounded in data from your articles and local research. This is not your mission statement &mdash; it's the <em>context</em> for your mission.</p>
+
+<p><strong>2. &ldquo;What's Missing&rdquo;</strong> &mdash; 2&ndash;3 sentences identifying the gap that your organization fills. This comes directly from your Q4 analysis &mdash; what the articles and existing organizations don't address.</p>
+
+<p><strong>3. &ldquo;How We Work&rdquo;</strong> &mdash; 3&ndash;4 organizational principles that define your approach. These should emerge from your Q5 leadership analysis &mdash; they're your answer to the challenges you've identified.</p>
+
+<p><strong>4. &ldquo;Our Partners&rdquo;</strong> &mdash; List the organizations you analyzed in Q3, with a brief description of how you collaborate. Use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to create a simple partner logo grid or visual.</p>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Our Approach Page</summary>
+  <div>
+    <p><strong>Page title:</strong> Our Approach</p>
+    <p><strong>The Issue:</strong><br>
+    &ldquo;Central Florida's Asian American and immigrant population has grown 45% in the past decade, yet culturally and linguistically responsive services remain critically scarce. Local news investigations have documented translation failures in hospitals, enrollment barriers in schools, and a social service infrastructure that was not designed for the linguistic diversity of the communities now living here.&rdquo;</p>
+    <p><strong>What's Missing:</strong><br>
+    &ldquo;Most media coverage &mdash; and most existing services &mdash; treat immigrant communities as monolithic. But a Korean-speaking family navigating healthcare has fundamentally different needs than a Burmese refugee family navigating the school system. Asian Bridge Orlando exists because this diversity matters, and because no one else is bridging this specific gap.&rdquo;</p>
+    <p><strong>How We Work:</strong></p>
+    <ul>
+      <li><strong>Community-led design</strong> &mdash; Our programs are designed with, not for, the communities we serve</li>
+      <li><strong>Language as infrastructure</strong> &mdash; Multilingual capacity is embedded in every service, not offered as a separate program</li>
+      <li><strong>Partnership over duplication</strong> &mdash; We connect families to existing services rather than rebuilding what already exists</li>
+      <li><strong>Data-informed practice</strong> &mdash; Every program is measured against clear outcomes because transparency builds trust</li>
+    </ul>
+    <p><strong>Our Partners:</strong></p>
+    <ul style="margin-bottom:0">
+      <li>Asian American Resource Center of Central Florida &mdash; Legal clinic referrals and language access collaboration</li>
+      <li>Catholic Charities of Central Florida &mdash; Refugee resettlement coordination</li>
+      <li>UCF School of Public Administration &mdash; Research partnership and volunteer pipeline</li>
+    </ul>
+  </div>
+</details>
+
+<hr>
+
+<h2>Grading Rubric (15 pts)</h2>
+<table>
+  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
+  <tbody>
+    <tr><td>Articles are well-selected (diverse sources, recent, relevant) and the essay demonstrates pattern analysis &mdash; not article-by-article summary</td><td>3 pts</td></tr>
+    <tr><td>Root cause analysis integrates MNM coursework frameworks, uses local data, and goes beyond what the articles themselves say</td><td>4 pts</td></tr>
+    <tr><td>Stakeholder analysis identifies real local organizations with specific, researched assessment of their strategies and gaps</td><td>2 pts</td></tr>
+    <tr><td>&ldquo;What's missing&rdquo; analysis is sharp, specific, and clearly connects to your organization's reason for existing</td><td>3 pts</td></tr>
+    <tr><td>Leadership strategy is concrete, operational, and connected to your Strategic Plan (<a href="week09.html">Week 9</a>)</td><td>3 pts</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Submission Details</h2>
+<ul>
+  <li><strong>Length:</strong> 2,000&ndash;2,500 words (double-spaced, 12pt font)</li>
+  <li><strong>References:</strong> APA 7th edition &mdash; in-text citations + reference list (does not count toward word limit)</li>
+  <li><strong>Format:</strong> Word (.docx)</li>
+  <li><strong>File name:</strong> <code>[YourLastName]_LeadershipCaseStudy.docx</code></li>
+  <li><strong>Submit to:</strong> Webcourses@UCF &rarr; Assignments &rarr; Week 11: Leadership Case Study</li>
+</ul>
+
+<div class="card" style="border-left:4px solid #DC2626">
+  <h4 style="margin-top:0">Independent Work</h4>
+  <p style="margin-bottom:0">This assignment is to be done independently. Do not discuss the case or your essays with other students.</p>
+</div>
+
+<hr>
+
+<h2>Useful AI &amp; Online Tools This Week</h2>
+<table>
+  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
+  <tbody>
+    <tr><td><strong><a href="https://www.perplexity.ai" target="_blank">Perplexity.ai</a></strong></td><td>Finding relevant news articles and local context</td><td><em>&ldquo;What are the most significant news stories about [your issue] in [your area] from 2024 to 2026?&rdquo;</em> &mdash; cited sources let you go directly to the articles</td></tr>
+    <tr><td><strong><a href="https://news.google.com" target="_blank">Google News</a></strong></td><td>Article search by topic, location, and date</td><td>Use advanced search to filter by date range and region &mdash; find both local and national coverage</td></tr>
+    <tr><td><strong><a href="https://www.proquest.com" target="_blank">ProQuest Newsstand</a></strong> (via UCF Library)</td><td>Full-text news database</td><td>Access paywalled articles through the UCF Library &mdash; search by keyword, publication, and date</td></tr>
+    <tr><td><strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong></td><td>Analyzing articles alongside your previous work</td><td>Upload your articles + Strategic Plan + previous submissions &rarr; ask how the issues in the articles connect to your organization's strategy</td></tr>
+    <tr><td><strong><a href="https://censusreporter.org" target="_blank">Census Reporter</a></strong></td><td>Local demographic data</td><td>Add quantitative context to the stories your articles tell &mdash; population, income, language data for your service area</td></tr>
+    <tr><td><strong><a href="https://www.socialexplorer.com" target="_blank">Social Explorer</a></strong> (via UCF Library)</td><td>Community-level data mapping</td><td>Visualize demographic and socioeconomic data by zip code &mdash; free through UCF Library databases</td></tr>
+    <tr><td><strong><a href="https://candid.org" target="_blank">Candid / GuideStar</a></strong></td><td>Researching local stakeholder organizations</td><td>Look up the nonprofits you analyze in Q3 &mdash; their Form 990s show revenue, programs, and geographic focus</td></tr>
+    <tr><td><strong><a href="https://scholar.google.com" target="_blank">Google Scholar</a></strong></td><td>Academic sources for root cause analysis</td><td>Find peer-reviewed research that deepens your analysis beyond what news articles provide</td></tr>
+    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Drafting &ldquo;How We Work&rdquo; principles and approach language</td><td>Generate a starting draft for your organizational principles &mdash; then revise until they genuinely reflect your values and strategy</td></tr>
+    <tr><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong></td><td>Website visuals</td><td>Create a partner logo grid, organizational principles graphic, or &ldquo;How We Work&rdquo; visual for your Our Approach page</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Video Demo: Building Your &ldquo;Our Approach&rdquo; Page</h2>
+<p><em>Video coming soon.</em></p>
+
+<hr>
+
+<h2>Looking Ahead</h2>
+<p><strong>Next week (<a href="week12.html">Week 12</a>):</strong> AI Content &amp; Social Media (5 pts). You'll assess your organization's readiness to grow &mdash; identifying gaps in infrastructure, technology, and organizational systems. Your website gets a polish pass in preparation for the final weeks.</p>
+<p><strong><a href="week13.html">Week 13</a>:</strong> Policy Advocacy Plan (8 pts). <strong><a href="week14.html">Week 14</a>:</strong> Final Pitch Presentation (14 pts). The finish line is in sight.</p>
+
+</div>
+</main>
+
+<footer>
+  PAD 6149 &middot; School of Public Administration &middot; University of Central Florida &middot; Fall 2026
+</footer>
+
+<script>
+// Close mobile menu on nav click
+document.querySelectorAll('.sidebar a').forEach(a=>{
+  a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
+});
+</script>
+</body>
+</html>

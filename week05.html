@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5: HR &amp; Volunteer Management Plan – PAD 6149</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7;--text:#1C1917;--accent:#FFC904;--accent-dk:#D4A900;--accent-soft:rgba(255,201,4,.1);
+  --muted:#78716C;--border:#E7E5E4;--surface:#FFF;--surface-alt:#F5F5F0;
+  --nav-bg:#1C1917;--nav-text:#FAFAF7;
+  --success:#16A34A;--info:#2563EB;--danger:#DC2626;
+  --font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+  --w:760px;--sidebar:260px;
+  --xs:4px;--sm:8px;--md:16px;--lg:24px;--xl:32px;--2xl:48px;--3xl:64px;
+  --r:8px;--r-lg:12px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);
+  --shadow-md:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
+.brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
+  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
+  padding:var(--lg) 0 var(--xl);z-index:100;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
+}
+.sidebar::-webkit-scrollbar{width:5px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
+.sb-title{font-size:16px;font-weight:700;padding:0 var(--lg);margin-bottom:var(--md);line-height:1.35}
+.sb-section{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.3);padding:var(--lg) var(--lg) var(--sm);border-top:1px solid rgba(255,255,255,.06);margin-top:var(--sm)}
+.sb-section:first-of-type{border-top:none;margin-top:0}
+.sidebar a{display:flex;align-items:baseline;gap:4px;padding:8px var(--lg);color:rgba(250,250,247,.6);text-decoration:none;font-size:13.5px;line-height:1.4;border-left:3px solid transparent;transition:all .15s ease}
+.sidebar a:hover{background:rgba(255,255,255,.06);color:var(--nav-text);border-left-color:rgba(255,201,4,.3)}
+.sidebar a.active{background:rgba(255,201,4,.08);color:var(--accent);border-left-color:var(--accent);font-weight:500}
+.sidebar .wk{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.3);min-width:18px;flex-shrink:0}
+.sidebar a.active .wk{color:rgba(255,201,4,.5)}
+.sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
+.sidebar a.active .pts{color:rgba(255,201,4,.4)}
+
+/* Mobile toggle */
+.menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
+
+/* Main */
+.main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
+.content{max-width:var(--w);margin:0 auto}
+
+/* Hero */
+.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
+.hero .content{max-width:var(--w)}
+.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
+.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
+.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
+.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
+
+/* Typography */
+h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
+h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
+h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
+h4{font-size:16px;font-weight:700;margin-top:var(--lg);margin-bottom:var(--xs)}
+p{margin-bottom:var(--md)}
+ul,ol{margin-bottom:var(--md);padding-left:var(--lg)}
+li{margin-bottom:6px}
+li::marker{color:var(--muted)}
+a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
+a:hover{text-decoration-color:var(--accent);color:var(--text)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
+
+/* Key facts card */
+.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
+.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.fact:nth-child(3n){border-right:none}
+.fact:nth-last-child(-n+3){border-bottom:none}
+.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
+.fact-value{font-size:15px;font-weight:500}
+
+/* Tables */
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+thead{background:var(--nav-bg);color:var(--nav-text)}
+th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
+td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:top;background:var(--surface)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:var(--surface-alt)}
+tbody tr:hover td{background:var(--accent-soft)}
+.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
+.pts-col{font-family:var(--mono);text-align:center;font-weight:500}
+tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
+tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
+tfoot td{background:var(--surface-alt);font-weight:700}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
+.card:hover{box-shadow:var(--shadow)}
+.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
+
+/* Badge */
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
+.badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
+.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
+
+/* Competency table */
+.comp-table td:first-child{font-weight:600;width:38%}
+
+/* Steps */
+.steps{counter-reset:step;list-style:none;padding-left:0}
+.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
+.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+
+/* Grade grid */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
+.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
+.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
+.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Details / collapsible */
+details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
+summary:hover{background:var(--surface-alt)}
+summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
+
+/* Footer */
+footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
+
+/* Responsive */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%);transition:transform .25s ease}
+  .sidebar.open{transform:translateX(0)}
+  .menu-toggle{display:block}
+  .main{margin-left:0;padding:var(--2xl) var(--lg)}
+  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
+  .hero h1{font-size:32px}
+  footer{margin-left:0}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2n){border-right:none}
+  .fact:nth-child(3n){border-right:1px solid var(--border)}
+  .grade-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="brand-bar"></div>
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle menu">☰ Menu</button>
+
+<nav class="sidebar">
+  <div class="sb-brand">PAD 6149</div>
+  <div class="sb-title">Build Your Nonprofit</div>
+
+  <div class="sb-section">Course</div>
+  <a href="index.html">Overview</a>
+
+  <div class="sb-section">Service Learning</div>
+  <a href="week01.html"><span class="wk">01</span> Concept Statement <span class="pts">2</span></a>
+  <a href="week02.html"><span class="wk">02</span> Interview Plan <span class="pts">2</span></a>
+  <a href="week04a.html"><span class="wk">04</span> Mentor Interview Report <span class="pts">8</span></a>
+
+  <div class="sb-section">Capstone Project</div>
+  <a href="week03.html"><span class="wk">03</span> Build Your Website <span class="pts">3</span></a>
+  <a href="week04b.html"><span class="wk">04</span> Board Governance <span class="pts">8</span></a>
+  <a href="week05.html" class="active"><span class="wk">05</span> HR &amp; Volunteers <span class="pts">8</span></a>
+  <a href="week06.html"><span class="wk">06</span> Confirming Identity <span class="pts">3</span></a>
+  <a href="week07.html"><span class="wk">07</span> Financial Plan <span class="pts">3</span></a>
+  <a href="week08.html"><span class="wk">08</span> Fundraising Strategy <span class="pts">3</span></a>
+  <a href="week09.html"><span class="wk">09</span> Strategic Plan <span class="pts">10</span></a>
+  <a href="week10.html"><span class="wk">10</span> Program Evaluation <span class="pts">8</span></a>
+  <a href="week11.html"><span class="wk">11</span> Leadership Case Study <span class="pts">15</span></a>
+  <a href="week12.html"><span class="wk">12</span> AI Content &amp; Social <span class="pts">5</span></a>
+  <a href="week13.html"><span class="wk">13</span> Policy Advocacy <span class="pts">8</span></a>
+  <a href="week14.html"><span class="wk">14</span> Final Pitch Video <span class="pts">14</span></a>
+</nav>
+
+<main class="main">
+<div class="content">
+
+<p><span class="badge badge-gold">Week 5</span> <span class="badge">8 pts</span> <span class="badge badge-dark">NASPAA C3</span></p>
+<h1>HR &amp; Volunteer Management Plan</h1>
+<p style="font-size:15px;color:var(--muted);margin-bottom:var(--xl)">Due: September 21, 2026 &middot; 8 pts &middot; 5&ndash;7 pages<br>Source coursework: PAD 6417 &ndash; Human Resource Management (HR Case Study) &middot; PAD 5145 &ndash; Volunteerism in Nonprofit Management (Volunteer Case Study + Volunteer Motivation Literature Review)</p>
+
+<hr>
+
+<h2>Deliverables</h2>
+<table>
+  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
+  <tbody>
+    <tr><td>HR &amp; Volunteer Management Plan</td><td>Webcourses &rarr; Assignments &rarr; Week 5</td><td>Word (.docx), 5&ndash;7 pages, double-spaced</td></tr>
+    <tr><td>Website update</td><td>Your live website</td><td>"Our Team" page + "Get Involved" page with summaries + PDF download links</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>What Is This Assignment?</h2>
+<p>Your nonprofit has a mission, a website, and a board. Now it needs people &mdash; both paid staff and volunteers.</p>
+<p>In PAD 6417, you conducted an <strong>HR Case Study</strong> &mdash; analyzing a real nonprofit's position management, recruitment, compensation, training, and performance systems. In PAD 5145, you studied <strong>volunteer management</strong> &mdash; motivation, program design, and best practices. This assignment asks you to take that knowledge and build the people infrastructure for your own organization.</p>
+<p>The deliverable is a formal HR &amp; Volunteer Management Plan. The website update: a "Team" page and a "Get Involved" page that would make a real visitor want to apply or volunteer.</p>
+
+<hr>
+
+<h2>The Process: From Prior Coursework to Your Organization</h2>
+<p>Same pattern as Week 4:</p>
+
+<h3>Step 1: Revisit Your Prior Coursework</h3>
+<p>Pull up your PAD 6417 HR Case Study and your PAD 5145 Volunteer Case Study and Literature Review. What did you learn about effective HR practices? What problems did you identify? What recommendations did you make?</p>
+
+<h3>Step 2: Upload to <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> and Discuss</h3>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">Using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> for This Assignment</h4>
+  <p>Upload your PAD 6417 and PAD 5145 assignments to a <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> notebook. You can upload multiple sources &mdash; <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> will synthesize across them.</p>
+  <p>Sample prompts:</p>
+  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Based on my HR case study from PAD 6417, what were the most
+significant HR challenges I identified? How would I design HR
+systems for a new nonprofit to avoid those problems from the start?</pre>
+  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">My PAD 5145 volunteer case study analyzed [organization's] volunteer
+program. What worked well and what didn't? How should I design a
+volunteer program for a nonprofit serving immigrant communities
+where language barriers and cultural norms affect volunteer
+recruitment and management?</pre>
+  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">In my volunteer motivation literature review, I found that [key
+finding]. How should this inform the volunteer recruitment and
+retention strategy for my organization?</pre>
+</div>
+
+<h3>Step 3: Draft Your HR &amp; Volunteer Management Plan</h3>
+
+<h3>Step 4: Update Your Website</h3>
+<p>Add a "Team" page and a "Get Involved" page (see Website Update section below).</p>
+
+<hr>
+
+<h2>What Do I Submit?</h2>
+<p>A <strong>5&ndash;7 page, double-spaced</strong> HR &amp; Volunteer Management Plan covering:</p>
+
+<h3>1. Organizational Chart</h3>
+<p>A visual representation of your staff and volunteer structure. Use <a href="https://canva.com" target="_blank">Canva AI</a> to create a clean org chart.</p>
+<p>For a startup nonprofit, this will be small &mdash; and that's fine. A typical early-stage structure might include:</p>
+<ul>
+  <li>Executive Director (1 FTE)</li>
+  <li>Program Manager/Coordinator (1 FTE)</li>
+  <li>Administrative/Development support (1 PT or volunteer)</li>
+  <li>Volunteers in program delivery roles</li>
+</ul>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Org Chart</summary>
+  <div>
+<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Board of Directors (9 members)
+       |
+Executive Director
+       |
+├── Program Director
+│     ├── Community Navigator (bilingual, FT)
+│     ├── Community Navigator (bilingual, FT)
+│     └── Program Volunteers (10-15)
+│
+├── Development &amp; Communications Coordinator (PT)
+│     └── Event Volunteers (5-10)
+│
+└── Administrative Assistant (PT)</pre>
+    <p><em>Year 1 budget supports 3 FTE and 2 PT positions. Volunteer program targets 20-25 active volunteers providing community navigation, event support, and translation services.</em></p>
+  </div>
+</details>
+
+<h3>2. Three Key Staff Position Descriptions</h3>
+<p>For each position, include:</p>
+<ul>
+  <li>Title</li>
+  <li>Reports to</li>
+  <li>Key responsibilities (5&ndash;7 bullet points)</li>
+  <li>Required qualifications</li>
+  <li>Preferred qualifications</li>
+  <li>Salary range (research comparable positions on <strong><a href="https://indeed.com" target="_blank">Indeed</a></strong>, <strong><a href="https://idealist.org" target="_blank">Idealist</a></strong>, and <strong><a href="https://glassdoor.com" target="_blank">Glassdoor</a></strong> &mdash; check at least 5 postings per role for your area). For standard job classification details and required competencies, look up the position on <strong><a href="https://onetonline.org" target="_blank">O*NET OnLine</a></strong> (<a href="https://onetonline.org" target="_blank">onetonline.org</a>)</li>
+</ul>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Position Description</summary>
+  <div>
+    <p><strong>Title:</strong> Community Navigator<br>
+    <strong>Reports to:</strong> Program Director<br>
+    <strong>Classification:</strong> Full-time, exempt<br>
+    <strong>Salary range:</strong> $38,000&ndash;$45,000</p>
+    <p><strong>Responsibilities:</strong></p>
+    <ul>
+      <li>Provide one-on-one navigation support to immigrant families accessing healthcare, legal, educational, and social services</li>
+      <li>Conduct community intake assessments in client's preferred language</li>
+      <li>Maintain case files and track service outcomes using organizational database</li>
+      <li>Facilitate group workshops on topics including healthcare enrollment, school registration, and civic participation</li>
+      <li>Build and maintain relationships with partner agencies and service providers</li>
+      <li>Participate in community outreach events and presentations</li>
+    </ul>
+    <p><strong>Required qualifications:</strong></p>
+    <ul>
+      <li>Bachelor's degree in social work, human services, public administration, or related field</li>
+      <li>Fluency in English and at least one additional language spoken by the community served (Mandarin, Vietnamese, Burmese/Karen, Nepali, or Hindi)</li>
+      <li>Experience working with immigrant or refugee populations</li>
+      <li>Valid driver's license and reliable transportation</li>
+    </ul>
+    <p><strong>Preferred qualifications:</strong></p>
+    <ul>
+      <li>Master's degree in social work or related field</li>
+      <li>Lived experience as an immigrant or first-generation American</li>
+      <li>Knowledge of Central Florida's social service landscape</li>
+    </ul>
+    <p><em>Note: This position description was informed by my PAD 6417 case study, where I found that the organization I analyzed lacked clear position descriptions for direct service roles, leading to role confusion and burnout. Asian Bridge Orlando's descriptions are designed to set clear expectations from day one.</em></p>
+  </div>
+</details>
+
+<h3>3. Volunteer Program Design</h3>
+<ul>
+  <li>Volunteer roles and descriptions (what will volunteers actually do?)</li>
+  <li>Recruitment strategy (where and how will you find volunteers?)</li>
+  <li>Screening and onboarding process</li>
+  <li>Training outline (initial orientation + ongoing development)</li>
+  <li>Recognition and retention approach</li>
+</ul>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">AI Tip: Volunteer Role Descriptions</h4>
+  <p>Use <strong>ChatGPT or Claude</strong> to draft a starting point:</p>
+  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Design 3 volunteer roles for a nonprofit that provides community
+navigation services to Asian American and immigrant families. For
+each role, include: title, time commitment, responsibilities,
+required skills, and training provided. Consider that many
+volunteers may themselves be members of the community served.</pre>
+  <p style="margin-bottom:0">Then browse <strong><a href="https://volunteermatch.org" target="_blank">VolunteerMatch</a></strong> (<a href="https://volunteermatch.org" target="_blank">volunteermatch.org</a>) to see how similar nonprofits describe their volunteer roles in practice &mdash; real listings are a better benchmark than AI-generated templates.</p>
+</div>
+
+<h3>4. DEI Statement and Hiring Commitment</h3>
+<ul>
+  <li>How will your organization build and maintain a diverse team?</li>
+  <li>What specific commitments will you make in hiring practices?</li>
+  <li>How does your DEI approach connect to your mission and the population you serve?</li>
+</ul>
+<p>This is especially important for organizations serving specific cultural or ethnic communities. Your hiring practices should reflect and respect the community you serve &mdash; not just in demographics, but in cultural competency, language capacity, and lived experience.</p>
+
+<h3>5. Conflict Resolution and HR Policies</h3>
+<ul>
+  <li>Key workplace policies (anti-harassment, grievance process, at-will employment)</li>
+  <li>How will conflicts between staff, between staff and volunteers, or between staff and community members be handled?</li>
+  <li>Keep it concise &mdash; 1 page of key policies is sufficient at this stage</li>
+</ul>
+<p>For sample policy language, <strong><a href="https://shrm.org" target="_blank">SHRM</a></strong> (<a href="https://shrm.org" target="_blank">shrm.org</a>) offers free articles and toolkits on anti-harassment policies, performance reviews, and employee handbooks that are widely used across the sector. Adapt, don't copy &mdash; your policies should reflect the size and culture of your specific organization.</p>
+
+<h3>6. Supervision and Performance Review Process</h3>
+<ul>
+  <li>How will staff be supervised? (frequency of check-ins, reporting structure)</li>
+  <li>What does the performance review process look like?</li>
+  <li>How will volunteer performance be monitored and supported?</li>
+</ul>
+
+<hr>
+
+<h2>Website Update</h2>
+<p>Add two pages to your website:</p>
+
+<h4>"Our Team" page:</h4>
+<ul>
+  <li>Brief introduction to your organizational structure</li>
+  <li>Staff profiles (fictional for now &mdash; name, title, 1-sentence bio, photo placeholder)</li>
+  <li>Org chart graphic (export from <a href="https://canva.com" target="_blank">Canva</a>)</li>
+  <li>Download link: "View our full HR &amp; Staffing Plan (PDF)"</li>
+</ul>
+
+<h4>"Get Involved" or "Volunteer" page:</h4>
+<ul>
+  <li>Why volunteer with your organization (connect to mission)</li>
+  <li>Available volunteer roles with brief descriptions</li>
+  <li>Time commitment expectations</li>
+  <li>A call to action ("Interested? Contact us at...")</li>
+  <li>Download link: "View our Volunteer Program Guide (PDF)"</li>
+</ul>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Get Involved Page</summary>
+  <div>
+    <p><strong>Page title:</strong> Get Involved</p>
+    <p><strong>Intro:</strong> "Asian Bridge Orlando relies on dedicated volunteers who share our commitment to serving Central Florida's Asian American and immigrant communities. Whether you speak a second language, have professional skills to share, or simply want to make a difference &mdash; there's a role for you."</p>
+    <p><strong>Volunteer Roles:</strong></p>
+    <ul>
+      <li><strong>Community Navigator Volunteer</strong> &mdash; Help immigrant families access services (bilingual required, 4-6 hrs/week)</li>
+      <li><strong>Administrative Support</strong> &mdash; Assist with data entry, phone calls, and office coordination (2-4 hrs/week)</li>
+      <li><strong>Event Volunteer</strong> &mdash; Support community events, workshops, and cultural celebrations (as needed)</li>
+    </ul>
+    <p><strong>What We Provide:</strong> Orientation training, ongoing support, flexible scheduling, professional development opportunities, and the chance to make a meaningful impact in your community.</p>
+    <p><a href="#">Download our Volunteer Program Guide (PDF)</a></p>
+  </div>
+</details>
+
+<hr>
+
+<h2>Useful AI &amp; Online Tools This Week</h2>
+<table>
+  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
+  <tbody>
+    <tr><td><strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong></td><td>Adapting your PAD 6417 and PAD 5145 coursework</td><td>Upload both assignments &rarr; ask how to adapt your HR and volunteer findings for a startup nonprofit</td></tr>
+    <tr><td><strong><a href="https://indeed.com" target="_blank">Indeed</a> / <a href="https://idealist.org" target="_blank">Idealist</a></strong></td><td>Salary benchmarking</td><td>Search for comparable positions in your area to set realistic salary ranges &mdash; <em>"Community Navigator Orlando FL"</em> &mdash; check 5&ndash;10 postings for a range</td></tr>
+    <tr><td><strong><a href="https://glassdoor.com" target="_blank">Glassdoor</a></strong> (<a href="https://glassdoor.com" target="_blank">glassdoor.com</a>)</td><td>Nonprofit salary and benefits data</td><td>Look up salaries for ED, Program Director, and coordinator roles at similarly-sized nonprofits in your region</td></tr>
+    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Drafting position descriptions and policies</td><td><em>"Write a job description for a bilingual Community Navigator at a nonprofit serving immigrant families. Include responsibilities, qualifications, and salary range for the Orlando area."</em></td></tr>
+    <tr><td><strong><a href="https://canva.com" target="_blank">Canva AI</a></strong></td><td>Org chart design</td><td>Search "org chart" templates &rarr; edit with your actual positions &rarr; export as PNG for your website</td></tr>
+    <tr><td><strong><a href="https://volunteermatch.org" target="_blank">VolunteerMatch</a></strong> (<a href="https://volunteermatch.org" target="_blank">volunteermatch.org</a>)</td><td>Understanding volunteer role design</td><td>Browse real volunteer listings from similar nonprofits to see how they describe roles, time commitments, and requirements</td></tr>
+    <tr><td><strong><a href="https://shrm.org" target="_blank">SHRM</a></strong> (<a href="https://shrm.org" target="_blank">shrm.org</a>)</td><td>HR policy guidance</td><td>Browse free articles and toolkits on anti-harassment policies, performance reviews, and employee handbooks &mdash; some templates require membership, but the free content is substantial</td></tr>
+    <tr><td><strong><a href="https://onetonline.org" target="_blank">O*NET OnLine</a></strong> (<a href="https://onetonline.org" target="_blank">onetonline.org</a>)</td><td>Position classification and competencies</td><td>Look up standard job descriptions, required skills, and education levels for the positions you're creating</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Grading Rubric (8 pts)</h2>
+<table>
+  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
+  <tbody>
+    <tr><td>Organizational chart and position descriptions are clear, realistic, and informed by prior coursework</td><td class="pts-col">2 pts</td></tr>
+    <tr><td>Volunteer program design is thoughtful &mdash; roles, recruitment, training, and retention are addressed</td><td class="pts-col">2 pts</td></tr>
+    <tr><td>DEI statement, HR policies, and supervision process are substantive and appropriate</td><td class="pts-col">2 pts</td></tr>
+    <tr><td>Document demonstrates meaningful application of PAD 6417/5145 learning to current HR and volunteer design</td><td class="pts-col">2 pts</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Submission Details</h2>
+<ul>
+  <li><strong>Length:</strong> 5&ndash;7 pages (double-spaced, 12pt font)</li>
+  <li><strong>Format:</strong> Word (.docx)</li>
+  <li><strong>File name:</strong> <code>[YourLastName]_HRVolunteerPlan.docx</code></li>
+  <li><strong>Submit to:</strong> Webcourses@UCF &rarr; Assignments &rarr; Week 5: HR &amp; Volunteer Management Plan</li>
+</ul>
+
+<hr>
+
+<h2>Video Demo: Building an Org Chart with <a href="https://canva.com" target="_blank">Canva</a> AI</h2>
+<p><em>Video coming soon.</em></p>
+
+<hr>
+
+<h2>Looking Ahead</h2>
+<p><strong>Next week (Week 6):</strong> Confirming Identity &mdash; no graded deliverable, but a critical week. You'll verify your organization name, finalize your mission and vision, lock in your brand identity, and put yourself on the website as Executive Director. This is where your brand comes together &mdash; and your website gets a visual refresh.</p>
+<p>After this week, you'll have completed <strong>35 points</strong> (Concept 3 + Interview Plan 2 + Mentor Report 10 + Board Governance 10 + HR Plan 10). You're more than a third of the way through, and your nonprofit already has governance, a team, and a web presence.</p>
+
+</div>
+</main>
+
+<footer>
+  PAD 6149 &middot; School of Public Administration &middot; University of Central Florida &middot; Fall 2026
+</footer>
+
+<script>
+// Close mobile menu on nav click
+document.querySelectorAll('.sidebar a').forEach(a=>{
+  a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
+});
+</script>
+</body>
+</html>

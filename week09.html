@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 9: Strategic Plan – PAD 6149</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF7;--text:#1C1917;--accent:#FFC904;--accent-dk:#D4A900;--accent-soft:rgba(255,201,4,.1);
+  --muted:#78716C;--border:#E7E5E4;--surface:#FFF;--surface-alt:#F5F5F0;
+  --nav-bg:#1C1917;--nav-text:#FAFAF7;
+  --success:#16A34A;--info:#2563EB;--danger:#DC2626;
+  --font:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;
+  --w:760px;--sidebar:260px;
+  --xs:4px;--sm:8px;--md:16px;--lg:24px;--xl:32px;--2xl:48px;--3xl:64px;
+  --r:8px;--r-lg:12px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);
+  --shadow-md:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
+.brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
+
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
+  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
+  padding:var(--lg) 0 var(--xl);z-index:100;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
+}
+.sidebar::-webkit-scrollbar{width:5px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
+.sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
+.sb-title{font-size:16px;font-weight:700;padding:0 var(--lg);margin-bottom:var(--md);line-height:1.35}
+.sb-section{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.3);padding:var(--lg) var(--lg) var(--sm);border-top:1px solid rgba(255,255,255,.06);margin-top:var(--sm)}
+.sb-section:first-of-type{border-top:none;margin-top:0}
+.sidebar a{display:flex;align-items:baseline;gap:4px;padding:8px var(--lg);color:rgba(250,250,247,.6);text-decoration:none;font-size:13.5px;line-height:1.4;border-left:3px solid transparent;transition:all .15s ease}
+.sidebar a:hover{background:rgba(255,255,255,.06);color:var(--nav-text);border-left-color:rgba(255,201,4,.3)}
+.sidebar a.active{background:rgba(255,201,4,.08);color:var(--accent);border-left-color:var(--accent);font-weight:500}
+.sidebar .wk{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.3);min-width:18px;flex-shrink:0}
+.sidebar a.active .wk{color:rgba(255,201,4,.5)}
+.sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
+.sidebar a.active .pts{color:rgba(255,201,4,.4)}
+
+/* Mobile toggle */
+.menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
+
+/* Main */
+.main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
+.content{max-width:var(--w);margin:0 auto}
+
+/* Hero */
+.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
+.hero .content{max-width:var(--w)}
+.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
+.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
+.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
+.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
+
+/* Typography */
+h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
+h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
+h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
+h4{font-size:16px;font-weight:700;margin-top:var(--lg);margin-bottom:var(--xs)}
+p{margin-bottom:var(--md)}
+ul,ol{margin-bottom:var(--md);padding-left:var(--lg)}
+li{margin-bottom:6px}
+li::marker{color:var(--muted)}
+a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
+a:hover{text-decoration-color:var(--accent);color:var(--text)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
+
+/* Key facts card */
+.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
+.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.fact:nth-child(3n){border-right:none}
+.fact:nth-last-child(-n+3){border-bottom:none}
+.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
+.fact-value{font-size:15px;font-weight:500}
+
+/* Tables */
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+thead{background:var(--nav-bg);color:var(--nav-text)}
+th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
+td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:top;background:var(--surface)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:var(--surface-alt)}
+tbody tr:hover td{background:var(--accent-soft)}
+.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
+.pts-col{font-family:var(--mono);text-align:center;font-weight:500}
+tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
+tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
+tfoot td{background:var(--surface-alt);font-weight:700}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
+.card:hover{box-shadow:var(--shadow)}
+.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
+
+/* Badge */
+.badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
+.badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
+.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
+
+/* Competency table */
+.comp-table td:first-child{font-weight:600;width:38%}
+
+/* Steps */
+.steps{counter-reset:step;list-style:none;padding-left:0}
+.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
+.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+
+/* Grade grid */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
+.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
+.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
+.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Details / collapsible */
+details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
+summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
+summary:hover{background:var(--surface-alt)}
+summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
+
+/* Footer */
+footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
+
+/* Responsive */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%);transition:transform .25s ease}
+  .sidebar.open{transform:translateX(0)}
+  .menu-toggle{display:block}
+  .main{margin-left:0;padding:var(--2xl) var(--lg)}
+  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
+  .hero h1{font-size:32px}
+  footer{margin-left:0}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2n){border-right:none}
+  .fact:nth-child(3n){border-right:1px solid var(--border)}
+  .grade-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="brand-bar"></div>
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle menu">&#9776; Menu</button>
+
+<nav class="sidebar">
+  <div class="sb-brand">PAD 6149</div>
+  <div class="sb-title">Build Your Nonprofit</div>
+
+  <div class="sb-section">Course</div>
+  <a href="index.html">Overview</a>
+
+  <div class="sb-section">Service Learning</div>
+  <a href="week01.html"><span class="wk">01</span> Concept Statement <span class="pts">2</span></a>
+  <a href="week02.html"><span class="wk">02</span> Interview Plan <span class="pts">2</span></a>
+  <a href="week04a.html"><span class="wk">04</span> Mentor Interview Report <span class="pts">8</span></a>
+
+  <div class="sb-section">Capstone Project</div>
+  <a href="week03.html"><span class="wk">03</span> Build Your Website <span class="pts">3</span></a>
+  <a href="week04b.html"><span class="wk">04</span> Board Governance <span class="pts">8</span></a>
+  <a href="week05.html"><span class="wk">05</span> HR &amp; Volunteers <span class="pts">8</span></a>
+  <a href="week06.html"><span class="wk">06</span> Confirming Identity <span class="pts">3</span></a>
+  <a href="week07.html"><span class="wk">07</span> Financial Plan <span class="pts">3</span></a>
+  <a href="week08.html"><span class="wk">08</span> Fundraising Strategy <span class="pts">3</span></a>
+  <a href="week09.html" class="active"><span class="wk">09</span> Strategic Plan <span class="pts">10</span></a>
+  <a href="week10.html"><span class="wk">10</span> Program Evaluation <span class="pts">8</span></a>
+  <a href="week11.html"><span class="wk">11</span> Leadership Case Study <span class="pts">15</span></a>
+  <a href="week12.html"><span class="wk">12</span> AI Content &amp; Social <span class="pts">5</span></a>
+  <a href="week13.html"><span class="wk">13</span> Policy Advocacy <span class="pts">8</span></a>
+  <a href="week14.html"><span class="wk">14</span> Final Pitch Video <span class="pts">14</span></a>
+</nav>
+
+<main class="main">
+<div class="content">
+
+<p><span class="badge badge-gold">Week 9</span> <span class="badge">10 pts</span> <span class="badge badge-dark">NASPAA C1</span></p>
+<h1>Strategic Plan</h1>
+<p style="font-size:15px;color:var(--muted)">Due: October 19, 2026 &middot; 8&ndash;10 pages &middot; Source: PAD 6335 &ndash; Strategic Planning</p>
+
+<hr>
+
+<h2>Deliverables</h2>
+<table>
+  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
+  <tbody>
+    <tr><td>Strategic Plan</td><td>Webcourses &rarr; Assignments &rarr; Week 9</td><td>Word (.docx), 8&ndash;10 pages, double-spaced</td></tr>
+    <tr><td>Website update</td><td>Your live website</td><td>&ldquo;Our Strategy&rdquo; or &ldquo;Impact&rdquo; page with executive summary + PDF download link</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>What Is This Assignment?</h2>
+<p>This is the integration assignment. Everything you've built over the past five weeks &mdash; governance, staffing, brand identity, budget, fundraising &mdash; now comes together into a <strong>cohesive organizational strategy</strong>.</p>
+<p>In PAD 6335, you developed a Strategic Plan for an existing nonprofit. You analyzed their environment, assessed strengths and weaknesses, defined strategic goals, and proposed action plans. Now you're doing the same thing &mdash; but for the organization you've been building from scratch.</p>
+<p>The difference: when you wrote a strategic plan for someone else's organization, you were working with historical data, existing programs, and established stakeholders. Here, you're projecting forward from zero. That requires a different kind of strategic thinking &mdash; less about where the organization has been, and more about where it needs to go and what it takes to get there.</p>
+
+<hr>
+
+<h2>The Process</h2>
+
+<h3>Step 1: Revisit Your PAD 6335 Strategic Plan</h3>
+<p>Pull up your PAD 6335 Strategic Plan assignment. What frameworks did you use? What did you learn about translating mission into measurable goals? What strategic planning mistakes did you observe in the organization you studied?</p>
+
+<h3>Step 2: Upload Everything to NotebookLM</h3>
+<p>This is where <strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong> becomes especially powerful. Upload all of your previous submissions &mdash; not just the PAD 6335 plan, but everything you've produced for this course so far:</p>
+<ul>
+  <li>Your Concept Statement (Week 1)</li>
+  <li>Board Governance Policy (Week 4)</li>
+  <li>HR &amp; Volunteer Management Plan (Week 5)</li>
+  <li>Brand Identity Checklist (Week 6)</li>
+  <li>Budget and Narrative (Week 7)</li>
+  <li>Fundraising Strategy (Week 8)</li>
+  <li>Your PAD 6335 Strategic Plan</li>
+</ul>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">Using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> for Strategic Integration</h4>
+  <p>With all documents uploaded, try:</p>
+<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Based on everything I've written about this organization, identify
+the 3 most important strategic priorities for Year 1. Consider our
+governance structure, staffing plan, budget constraints, and
+fundraising capacity. What should we focus on first, and why?</pre>
+<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Compare my PAD 6335 strategic plan for [organization] with the
+nonprofit I'm building now. What strategic planning principles
+from that plan apply here? What needs to be different for a
+startup with no track record?</pre>
+<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Based on my budget (Week 7) and fundraising strategy (Week 8),
+what are the biggest strategic risks for this organization in
+Year 1? How should the strategic plan address them?</pre>
+</div>
+
+<h3>Step 3: Draft Your Strategic Plan</h3>
+<p>Use the sections below to structure your plan. This is the most substantial document you'll produce in this course &mdash; give it the depth it deserves.</p>
+
+<h3>Step 4: Update Your Website</h3>
+<p>Add an &ldquo;Our Strategy&rdquo; or &ldquo;Impact&rdquo; page to your website with an executive summary and PDF download.</p>
+
+<hr>
+
+<h2>What Do I Submit?</h2>
+
+<h3>1. Executive Summary (1 page)</h3>
+<p>A concise overview of the entire strategic plan &mdash; mission, vision, key strategic goals, and Year 1 priorities. This should stand alone: a board member or funder who reads only this page should understand your organization's direction.</p>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Executive Summary</summary>
+  <div>
+    <p>Asian Bridge Orlando was founded to address a critical gap in Central Florida's social service landscape: the lack of culturally and linguistically responsive services for Asian American and immigrant families. Our mission &mdash; connecting families to the services, language access, and community they need to thrive &mdash; guides every aspect of our organizational strategy.</p>
+    <p>In Year 1, we will focus on three strategic priorities: (1) establishing core community navigation services in partnership with existing agencies, (2) building a sustainable funding base through diversified revenue streams, and (3) developing organizational capacity through staff recruitment, volunteer engagement, and board development. Our $200,000 operating budget supports 5 staff positions and a volunteer corps of 20&ndash;25 community members.</p>
+    <p style="margin-bottom:0">This plan was developed through analysis of the local service landscape, stakeholder input from our mentor interview, and application of strategic planning frameworks from the MNM curriculum. It is designed to position Asian Bridge Orlando for growth while maintaining the community trust essential to our mission.</p>
+  </div>
+</details>
+
+<h3>2. Organizational Overview (1 page)</h3>
+<p>Summarize the key elements from your previous assignments:</p>
+<ul>
+  <li>Mission and vision (from Week 6)</li>
+  <li>Legal structure and 501(c)(3) status (from Week 1)</li>
+  <li>Board composition and governance structure (from Week 4)</li>
+  <li>Staffing and volunteer plan (from Week 5)</li>
+  <li>Brand identity and target audiences (from Week 6)</li>
+</ul>
+<p>This section should read as a coherent narrative &mdash; not a list of things you did in previous weeks. Synthesize.</p>
+
+<h3>3. Environmental Analysis (2 pages)</h3>
+
+<h4>SWOT Analysis</h4>
+<p>Conduct a comprehensive SWOT analysis that integrates your fundraising SWOT (Week 8) with broader organizational and environmental factors.</p>
+<table>
+  <thead><tr><th></th><th>Helpful</th><th>Harmful</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Internal</strong></td><td><strong>Strengths</strong></td><td><strong>Weaknesses</strong></td></tr>
+    <tr><td><strong>External</strong></td><td><strong>Opportunities</strong></td><td><strong>Threats</strong></td></tr>
+  </tbody>
+</table>
+<p>Use <strong><a href="https://www.perplexity.ai" target="_blank">Perplexity.ai</a></strong> to research current trends and data relevant to your SWOT: <em>&ldquo;What are the current trends in funding for immigrant-serving nonprofits in Florida? What policy changes might affect these organizations in 2026&ndash;2027?&rdquo;</em></p>
+
+<h4>Needs Assessment Summary</h4>
+<p>Summarize the community need your organization addresses. Draw on:</p>
+<ul>
+  <li>Data from <strong><a href="https://censusreporter.org" target="_blank">Census Reporter</a></strong> and <strong><a href="https://www.socialexplorer.com" target="_blank">Social Explorer</a></strong> (UCF Library) that you gathered in Week 1</li>
+  <li>Insights from your mentor interview (Week 4)</li>
+  <li>Any relevant academic literature from <strong><a href="https://scholar.google.com" target="_blank">Google Scholar</a></strong></li>
+</ul>
+
+<h4>Competitive Landscape</h4>
+<p>Who else is working in your space? This isn't about competition in the business sense &mdash; it's about understanding where your organization fits in the ecosystem.</p>
+<ul>
+  <li>What organizations serve similar populations?</li>
+  <li>What gaps remain that your organization addresses?</li>
+  <li>How will you collaborate rather than duplicate?</li>
+</ul>
+<p>Use <strong><a href="https://candid.org" target="_blank">Candid / GuideStar</a></strong> (<a href="https://candid.org" target="_blank">candid.org</a>) to research comparable organizations' programs, budgets, and service areas.</p>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Competitive Landscape</summary>
+  <div>
+    <p>Central Florida has several organizations serving immigrant populations, including the Asian American Resource Center (AARC), Hispanic Federation of Central Florida, and Catholic Charities' refugee services. However, our analysis reveals a specific gap: no organization currently provides comprehensive, culturally responsive navigation services tailored to the diversity <em>within</em> the Asian American community &mdash; addressing the distinct needs of East Asian, South Asian, and Southeast Asian families through linguistically appropriate services.</p>
+    <p style="margin-bottom:0">Asian Bridge Orlando does not seek to replace existing organizations. Our strategy is to complement them &mdash; partnering with AARC for legal clinic referrals, with Catholic Charities for refugee-specific services, and with UCF for research and volunteer recruitment. Our distinctive contribution is the bridge function: connecting families to the right service at the right time, in their language, with cultural understanding.</p>
+  </div>
+</details>
+
+<h3>4. Strategic Goals and Objectives (2&ndash;3 pages)</h3>
+<p>Define <strong>3&ndash;5 strategic goals</strong> for Years 1&ndash;3. For each goal, include:</p>
+<ul>
+  <li><strong>Goal statement</strong> &mdash; broad, directional</li>
+  <li><strong>Objectives</strong> &mdash; specific, measurable outcomes (use SMART criteria)</li>
+  <li><strong>Key activities</strong> &mdash; what you'll actually do</li>
+  <li><strong>Timeline</strong> &mdash; when it happens</li>
+  <li><strong>Resources needed</strong> &mdash; budget, staff, partnerships</li>
+  <li><strong>How you'll measure success</strong> &mdash; specific metrics</li>
+</ul>
+
+<div class="card card-accent">
+  <h4 style="margin-top:0">AI Tip: Strategic Goals Framework</h4>
+  <p>Use <strong>ChatGPT or Claude</strong> to stress-test your goals:</p>
+<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Review these 3 strategic goals for a startup nonprofit with a
+$200,000 Year 1 budget and 5 staff members. Are they realistic?
+Are the objectives measurable? What's missing? What would you
+prioritize if resources are tighter than expected?
+
+Goal 1: [paste your goal]
+Goal 2: [paste your goal]
+Goal 3: [paste your goal]</pre>
+</div>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Strategic Goal 1</summary>
+  <div>
+    <p><strong>Goal 1: Establish core community navigation services by end of Year 1.</strong></p>
+    <table>
+      <thead><tr><th>Objective</th><th>Key Activities</th><th>Timeline</th><th>Metrics</th></tr></thead>
+      <tbody>
+        <tr><td>Serve 150 families through one-on-one navigation</td><td>Hire 2 bilingual Community Navigators; develop intake process; establish referral partnerships with 10 agencies</td><td>Q1&ndash;Q2 for hiring; Q2&ndash;Q4 for service delivery</td><td># families served, # referrals made, client satisfaction surveys</td></tr>
+        <tr><td>Launch 6 community workshops</td><td>Design curriculum for healthcare enrollment, school registration, and civic participation workshops; partner with libraries and community centers for space</td><td>Q2&ndash;Q4</td><td># workshops held, # attendees, pre/post knowledge assessments</td></tr>
+        <tr><td>Build a multilingual resource library</td><td>Translate key documents into Mandarin, Vietnamese, Burmese/Karen, and Nepali; create digital and print versions</td><td>Q1&ndash;Q3</td><td># languages covered, # documents translated, # downloads/distributions</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Resources:</strong> 2 FTE Community Navigators ($80,000), Program Director oversight, $18,000 program budget, volunteer translators</p>
+    <p style="margin-bottom:0"><em>This goal directly addresses our mission and represents the core service that justifies our existence. If we achieve nothing else in Year 1, we must demonstrate that families are being reached and connected to services.</em></p>
+  </div>
+</details>
+
+<h3>5. Financial Strategy Summary (1 page)</h3>
+<p>Connect your budget (Week 7) and fundraising plan (Week 8) to your strategic goals:</p>
+<ul>
+  <li>How does the budget allocation support each strategic goal?</li>
+  <li>What is the fundraising timeline, and how does it align with program launch?</li>
+  <li>What happens if revenue falls short of projections? What's your contingency?</li>
+  <li>What are the financial benchmarks for Year 1 success?</li>
+</ul>
+<p>Use <strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong> to create a simple strategic budget alignment table showing which budget line items support which strategic goals.</p>
+
+<h3>6. Implementation Timeline (1 page)</h3>
+<p>Create a visual Year 1 implementation timeline that maps strategic goals, key milestones, and deadlines across all 12 months. Use <strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong> or <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to create this &mdash; a table or Gantt-style chart works well.</p>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Year 1 Milestones</summary>
+  <div>
+    <table>
+      <thead><tr><th>Quarter</th><th>Governance &amp; Operations</th><th>Programs</th><th>Fundraising</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Q1</strong> (Jan&ndash;Mar)</td><td>Incorporate; file 501(c)(3); hire ED and Program Director; first board meeting</td><td>Develop intake process; begin partnership outreach</td><td>Submit 2 grant applications; launch board giving campaign</td></tr>
+        <tr><td><strong>Q2</strong> (Apr&ndash;Jun)</td><td>Hire Community Navigators; onboard volunteers; launch website</td><td>Begin serving families; first community workshop</td><td>Corporate sponsorship outreach; individual donor cultivation</td></tr>
+        <tr><td><strong>Q3</strong> (Jul&ndash;Sep)</td><td>Mid-year board review; first program evaluation</td><td>100 families served; 4 workshops completed</td><td>Fall fundraising event; mid-year donor update</td></tr>
+        <tr><td><strong>Q4</strong> (Oct&ndash;Dec)</td><td>Annual board retreat; Year 2 planning begins</td><td>150 families served; multilingual resource library launched</td><td>Year-end giving campaign; annual report published</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<h3>7. Evaluation Framework (half a page)</h3>
+<p>How will you know if the strategic plan is working? Define:</p>
+<ul>
+  <li>Key performance indicators (KPIs) for each strategic goal</li>
+  <li>How and when you'll collect data</li>
+  <li>Who is responsible for monitoring progress</li>
+  <li>When and how the plan will be reviewed and updated</li>
+</ul>
+<p>This section sets up your <strong><a href="week10.html">Program Evaluation Framework</a></strong> assignment in Week 10.</p>
+
+<hr>
+
+<h2>Website Update</h2>
+<p>Add an <strong>&ldquo;Our Strategy&rdquo;</strong> or <strong>&ldquo;Impact&rdquo;</strong> page to your website.</p>
+<p><strong>Your page should include:</strong></p>
+<ul>
+  <li>Executive summary of the strategic plan (the same one from Section 1, adapted for a public audience)</li>
+  <li>Your 3&ndash;5 strategic goals presented clearly &mdash; use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to create a visual goals infographic or strategic framework graphic</li>
+  <li>A brief &ldquo;Year 1 Priorities&rdquo; section</li>
+  <li>Download link to the full Strategic Plan (PDF)</li>
+</ul>
+
+<details>
+  <summary>Running Example: Asian Bridge Orlando &mdash; Strategy Page</summary>
+  <div>
+    <p><strong>Page title:</strong> Our Strategy</p>
+    <p><strong>Intro:</strong> &ldquo;Asian Bridge Orlando's strategic plan guides our work toward one vision: a Central Florida where every immigrant family can fully access the opportunities, services, and civic life of their community. Here's how we're getting there.&rdquo;</p>
+    <p><strong>Year 1 Priorities:</strong></p>
+    <ol>
+      <li>Launch community navigation services for 150 families</li>
+      <li>Build a sustainable, diversified funding base</li>
+      <li>Develop organizational capacity through hiring, volunteer engagement, and board development</li>
+    </ol>
+    <p><strong>Visual:</strong> [Strategic goals infographic &mdash; designed in <a href="https://canva.com" target="_blank">Canva</a>]</p>
+    <p style="margin-bottom:0">[Download our full Strategic Plan (PDF)]</p>
+  </div>
+</details>
+
+<hr>
+
+<h2>Grading Rubric (10 pts)</h2>
+<table>
+  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
+  <tbody>
+    <tr><td>Environmental analysis (SWOT, needs assessment, competitive landscape) is thorough and data-informed</td><td>2 pts</td></tr>
+    <tr><td>Strategic goals are clear, realistic, measurable, and aligned with organizational capacity</td><td>3 pts</td></tr>
+    <tr><td>Financial strategy and implementation timeline are coherent and connected to goals</td><td>2 pts</td></tr>
+    <tr><td>Plan demonstrates meaningful integration of previous assignments (governance, HR, budget, fundraising) &mdash; not just summarizing but synthesizing</td><td>2 pts</td></tr>
+    <tr><td>Plan demonstrates meaningful integration of PAD 6335 strategic planning frameworks</td><td>1 pt</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Submission Details</h2>
+<ul>
+  <li><strong>Length:</strong> 8&ndash;10 pages (double-spaced, 12pt font)</li>
+  <li><strong>Format:</strong> Word (.docx)</li>
+  <li><strong>File name:</strong> <code>[YourLastName]_StrategicPlan.docx</code></li>
+  <li><strong>Submit to:</strong> Webcourses@UCF &rarr; Assignments &rarr; Week 9: Strategic Plan</li>
+</ul>
+
+<hr>
+
+<h2>Useful AI &amp; Online Tools This Week</h2>
+<table>
+  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
+  <tbody>
+    <tr><td><strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong></td><td>Synthesizing all previous work into a strategic plan</td><td>Upload all previous submissions + PAD 6335 plan &rarr; ask for strategic priorities, risk analysis, and integration insights</td></tr>
+    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Stress-testing strategic goals</td><td>Paste your goals and ask if they're realistic, measurable, and appropriately scoped for your budget and staff</td></tr>
+    <tr><td><strong><a href="https://www.perplexity.ai" target="_blank">Perplexity.ai</a></strong></td><td>Environmental scanning and trend research</td><td>Research policy changes, funding trends, and demographic data relevant to your SWOT analysis &mdash; cited sources strengthen your plan</td></tr>
+    <tr><td><strong><a href="https://censusreporter.org" target="_blank">Census Reporter</a></strong></td><td>Community needs data</td><td>Update your demographic analysis with the latest population, income, and language data for your service area</td></tr>
+    <tr><td><strong><a href="https://candid.org" target="_blank">Candid / GuideStar</a></strong></td><td>Competitive landscape research</td><td>Research comparable organizations' programs, budgets, and geographic reach to define your positioning</td></tr>
+    <tr><td><strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong></td><td>Implementation timeline and budget alignment</td><td>Build a Year 1 timeline, strategic budget alignment table, and KPI tracking framework</td></tr>
+    <tr><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong></td><td>Strategy visuals for your website</td><td>Create a strategic goals infographic, Year 1 milestones graphic, or SWOT visual for your Strategy page</td></tr>
+    <tr><td><strong><a href="https://grammarly.com" target="_blank">Grammarly</a></strong></td><td>Final document polish</td><td>This is your longest document so far &mdash; run it through <a href="https://grammarly.com" target="_blank">Grammarly</a> for consistency, clarity, and grammar before submission</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Video Demo: Using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> to Synthesize Your Strategic Plan</h2>
+<p><em>Video coming soon.</em></p>
+
+<hr>
+
+<h2>Looking Ahead</h2>
+<p><strong>Next week (<a href="week10.html">Week 10</a>):</strong> Program Evaluation Framework (8 pts). You'll design the evaluation system that measures whether your strategic goals are being achieved &mdash; connecting directly to the KPIs you defined this week. Drawing on your PAD 6327 Program Evaluation coursework.</p>
+
+</div>
+</main>
+
+<footer>
+  PAD 6149 &middot; School of Public Administration &middot; University of Central Florida &middot; Fall 2026
+</footer>
+
+<script>
+// Close mobile menu on nav click
+document.querySelectorAll('.sidebar a').forEach(a=>{
+  a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
+});
+</script>
+</body>
+</html>
