@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 7: Financial Plan &amp; Budget – PAD 6149</title>
+<title>Week 7: Financial Plan & Budget – PAD 6149</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -22,14 +22,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
 .brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
-
-/* Sidebar */
-.sidebar{
-  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
-  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
-  padding:var(--lg) 0 var(--xl);z-index:100;
-  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
-}
+.sidebar{width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;padding:var(--lg) 0 var(--xl);z-index:100;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
 .sidebar::-webkit-scrollbar{width:5px}
 .sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
 .sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
@@ -43,23 +36,9 @@ body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);ba
 .sidebar a.active .wk{color:rgba(255,201,4,.5)}
 .sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
 .sidebar a.active .pts{color:rgba(255,201,4,.4)}
-
-/* Mobile toggle */
 .menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
-
-/* Main */
 .main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
 .content{max-width:var(--w);margin:0 auto}
-
-/* Hero */
-.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
-.hero .content{max-width:var(--w)}
-.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
-.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
-.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
-.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
-
-/* Typography */
 h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
 h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
 h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
@@ -70,19 +49,8 @@ li{margin-bottom:6px}
 li::marker{color:var(--muted)}
 a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
 a:hover{text-decoration-color:var(--accent);color:var(--text)}
-strong{font-weight:700}
-em{font-style:italic}
+strong{font-weight:700}em{font-style:italic}
 hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
-
-/* Key facts card */
-.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
-.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.fact:nth-child(3n){border-right:none}
-.fact:nth-last-child(-n+3){border-bottom:none}
-.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
-.fact-value{font-size:15px;font-weight:500}
-
-/* Tables */
 table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 thead{background:var(--nav-bg);color:var(--nav-text)}
 th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
@@ -90,62 +58,29 @@ td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:t
 tbody tr:last-child td{border-bottom:none}
 tbody tr:nth-child(even) td{background:var(--surface-alt)}
 tbody tr:hover td{background:var(--accent-soft)}
-.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
 .pts-col{font-family:var(--mono);text-align:center;font-weight:500}
-tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
-tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
-tfoot td{background:var(--surface-alt);font-weight:700}
-
-/* Cards */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
 .card:hover{box-shadow:var(--shadow)}
-.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
-
-/* Badge */
+.card-warn{border-left:4px solid var(--danger)}
+.card-info{border-left:4px solid var(--info)}
+.card-note{border-left:4px solid var(--accent)}
+.card-example{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
 .badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
 .badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
-.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
-
-/* Competency table */
-.comp-table td:first-child{font-weight:600;width:38%}
-
-/* Steps */
-.steps{counter-reset:step;list-style:none;padding-left:0}
-.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
-.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-
-/* Grade grid */
-.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
-.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
-.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
-.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
-
-/* Details / collapsible */
 details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
 summary:hover{background:var(--surface-alt)}
 summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
 details[open] summary::before{transform:rotate(90deg)}
 details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
-
-/* Footer */
 footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
-
-/* Responsive */
+.subtitle{font-size:15px;color:var(--muted);margin-bottom:var(--xl)}
 @media(max-width:900px){
   .sidebar{transform:translateX(-100%);transition:transform .25s ease}
   .sidebar.open{transform:translateX(0)}
   .menu-toggle{display:block}
   .main{margin-left:0;padding:var(--2xl) var(--lg)}
-  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
-  .hero h1{font-size:32px}
   footer{margin-left:0}
-  .facts{grid-template-columns:1fr 1fr}
-  .fact:nth-child(2n){border-right:none}
-  .fact:nth-child(3n){border-right:1px solid var(--border)}
-  .grade-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
@@ -184,201 +119,407 @@ footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px so
 <div class="content">
 
 <p><span class="badge badge-gold">Week 7</span> <span class="badge">3 pts</span></p>
-<h1>Financial Plan &amp; Budget</h1>
-<p style="font-size:15px;color:var(--muted)"><strong>Due:</strong> October 5, 2026 &middot; <strong>Source coursework:</strong> PAD 6208 – Nonprofit Financial Management</p>
+<h1>Financial Plan & Budget</h1>
+<p class="subtitle">Due: October 5, 2026 · 3 pts</p>
 
-<hr>
-
-<h2>Deliverables</h2>
-
+<p><strong>Source coursework:</strong> PAD 6208 – Nonprofit Financial Management (Budget Assignment + Financial Report Assignment)</p>
+<hr />
+<h2 id="deliverables">Deliverables</h2>
 <table>
-  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
-  <tbody>
-    <tr><td>Year 1 Operating Budget</td><td>Webcourses &rarr; Assignments &rarr; Week 7</td><td>Google Sheets or Excel (.xlsx) — revenue + expenses with formulas</td></tr>
-    <tr><td>Budget Narrative</td><td>Webcourses &rarr; Assignments &rarr; Week 7</td><td>Word (.docx), 1 page, double-spaced</td></tr>
-    <tr><td>Website update</td><td>Your live website</td><td>"Transparency / Financials" page with budget summary + PDF download link</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Year 1 Operating Budget</td>
+<td>Webcourses → Assignments → Week 7</td>
+<td>Google Sheets or Excel (.xlsx) — revenue + expenses with formulas</td>
+</tr>
+<tr>
+<td>Budget Narrative</td>
+<td>Webcourses → Assignments → Week 7</td>
+<td>Word (.docx), 1 page, double-spaced</td>
+</tr>
+<tr>
+<td>Website update</td>
+<td>Your live website</td>
+<td>"Transparency / Financials" page with budget summary + PDF download link</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>What Is This Assignment?</h2>
-
+<hr />
+<h2 id="what-is-this-assignment">What Is This Assignment?</h2>
 <p>Your nonprofit has a mission, governance, and a team. Now the question every funder will ask: <strong>how much does it cost, and where does the money come from?</strong></p>
-
 <p>You submit your budget and narrative to Webcourses. This budget becomes a core component of your <strong>Strategic Plan (Week 9, 10 pts)</strong>, so treat it with that weight.</p>
-
 <p>In PAD 6208, you analyzed an existing nonprofit's financial reports and completed a budget assignment. Now you're building a budget from zero for your own organization.</p>
-
-<hr>
-
-<h2>The Process</h2>
-
-<h3>Step 1: Revisit Your PAD 6208 Work</h3>
-
+<hr />
+<h2 id="the-process">The Process</h2>
+<h3 id="step-1-revisit-your-pad-6208-work">Step 1: Revisit Your PAD 6208 Work</h3>
 <p>Pull up your Budget Assignment and Financial Report Assignment. What did you learn about nonprofit revenue structures, expense categories, and financial analysis? What surprised you about how real nonprofits allocate resources?</p>
-
-<h3>Step 2: Upload to NotebookLM</h3>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">Using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> for Financial Planning</h4>
-  <p>Upload your PAD 6208 assignments. Then explore:</p>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Based on my financial analysis work, what were the most common
+<h3 id="step-2-upload-to-notebooklm">Step 2: Upload to NotebookLM</h3>
+<div class="card card-note">
+<h4 style="margin-top:0">Using NotebookLM for Financial Planning</h4>
+<p>Upload your PAD 6208 assignments. Then explore:</p>
+<pre><code>Based on my financial analysis work, what were the most common
 revenue sources and expense categories for the nonprofit I studied?
 How would I adapt this financial structure for a startup nonprofit
-with a projected Year 1 budget of $200,000?</pre>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap;margin-top:var(--sm)">In my budget assignment, I identified [specific finding about
+with a projected Year 1 budget of $200,000?</code></pre>
+<pre><code>In my budget assignment, I identified [specific finding about
 financial management]. How should this inform the budget design
-for a new nonprofit serving immigrant communities?</pre>
-</div>
-
-<h3>Step 3: Build Your Budget in a Spreadsheet</h3>
-
-<p>Use <a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a> or Excel. A narrative budget in Word won't cut it — funders expect numbers in a spreadsheet format. If you're in <a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a>, try <strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Gemini in Sheets</a></strong> to help write formulas and create charts — for example, ask it to <em>"create a pie chart from cells B2:B8 with labels from A2:A8."</em></p>
-
-<hr>
-
-<h2>What Do I Submit?</h2>
-
-<h3>1. Revenue Projections (Year 1)</h3>
-
-<p>Identify your revenue sources and estimate amounts. For a startup nonprofit, be realistic — you won't have a major donor base or a history of grant funding on day one. Look up comparable organizations on <strong><a href="https://candid.org" target="_blank">GuideStar / Candid</a></strong> (<a href="https://candid.org" target="_blank">candid.org</a>) — their Form 990s show actual revenue breakdowns by source. Use <strong><a href="https://candid.org" target="_blank">Candid's Foundation Directory</a></strong> to research foundations that fund organizations like yours, including average grant sizes and application deadlines — access it free through the <strong>UCF Library databases</strong> (search "Foundation Directory Online" in the library's database list). The <strong><a href="https://nff.org" target="_blank">Nonprofit Finance Fund</a></strong> (<a href="https://nff.org" target="_blank">nff.org</a>) also offers free startup-specific budgeting guides and cash flow templates.</p>
-
+for a new nonprofit serving immigrant communities?</code></pre></div>
+<h3 id="step-3-build-your-budget-in-a-spreadsheet">Step 3: Build Your Budget in a Spreadsheet</h3>
+<p>Use Google Sheets or Excel. A narrative budget in Word won't cut it — funders expect numbers in a spreadsheet format. If you're in Google Sheets, try <strong>Google Gemini in Sheets</strong> to help write formulas and create charts — for example, ask it to <em>"create a pie chart from cells B2:B8 with labels from A2:A8."</em></p>
+<hr />
+<h2 id="what-do-i-submit">What Do I Submit?</h2>
+<h3 id="revenue-projections-year-1">1. Revenue Projections (Year 1)</h3>
+<p>Identify your revenue sources and estimate amounts. For a startup nonprofit, be realistic — you won't have a major donor base or a history of grant funding on day one. Look up comparable organizations on <strong>GuideStar / Candid</strong> (candid.org) — their Form 990s show actual revenue breakdowns by source. Use <strong>Candid's Foundation Directory</strong> to research foundations that fund organizations like yours, including average grant sizes and application deadlines — access it free through the <strong>UCF Library databases</strong> (search "Foundation Directory Online" in the library's database list). The <strong>Nonprofit Finance Fund</strong> (nff.org) also offers free startup-specific budgeting guides and cash flow templates.</p>
 <p>Common startup revenue sources:</p>
-
 <table>
-  <thead><tr><th>Source</th><th>Typical % for Startup</th><th>Notes</th></tr></thead>
-  <tbody>
-    <tr><td>Foundation grants</td><td>30–40%</td><td>Requires research and applications; some foundations specifically fund new organizations</td></tr>
-    <tr><td>Government grants/contracts</td><td>0–20%</td><td>Competitive; usually requires track record</td></tr>
-    <tr><td>Individual donations</td><td>20–30%</td><td>Board giving, personal networks, community fundraising</td></tr>
-    <tr><td>Corporate sponsorships</td><td>5–15%</td><td>Local businesses, in-kind support</td></tr>
-    <tr><td>Events/fundraisers</td><td>5–10%</td><td>Low net revenue in Year 1, but builds visibility</td></tr>
-    <tr><td>Earned income / fees</td><td>0–15%</td><td>Program fees, consulting, merchandise — depends on model</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Source</th>
+<th>Typical % for Startup</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foundation grants</td>
+<td>30–40%</td>
+<td>Requires research and applications; some foundations specifically fund new organizations</td>
+</tr>
+<tr>
+<td>Government grants/contracts</td>
+<td>0–20%</td>
+<td>Competitive; usually requires track record</td>
+</tr>
+<tr>
+<td>Individual donations</td>
+<td>20–30%</td>
+<td>Board giving, personal networks, community fundraising</td>
+</tr>
+<tr>
+<td>Corporate sponsorships</td>
+<td>5–15%</td>
+<td>Local businesses, in-kind support</td>
+</tr>
+<tr>
+<td>Events/fundraisers</td>
+<td>5–10%</td>
+<td>Low net revenue in Year 1, but builds visibility</td>
+</tr>
+<tr>
+<td>Earned income / fees</td>
+<td>0–15%</td>
+<td>Program fees, consulting, merchandise — depends on model</td>
+</tr>
+</tbody>
 </table>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Revenue (Year 1)</summary>
-  <div>
-    <table>
-      <thead><tr><th>Source</th><th>Amount</th><th>%</th></tr></thead>
-      <tbody>
-        <tr><td>Foundation grants (2 grants)</td><td>$80,000</td><td>40%</td></tr>
-        <tr><td>Individual donations</td><td>$40,000</td><td>20%</td></tr>
-        <tr><td>Board member giving (9 &times; $2,000 avg)</td><td>$18,000</td><td>9%</td></tr>
-        <tr><td>Corporate sponsorships</td><td>$25,000</td><td>12.5%</td></tr>
-        <tr><td>Community fundraising event</td><td>$12,000</td><td>6%</td></tr>
-        <tr><td>City/county service contract</td><td>$25,000</td><td>12.5%</td></tr>
-        <tr><td><strong>Total</strong></td><td><strong>$200,000</strong></td><td><strong>100%</strong></td></tr>
-      </tbody>
-    </table>
-    <p><em>Revenue diversification is intentional — no single source exceeds 40%. This was a key lesson from my PAD 6208 analysis, where the nonprofit I studied was dangerously dependent on a single government contract (72% of revenue).</em></p>
-  </div>
-</details>
-
-<h3>2. Expense Budget (Year 1)</h3>
-
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Revenue (Year 1)</h4>
 <table>
-  <thead><tr><th>Category</th><th>Amount</th><th>%</th><th>Notes</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Personnel</strong></td><td></td><td>60–70%</td><td>Salaries, benefits, payroll taxes</td></tr>
-    <tr><td>Executive Director</td><td>$55,000</td><td></td><td></td></tr>
-    <tr><td>Program Director</td><td>$45,000</td><td></td><td></td></tr>
-    <tr><td>Community Navigators (2 FT)</td><td>$80,000</td><td></td><td>$40K each</td></tr>
-    <tr><td>Development Coordinator (PT)</td><td>$18,000</td><td></td><td></td></tr>
-    <tr><td>Admin Assistant (PT)</td><td>$15,000</td><td></td><td></td></tr>
-    <tr><td>Benefits &amp; payroll taxes (20%)</td><td>$42,600</td><td></td><td></td></tr>
-    <tr><td><strong>Subtotal Personnel</strong></td><td><strong>$155,600</strong></td><td><strong>78%</strong></td><td></td></tr>
-    <tr><td><strong>Program costs</strong></td><td>$18,000</td><td>9%</td><td>Materials, translation, client support</td></tr>
-    <tr><td><strong>Occupancy</strong></td><td>$12,000</td><td>6%</td><td>Shared office space</td></tr>
-    <tr><td><strong>Technology</strong></td><td>$4,000</td><td>2%</td><td>CRM, website, communications tools</td></tr>
-    <tr><td><strong>Insurance</strong></td><td>$3,000</td><td>1.5%</td><td>General liability, D&amp;O</td></tr>
-    <tr><td><strong>Professional development</strong></td><td>$2,400</td><td>1.2%</td><td>Staff training, conferences</td></tr>
-    <tr><td><strong>Marketing &amp; outreach</strong></td><td>$3,000</td><td>1.5%</td><td>Print materials, events, digital</td></tr>
-    <tr><td><strong>Miscellaneous / contingency</strong></td><td>$2,000</td><td>1%</td><td></td></tr>
-    <tr><td><strong>Total</strong></td><td><strong>$200,000</strong></td><td><strong>100%</strong></td><td></td></tr>
-  </tbody>
+<thead>
+<tr>
+<th>Source</th>
+<th>Amount</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foundation grants (2 grants)</td>
+<td>$80,000</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>Individual donations</td>
+<td>$40,000</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Board member giving (9 × $2,000 avg)</td>
+<td>$18,000</td>
+<td>9%</td>
+</tr>
+<tr>
+<td>Corporate sponsorships</td>
+<td>$25,000</td>
+<td>12.5%</td>
+</tr>
+<tr>
+<td>Community fundraising event</td>
+<td>$12,000</td>
+<td>6%</td>
+</tr>
+<tr>
+<td>City/county service contract</td>
+<td>$25,000</td>
+<td>12.5%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>$200,000</strong></td>
+<td><strong>100%</strong></td>
+</tr>
+</tbody>
 </table>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">AI Tip: Budget Template</h4>
-  <p>Use <strong>ChatGPT, <a href="https://claude.ai" target="_blank">Claude</a>, or Gemini</strong> to generate a starting framework:</p>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Create a Year 1 operating budget for a startup nonprofit focused
+<p><em>Revenue diversification is intentional — no single source exceeds 40%. This was a key lesson from my PAD 6208 analysis, where the nonprofit I studied was dangerously dependent on a single government contract (72% of revenue).</em></p></div>
+<h3 id="expense-budget-year-1">2. Expense Budget (Year 1)</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Category</th>
+<th>Amount</th>
+<th>%</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Personnel</strong></td>
+<td></td>
+<td>60–70%</td>
+<td>Salaries, benefits, payroll taxes</td>
+</tr>
+<tr>
+<td>Executive Director</td>
+<td>$55,000</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Program Director</td>
+<td>$45,000</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Community Navigators (2 FT)</td>
+<td>$80,000</td>
+<td></td>
+<td>$40K each</td>
+</tr>
+<tr>
+<td>Development Coordinator (PT)</td>
+<td>$18,000</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Admin Assistant (PT)</td>
+<td>$15,000</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Benefits &amp; payroll taxes (20%)</td>
+<td>$42,600</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Subtotal Personnel</strong></td>
+<td><strong>$155,600</strong></td>
+<td><strong>78%</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Program costs</strong></td>
+<td>$18,000</td>
+<td>9%</td>
+<td>Materials, translation, client support</td>
+</tr>
+<tr>
+<td><strong>Occupancy</strong></td>
+<td>$12,000</td>
+<td>6%</td>
+<td>Shared office space</td>
+</tr>
+<tr>
+<td><strong>Technology</strong></td>
+<td>$4,000</td>
+<td>2%</td>
+<td>CRM, website, communications tools</td>
+</tr>
+<tr>
+<td><strong>Insurance</strong></td>
+<td>$3,000</td>
+<td>1.5%</td>
+<td>General liability, D&amp;O</td>
+</tr>
+<tr>
+<td><strong>Professional development</strong></td>
+<td>$2,400</td>
+<td>1.2%</td>
+<td>Staff training, conferences</td>
+</tr>
+<tr>
+<td><strong>Marketing &amp; outreach</strong></td>
+<td>$3,000</td>
+<td>1.5%</td>
+<td>Print materials, events, digital</td>
+</tr>
+<tr>
+<td><strong>Miscellaneous / contingency</strong></td>
+<td>$2,000</td>
+<td>1%</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>$200,000</strong></td>
+<td><strong>100%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="card card-note">
+<h4 style="margin-top:0">AI Tip: Budget Template</h4>
+<p>Use <strong>ChatGPT, Claude, or Gemini</strong> to generate a starting framework:</p>
+<pre><code>Create a Year 1 operating budget for a startup nonprofit focused
 on community navigation services for immigrant families. Annual
 budget: $200,000. Include: 5 staff positions with salary ranges,
 program costs, occupancy, technology, insurance, and marketing.
-Format as a table with amount and percentage columns.</pre>
-  <p style="margin-bottom:0">Use the output as a starting framework, then adjust based on your specific organization and local cost data (check <a href="https://indeed.com" target="_blank">Indeed</a> or <a href="https://idealist.org" target="_blank">Idealist</a> for salary benchmarks in your area).</p>
-</div>
-
-<h3>3. Budget Narrative (Brief)</h3>
-
-<p>Write 1 page explaining your budget rationale:</p>
-<ul>
-  <li>Why did you allocate resources this way?</li>
-  <li>What are the biggest financial risks in Year 1?</li>
-  <li>What assumptions are you making?</li>
-  <li>How does this budget support the strategic goals you'll articulate in Week 9?</li>
-</ul>
-
-<hr>
-
-<h2>Website Update</h2>
-
+Format as a table with amount and percentage columns.</code></pre>
+<p>Use the output as a starting framework, then adjust based on your specific organization and local cost data (check Indeed or Idealist for salary benchmarks in your area).</p></div>
+<h3 id="budget-narrative-brief">3. Budget Narrative (Brief)</h3>
+<p>Write 1 page explaining your budget rationale: - Why did you allocate resources this way? - What are the biggest financial risks in Year 1? - What assumptions are you making? - How does this budget support the strategic goals you'll articulate in Week 9?</p>
+<hr />
+<h2 id="website-update">Website Update</h2>
 <p>Add a <strong>"Transparency" or "Financials"</strong> page to your website. Funders and donors increasingly expect financial transparency from nonprofits — even new ones. Getting this on your site now builds credibility from day one.</p>
-
-<p><strong>Your page should include:</strong></p>
-<ul>
-  <li>A summary of your projected Year 1 budget — use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to create a clean pie chart or infographic that's more visually engaging than a raw spreadsheet</li>
-  <li>A statement about financial accountability</li>
-  <li>Link to a downloadable budget summary (PDF)</li>
-</ul>
-
-<hr>
-
-<h2>Useful AI &amp; Online Tools This Week</h2>
-
+<p><strong>Your page should include:</strong> - A summary of your projected Year 1 budget — use <strong>Canva</strong> to create a clean pie chart or infographic that's more visually engaging than a raw spreadsheet - A statement about financial accountability - Link to a downloadable budget summary (PDF)</p>
+<hr />
+<h2 id="useful-ai-online-tools-this-week">Useful AI &amp; Online Tools This Week</h2>
 <table>
-  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
-  <tbody>
-    <tr><td><strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong></td><td>Adapting your PAD 6208 coursework</td><td>Upload your Budget Assignment and Financial Report &rarr; ask how to adapt the financial structure for a startup nonprofit</td></tr>
-    <tr><td><strong><a href="https://candid.org" target="_blank">GuideStar / Candid</a></strong> (<a href="https://candid.org" target="_blank">candid.org</a>)</td><td>Comparable nonprofit budgets</td><td>Look up Form 990s from organizations similar to yours in size and mission — see how they allocate between personnel, programs, and overhead</td></tr>
-    <tr><td><strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong></td><td>Building your actual budget</td><td>Use formulas (SUM, percentage calculations) &rarr; create pie/bar charts &rarr; export as PDF for your website</td></tr>
-    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Budget narrative drafting</td><td><em>"Review this budget breakdown and identify the top 3 financial risks for a startup nonprofit in Year 1. Suggest mitigation strategies."</em></td></tr>
-    <tr><td><strong><a href="https://candid.org" target="_blank">Candid's Foundation Directory</a></strong> (via UCF Library)</td><td>Identifying potential funders</td><td>Research foundations that fund organizations like yours — see average grant sizes, geographic focus, and application deadlines; access free through UCF Library databases</td></tr>
-    <tr><td><strong><a href="https://indeed.com" target="_blank">Indeed</a> / <a href="https://idealist.org" target="_blank">Idealist</a></strong></td><td>Salary benchmarking</td><td>Search for comparable positions in your area &rarr; use real salary data instead of guessing; check at least 5 postings per role</td></tr>
-    <tr><td><strong><a href="https://nff.org" target="_blank">Nonprofit Finance Fund</a></strong> (<a href="https://nff.org" target="_blank">nff.org</a>)</td><td>Financial planning resources</td><td>Access startup nonprofit budgeting guides, cash flow templates, and financial health assessment tools</td></tr>
-    <tr><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong></td><td>Budget visualizations for your website</td><td>Create a clean pie chart or infographic of your budget breakdown &rarr; more engaging than a raw spreadsheet on your Transparency page</td></tr>
-    <tr><td><strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Gemini in Sheets</a></strong></td><td>Formula and chart assistance</td><td>Use Gemini in <a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a> to help write formulas, create charts, or format your budget spreadsheet — <em>"Create a pie chart from cells B2:B8 with labels from A2:A8"</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It's Good For</th>
+<th>How to Use It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://notebooklm.google.com">Google NotebookLM</a></strong></td>
+<td>Adapting your PAD 6208 coursework</td>
+<td>Upload your Budget Assignment and Financial Report → ask how to adapt the financial structure for a startup nonprofit</td>
+</tr>
+<tr>
+<td><strong><a href="https://candid.org">GuideStar / Candid</a></strong></td>
+<td>Comparable nonprofit budgets</td>
+<td>Look up Form 990s from organizations similar to yours in size and mission — see how they allocate between personnel, programs, and overhead</td>
+</tr>
+<tr>
+<td><strong><a href="https://sheets.google.com">Google Sheets</a></strong></td>
+<td>Building your actual budget</td>
+<td>Use formulas (SUM, percentage calculations) → create pie/bar charts → export as PDF for your website</td>
+</tr>
+<tr>
+<td><strong><a href="https://chatgpt.com">ChatGPT</a> / <a href="https://claude.ai">Claude</a></strong></td>
+<td>Budget narrative drafting</td>
+<td><em>"Review this budget breakdown and identify the top 3 financial risks for a startup nonprofit in Year 1. Suggest mitigation strategies."</em></td>
+</tr>
+<tr>
+<td><strong>Candid's Foundation Directory</strong> (via UCF Library)</td>
+<td>Identifying potential funders</td>
+<td>Research foundations that fund organizations like yours — see average grant sizes, geographic focus, and application deadlines; access free through UCF Library databases</td>
+</tr>
+<tr>
+<td><strong><a href="https://indeed.com">Indeed</a> / <a href="https://idealist.org">Idealist</a></strong></td>
+<td>Salary benchmarking</td>
+<td>Search for comparable positions in your area → use real salary data instead of guessing; check at least 5 postings per role</td>
+</tr>
+<tr>
+<td><strong><a href="https://nff.org">Nonprofit Finance Fund</a></strong></td>
+<td>Financial planning resources</td>
+<td>Access startup nonprofit budgeting guides, cash flow templates, and financial health assessment tools</td>
+</tr>
+<tr>
+<td><strong><a href="https://canva.com">Canva</a></strong></td>
+<td>Budget visualizations for your website</td>
+<td>Create a clean pie chart or infographic of your budget breakdown → more engaging than a raw spreadsheet on your Transparency page</td>
+</tr>
+<tr>
+<td><strong>Google Gemini in Sheets</strong></td>
+<td>Formula and chart assistance</td>
+<td>Use Gemini in Google Sheets to help write formulas, create charts, or format your budget spreadsheet — <em>"Create a pie chart from cells B2:B8 with labels from A2:A8"</em></td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>Grading Rubric (3 pts)</h2>
-
+<hr />
+<h2 id="grading-rubric-3-pts">Grading Rubric (3 pts)</h2>
 <table>
-  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
-  <tbody>
-    <tr><td>Budget spreadsheet includes realistic revenue projections and expense categories with formulas</td><td class="pts-col">1 pt</td></tr>
-    <tr><td>Budget narrative explains rationale, risks, and assumptions</td><td class="pts-col">1 pt</td></tr>
-    <tr><td>Website Financials/Transparency page is updated with budget summary and PDF download</td><td class="pts-col">1 pt</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Budget spreadsheet includes realistic revenue projections and expense categories with formulas</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>Budget narrative explains rationale, risks, and assumptions</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>Website Financials/Transparency page is updated with budget summary and PDF download</td>
+<td>1 pt</td>
+</tr>
+</tbody>
 </table>
+<hr />
+<h2 id="video-demo-building-a-nonprofit-budget-in-google-sheets">Video Demo: Building a Nonprofit Budget in Google Sheets</h2>
+<!--
+RECORDING SCRIPT — Week 7 Video (approximately 2 minutes)
 
-<hr>
+SCREEN RECORDING (Cmd+Shift+5, no audio):
+1. Open Google Sheets → create new spreadsheet
+2. Title it "[Org Name] Year 1 Operating Budget"
+3. Create Revenue section: list sources with amounts, add SUM formula, add % column
+4. Create Expense section: categories with amounts, SUM formula, % column
+5. Show a simple check: Revenue total - Expense total = 0 (balanced budget)
+6. Show creating a simple pie chart from expense categories
+7. Show File → Download → PDF for website upload
 
-<h2>Video Demo: Building a Nonprofit Budget in Google Sheets</h2>
-
+IPHONE VOICEOVER:
+"Here's how to build a basic operating budget in Google Sheets. I'll start with revenue sources — notice I'm diversifying across at least four streams. Then expenses, with personnel as the largest category — that's typical for service-delivery nonprofits. The key check: revenue minus expenses should equal zero for a balanced budget. A quick pie chart gives you a visual that works well on your website or in presentations. Export as PDF for your site's transparency page."
+-->
 <p><em>Video coming soon.</em></p>
-
-<hr>
-
-<h2>Looking Ahead</h2>
-
+<hr />
+<h2 id="looking-ahead">Looking Ahead</h2>
 <p><strong>Next week (Week 8):</strong> Fundraising Strategy (ungraded). You'll design your donor cultivation pipeline, identify specific grant prospects, and build the "Donate" page on your website. Drawing on your PAD 5146 Fundraising Plan.</p>
-
 <p><strong>Week 9 (Oct 19):</strong> Strategic Plan is due (10 pts). That assignment integrates governance (Week 4), HR (Week 5), marketing (Week 6), budget (this week), and fundraising (Week 8) into a cohesive organizational strategy. Start thinking about your SWOT analysis and strategic goals now.</p>
 
 </div>
@@ -389,7 +530,6 @@ Format as a table with amount and percentage columns.</pre>
 </footer>
 
 <script>
-// Close mobile menu on nav click
 document.querySelectorAll('.sidebar a').forEach(a=>{
   a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
 });

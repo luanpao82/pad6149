@@ -22,14 +22,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
 .brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
-
-/* Sidebar */
-.sidebar{
-  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
-  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
-  padding:var(--lg) 0 var(--xl);z-index:100;
-  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
-}
+.sidebar{width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;padding:var(--lg) 0 var(--xl);z-index:100;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
 .sidebar::-webkit-scrollbar{width:5px}
 .sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
 .sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
@@ -43,23 +36,9 @@ body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);ba
 .sidebar a.active .wk{color:rgba(255,201,4,.5)}
 .sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
 .sidebar a.active .pts{color:rgba(255,201,4,.4)}
-
-/* Mobile toggle */
 .menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
-
-/* Main */
 .main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
 .content{max-width:var(--w);margin:0 auto}
-
-/* Hero */
-.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
-.hero .content{max-width:var(--w)}
-.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
-.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
-.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
-.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
-
-/* Typography */
 h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
 h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
 h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
@@ -70,19 +49,8 @@ li{margin-bottom:6px}
 li::marker{color:var(--muted)}
 a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
 a:hover{text-decoration-color:var(--accent);color:var(--text)}
-strong{font-weight:700}
-em{font-style:italic}
+strong{font-weight:700}em{font-style:italic}
 hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
-
-/* Key facts card */
-.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
-.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.fact:nth-child(3n){border-right:none}
-.fact:nth-last-child(-n+3){border-bottom:none}
-.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
-.fact-value{font-size:15px;font-weight:500}
-
-/* Tables */
 table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 thead{background:var(--nav-bg);color:var(--nav-text)}
 th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
@@ -90,62 +58,29 @@ td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:t
 tbody tr:last-child td{border-bottom:none}
 tbody tr:nth-child(even) td{background:var(--surface-alt)}
 tbody tr:hover td{background:var(--accent-soft)}
-.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
 .pts-col{font-family:var(--mono);text-align:center;font-weight:500}
-tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
-tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
-tfoot td{background:var(--surface-alt);font-weight:700}
-
-/* Cards */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
 .card:hover{box-shadow:var(--shadow)}
-.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
-
-/* Badge */
+.card-warn{border-left:4px solid var(--danger)}
+.card-info{border-left:4px solid var(--info)}
+.card-note{border-left:4px solid var(--accent)}
+.card-example{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
 .badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
 .badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
-.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
-
-/* Competency table */
-.comp-table td:first-child{font-weight:600;width:38%}
-
-/* Steps */
-.steps{counter-reset:step;list-style:none;padding-left:0}
-.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
-.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-
-/* Grade grid */
-.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
-.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
-.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
-.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
-
-/* Details / collapsible */
 details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
 summary:hover{background:var(--surface-alt)}
 summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
 details[open] summary::before{transform:rotate(90deg)}
 details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
-
-/* Footer */
 footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
-
-/* Responsive */
+.subtitle{font-size:15px;color:var(--muted);margin-bottom:var(--xl)}
 @media(max-width:900px){
   .sidebar{transform:translateX(-100%);transition:transform .25s ease}
   .sidebar.open{transform:translateX(0)}
   .menu-toggle{display:block}
   .main{margin-left:0;padding:var(--2xl) var(--lg)}
-  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
-  .hero h1{font-size:32px}
   footer{margin-left:0}
-  .facts{grid-template-columns:1fr 1fr}
-  .fact:nth-child(2n){border-right:none}
-  .fact:nth-child(3n){border-right:1px solid var(--border)}
-  .grade-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
@@ -183,303 +118,354 @@ footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px so
 <main class="main">
 <div class="content">
 
-<p><span class="badge badge-gold">Week 13</span> <span class="badge">8 pts</span> <span class="badge badge-dark">NASPAA C5</span></p>
+<p><span class="badge badge-gold">Week 13</span> <span class="badge">8 pts</span></p>
 <h1>Policy Advocacy Plan</h1>
-<p style="font-size:19px;color:var(--muted);margin-bottom:var(--xl)">Due: November 16, 2026 &middot; 5–7 pages</p>
+<p class="subtitle">Due: November 16, 2026 · 8 pts · 5–7 pages</p>
 
-<p><strong>NASPAA Competency 5:</strong> Participate in and contribute to the policy process while functioning in the nonprofit sector</p>
-<p><strong>Source coursework:</strong></p>
-<ul>
-  <li>PAD 6142 – Introduction to Nonprofit Organizations (Policy Advocacy Plan)</li>
-  <li>PAD 5146 – Resource Development (Policy Process Paper)</li>
-</ul>
-
-<h2>Deliverables</h2>
+<p><strong>NASPAA Competency 5:</strong> Participate in and contribute to the policy process while functioning in the nonprofit sector <strong>Source coursework:</strong> - PAD 6142 – Introduction to Nonprofit Organizations (Policy Advocacy Plan) - PAD 5146 – Resource Development (Policy Process Paper)</p>
+<hr />
+<h2 id="deliverables">Deliverables</h2>
 <table>
-  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
-  <tbody>
-    <tr><td>Policy Advocacy Plan</td><td>Webcourses → Assignments → Week 13</td><td>Word (.docx), 5–7 pages, double-spaced</td></tr>
-    <tr><td>Website update</td><td>Your live website</td><td>"Advocacy / Take Action" page with issue summary, action items, and policymaker contacts</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy Advocacy Plan</td>
+<td>Webcourses → Assignments → Week 13</td>
+<td>Word (.docx), 5–7 pages, double-spaced</td>
+</tr>
+<tr>
+<td>Website update</td>
+<td>Your live website</td>
+<td>"Advocacy / Take Action" page with issue summary, action items, and policymaker contacts</td>
+</tr>
+</tbody>
 </table>
-
-<h2>What Is This Assignment?</h2>
+<hr />
+<h2 id="what-is-this-assignment">What Is This Assignment?</h2>
 <p>Nonprofits don't just deliver services — they <strong>advocate for the people they serve</strong>. The communities your organization works with face systemic barriers that no single program can fix. Policy change is how you address root causes, not just symptoms.</p>
 <p>In PAD 6142, you developed a Policy Advocacy Plan for a nonprofit organization — identifying a policy issue, mapping the political landscape, and designing an advocacy strategy within 501(c)(3) legal boundaries. Now you're doing the same for your own organization: what policy issue most affects your community, and what can your nonprofit legally and strategically do about it?</p>
 <p>This assignment is also a test of a critical nonprofit leadership skill: understanding <strong>what you can and cannot do</strong> as a tax-exempt organization. 501(c)(3)s can educate, research, and advocate — but they cannot endorse candidates or spend a "substantial part" of their activities on lobbying. Knowing where the line is matters.</p>
-
-<hr>
-
-<h2>The Process</h2>
-
-<h3>Step 1: Revisit Your Prior Coursework</h3>
-<p>Pull up two assignments:</p>
-<ul>
-  <li><strong>PAD 6142 Policy Advocacy Plan</strong> — What policy issue did you address? What advocacy strategies did you recommend? What did you learn about the legal boundaries of nonprofit advocacy?</li>
-  <li><strong>PAD 5146 Policy Process Paper</strong> — What did you learn about how policy is made, who the key actors are, and what methods of political advocacy are available to nonprofits?</li>
-</ul>
-
-<h3>Step 2: Upload to NotebookLM</h3>
-<p>Upload your PAD 6142 Policy Advocacy Plan, your PAD 5146 Policy Process Paper, and your Leadership Case Study (Week 11) to <strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong>. Your Week 11 essay analyzed the challenges your community faces — now you're asking: what policy changes would address the root causes?</p>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">Using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> for Advocacy Planning</h4>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Based on my PAD 6142 advocacy plan and my PAD 5146 policy process
+<hr />
+<h2 id="the-process">The Process</h2>
+<h3 id="step-1-revisit-your-prior-coursework">Step 1: Revisit Your Prior Coursework</h3>
+<p>Pull up two assignments: - <strong>PAD 6142 Policy Advocacy Plan</strong> — What policy issue did you address? What advocacy strategies did you recommend? What did you learn about the legal boundaries of nonprofit advocacy? - <strong>PAD 5146 Policy Process Paper</strong> — What did you learn about how policy is made, who the key actors are, and what methods of political advocacy are available to nonprofits?</p>
+<h3 id="step-2-upload-to-notebooklm">Step 2: Upload to NotebookLM</h3>
+<p>Upload your PAD 6142 Policy Advocacy Plan, your PAD 5146 Policy Process Paper, and your Leadership Case Study (Week 11) to <strong>Google NotebookLM</strong>. Your Week 11 essay analyzed the challenges your community faces — now you're asking: what policy changes would address the root causes?</p>
+<div class="card card-note">
+<h4 style="margin-top:0">Using NotebookLM for Advocacy Planning</h4>
+<pre><code>Based on my PAD 6142 advocacy plan and my PAD 5146 policy process
 paper, what policy issues most directly affect the population my
 nonprofit serves? Which of these are actionable at the local or
-state level?</pre>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">In my PAD 5146 paper, I analyzed the policy process and methods
+state level?</code></pre>
+<pre><code>In my PAD 5146 paper, I analyzed the policy process and methods
 of political advocacy. How would I apply those frameworks to
-advocate for [specific policy issue] as a startup nonprofit?</pre>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap;margin-bottom:0">In my PAD 6142 plan, I recommended [specific strategy]. How would
+advocate for [specific policy issue] as a startup nonprofit?</code></pre>
+<pre><code>In my PAD 6142 plan, I recommended [specific strategy]. How would
 I adapt that strategy for a startup nonprofit with limited staff
-and no established political relationships?</pre>
-</div>
-
-<h3>Step 3: Draft Your Policy Advocacy Plan</h3>
-
-<h3>Step 4: Update Your Website</h3>
+and no established political relationships?</code></pre></div>
+<h3 id="step-3-draft-your-policy-advocacy-plan">Step 3: Draft Your Policy Advocacy Plan</h3>
+<h3 id="step-4-update-your-website">Step 4: Update Your Website</h3>
 <p>Add an "Advocacy / Take Action" page to your website.</p>
-
-<hr>
-
-<h2>What Do I Submit?</h2>
-
-<h3>1. Policy Issue Identification (1 page)</h3>
+<hr />
+<h2 id="what-do-i-submit">What Do I Submit?</h2>
+<h3 id="policy-issue-identification-1-page">1. Policy Issue Identification (1 page)</h3>
 <p>Identify <strong>one specific policy issue</strong> that directly affects your organization's community. Be precise — not "immigration reform" but rather "Florida's lack of mandated language access standards in county health departments."</p>
-<p>For each policy issue, address:</p>
-<ul>
-  <li>What is the current policy (or lack of policy)?</li>
-  <li>Who is affected, and how?</li>
-  <li>What level of government has jurisdiction? (local, state, federal)</li>
-  <li>What is the current political landscape around this issue?</li>
-</ul>
-<p>Use <strong><a href="https://perplexity.ai" target="_blank">Perplexity.ai</a></strong> to research the current status: <em>"What is Florida's current policy on language access requirements in healthcare settings? What legislation has been proposed in 2024–2026?"</em></p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Policy Issue</summary>
-  <div>
-    <p><strong>Issue:</strong> Lack of mandated language access standards in Orange County healthcare facilities.</p>
-    <p><strong>Current situation:</strong> While federal law (Title VI of the Civil Rights Act) requires recipients of federal funds to provide meaningful language access, there is no Florida state law or Orange County ordinance establishing specific standards for translation and interpretation in healthcare settings. Compliance is inconsistent — our Week 11 case study cited an Orlando Sentinel investigation documenting translation failures at three local hospitals.</p>
-    <p><strong>Who is affected:</strong> An estimated 85,000 residents in Orange County speak English "less than very well" (<a href="https://censusreporter.org" target="_blank">Census Reporter</a>, 2024). For Asian American and immigrant families, medical miscommunication creates risks ranging from incorrect prescriptions to missed diagnoses.</p>
-    <p><strong>Jurisdiction:</strong> County level — Orange County Board of County Commissioners has authority to establish local ordinances and to set standards for county-funded health programs.</p>
-    <p><strong>Political landscape:</strong> Orange County has a history of progressive policy on immigrant inclusion (e.g., community ID program). Two current commissioners have publicly supported language access initiatives. The local medical association has expressed openness to voluntary standards but opposes unfunded mandates.</p>
-  </div>
-</details>
-
-<h3>2. Advocacy Goals and Objectives (half a page)</h3>
-<p>Define what your organization is trying to achieve through advocacy. Use SMART criteria:</p>
-<ul>
-  <li><strong>Goal:</strong> The broad policy change you seek</li>
-  <li><strong>Objectives:</strong> Specific, measurable steps toward that goal</li>
-</ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Advocacy Goals</summary>
-  <div>
-    <p><strong>Goal:</strong> Establish minimum language access standards for healthcare facilities in Orange County that receive county funding.</p>
-    <p><strong>Objectives:</strong></p>
-    <ol>
-      <li>By March 2027, present a community impact report to the Orange County Board of County Commissioners documenting language access gaps in local healthcare</li>
-      <li>By June 2027, secure commitments from at least 3 county commissioners to support a language access ordinance</li>
-      <li>By December 2027, contribute to the drafting and introduction of a county language access ordinance</li>
-    </ol>
-  </div>
-</details>
-
-<h3>3. 501(c)(3) Legal Framework (half a page)</h3>
+<p>For each policy issue, address: - What is the current policy (or lack of policy)? - Who is affected, and how? - What level of government has jurisdiction? (local, state, federal) - What is the current political landscape around this issue?</p>
+<p>Use <strong>Perplexity.ai</strong> to research the current status: <em>"What is Florida's current policy on language access requirements in healthcare settings? What legislation has been proposed in 2024–2026?"</em></p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Policy Issue</h4>
+<p><strong>Issue:</strong> Lack of mandated language access standards in Orange County healthcare facilities.</p>
+<p><strong>Current situation:</strong> While federal law (Title VI of the Civil Rights Act) requires recipients of federal funds to provide meaningful language access, there is no Florida state law or Orange County ordinance establishing specific standards for translation and interpretation in healthcare settings. Compliance is inconsistent — our Week 11 case study cited an Orlando Sentinel investigation documenting translation failures at three local hospitals.</p>
+<p><strong>Who is affected:</strong> An estimated 85,000 residents in Orange County speak English "less than very well" (Census Reporter, 2024). For Asian American and immigrant families, medical miscommunication creates risks ranging from incorrect prescriptions to missed diagnoses.</p>
+<p><strong>Jurisdiction:</strong> County level — Orange County Board of County Commissioners has authority to establish local ordinances and to set standards for county-funded health programs.</p>
+<p><strong>Political landscape:</strong> Orange County has a history of progressive policy on immigrant inclusion (e.g., community ID program). Two current commissioners have publicly supported language access initiatives. The local medical association has expressed openness to voluntary standards but opposes unfunded mandates.</p></div>
+<h3 id="advocacy-goals-and-objectives-half-a-page">2. Advocacy Goals and Objectives (half a page)</h3>
+<p>Define what your organization is trying to achieve through advocacy. Use SMART criteria: - <strong>Goal:</strong> The broad policy change you seek - <strong>Objectives:</strong> Specific, measurable steps toward that goal</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Advocacy Goals</h4>
+<p><strong>Goal:</strong> Establish minimum language access standards for healthcare facilities in Orange County that receive county funding.</p>
+<p><strong>Objectives:</strong> 1. By March 2027, present a community impact report to the Orange County Board of County Commissioners documenting language access gaps in local healthcare 2. By June 2027, secure commitments from at least 3 county commissioners to support a language access ordinance 3. By December 2027, contribute to the drafting and introduction of a county language access ordinance</p></div>
+<h3 id="c3-legal-framework-half-a-page">3. 501(c)(3) Legal Framework (half a page)</h3>
 <p>Demonstrate that you understand what your organization can and cannot do:</p>
-
 <table>
-  <thead><tr><th>Activity</th><th>Permitted?</th><th>Notes</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Voter education</strong> (nonpartisan)</td><td>✅ Yes</td><td>Candidate forums, voter guides (must be nonpartisan)</td></tr>
-    <tr><td><strong>Issue advocacy</strong></td><td>✅ Yes</td><td>Educating the public and policymakers about your issue — no limits</td></tr>
-    <tr><td><strong>Direct lobbying</strong></td><td>⚠️ Limited</td><td>Contacting legislators about specific legislation — permitted but cannot be a "substantial part" of activities</td></tr>
-    <tr><td><strong>Grassroots lobbying</strong></td><td>⚠️ Limited</td><td>Asking the public to contact legislators about specific bills — same limits apply</td></tr>
-    <tr><td><strong>Candidate endorsement</strong></td><td>❌ No</td><td>Absolutely prohibited for 501(c)(3)s</td></tr>
-    <tr><td><strong>Campaign contributions</strong></td><td>❌ No</td><td>Absolutely prohibited</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Permitted?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Voter education</strong> (nonpartisan)</td>
+<td>✅ Yes</td>
+<td>Candidate forums, voter guides (must be nonpartisan)</td>
+</tr>
+<tr>
+<td><strong>Issue advocacy</strong></td>
+<td>✅ Yes</td>
+<td>Educating the public and policymakers about your issue — no limits</td>
+</tr>
+<tr>
+<td><strong>Direct lobbying</strong></td>
+<td>⚠️ Limited</td>
+<td>Contacting legislators about specific legislation — permitted but cannot be a "substantial part" of activities</td>
+</tr>
+<tr>
+<td><strong>Grassroots lobbying</strong></td>
+<td>⚠️ Limited</td>
+<td>Asking the public to contact legislators about specific bills — same limits apply</td>
+</tr>
+<tr>
+<td><strong>Candidate endorsement</strong></td>
+<td>❌ No</td>
+<td>Absolutely prohibited for 501(c)(3)s</td>
+</tr>
+<tr>
+<td><strong>Campaign contributions</strong></td>
+<td>❌ No</td>
+<td>Absolutely prohibited</td>
+</tr>
+</tbody>
 </table>
-
 <p>Use <strong>ChatGPT or Claude</strong> to help clarify: <em>"Explain the IRS rules on 501(c)(3) lobbying limits. What is the 'substantial part' test vs. the 501(h) election? Which is better for a small nonprofit?"</em></p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Legal Framework</summary>
-  <div>
-    <p>Asian Bridge Orlando will operate under the <strong>501(h) election</strong>, which provides clear expenditure limits for lobbying rather than the vague "substantial part" test. Under 501(h), organizations with budgets under $500,000 may spend up to 20% of exempt purpose expenditures on lobbying. For our $200,000 budget, this allows up to $40,000 in lobbying-related activities — well above what we plan to spend.</p>
-    <p>The majority of our advocacy work — community education, research, coalition building — qualifies as <strong>issue advocacy</strong>, which has no spending limits under IRS rules.</p>
-  </div>
-</details>
-
-<h3>4. Advocacy Strategy (2–3 pages)</h3>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Legal Framework</h4>
+<p>Asian Bridge Orlando will operate under the <strong>501(h) election</strong>, which provides clear expenditure limits for lobbying rather than the vague "substantial part" test. Under 501(h), organizations with budgets under $500,000 may spend up to 20% of exempt purpose expenditures on lobbying. For our $200,000 budget, this allows up to $40,000 in lobbying-related activities — well above what we plan to spend.</p>
+<p>The majority of our advocacy work — community education, research, coalition building — qualifies as <strong>issue advocacy</strong>, which has no spending limits under IRS rules.</p></div>
+<h3 id="advocacy-strategy-23-pages">4. Advocacy Strategy (2–3 pages)</h3>
 <p>Design your advocacy approach using multiple tactics. For each tactic, explain what you'll do, who is responsible, and what resources are needed.</p>
-
-<h4>Community Education and Research</h4>
+<h4 id="community-education-and-research">Community Education and Research</h4>
 <ul>
-  <li>How will you educate your community about the policy issue?</li>
-  <li>What data or research will you produce to support your position?</li>
-  <li>Use <strong><a href="https://scholar.google.com" target="_blank">Google Scholar</a></strong> to find academic research supporting your policy position</li>
+<li>How will you educate your community about the policy issue?</li>
+<li>What data or research will you produce to support your position?</li>
+<li>Use <strong>Google Scholar</strong> to find academic research supporting your policy position</li>
 </ul>
-
-<h4>Coalition Building</h4>
+<h4 id="coalition-building">Coalition Building</h4>
 <ul>
-  <li>What organizations will you partner with on this issue?</li>
-  <li>How will a coalition amplify your impact beyond what your organization could do alone?</li>
-  <li>Use <strong><a href="https://candid.org" target="_blank">Candid / GuideStar</a></strong> (<a href="https://candid.org" target="_blank">candid.org</a>) to identify potential coalition partners — search for organizations working on similar issues in your area</li>
+<li>What organizations will you partner with on this issue?</li>
+<li>How will a coalition amplify your impact beyond what your organization could do alone?</li>
+<li>Use <strong>Candid / GuideStar</strong> (candid.org) to identify potential coalition partners — search for organizations working on similar issues in your area</li>
 </ul>
-
-<h4>Policymaker Engagement</h4>
+<h4 id="policymaker-engagement">Policymaker Engagement</h4>
 <ul>
-  <li>Who are the specific policymakers you need to reach? (Name them)</li>
-  <li>How will you build relationships? (meetings, testimony, policy briefs, invitations to see your programs)</li>
-  <li>What is your "ask" — what specific action do you want each policymaker to take?</li>
+<li>Who are the specific policymakers you need to reach? (Name them)</li>
+<li>How will you build relationships? (meetings, testimony, policy briefs, invitations to see your programs)</li>
+<li>What is your "ask" — what specific action do you want each policymaker to take?</li>
 </ul>
-
-<h4>Public Awareness</h4>
+<h4 id="public-awareness">Public Awareness</h4>
 <ul>
-  <li>How will you bring public attention to the issue?</li>
-  <li>What communications channels will you use? (social media, op-eds, community events, media outreach)</li>
-  <li>Use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to design an advocacy one-pager or infographic that summarizes the issue for a general audience</li>
+<li>How will you bring public attention to the issue?</li>
+<li>What communications channels will you use? (social media, op-eds, community events, media outreach)</li>
+<li>Use <strong>Canva</strong> to design an advocacy one-pager or infographic that summarizes the issue for a general audience</li>
 </ul>
-
-<h4>Community Mobilization</h4>
+<h4 id="community-mobilization">Community Mobilization</h4>
 <ul>
-  <li>How will you engage the people most affected by this policy?</li>
-  <li>How will you make it easy for community members to take action? (petitions, public comment, attending hearings)</li>
+<li>How will you engage the people most affected by this policy?</li>
+<li>How will you make it easy for community members to take action? (petitions, public comment, attending hearings)</li>
 </ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Advocacy Strategy (Excerpt)</summary>
-  <div>
-    <p><strong>Policymaker Engagement:</strong></p>
-    <ul>
-      <li>Schedule meetings with Commissioners [Name] and [Name] — both have expressed support for immigrant inclusion initiatives</li>
-      <li>Present community impact data at a County Commission public comment session</li>
-      <li>Invite commissioners to observe a Community Navigator session firsthand — let them see the language barrier in practice</li>
-      <li>Deliver a one-page policy brief (designed in <strong><a href="https://canva.com" target="_blank">Canva</a></strong>) summarizing the issue, the data, and the proposed solution</li>
-    </ul>
-    <p><strong>Community Mobilization:</strong></p>
-    <ul>
-      <li>Partner with AARC, Catholic Charities, and UCF's Office of Diversity to form a <strong>Language Access Coalition</strong></li>
-      <li>Host a community forum (bilingual, with interpretation) where affected families share their experiences</li>
-      <li>Create a simple online petition via <strong><a href="https://forms.google.com" target="_blank">Google Forms</a></strong> — collect signatures supporting the language access ordinance</li>
-      <li>Train 10 community members to deliver 2-minute testimonials at County Commission hearings</li>
-    </ul>
-  </div>
-</details>
-
-<h3>5. Advocacy Timeline (half a page)</h3>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Advocacy Strategy (Excerpt)</h4>
+<p><strong>Policymaker Engagement:</strong> - Schedule meetings with Commissioners [Name] and [Name] — both have expressed support for immigrant inclusion initiatives - Present community impact data at a County Commission public comment session - Invite commissioners to observe a Community Navigator session firsthand — let them see the language barrier in practice - Deliver a one-page policy brief (designed in <strong>Canva</strong>) summarizing the issue, the data, and the proposed solution</p>
+<p><strong>Community Mobilization:</strong> - Partner with AARC, Catholic Charities, and UCF's Office of Diversity to form a <strong>Language Access Coalition</strong> - Host a community forum (bilingual, with interpretation) where affected families share their experiences - Create a simple online petition via <strong>Google Forms</strong> — collect signatures supporting the language access ordinance - Train 10 community members to deliver 2-minute testimonials at County Commission hearings</p></div>
+<h3 id="advocacy-timeline-half-a-page">5. Advocacy Timeline (half a page)</h3>
 <p>Map your advocacy activities across Year 1:</p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Advocacy Timeline</summary>
-  <div>
-    <table>
-      <thead><tr><th>Phase</th><th>Timeline</th><th>Activities</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Research &amp; Build</strong></td><td>Months 1–3</td><td>Compile language access data; identify coalition partners; draft policy brief</td></tr>
-        <tr><td><strong>Educate &amp; Engage</strong></td><td>Months 4–6</td><td>Community forum; commissioner meetings; op-ed placement; coalition launch</td></tr>
-        <tr><td><strong>Mobilize &amp; Advocate</strong></td><td>Months 7–9</td><td>Petition drive; public comment at Commission meetings; media outreach</td></tr>
-        <tr><td><strong>Push &amp; Follow Up</strong></td><td>Months 10–12</td><td>Formal policy proposal; continued commissioner engagement; community updates</td></tr>
-      </tbody>
-    </table>
-  </div>
-</details>
-
-<h3>6. Evaluation (half a page)</h3>
-<p>How will you measure advocacy success? Define:</p>
-<ul>
-  <li>Short-term metrics (meetings held, petition signatures, media coverage)</li>
-  <li>Medium-term metrics (commissioner commitments, ordinance introduction)</li>
-  <li>Long-term metrics (policy passed, compliance rates, community impact)</li>
-</ul>
-
-<hr>
-
-<h2>Website Update: "Advocacy / Take Action" Page</h2>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Advocacy Timeline</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Timeline</th>
+<th>Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Research &amp; Build</strong></td>
+<td>Months 1–3</td>
+<td>Compile language access data; identify coalition partners; draft policy brief</td>
+</tr>
+<tr>
+<td><strong>Educate &amp; Engage</strong></td>
+<td>Months 4–6</td>
+<td>Community forum; commissioner meetings; op-ed placement; coalition launch</td>
+</tr>
+<tr>
+<td><strong>Mobilize &amp; Advocate</strong></td>
+<td>Months 7–9</td>
+<td>Petition drive; public comment at Commission meetings; media outreach</td>
+</tr>
+<tr>
+<td><strong>Push &amp; Follow Up</strong></td>
+<td>Months 10–12</td>
+<td>Formal policy proposal; continued commissioner engagement; community updates</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="evaluation-half-a-page">6. Evaluation (half a page)</h3>
+<p>How will you measure advocacy success? Define: - Short-term metrics (meetings held, petition signatures, media coverage) - Medium-term metrics (commissioner commitments, ordinance introduction) - Long-term metrics (policy passed, compliance rates, community impact)</p>
+<hr />
+<h2 id="website-update-advocacy-take-action-page">Website Update: "Advocacy / Take Action" Page</h2>
 <p>Add an <strong>"Advocacy"</strong> or <strong>"Take Action"</strong> page to your website. This page should make visitors understand the policy issue and give them something concrete to do.</p>
 <p><strong>Your page should include:</strong></p>
 <p><strong>1. "The Issue"</strong> — 2–3 sentences explaining the policy problem in plain language (not academic language — a community member should understand it)</p>
 <p><strong>2. "What We're Asking For"</strong> — your specific policy ask, clearly stated</p>
 <p><strong>3. "How You Can Help"</strong> — 2–3 concrete actions a visitor can take right now (sign a petition, contact a commissioner, attend a hearing, share on social media)</p>
 <p><strong>4. "Who to Contact"</strong> — names and contact information for the relevant policymakers</p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Take Action Page</summary>
-  <div>
-    <p><strong>Page title:</strong> Take Action</p>
-    <p><strong>The Issue:</strong><br>
-    "Thousands of families in Orange County struggle to communicate with their doctors, navigate the school system, or access public services — simply because services aren't available in their language. There is currently no county standard requiring language access in publicly funded healthcare."</p>
-    <p><strong>What We're Asking For:</strong><br>
-    "We're calling on the Orange County Board of County Commissioners to pass a Language Access Ordinance — establishing minimum translation and interpretation standards for all county-funded healthcare facilities."</p>
-    <p><strong>How You Can Help:</strong></p>
-    <ul>
-      <li>📝 Sign our community petition [link to Google Form]</li>
-      <li>📧 Email your County Commissioner — [sample email template]</li>
-      <li>📅 Attend the next County Commission meeting — [date, time, location]</li>
-      <li>📢 Share this page with your network</li>
-    </ul>
-    <p><strong>Who to Contact:</strong></p>
-    <ul>
-      <li>Commissioner [Name], District [X] — email, phone</li>
-      <li>Commissioner [Name], District [Y] — email, phone</li>
-      <li>Orange County Mayor [Name] — email, phone</li>
-    </ul>
-  </div>
-</details>
-
-<hr>
-
-<h2>Grading Rubric (8 pts)</h2>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Take Action Page</h4>
+<p><strong>Page title:</strong> Take Action</p>
+<p><strong>The Issue:</strong> "Thousands of families in Orange County struggle to communicate with their doctors, navigate the school system, or access public services — simply because services aren't available in their language. There is currently no county standard requiring language access in publicly funded healthcare."</p>
+<p><strong>What We're Asking For:</strong> "We're calling on the Orange County Board of County Commissioners to pass a Language Access Ordinance — establishing minimum translation and interpretation standards for all county-funded healthcare facilities."</p>
+<p><strong>How You Can Help:</strong> - 📝 Sign our community petition [link to Google Form] - 📧 Email your County Commissioner — [sample email template] - 📅 Attend the next County Commission meeting — [date, time, location] - 📢 Share this page with your network</p>
+<p><strong>Who to Contact:</strong> - Commissioner [Name], District [X] — email, phone - Commissioner [Name], District [Y] — email, phone - Orange County Mayor [Name] — email, phone</p></div>
+<hr />
+<h2 id="grading-rubric-8-pts">Grading Rubric (8 pts)</h2>
 <table>
-  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
-  <tbody>
-    <tr><td>Policy issue is specific, well-researched, and directly relevant to the organization's community</td><td class="pts-col">2 pts</td></tr>
-    <tr><td>501(c)(3) legal framework is accurately described and applied to the advocacy strategy</td><td class="pts-col">1 pt</td></tr>
-    <tr><td>Advocacy strategy uses multiple tactics (education, coalition, policymaker engagement, mobilization) with specific, actionable plans</td><td class="pts-col">2 pts</td></tr>
-    <tr><td>Timeline and evaluation metrics are realistic and connected to advocacy goals</td><td class="pts-col">1 pt</td></tr>
-    <tr><td>Document demonstrates meaningful application of PAD 6142 and PAD 5146 policy and advocacy frameworks</td><td class="pts-col">2 pts</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy issue is specific, well-researched, and directly relevant to the organization's community</td>
+<td>2 pts</td>
+</tr>
+<tr>
+<td>501(c)(3) legal framework is accurately described and applied to the advocacy strategy</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>Advocacy strategy uses multiple tactics (education, coalition, policymaker engagement, mobilization) with specific, actionable plans</td>
+<td>2 pts</td>
+</tr>
+<tr>
+<td>Timeline and evaluation metrics are realistic and connected to advocacy goals</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>Document demonstrates meaningful application of PAD 6142 and PAD 5146 policy and advocacy frameworks</td>
+<td>2 pts</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>Submission Details</h2>
+<hr />
+<h2 id="submission-details">Submission Details</h2>
 <ul>
-  <li><strong>Length:</strong> 5–7 pages (double-spaced, 12pt font)</li>
-  <li><strong>Format:</strong> Word (.docx)</li>
-  <li><strong>File name:</strong> <code>[YourLastName]_PolicyAdvocacyPlan.docx</code></li>
-  <li><strong>Submit to:</strong> Webcourses@UCF → Assignments → Week 13: Policy Advocacy Plan</li>
+<li><strong>Length:</strong> 5–7 pages (double-spaced, 12pt font)</li>
+<li><strong>Format:</strong> Word (.docx)</li>
+<li><strong>File name:</strong> <code>[YourLastName]_PolicyAdvocacyPlan.docx</code></li>
+<li><strong>Submit to:</strong> Webcourses@UCF → Assignments → Week 13: Policy Advocacy Plan</li>
 </ul>
-
-<hr>
-
-<h2>Useful AI &amp; Online Tools This Week</h2>
+<hr />
+<h2 id="useful-ai-online-tools-this-week">Useful AI &amp; Online Tools This Week</h2>
 <table>
-  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
-  <tbody>
-    <tr><td><strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong></td><td>Connecting PAD 6142 frameworks to your organization</td><td>Upload your advocacy plan + Week 11 case study → ask which policy issues are most actionable for your org</td></tr>
-    <tr><td><strong><a href="https://perplexity.ai" target="_blank">Perplexity.ai</a></strong></td><td>Policy research and current legislation tracking</td><td>Research current policies, proposed bills, and political landscape around your issue — cited sources for your plan</td></tr>
-    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>501(c)(3) legal clarification and strategy drafting</td><td>Ask about IRS lobbying rules, draft policymaker talking points, and brainstorm advocacy tactics</td></tr>
-    <tr><td><strong><a href="https://scholar.google.com" target="_blank">Google Scholar</a></strong> (<a href="https://scholar.google.com" target="_blank">scholar.google.com</a>)</td><td>Academic evidence for your policy position</td><td>Find peer-reviewed research on the policy issue — academic citations strengthen your case with policymakers</td></tr>
-    <tr><td><strong><a href="https://candid.org" target="_blank">Candid / GuideStar</a></strong> (<a href="https://candid.org" target="_blank">candid.org</a>)</td><td>Identifying coalition partners</td><td>Search for organizations working on similar policy issues in your area — potential coalition members</td></tr>
-    <tr><td><strong><a href="https://forms.google.com" target="_blank">Google Forms</a></strong> (<a href="https://forms.google.com" target="_blank">forms.google.com</a>)</td><td>Community petition</td><td>Create a simple petition form for community members to sign in support of your policy ask</td></tr>
-    <tr><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong> (<a href="https://canva.com" target="_blank">canva.com</a>)</td><td>Advocacy one-pager and infographic</td><td>Design a policy brief, advocacy infographic, or Take Action graphic for your website</td></tr>
-    <tr><td><strong><a href="https://openstates.org" target="_blank">OpenStates</a></strong> (<a href="https://openstates.org" target="_blank">openstates.org</a>)</td><td>State legislation tracking</td><td>Search for bills related to your policy issue in the Florida legislature — free, open-source tool</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It's Good For</th>
+<th>How to Use It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://notebooklm.google.com">Google NotebookLM</a></strong></td>
+<td>Connecting PAD 6142 frameworks to your organization</td>
+<td>Upload your advocacy plan + Week 11 case study → ask which policy issues are most actionable for your org</td>
+</tr>
+<tr>
+<td><strong><a href="https://perplexity.ai">Perplexity.ai</a></strong></td>
+<td>Policy research and current legislation tracking</td>
+<td>Research current policies, proposed bills, and political landscape around your issue — cited sources for your plan</td>
+</tr>
+<tr>
+<td><strong><a href="https://chatgpt.com">ChatGPT</a> / <a href="https://claude.ai">Claude</a></strong></td>
+<td>501(c)(3) legal clarification and strategy drafting</td>
+<td>Ask about IRS lobbying rules, draft policymaker talking points, and brainstorm advocacy tactics</td>
+</tr>
+<tr>
+<td><strong><a href="https://scholar.google.com">Google Scholar</a></strong></td>
+<td>Academic evidence for your policy position</td>
+<td>Find peer-reviewed research on the policy issue — academic citations strengthen your case with policymakers</td>
+</tr>
+<tr>
+<td><strong><a href="https://candid.org">Candid / GuideStar</a></strong></td>
+<td>Identifying coalition partners</td>
+<td>Search for organizations working on similar policy issues in your area — potential coalition members</td>
+</tr>
+<tr>
+<td><strong><a href="https://forms.google.com">Google Forms</a></strong></td>
+<td>Community petition</td>
+<td>Create a simple petition form for community members to sign in support of your policy ask</td>
+</tr>
+<tr>
+<td><strong><a href="https://canva.com">Canva</a></strong></td>
+<td>Advocacy one-pager and infographic</td>
+<td>Design a policy brief, advocacy infographic, or Take Action graphic for your website</td>
+</tr>
+<tr>
+<td><strong><a href="https://openstates.org">OpenStates</a></strong></td>
+<td>State legislation tracking</td>
+<td>Search for bills related to your policy issue in the Florida legislature — free, open-source tool</td>
+</tr>
+</tbody>
 </table>
+<hr />
+<h2 id="video-demo-building-your-take-action-page">Video Demo: Building Your "Take Action" Page</h2>
+<!--
+RECORDING SCRIPT — Week 13 Video (approximately 2 minutes)
 
-<hr>
+SCREEN RECORDING (Cmd+Shift+5, no audio):
+1. Open Perplexity.ai → search for current policy status on the issue
+2. Open OpenStates → show searching for relevant Florida legislation
+3. Open Google Sites → create "Take Action" page
+4. Type "The Issue" section in plain language
+5. Type "What We're Asking For" with a specific policy ask
+6. Add "How You Can Help" with action items
+7. Add "Who to Contact" with policymaker names and emails
+8. Show creating a Google Form petition → link it from the page
 
-<h2>Video Demo: Building Your "Take Action" Page</h2>
+IPHONE VOICEOVER:
+"The Take Action page is where your nonprofit moves from service delivery to systems change. I'll start by researching the current policy landscape on Perplexity — I need to know what's already been proposed and who's involved. Then on my website, I'll frame the issue in plain language — not academic language. A community member should read this and immediately understand what's at stake. The specific ask is critical: not 'we need better language access' but 'we're asking the County Commission to pass a language access ordinance.' Then action items — sign the petition, email your commissioner, show up to the hearing. Make it easy. Finally, I'll list the specific policymakers by name with their contact info. Advocacy only works when people know who to call."
+-->
 <p><em>Video coming soon.</em></p>
-
-<hr>
-
-<h2>Looking Ahead</h2>
+<hr />
+<h2 id="looking-ahead">Looking Ahead</h2>
 <p><strong>Next week: Thanksgiving Break (November 23–28).</strong> No class, no deliverables. Rest and prepare.</p>
-<p><strong>Week 14 (Dec 3):</strong> <a href="week14.html">Final Pitch Presentation</a> (15 pts). You'll present your entire nonprofit to the class — walking through your website as if pitching to a funder, board member, or community partner. This is the culmination of everything you've built. Start rehearsing.</p>
+<p><strong>Week 14 (Dec 3):</strong> Final Pitch Presentation (15 pts). You'll present your entire nonprofit to the class — walking through your website as if pitching to a funder, board member, or community partner. This is the culmination of everything you've built. Start rehearsing.</p>
 
 </div>
 </main>
@@ -489,7 +475,6 @@ and no established political relationships?</pre>
 </footer>
 
 <script>
-// Close mobile menu on nav click
 document.querySelectorAll('.sidebar a').forEach(a=>{
   a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
 });

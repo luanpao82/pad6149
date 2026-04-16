@@ -22,14 +22,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
 .brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
-
-/* Sidebar */
-.sidebar{
-  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
-  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
-  padding:var(--lg) 0 var(--xl);z-index:100;
-  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
-}
+.sidebar{width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;padding:var(--lg) 0 var(--xl);z-index:100;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
 .sidebar::-webkit-scrollbar{width:5px}
 .sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
 .sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
@@ -43,23 +36,9 @@ body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);ba
 .sidebar a.active .wk{color:rgba(255,201,4,.5)}
 .sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
 .sidebar a.active .pts{color:rgba(255,201,4,.4)}
-
-/* Mobile toggle */
 .menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
-
-/* Main */
 .main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
 .content{max-width:var(--w);margin:0 auto}
-
-/* Hero */
-.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
-.hero .content{max-width:var(--w)}
-.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
-.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
-.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
-.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
-
-/* Typography */
 h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
 h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
 h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
@@ -70,19 +49,8 @@ li{margin-bottom:6px}
 li::marker{color:var(--muted)}
 a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
 a:hover{text-decoration-color:var(--accent);color:var(--text)}
-strong{font-weight:700}
-em{font-style:italic}
+strong{font-weight:700}em{font-style:italic}
 hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
-
-/* Key facts card */
-.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
-.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.fact:nth-child(3n){border-right:none}
-.fact:nth-last-child(-n+3){border-bottom:none}
-.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
-.fact-value{font-size:15px;font-weight:500}
-
-/* Tables */
 table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 thead{background:var(--nav-bg);color:var(--nav-text)}
 th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
@@ -90,62 +58,29 @@ td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:t
 tbody tr:last-child td{border-bottom:none}
 tbody tr:nth-child(even) td{background:var(--surface-alt)}
 tbody tr:hover td{background:var(--accent-soft)}
-.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
 .pts-col{font-family:var(--mono);text-align:center;font-weight:500}
-tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
-tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
-tfoot td{background:var(--surface-alt);font-weight:700}
-
-/* Cards */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
 .card:hover{box-shadow:var(--shadow)}
-.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
-
-/* Badge */
+.card-warn{border-left:4px solid var(--danger)}
+.card-info{border-left:4px solid var(--info)}
+.card-note{border-left:4px solid var(--accent)}
+.card-example{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
 .badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
 .badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
-.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
-
-/* Competency table */
-.comp-table td:first-child{font-weight:600;width:38%}
-
-/* Steps */
-.steps{counter-reset:step;list-style:none;padding-left:0}
-.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
-.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-
-/* Grade grid */
-.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
-.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
-.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
-.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
-
-/* Details / collapsible */
 details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
 summary:hover{background:var(--surface-alt)}
 summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
 details[open] summary::before{transform:rotate(90deg)}
 details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
-
-/* Footer */
 footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
-
-/* Responsive */
+.subtitle{font-size:15px;color:var(--muted);margin-bottom:var(--xl)}
 @media(max-width:900px){
   .sidebar{transform:translateX(-100%);transition:transform .25s ease}
   .sidebar.open{transform:translateX(0)}
   .menu-toggle{display:block}
   .main{margin-left:0;padding:var(--2xl) var(--lg)}
-  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
-  .hero h1{font-size:32px}
   footer{margin-left:0}
-  .facts{grid-template-columns:1fr 1fr}
-  .fact:nth-child(2n){border-right:none}
-  .fact:nth-child(3n){border-right:1px solid var(--border)}
-  .grade-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
@@ -185,203 +120,223 @@ footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px so
 
 <p><span class="badge badge-gold">Week 2</span> <span class="badge">2 pts</span></p>
 <h1>Interview Plan</h1>
-<p style="font-size:15px;color:var(--muted)">Due: August 31, 2026 | Format: Word (.docx), 1–2 pages, double-spaced</p>
+<p class="subtitle">Due: August 31, 2026 · 2 pts · 1–2 pages</p>
 
-<hr>
-
-<h2>Deliverables</h2>
+<hr />
+<h2 id="deliverables">Deliverables</h2>
 <table>
-  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
-  <tbody>
-    <tr><td>Interview Plan</td><td>Webcourses &rarr; Assignments &rarr; Week 2</td><td>Word (.docx), 1–2 pages, double-spaced</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interview Plan</td>
+<td>Webcourses → Assignments → Week 2</td>
+<td>Word (.docx), 1–2 pages, double-spaced</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>What Is This Assignment?</h2>
+<hr />
+<h2 id="what-is-this-assignment">What Is This Assignment?</h2>
 <p>Last week you defined a nonprofit concept. This week you're identifying someone who's already doing the work — and preparing to learn from them.</p>
 <p>The deliverable is straightforward: <strong>identify a nonprofit leader in your field, explain why you chose them, and draft the questions you'll ask in an informational interview.</strong> This sets up the Mentor Interview Report (due Week 4, 10 pts).</p>
-<p>Think of this as the research and preparation phase. The stronger your plan, the better the interview. Also start thinking about logistics — if you plan to record the interview (always with permission), <strong><a href="https://otter.ai" target="_blank">Otter.ai</a></strong> (<a href="https://otter.ai" target="_blank">otter.ai</a>) provides free AI transcription that can save you hours of note-taking when writing the Week 4 report.</p>
-
-<hr>
-
-<h2>Why Does This Matter?</h2>
+<p>Think of this as the research and preparation phase. The stronger your plan, the better the interview. Also start thinking about logistics — if you plan to record the interview (always with permission), <strong>Otter.ai</strong> (otter.ai) provides free AI transcription that can save you hours of note-taking when writing the Week 4 report.</p>
+<hr />
+<h2 id="why-does-this-matter">Why Does This Matter?</h2>
 <p>You've spent the MNM program studying nonprofit management in the classroom. This assignment moves you into the field. An informational interview with an experienced practitioner will give you insights that readings and case studies can't — how decisions actually get made, what keeps leaders up at night, and what they wish they'd known earlier.</p>
 <p>For many of you already working in the sector, this is also a networking opportunity. The nonprofit world is small, and the connections you make in this assignment can extend well beyond this course.</p>
-
-<hr>
-
-<h2>What Do I Submit?</h2>
+<hr />
+<h2 id="what-do-i-submit">What Do I Submit?</h2>
 <p>A <strong>1–2 page document</strong> with three sections:</p>
-
-<h3>1. Who Will You Contact?</h3>
+<h3 id="who-will-you-contact">1. Who Will You Contact?</h3>
 <p>Identify your interview target:</p>
 <ul>
-  <li><strong>Name</strong> (if identified — otherwise, describe your Plan B)</li>
-  <li><strong>Title</strong> (Executive Director, Program Director, Founder, Board Chair, etc.)</li>
-  <li><strong>Organization name</strong></li>
-  <li><strong>Connection to your concept</strong> — Why this person and this organization? How does their work relate to the nonprofit you're building?</li>
+<li><strong>Name</strong> (if identified — otherwise, describe your Plan B)</li>
+<li><strong>Title</strong> (Executive Director, Program Director, Founder, Board Chair, etc.)</li>
+<li><strong>Organization name</strong></li>
+<li><strong>Connection to your concept</strong> — Why this person and this organization? How does their work relate to the nonprofit you're building?</li>
 </ul>
-<p>Look for a <strong>role-model organization</strong>: one that operates in a similar space, serves a similar population, or uses an approach you want to learn from. They don't need to be local — a <a href="https://zoom.us" target="_blank">Zoom</a> call works.</p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Who to Contact</summary>
-  <div>
-    <p><strong>Name:</strong> Sarah Kim, Executive Director<br>
-    <strong>Organization:</strong> Asian American Resource Center of Central Florida<br>
-    <strong>Why:</strong> AARC is the primary organization serving Asian American communities in the Orlando area, offering translation services, immigration legal clinics, and cultural programs. Their work directly aligns with what Asian Bridge Orlando aims to provide. I want to understand how they built their model, what funding challenges they face, and where they see unmet needs — particularly for South Asian and Southeast Asian populations that may be underserved by existing programs.</p>
-  </div>
-</details>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">Finding Your Contact</h4>
-  <ul>
-    <li><strong>UCF Service Learning Organization Partners</strong> — [link forthcoming] — pre-vetted organizations with existing UCF relationships</li>
-    <li><strong>MNM Board of Directors</strong> — [link forthcoming] — program advisory board members who are practicing nonprofit leaders</li>
-    <li><strong><a href="https://candid.org" target="_blank">Candid / GuideStar</a></strong> (<a href="https://candid.org" target="_blank">candid.org</a>) — search nonprofits by issue area and location</li>
-    <li><strong><a href="https://linkedin.com" target="_blank">LinkedIn</a></strong> — search for Executive Directors in your field</li>
-    <li><strong><a href="https://perplexity.ai" target="_blank">Perplexity.ai</a></strong> — research prompt:</li>
-  </ul>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">What are the leading nonprofit organizations serving Asian American
+<p>Look for a <strong>role-model organization</strong>: one that operates in a similar space, serves a similar population, or uses an approach you want to learn from. They don't need to be local — a Zoom call works.</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Who to Contact</h4>
+<p><strong>Name:</strong> Sarah Kim, Executive Director <strong>Organization:</strong> Asian American Resource Center of Central Florida <strong>Why:</strong> AARC is the primary organization serving Asian American communities in the Orlando area, offering translation services, immigration legal clinics, and cultural programs. Their work directly aligns with what Asian Bridge Orlando aims to provide. I want to understand how they built their model, what funding challenges they face, and where they see unmet needs — particularly for South Asian and Southeast Asian populations that may be underserved by existing programs.</p></div>
+<div class="card card-note">
+<h4 style="margin-top:0">Finding Your Contact</h4>
+<ul>
+<li><strong>UCF Service Learning Organization Partners</strong> — [link forthcoming] — pre-vetted organizations with existing UCF relationships</li>
+<li><strong>MNM Board of Directors</strong> — [link forthcoming] — program advisory board members who are practicing nonprofit leaders</li>
+<li><strong>Candid / GuideStar</strong> (candid.org) — search nonprofits by issue area and location</li>
+<li><strong>LinkedIn</strong> — search for Executive Directors in your field</li>
+<li><strong>Perplexity.ai</strong> — research prompt:</li>
+</ul>
+<pre><code>What are the leading nonprofit organizations serving Asian American
 and immigrant communities in the Orlando, Florida area? Include their
-mission, key programs, and executive leadership.</pre>
-  <ul>
-    <li><strong>Your professional network</strong> — colleagues, supervisors, alumni connections</li>
-  </ul>
-</div>
-
-<h3>2. Why This Organization?</h3>
+mission, key programs, and executive leadership.</code></pre>
+<ul>
+<li><strong>Your professional network</strong> — colleagues, supervisors, alumni connections</li>
+</ul></div>
+<h3 id="why-this-organization">2. Why This Organization?</h3>
 <p>Write 3–5 sentences connecting this organization to your nonprofit concept. What can you learn from them? What do they do well? What gaps might exist that your organization could address?</p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Why This Org</summary>
-  <div>
-    <p style="margin-bottom:0">The Asian American Resource Center (AARC) has served Central Florida's Asian community for over 15 years, with established programs in language access and immigration legal services. Their model is directly relevant to Asian Bridge Orlando's design. However, initial research suggests that AARC's programming focuses primarily on East Asian communities — Chinese, Korean, and Vietnamese populations. There may be a significant service gap for South Asian and Southeast Asian families, particularly Burmese, Nepali, and Bhutanese refugees who have been resettling in the Orlando area in growing numbers. Understanding AARC's experience and perspective on these gaps will be critical for defining Asian Bridge Orlando's niche.</p>
-  </div>
-</details>
-
-<h3>3. Interview Questions (8–10)</h3>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Why This Org</h4>
+<p>The Asian American Resource Center (AARC) has served Central Florida's Asian community for over 15 years, with established programs in language access and immigration legal services. Their model is directly relevant to Asian Bridge Orlando's design. However, initial research suggests that AARC's programming focuses primarily on East Asian communities — Chinese, Korean, and Vietnamese populations. There may be a significant service gap for South Asian and Southeast Asian families, particularly Burmese, Nepali, and Bhutanese refugees who have been resettling in the Orlando area in growing numbers. Understanding AARC's experience and perspective on these gaps will be critical for defining Asian Bridge Orlando's niche.</p></div>
+<h3 id="interview-questions-810">3. Interview Questions (8–10)</h3>
 <p>Draft 8–10 substantive questions. The best questions ask about <strong>experience, judgment, and lessons learned</strong> — things you can't find on a website or Form 990.</p>
-
-<p>Avoid:</p>
-<ul>
-  <li>Questions answerable via Google or <a href="https://candid.org" target="_blank">GuideStar</a> ("What is your mission?" "What's your annual budget?")</li>
-  <li>Yes/no questions that shut down conversation</li>
-</ul>
-
-<p>Aim for:</p>
-<ul>
-  <li>Open-ended questions that draw out professional insight</li>
-  <li>Questions specific enough to show you've done your homework</li>
-  <li>At least 2–3 questions that connect directly to your own nonprofit concept</li>
-</ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Interview Questions</summary>
-  <div>
-    <ol>
-      <li>How has AARC's mission evolved since its founding, and what drove those changes?</li>
-      <li>What are the most significant unmet needs you see in Central Florida's Asian American and immigrant community today?</li>
-      <li>How do you navigate the considerable diversity <em>within</em> the Asian American community — different languages, immigration histories, cultural norms — when designing programs?</li>
-      <li>What does your funding model look like, and how has it shifted over the years?</li>
-      <li>What has been your biggest challenge in building trust with the communities you serve?</li>
-      <li>How do you recruit and retain bilingual, bicultural staff and volunteers? What's worked and what hasn't?</li>
-      <li>What role does policy advocacy play in your work? How do you navigate 501(c)(3) limitations?</li>
-      <li>If you were starting this organization today, what would you do differently?</li>
-      <li>Are there populations or needs in the area that you feel are currently underserved — groups that aren't being reached by existing organizations?</li>
-      <li>What advice would you give to someone launching a new nonprofit in this space?</li>
-    </ol>
-  </div>
-</details>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">Using AI to Draft Questions</h4>
-  <p>AI can help generate a starting list, but <strong>edit aggressively</strong> — generic questions signal that you haven't done your homework.</p>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">I'm interviewing the Executive Director of a nonprofit serving Asian
+<p>Avoid: - Questions answerable via Google or GuideStar ("What is your mission?" "What's your annual budget?") - Yes/no questions that shut down conversation</p>
+<p>Aim for: - Open-ended questions that draw out professional insight - Questions specific enough to show you've done your homework - At least 2–3 questions that connect directly to your own nonprofit concept</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Interview Questions</h4>
+<ol type="1">
+<li>How has AARC's mission evolved since its founding, and what drove those changes?</li>
+<li>What are the most significant unmet needs you see in Central Florida's Asian American and immigrant community today?</li>
+<li>How do you navigate the considerable diversity <em>within</em> the Asian American community — different languages, immigration histories, cultural norms — when designing programs?</li>
+<li>What does your funding model look like, and how has it shifted over the years?</li>
+<li>What has been your biggest challenge in building trust with the communities you serve?</li>
+<li>How do you recruit and retain bilingual, bicultural staff and volunteers? What's worked and what hasn't?</li>
+<li>What role does policy advocacy play in your work? How do you navigate 501(c)(3) limitations?</li>
+<li>If you were starting this organization today, what would you do differently?</li>
+<li>Are there populations or needs in the area that you feel are currently underserved — groups that aren't being reached by existing organizations?</li>
+<li>What advice would you give to someone launching a new nonprofit in this space?</li>
+</ol></div>
+<div class="card card-note">
+<h4 style="margin-top:0">Using AI to Draft Questions</h4>
+<p>AI can help generate a starting list, but <strong>edit aggressively</strong> — generic questions signal that you haven't done your homework.</p>
+<pre><code>I&#39;m interviewing the Executive Director of a nonprofit serving Asian
 American and immigrant families in Central Florida. My own nonprofit
 will focus on [your specific angle]. Draft 10 interview questions
 focused on lessons learned, organizational challenges, and strategic
-decisions — not factual information I could find online.</pre>
-  <p style="margin-bottom:0">Review the output critically. Cut anything generic, and add questions that reflect your specific research on this organization.</p>
-</div>
-
-<hr>
-
-<h2>Getting the Interview: Outreach</h2>
+decisions — not factual information I could find online.</code></pre>
+<p>Review the output critically. Cut anything generic, and add questions that reflect your specific research on this organization.</p></div>
+<hr />
+<h2 id="getting-the-interview-outreach">Getting the Interview: Outreach</h2>
 <p>A brief note on making contact, since this directly affects your Week 4 deliverable.</p>
-
-<p><strong>Outreach best practices:</strong></p>
-<ul>
-  <li>Subject line should be clear and professional: <em>"UCF Graduate Student — 30-Minute Informational Interview Request"</em></li>
-  <li>Keep the email concise — 5–6 sentences</li>
-  <li>Reference something specific about their work (shows you've done your research)</li>
-  <li>Offer flexibility on format and timing</li>
-  <li><strong>Send it this week.</strong> The interview needs to happen before the Week 4 report is due.</li>
-</ul>
-
-<p>Before you send, run your email through <strong><a href="https://grammarly.com" target="_blank">Grammarly</a></strong> (<a href="https://grammarly.com" target="_blank">grammarly.com</a>) for tone and clarity — first impressions matter, and a polished email signals professionalism. To simplify scheduling, consider including a <strong><a href="https://calendly.com" target="_blank">Calendly</a></strong> (<a href="https://calendly.com" target="_blank">calendly.com</a>) link so they can pick a time that works without back-and-forth emails.</p>
-
+<p><strong>Outreach best practices:</strong> - Subject line should be clear and professional: <em>"UCF Graduate Student — 30-Minute Informational Interview Request"</em> - Keep the email concise — 5–6 sentences - Reference something specific about their work (shows you've done your research) - Offer flexibility on format and timing - <strong>Send it this week.</strong> The interview needs to happen before the Week 4 report is due.</p>
+<p>Before you send, run your email through <strong>Grammarly</strong> (grammarly.com) for tone and clarity — first impressions matter, and a polished email signals professionalism. To simplify scheduling, consider including a <strong>Calendly</strong> (calendly.com) link so they can pick a time that works without back-and-forth emails.</p>
 <p><strong>Have a backup plan.</strong> Identify 2–3 potential contacts in case your first choice is unavailable.</p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Outreach Email</summary>
-  <div>
-    <p><strong>Subject:</strong> UCF Graduate Student — 30-Minute Interview Request</p>
-    <p>Dear Ms. Kim,</p>
-    <p>My name is [Student Name], and I'm completing my final semester in the Master of Nonprofit Management program at the University of Central Florida. As part of my capstone course, I'm developing a nonprofit concept focused on serving Asian American and immigrant families in Central Florida — particularly populations that may be underserved by existing community resources.</p>
-    <p>I've been following the work of the Asian American Resource Center, and your language access programs and community legal clinics are a model for the kind of organization I'm hoping to build. I would greatly appreciate the opportunity to learn from your experience — what has shaped AARC's approach, what challenges you've navigated, and where you see opportunities in this space.</p>
-    <p>Would you be available for a 30-minute phone or <a href="https://zoom.us" target="_blank">Zoom</a> conversation in the next two weeks? I'm happy to work around your schedule.</p>
-    <p>Thank you for your time and your work in our community.</p>
-    <p style="margin-bottom:0">Sincerely,<br>[Student Name]<br>Master of Nonprofit Management, University of Central Florida</p>
-  </div>
-</details>
-
-<hr>
-
-<h2>Submission Details</h2>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Outreach Email</h4>
+<p><strong>Subject:</strong> UCF Graduate Student — 30-Minute Interview Request</p>
+<p>Dear Ms. Kim,</p>
+<p>My name is [Student Name], and I'm completing my final semester in the Master of Nonprofit Management program at the University of Central Florida. As part of my capstone course, I'm developing a nonprofit concept focused on serving Asian American and immigrant families in Central Florida — particularly populations that may be underserved by existing community resources.</p>
+<p>I've been following the work of the Asian American Resource Center, and your language access programs and community legal clinics are a model for the kind of organization I'm hoping to build. I would greatly appreciate the opportunity to learn from your experience — what has shaped AARC's approach, what challenges you've navigated, and where you see opportunities in this space.</p>
+<p>Would you be available for a 30-minute phone or Zoom conversation in the next two weeks? I'm happy to work around your schedule.</p>
+<p>Thank you for your time and your work in our community.</p>
+<p>Sincerely, [Student Name] Master of Nonprofit Management, University of Central Florida</p></div>
+<hr />
+<h2 id="submission-details">Submission Details</h2>
 <ul>
-  <li><strong>Length:</strong> 1–2 pages (double-spaced, 12pt font)</li>
-  <li><strong>Format:</strong> Word (.docx)</li>
-  <li><strong>File name:</strong> <code>[YourLastName]_InterviewPlan.docx</code></li>
-  <li><strong>Submit to:</strong> Webcourses@UCF &rarr; Assignments &rarr; Week 2: Interview Plan</li>
+<li><strong>Length:</strong> 1–2 pages (double-spaced, 12pt font)</li>
+<li><strong>Format:</strong> Word (.docx)</li>
+<li><strong>File name:</strong> <code>[YourLastName]_InterviewPlan.docx</code></li>
+<li><strong>Submit to:</strong> Webcourses@UCF → Assignments → Week 2: Interview Plan</li>
 </ul>
-
-<hr>
-
-<h2>Grading Rubric (2 pts)</h2>
+<hr />
+<h2 id="grading-rubric-2-pts">Grading Rubric (2 pts)</h2>
 <table>
-  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
-  <tbody>
-    <tr><td>Contact identified with clear rationale connecting to your nonprofit concept</td><td>1 pt</td></tr>
-    <tr><td>8–10 substantive, specific interview questions (not answerable via Google)</td><td>1 pt</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contact identified with clear rationale connecting to your nonprofit concept</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>8–10 substantive, specific interview questions (not answerable via Google)</td>
+<td>1 pt</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>Useful AI &amp; Online Tools This Week</h2>
+<hr />
+<h2 id="useful-ai-online-tools-this-week">Useful AI &amp; Online Tools This Week</h2>
 <table>
-  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
-  <tbody>
-    <tr><td><strong><a href="https://perplexity.ai" target="_blank">Perplexity.ai</a></strong></td><td>Researching organizations and leaders</td><td>Use search prompts to identify nonprofits in your space — <a href="https://perplexity.ai" target="_blank">Perplexity</a> cites sources so you can verify claims</td></tr>
-    <tr><td><strong><a href="https://candid.org" target="_blank">GuideStar / Candid</a></strong> (<a href="https://candid.org" target="_blank">candid.org</a>)</td><td>Financial and program data on nonprofits</td><td>Look up your target org's Form 990 — see revenue, expenses, CEO compensation, and program descriptions before the interview</td></tr>
-    <tr><td><strong><a href="https://linkedin.com" target="_blank">LinkedIn</a></strong></td><td>Finding and learning about your contact</td><td>Review the person's career path, publications, and connections — helps you ask informed questions</td></tr>
-    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Drafting and refining interview questions</td><td>Generate a starting list, then <strong>edit aggressively</strong> — cut anything generic and add questions specific to your research</td></tr>
-    <tr><td><strong><a href="https://grammarly.com" target="_blank">Grammarly</a></strong> (<a href="https://grammarly.com" target="_blank">grammarly.com</a>)</td><td>Polishing your outreach email</td><td>Run your email through <a href="https://grammarly.com" target="_blank">Grammarly</a> for tone, clarity, and professionalism — first impressions matter</td></tr>
-    <tr><td><strong><a href="https://otter.ai" target="_blank">Otter.ai</a></strong> (<a href="https://otter.ai" target="_blank">otter.ai</a>)</td><td>Preparing for the interview itself</td><td>Free transcription tool — if your interviewee agrees, use it to record and transcribe the interview for your Week 4 report (always ask permission first)</td></tr>
-    <tr><td><strong><a href="https://calendly.com" target="_blank">Calendly</a></strong> (<a href="https://calendly.com" target="_blank">calendly.com</a>)</td><td>Scheduling the interview</td><td>If you have multiple contacts to coordinate with, a free <a href="https://calendly.com" target="_blank">Calendly</a> link lets them pick a time without the back-and-forth email chain</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It's Good For</th>
+<th>How to Use It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://perplexity.ai">Perplexity.ai</a></strong></td>
+<td>Researching organizations and leaders</td>
+<td>Use search prompts to identify nonprofits in your space — Perplexity cites sources so you can verify claims</td>
+</tr>
+<tr>
+<td><strong><a href="https://candid.org">GuideStar / Candid</a></strong></td>
+<td>Financial and program data on nonprofits</td>
+<td>Look up your target org's Form 990 — see revenue, expenses, CEO compensation, and program descriptions before the interview</td>
+</tr>
+<tr>
+<td><strong><a href="https://linkedin.com">LinkedIn</a></strong></td>
+<td>Finding and learning about your contact</td>
+<td>Review the person's career path, publications, and connections — helps you ask informed questions</td>
+</tr>
+<tr>
+<td><strong><a href="https://chatgpt.com">ChatGPT</a> / <a href="https://claude.ai">Claude</a></strong></td>
+<td>Drafting and refining interview questions</td>
+<td>Generate a starting list, then <strong>edit aggressively</strong> — cut anything generic and add questions specific to your research</td>
+</tr>
+<tr>
+<td><strong><a href="https://grammarly.com">Grammarly</a></strong></td>
+<td>Polishing your outreach email</td>
+<td>Run your email through Grammarly for tone, clarity, and professionalism — first impressions matter</td>
+</tr>
+<tr>
+<td><strong><a href="https://otter.ai">Otter.ai</a></strong></td>
+<td>Preparing for the interview itself</td>
+<td>Free transcription tool — if your interviewee agrees, use it to record and transcribe the interview for your Week 4 report (always ask permission first)</td>
+</tr>
+<tr>
+<td><strong><a href="https://calendly.com">Calendly</a></strong></td>
+<td>Scheduling the interview</td>
+<td>If you have multiple contacts to coordinate with, a free Calendly link lets them pick a time without the back-and-forth email chain</td>
+</tr>
+</tbody>
 </table>
+<hr />
+<h2 id="video-demo-researching-your-role-model-org">Video Demo: Researching Your Role-Model Org</h2>
+<!--
+RECORDING SCRIPT — Week 2 Video (approximately 2 minutes)
 
-<hr>
+SCREEN RECORDING (Cmd+Shift+5, no audio):
+1. Open browser → go to perplexity.ai
+2. Type: "What nonprofit organizations serve Asian American and immigrant communities in Orlando, Florida? Include their mission, programs, annual budget, and leadership."
+3. Wait for results → scroll through slowly
+4. Click on one cited source → show it leads to a real org website
+5. Open new tab → go to candid.org (GuideStar)
+6. Search for the organization name → show the profile (EIN, revenue, programs)
+7. Open new tab → go to LinkedIn
+8. Search for the Executive Director → show their profile
 
-<h2>Video Demo: Researching Your Role-Model Org</h2>
+IPHONE VOICEOVER SCRIPT (record separately):
+"Here's how I'd research a role-model organization. I'll start with Perplexity to identify nonprofits in my space — notice it provides cited sources, which is useful for verification. Next, I'll cross-reference on GuideStar to see actual financials and program details. And finally, LinkedIn to identify the right person to contact. With this information, you can write a targeted outreach email that demonstrates you've done your homework — which significantly increases your chances of getting a response."
+-->
 <p><em>Video coming soon — check back before submitting your assignment.</em></p>
-
-<hr>
-
-<h2>Looking Ahead</h2>
+<hr />
+<h2 id="looking-ahead">Looking Ahead</h2>
 <p><strong>Next week (Week 3):</strong> You'll build your nonprofit's website — the platform that will house all of your capstone deliverables throughout the semester. No graded submission, but by the end of the week you should have a live site with your organization name, mission, and placeholder pages.</p>
 <p><strong>Priority this week:</strong> Send your outreach email as soon as possible. The Mentor Interview Report is due in Week 4, so you need time to schedule and conduct the interview.</p>
 
@@ -393,7 +348,6 @@ decisions — not factual information I could find online.</pre>
 </footer>
 
 <script>
-// Close mobile menu on nav click
 document.querySelectorAll('.sidebar a').forEach(a=>{
   a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
 });

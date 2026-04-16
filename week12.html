@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 12: AI Content Creation & Social Media – PAD 6149</title>
+<title>Week 12: AI Content Creation & Social Media Launch – PAD 6149</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -22,14 +22,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
 .brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
-
-/* Sidebar */
-.sidebar{
-  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
-  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
-  padding:var(--lg) 0 var(--xl);z-index:100;
-  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
-}
+.sidebar{width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;padding:var(--lg) 0 var(--xl);z-index:100;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
 .sidebar::-webkit-scrollbar{width:5px}
 .sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
 .sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
@@ -43,23 +36,9 @@ body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);ba
 .sidebar a.active .wk{color:rgba(255,201,4,.5)}
 .sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
 .sidebar a.active .pts{color:rgba(255,201,4,.4)}
-
-/* Mobile toggle */
 .menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
-
-/* Main */
 .main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
 .content{max-width:var(--w);margin:0 auto}
-
-/* Hero */
-.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
-.hero .content{max-width:var(--w)}
-.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
-.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
-.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
-.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
-
-/* Typography */
 h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
 h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
 h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
@@ -70,19 +49,8 @@ li{margin-bottom:6px}
 li::marker{color:var(--muted)}
 a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
 a:hover{text-decoration-color:var(--accent);color:var(--text)}
-strong{font-weight:700}
-em{font-style:italic}
+strong{font-weight:700}em{font-style:italic}
 hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
-
-/* Key facts card */
-.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
-.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.fact:nth-child(3n){border-right:none}
-.fact:nth-last-child(-n+3){border-bottom:none}
-.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
-.fact-value{font-size:15px;font-weight:500}
-
-/* Tables */
 table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 thead{background:var(--nav-bg);color:var(--nav-text)}
 th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
@@ -90,62 +58,29 @@ td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:t
 tbody tr:last-child td{border-bottom:none}
 tbody tr:nth-child(even) td{background:var(--surface-alt)}
 tbody tr:hover td{background:var(--accent-soft)}
-.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
 .pts-col{font-family:var(--mono);text-align:center;font-weight:500}
-tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
-tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
-tfoot td{background:var(--surface-alt);font-weight:700}
-
-/* Cards */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
 .card:hover{box-shadow:var(--shadow)}
-.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
-
-/* Badge */
+.card-warn{border-left:4px solid var(--danger)}
+.card-info{border-left:4px solid var(--info)}
+.card-note{border-left:4px solid var(--accent)}
+.card-example{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
 .badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
 .badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
-.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
-
-/* Competency table */
-.comp-table td:first-child{font-weight:600;width:38%}
-
-/* Steps */
-.steps{counter-reset:step;list-style:none;padding-left:0}
-.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
-.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-
-/* Grade grid */
-.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
-.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
-.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
-.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
-
-/* Details / collapsible */
 details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
 summary:hover{background:var(--surface-alt)}
 summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
 details[open] summary::before{transform:rotate(90deg)}
 details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
-
-/* Footer */
 footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
-
-/* Responsive */
+.subtitle{font-size:15px;color:var(--muted);margin-bottom:var(--xl)}
 @media(max-width:900px){
   .sidebar{transform:translateX(-100%);transition:transform .25s ease}
   .sidebar.open{transform:translateX(0)}
   .menu-toggle{display:block}
   .main{margin-left:0;padding:var(--2xl) var(--lg)}
-  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
-  .hero h1{font-size:32px}
   footer{margin-left:0}
-  .facts{grid-template-columns:1fr 1fr}
-  .fact:nth-child(2n){border-right:none}
-  .fact:nth-child(3n){border-right:1px solid var(--border)}
-  .grade-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
@@ -184,242 +119,297 @@ footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px so
 <div class="content">
 
 <p><span class="badge badge-gold">Week 12</span> <span class="badge">5 pts</span></p>
-<h1>AI Content Creation &amp; Social Media Launch</h1>
-<p style="font-size:19px;color:var(--muted);margin-bottom:var(--xl)">Due: November 9, 2026</p>
+<h1>AI Content Creation & Social Media Launch</h1>
+<p class="subtitle">Due: November 9, 2026 · 5 pts</p>
 
-<h2>Deliverables</h2>
+<hr />
+<h2 id="deliverables">Deliverables</h2>
 <table>
-  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
-  <tbody>
-    <tr><td>AI-generated promotional video (30–60 sec)</td><td>Webcourses → Assignments → Week 12</td><td>MP4 file upload</td></tr>
-    <tr><td>AI-generated promotional images (3–5)</td><td>Webcourses → Assignments → Week 12</td><td>PNG/JPG file upload</td></tr>
-    <tr><td>LinkedIn post link</td><td>Webcourses → Assignments → Week 12</td><td>URL to your <a href="https://linkedin.com" target="_blank">LinkedIn</a> post (with required disclosure)</td></tr>
-    <tr><td>Website update</td><td>Your live website</td><td>"Contact" page with email + <a href="https://linkedin.com" target="_blank">LinkedIn</a> link</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-generated promotional video (30–60 sec)</td>
+<td>Webcourses → Assignments → Week 12</td>
+<td>MP4 file upload</td>
+</tr>
+<tr>
+<td>AI-generated promotional images (3–5)</td>
+<td>Webcourses → Assignments → Week 12</td>
+<td>PNG/JPG file upload</td>
+</tr>
+<tr>
+<td>LinkedIn post link</td>
+<td>Webcourses → Assignments → Week 12</td>
+<td>URL to your LinkedIn post (with required disclosure)</td>
+</tr>
+<tr>
+<td>Website update</td>
+<td>Your live website</td>
+<td>"Contact" page with email + LinkedIn link</td>
+</tr>
+</tbody>
 </table>
-
-<h2>What Is This Assignment?</h2>
+<hr />
+<h2 id="what-is-this-assignment">What Is This Assignment?</h2>
 <p>You've spent 11 weeks building a nonprofit on paper and on a website. This week, you bring it to life visually — and share it with the real world.</p>
 <p>AI tools have made it possible for anyone to create professional-quality video and visual content without a production budget, a design team, or video editing skills. As a nonprofit leader, this is a skill you need: <strong>the ability to tell your organization's story visually, quickly, and compellingly.</strong></p>
-<p>This week you will:</p>
-<ol>
-  <li>Create a <strong>30–60 second promotional video</strong> for your nonprofit using AI tools</li>
-  <li>Create <strong>3–5 promotional images</strong> using AI image generation</li>
-  <li>Share your content on <strong><a href="https://linkedin.com" target="_blank">LinkedIn</a></strong> with a post introducing your coursework</li>
-  <li>Complete a <strong>final website audit</strong> before your pitch presentation</li>
-</ol>
-
-<hr>
-
-<h2>Part 1: Create Your Nonprofit's Promotional Video</h2>
+<p>This week you will: 1. Create a <strong>30–60 second promotional video</strong> for your nonprofit using AI tools 2. Create <strong>3–5 promotional images</strong> using AI image generation 3. Share your content on <strong>LinkedIn</strong> with a post introducing your coursework 4. Complete a <strong>final website audit</strong> before your pitch presentation</p>
+<hr />
+<h2 id="part-1-create-your-nonprofits-promotional-video">Part 1: Create Your Nonprofit's Promotional Video</h2>
 <p>Use AI video tools to create a <strong>30–60 second video</strong> that introduces your organization. Think of it as a visual elevator pitch — the kind of video that would play on your homepage, at a fundraising event, or in a grant application.</p>
-
-<h3>What your video should include:</h3>
+<h3 id="what-your-video-should-include">What your video should include:</h3>
 <ul>
-  <li>Organization name and logo</li>
-  <li>The problem you're solving (1–2 sentences)</li>
-  <li>What your organization does (1–2 sentences)</li>
-  <li>A call to action ("Learn more," "Get involved," "Support our work")</li>
+<li>Organization name and logo</li>
+<li>The problem you're solving (1–2 sentences)</li>
+<li>What your organization does (1–2 sentences)</li>
+<li>A call to action ("Learn more," "Get involved," "Support our work")</li>
 </ul>
-
-<h3>Recommended Tools (all free):</h3>
-<h4>Option A: <a href="https://canva.com" target="_blank">Canva Video</a> (Recommended — easiest)</h4>
-<ol>
-  <li>Go to <strong><a href="https://canva.com" target="_blank">Canva</a></strong> (<a href="https://canva.com" target="_blank">canva.com</a>) → search "nonprofit video" or "promotional video"</li>
-  <li>Select a template → customize with your org name, mission, colors, and images</li>
-  <li>Use <strong>Canva's AI features</strong>: <a href="https://canva.com" target="_blank">Magic Design</a> for layout suggestions, text-to-image for custom visuals, and Magic Write for script suggestions</li>
-  <li>Add background music from <a href="https://canva.com" target="_blank">Canva</a>'s free library</li>
-  <li>Export as MP4</li>
-</ol>
-
-<h4>Option B: <a href="https://lumen5.com" target="_blank">Lumen5</a> (<a href="https://lumen5.com" target="_blank">lumen5.com</a>)</h4>
-<ol>
-  <li>Free tier available → paste your About Us text or mission statement</li>
-  <li><strong>Lumen5's AI</strong> automatically generates a video from your text — selects images, creates scenes, adds transitions</li>
-  <li>Customize colors, fonts, and music</li>
-  <li>Export as MP4 (free tier includes <a href="https://lumen5.com" target="_blank">Lumen5</a> watermark)</li>
-</ol>
-
-<h4>Option C: <a href="https://invideo.io" target="_blank">InVideo AI</a> (<a href="https://invideo.io" target="_blank">invideo.io</a>)</h4>
-<ol>
-  <li>Free tier available → describe your nonprofit in a prompt</li>
-  <li><strong>InVideo's AI</strong> generates a complete video draft with stock footage, text overlays, and music</li>
-  <li>Edit scenes, swap images, adjust pacing</li>
-  <li>Export as MP4</li>
-</ol>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">AI Tip: Video Script</h4>
-  <p>Before opening any video tool, draft your script with <strong>ChatGPT or Claude</strong>:</p>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Write a 30-second video script for a nonprofit called [Your Org Name].
+<h3 id="recommended-tools-all-free">Recommended Tools (all free):</h3>
+<p><strong>Option A: Canva Video (Recommended — easiest)</strong> 1. Go to <strong>Canva</strong> (canva.com) → search "nonprofit video" or "promotional video" 2. Select a template → customize with your org name, mission, colors, and images 3. Use <strong>Canva's AI features</strong>: Magic Design for layout suggestions, text-to-image for custom visuals, and Magic Write for script suggestions 4. Add background music from Canva's free library 5. Export as MP4</p>
+<p><strong>Option B: Lumen5 (lumen5.com)</strong> 1. Free tier available → paste your About Us text or mission statement 2. <strong>Lumen5's AI</strong> automatically generates a video from your text — selects images, creates scenes, adds transitions 3. Customize colors, fonts, and music 4. Export as MP4 (free tier includes Lumen5 watermark)</p>
+<p><strong>Option C: InVideo AI (invideo.io)</strong> 1. Free tier available → describe your nonprofit in a prompt 2. <strong>InVideo's AI</strong> generates a complete video draft with stock footage, text overlays, and music 3. Edit scenes, swap images, adjust pacing 4. Export as MP4</p>
+<div class="card card-note">
+<h4 style="margin-top:0">AI Tip: Video Script</h4>
+<p>Before opening any video tool, draft your script with <strong>ChatGPT or Claude</strong>:</p>
+<pre><code>Write a 30-second video script for a nonprofit called [Your Org Name].
 Mission: [your mission statement].
 The video should open with the problem, introduce the organization
 as the solution, and end with a call to action. Tone: professional,
-warm, urgent but hopeful. Keep it under 80 words.</pre>
-  <p style="margin-bottom:0">Then use this script as the foundation for your video.</p>
-</div>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Video Script</summary>
-  <div>
-    <p><em>[Scene 1: Aerial shot of Orlando skyline]</em><br>
-    "Central Florida's Asian American and immigrant population has grown 45% in a decade."</p>
-    <p><em>[Scene 2: Family walking into a community center]</em><br>
-    "But culturally responsive services haven't kept pace. Language barriers, isolation, and system complexity keep families from the resources they need."</p>
-    <p><em>[Scene 3: Community Navigator meeting with a family]</em><br>
-    "Asian Bridge Orlando connects families to services, language access, and community — in their language, with cultural understanding."</p>
-    <p><em>[Scene 4: Logo + website URL]</em><br>
-    "Learn more at asianbridgeorlando.org"</p>
-  </div>
-</details>
-
-<hr>
-
-<h2>Part 2: Create Promotional Images</h2>
+warm, urgent but hopeful. Keep it under 80 words.</code></pre>
+<p>Then use this script as the foundation for your video.</p></div>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Video Script</h4>
+<p><em>[Scene 1: Aerial shot of Orlando skyline]</em> "Central Florida's Asian American and immigrant population has grown 45% in a decade."</p>
+<p><em>[Scene 2: Family walking into a community center]</em> "But culturally responsive services haven't kept pace. Language barriers, isolation, and system complexity keep families from the resources they need."</p>
+<p><em>[Scene 3: Community Navigator meeting with a family]</em> "Asian Bridge Orlando connects families to services, language access, and community — in their language, with cultural understanding."</p>
+<p><em>[Scene 4: Logo + website URL]</em> "Learn more at asianbridgeorlando.org"</p></div>
+<hr />
+<h2 id="part-2-create-promotional-images">Part 2: Create Promotional Images</h2>
 <p>Create <strong>3–5 images</strong> that could be used on your website, social media, or printed materials. Each image should be professional, on-brand, and mission-aligned.</p>
-
-<h3>What to create:</h3>
+<h3 id="what-to-create">What to create:</h3>
 <table>
-  <thead><tr><th>Image</th><th>Purpose</th><th>Suggested Tool</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Hero image</strong> for homepage</td><td>Sets the visual tone for your entire site</td><td><strong><a href="https://canva.com" target="_blank">Canva AI</a></strong> (<a href="https://canva.com" target="_blank">Magic Media</a> text-to-image) or <strong><a href="https://designer.microsoft.com" target="_blank">Microsoft Designer</a></strong> (<a href="https://designer.microsoft.com" target="_blank">designer.microsoft.com</a>, free)</td></tr>
-    <tr><td><strong>Impact infographic</strong></td><td>Visualizes a key statistic or your theory of change</td><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong> templates</td></tr>
-    <tr><td><strong>Program spotlight</strong></td><td>Illustrates one of your core programs in action</td><td><strong><a href="https://canva.com" target="_blank">Canva AI</a></strong> or <strong><a href="https://chatgpt.com" target="_blank">ChatGPT (DALL-E)</a></strong></td></tr>
-    <tr><td><strong>Social media post graphic</strong></td><td>Ready-to-post branded image for LinkedIn</td><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong> (search "LinkedIn post" templates)</td></tr>
-    <tr><td><strong>Quote card or testimonial</strong></td><td>A compelling quote from your mission or vision</td><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong> templates</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Image</th>
+<th>Purpose</th>
+<th>Suggested Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hero image</strong> for homepage</td>
+<td>Sets the visual tone for your entire site</td>
+<td><strong><a href="https://canva.com">Canva AI</a></strong> (Magic Media text-to-image) or <strong><a href="https://designer.microsoft.com">Microsoft Designer</a></strong> (designer.microsoft.com, free)</td>
+</tr>
+<tr>
+<td><strong>Impact infographic</strong></td>
+<td>Visualizes a key statistic or your theory of change</td>
+<td><strong><a href="https://canva.com">Canva</a></strong> templates</td>
+</tr>
+<tr>
+<td><strong>Program spotlight</strong></td>
+<td>Illustrates one of your core programs in action</td>
+<td><strong><a href="https://canva.com">Canva AI</a></strong> or <strong><a href="https://chatgpt.com">ChatGPT (DALL-E)</a></strong></td>
+</tr>
+<tr>
+<td><strong>Social media post graphic</strong></td>
+<td>Ready-to-post branded image for LinkedIn</td>
+<td><strong><a href="https://canva.com">Canva</a></strong> (search "LinkedIn post" templates)</td>
+</tr>
+<tr>
+<td><strong>Quote card or testimonial</strong></td>
+<td>A compelling quote from your mission or vision</td>
+<td><strong><a href="https://canva.com">Canva</a></strong> templates</td>
+</tr>
+</tbody>
 </table>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">AI Image Generation</h4>
-  <p>Use <strong>Canva's Magic Media</strong> (free, limited generations per month) or <strong><a href="https://designer.microsoft.com" target="_blank">Microsoft Designer</a></strong> (<a href="https://designer.microsoft.com" target="_blank">designer.microsoft.com</a>, free with Microsoft account):</p>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Create a warm, professional photograph of a diverse community
+<div class="card card-note">
+<h4 style="margin-top:0">AI Image Generation</h4>
+<p>Use <strong>Canva's Magic Media</strong> (free, limited generations per month) or <strong>Microsoft Designer</strong> (designer.microsoft.com, free with Microsoft account):</p>
+<pre><code>Create a warm, professional photograph of a diverse community
 gathering at a nonprofit event. Asian American families, community
 workers, and volunteers in a welcoming community center setting.
-Bright, natural lighting. No text overlay.</pre>
-  <p style="margin-bottom:0">Review AI-generated images critically — check for visual artifacts, cultural accuracy, and whether the image genuinely represents your community.</p>
-</div>
-
-<div class="card" style="border-left:4px solid #DC2626">
-  <h4 style="margin-top:0">AI Image Ethics</h4>
-  <p>AI-generated images of people can raise ethical concerns, particularly when representing specific communities. If you use AI to generate images of people:</p>
-  <ul>
-    <li>Do not present them as real individuals</li>
-    <li>Ensure representations are respectful and culturally appropriate</li>
-    <li>Consider using AI for abstract, symbolic, or graphic design images instead of photorealistic people</li>
-    <li>On your website, label AI-generated images as such if they could be mistaken for real photographs</li>
-  </ul>
-</div>
-
-<hr>
-
-<h2>Part 3: <a href="https://linkedin.com" target="_blank">LinkedIn</a> Post</h2>
-<p>You need a <strong><a href="https://linkedin.com" target="_blank">LinkedIn</a></strong> account for this part. If you don't have one, create a free profile at <strong><a href="https://linkedin.com" target="_blank">linkedin.com</a></strong> this week.</p>
-
-<div class="card" style="border-left:4px solid #DC2626">
-  <h4 style="margin-top:0">Important</h4>
-  <p style="margin-bottom:0">You are <strong>not</strong> adding this nonprofit to your <a href="https://linkedin.com" target="_blank">LinkedIn</a> profile or experience section. This is a class project, not a real organization. You are posting <strong>one post</strong> about your coursework — clearly labeled as such.</p>
-</div>
-
-<h3>Post Your Content</h3>
-<p>Create a <strong>single <a href="https://linkedin.com" target="_blank">LinkedIn</a> post</strong> sharing your AI-generated video or image and introducing the nonprofit you built for this course.</p>
-<p><strong>Your post must include:</strong></p>
-<ol>
-  <li>A brief introduction to the organization you designed (3–5 sentences)</li>
-  <li>Your video or one of your promotional images attached</li>
-  <li>A link to your website</li>
-  <li><strong>Required disclosure</strong> — the following statement must appear at the end of your post:</li>
-</ol>
-<blockquote style="border-left:4px solid var(--accent);padding:var(--sm) var(--md);margin:var(--md) 0;background:rgba(255,201,4,.06);border-radius:0 var(--r) var(--r) 0">
-  <p style="margin-bottom:0"><em>⚠️ This is not a real nonprofit organization. It was designed as part of my capstone course (PAD 6149 — Nonprofit Administration) in the Master of Nonprofit Management program at the University of Central Florida. The promotional video/images were created using AI tools as a course assignment. #UCF #MNM #NonprofitLeadership</em></p>
+Bright, natural lighting. No text overlay.</code></pre>
+<p>Review AI-generated images critically — check for visual artifacts, cultural accuracy, and whether the image genuinely represents your community.</p></div>
+<div class="card card-warn">
+<h4 style="margin-top:0">AI Image Ethics</h4>
+<p>AI-generated images of people can raise ethical concerns, particularly when representing specific communities. If you use AI to generate images of people: - Do not present them as real individuals - Ensure representations are respectful and culturally appropriate - Consider using AI for abstract, symbolic, or graphic design images instead of photorealistic people - On your website, label AI-generated images as such if they could be mistaken for real photographs</p></div>
+<hr />
+<h2 id="part-3-linkedin-post">Part 3: LinkedIn Post</h2>
+<p>You need a <strong>LinkedIn</strong> account for this part. If you don't have one, create a free profile at <strong>linkedin.com</strong> this week.</p>
+<div class="card card-warn">
+<h4 style="margin-top:0">Important</h4>
+<p>You are <strong>not</strong> adding this nonprofit to your LinkedIn profile or experience section. This is a class project, not a real organization. You are posting <strong>one post</strong> about your coursework — clearly labeled as such.</p></div>
+<h3 id="post-your-content">Post Your Content</h3>
+<p>Create a <strong>single LinkedIn post</strong> sharing your AI-generated video or image and introducing the nonprofit you built for this course.</p>
+<p><strong>Your post must include:</strong> 1. A brief introduction to the organization you designed (3–5 sentences) 2. Your video or one of your promotional images attached 3. A link to your website 4. <strong>Required disclosure</strong> — the following statement must appear at the end of your post:</p>
+<blockquote>
+<p><em>⚠️ This is not a real nonprofit organization. It was designed as part of my capstone course (PAD 6149 — Nonprofit Administration) in the Master of Nonprofit Management program at the University of Central Florida. The promotional video/images were created using AI tools as a course assignment. #UCF #MNM #NonprofitLeadership</em></p>
 </blockquote>
 <p>This disclosure is <strong>not optional</strong>. It ensures your professional network understands the context.</p>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">AI Tip: <a href="https://linkedin.com" target="_blank">LinkedIn</a> Post Draft</h4>
-  <p>Use <strong>ChatGPT or Claude</strong> to draft your post:</p>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Write a LinkedIn post (under 200 words) sharing a capstone course
+<div class="card card-note">
+<h4 style="margin-top:0">AI Tip: LinkedIn Post Draft</h4>
+<p>Use <strong>ChatGPT or Claude</strong> to draft your post:</p>
+<pre><code>Write a LinkedIn post (under 200 words) sharing a capstone course
 project. I designed a nonprofit called [Your Org Name] that serves
 [population] in [area]. I want to share what I built and the AI-
 generated promotional content I created. Tone: proud of the work,
 clearly a student project, professional. Do NOT make it sound like
-a real organization launch.</pre>
-  <p style="margin-bottom:0">Edit the output to match your voice and make sure the disclosure is included.</p>
-</div>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — <a href="https://linkedin.com" target="_blank">LinkedIn</a> Post</summary>
-  <div>
-    <p>"This semester in my MNM capstone course at UCF, I designed a nonprofit from the ground up: <strong>Asian Bridge Orlando</strong> — a concept for an organization connecting Central Florida's Asian American and immigrant families to culturally responsive services and language access.</p>
-    <p>Over 12 weeks, I built the full organizational blueprint: governance structure, staffing plan, $200K operating budget, fundraising strategy, program evaluation framework, and a strategic plan. The website is live as a demonstration of the coursework.</p>
-    <p>I also used AI tools (<a href="https://canva.com" target="_blank">Canva</a>, <a href="https://chatgpt.com" target="_blank">ChatGPT</a>, <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a>) to create this promotional video — a skill I'll carry into my career in the nonprofit sector.</p>
-    <p>Check out the site: [website URL]</p>
-    <p><em>⚠️ This is not a real nonprofit organization. It was designed as part of my capstone course (PAD 6149 — Nonprofit Administration) in the Master of Nonprofit Management program at the University of Central Florida. The promotional video/images were created using AI tools as a course assignment. #UCF #MNM #NonprofitLeadership</em>"</p>
-  </div>
-</details>
-
-<hr>
-
-<h2>Part 4: Website Update — Contact Page</h2>
+a real organization launch.</code></pre>
+<p>Edit the output to match your voice and make sure the disclosure is included.</p></div>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — LinkedIn Post</h4>
+<p>"This semester in my MNM capstone course at UCF, I designed a nonprofit from the ground up: <strong>Asian Bridge Orlando</strong> — a concept for an organization connecting Central Florida's Asian American and immigrant families to culturally responsive services and language access.</p>
+<p>Over 12 weeks, I built the full organizational blueprint: governance structure, staffing plan, $200K operating budget, fundraising strategy, program evaluation framework, and a strategic plan. The website is live as a demonstration of the coursework.</p>
+<p>I also used AI tools (Canva, ChatGPT, NotebookLM) to create this promotional video — a skill I'll carry into my career in the nonprofit sector.</p>
+<p>Check out the site: [website URL]</p>
+<p><em>⚠️ This is not a real nonprofit organization. It was designed as part of my capstone course (PAD 6149 — Nonprofit Administration) in the Master of Nonprofit Management program at the University of Central Florida. The promotional video/images were created using AI tools as a course assignment. #UCF #MNM #NonprofitLeadership</em>"</p></div>
+<hr />
+<h2 id="part-4-website-update-contact-page">Part 4: Website Update — Contact Page</h2>
 <p>Add a <strong>"Contact"</strong> page to your website with two things:</p>
-<ol>
-  <li><strong>Email address</strong> — your organization's contact email (use your UCF email or create a free Gmail like <code>asianbridgeorlando@gmail.com</code>)</li>
-  <li><strong>LinkedIn link</strong> — a clickable <a href="https://linkedin.com" target="_blank">LinkedIn</a> icon or button linking to your personal <a href="https://linkedin.com" target="_blank">LinkedIn</a> profile</li>
+<ol type="1">
+<li><strong>Email address</strong> — your organization's contact email (use your UCF email or create a free Gmail like <code>asianbridgeorlando@gmail.com</code>)</li>
+<li><strong>LinkedIn link</strong> — a clickable LinkedIn icon or button linking to your personal LinkedIn profile</li>
 </ol>
-<p>In <a href="https://sites.google.com" target="_blank">Google Sites</a>, upload a <a href="https://linkedin.com" target="_blank">LinkedIn</a> icon image (free icons available at <strong><a href="https://simpleicons.org" target="_blank">SimpleIcons</a></strong> — <a href="https://simpleicons.org" target="_blank">simpleicons.org</a>) and add a hyperlink to your <a href="https://linkedin.com" target="_blank">LinkedIn</a> profile URL.</p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Contact Page</summary>
-  <div>
-    <p><strong>Page title:</strong> Contact Us</p>
-    <p><strong>Get in Touch</strong><br>
-    Have questions about our programs or want to get involved?</p>
-    <p>📧 info@asianbridgeorlando.org</p>
-    <p>🔗 <a href="#">Connect with us on LinkedIn</a></p>
-    <p><em>We respond within 2 business days.</em></p>
-  </div>
-</details>
-
-<hr>
-
-<h2>Useful AI &amp; Online Tools This Week</h2>
+<p>In Google Sites, upload a LinkedIn icon image (free icons available at <strong>SimpleIcons</strong> — simpleicons.org) and add a hyperlink to your LinkedIn profile URL.</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Contact Page</h4>
+<p><strong>Page title:</strong> Contact Us</p>
+<p><strong>Get in Touch</strong> Have questions about our programs or want to get involved?</p>
+<p>📧 info@asianbridgeorlando.org</p>
+<p>🔗 [Connect with us on LinkedIn]</p>
+<p><em>We respond within 2 business days.</em></p></div>
+<hr />
+<h2 id="useful-ai-online-tools-this-week">Useful AI &amp; Online Tools This Week</h2>
 <table>
-  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
-  <tbody>
-    <tr><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong> (<a href="https://canva.com" target="_blank">canva.com</a>)</td><td>Video creation, image design, social graphics</td><td>Search templates for "nonprofit video" or "LinkedIn post"; use <a href="https://canva.com" target="_blank">Magic Media</a> for AI image generation; export video as MP4</td></tr>
-    <tr><td><strong><a href="https://lumen5.com" target="_blank">Lumen5</a></strong> (<a href="https://lumen5.com" target="_blank">lumen5.com</a>)</td><td>AI video from text</td><td>Paste your mission/about text → AI generates a video with stock footage and music; free tier available</td></tr>
-    <tr><td><strong><a href="https://invideo.io" target="_blank">InVideo AI</a></strong> (<a href="https://invideo.io" target="_blank">invideo.io</a>)</td><td>AI-generated video from prompts</td><td>Describe your nonprofit → AI creates a complete video draft; edit and export; free tier available</td></tr>
-    <tr><td><strong><a href="https://designer.microsoft.com" target="_blank">Microsoft Designer</a></strong> (<a href="https://designer.microsoft.com" target="_blank">designer.microsoft.com</a>)</td><td>AI image generation</td><td>Free with Microsoft account; generate promotional images from text descriptions</td></tr>
-    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT (DALL-E)</a></strong></td><td>AI image generation</td><td>Generate custom images from prompts — useful for abstract or symbolic visuals; free tier available</td></tr>
-    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Video scripts, <a href="https://linkedin.com" target="_blank">LinkedIn</a> copy, image prompts</td><td>Draft your 30-second script, <a href="https://linkedin.com" target="_blank">LinkedIn</a> post, and image generation prompts — then refine</td></tr>
-    <tr><td><strong><a href="https://linkedin.com" target="_blank">LinkedIn</a></strong> (<a href="https://linkedin.com" target="_blank">linkedin.com</a>)</td><td>Professional networking and content sharing</td><td>Post your promotional content with course disclosure; link to your website</td></tr>
-    <tr><td><strong><a href="https://simpleicons.org" target="_blank">SimpleIcons</a></strong> (<a href="https://simpleicons.org" target="_blank">simpleicons.org</a>)</td><td>Free brand icons</td><td>Download a <a href="https://linkedin.com" target="_blank">LinkedIn</a> icon for your website's Contact page — free, SVG format</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It's Good For</th>
+<th>How to Use It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://canva.com">Canva</a></strong></td>
+<td>Video creation, image design, social graphics</td>
+<td>Search templates for "nonprofit video" or "LinkedIn post"; use Magic Media for AI image generation; export video as MP4</td>
+</tr>
+<tr>
+<td><strong><a href="https://lumen5.com">Lumen5</a></strong></td>
+<td>AI video from text</td>
+<td>Paste your mission/about text → AI generates a video with stock footage and music; free tier available</td>
+</tr>
+<tr>
+<td><strong><a href="https://invideo.io">InVideo AI</a></strong></td>
+<td>AI-generated video from prompts</td>
+<td>Describe your nonprofit → AI creates a complete video draft; edit and export; free tier available</td>
+</tr>
+<tr>
+<td><strong><a href="https://designer.microsoft.com">Microsoft Designer</a></strong></td>
+<td>AI image generation</td>
+<td>Free with Microsoft account; generate promotional images from text descriptions</td>
+</tr>
+<tr>
+<td><strong><a href="https://chatgpt.com">ChatGPT (DALL-E)</a></strong></td>
+<td>AI image generation</td>
+<td>Generate custom images from prompts — useful for abstract or symbolic visuals; free tier available</td>
+</tr>
+<tr>
+<td><strong><a href="https://chatgpt.com">ChatGPT</a> / <a href="https://claude.ai">Claude</a></strong></td>
+<td>Video scripts, LinkedIn copy, image prompts</td>
+<td>Draft your 30-second script, LinkedIn post, and image generation prompts — then refine</td>
+</tr>
+<tr>
+<td><strong><a href="https://linkedin.com">LinkedIn</a></strong></td>
+<td>Professional networking and content sharing</td>
+<td>Post your promotional content with course disclosure; link to your website</td>
+</tr>
+<tr>
+<td><strong><a href="https://simpleicons.org">SimpleIcons</a></strong></td>
+<td>Free brand icons</td>
+<td>Download a LinkedIn icon for your website's Contact page — free, SVG format</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>Grading Rubric (5 pts)</h2>
+<hr />
+<h2 id="grading-rubric-5-pts">Grading Rubric (5 pts)</h2>
 <table>
-  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
-  <tbody>
-    <tr><td>Promotional video (30–60 sec) is professional, on-brand, and covers problem + mission + call to action</td><td class="pts-col">2 pts</td></tr>
-    <tr><td>Promotional images (3–5) are high-quality, mission-aligned, and visually consistent with brand identity</td><td class="pts-col">1 pt</td></tr>
-    <tr><td>LinkedIn post introduces the project clearly with video/image, website link, and required disclosure</td><td class="pts-col">1 pt</td></tr>
-    <tr><td>Website Contact page is added with email and <a href="https://linkedin.com" target="_blank">LinkedIn</a> link</td><td class="pts-col">1 pt</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Promotional video (30–60 sec) is professional, on-brand, and covers problem + mission + call to action</td>
+<td>2 pts</td>
+</tr>
+<tr>
+<td>Promotional images (3–5) are high-quality, mission-aligned, and visually consistent with brand identity</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>LinkedIn post introduces the project clearly with video/image, website link, and required disclosure</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>Website Contact page is added with email and LinkedIn link</td>
+<td>1 pt</td>
+</tr>
+</tbody>
 </table>
+<hr />
+<h2 id="video-demo-creating-a-nonprofit-promo-video-with-canva">Video Demo: Creating a Nonprofit Promo Video with Canva</h2>
+<!--
+RECORDING SCRIPT — Week 12 Video (approximately 3 minutes)
 
-<hr>
+SCREEN RECORDING (Cmd+Shift+5, no audio):
+1. Open ChatGPT → type the video script prompt → show the generated script
+2. Open Canva → search "nonprofit video" → select a template
+3. Replace text with the script lines
+4. Show using Magic Media to generate an image for one scene
+5. Add background music from Canva's library
+6. Show adjusting timing and transitions
+7. Export as MP4
+8. Open Canva → show creating promotional images with Magic Media
+9. Open Google Sites → create Contact page → add email and LinkedIn icon with hyperlink
+10. Open LinkedIn → create a new post → attach video → add disclosure text → post
 
-<h2>Video Demo: Creating a Nonprofit Promo Video with Canva</h2>
+IPHONE VOICEOVER:
+"This week you're creating real promotional content with AI tools. I'll start by drafting a 30-second script with ChatGPT — notice it follows the problem-solution-action structure. Now in Canva, I'll pick a video template and customize it with my script and brand colors. Magic Media generates a custom image for one of the scenes. Add background music, adjust timing, export as MP4. Next, I'll create a few promotional images — a hero graphic and a social media post template. On my website, I'll add a Contact page with an email address and a LinkedIn icon linking to my profile. Finally, I'll post the video on LinkedIn with a clear disclosure that this is a course project created with AI tools. That last part is important — be transparent about what this is."
+-->
 <p><em>Video coming soon.</em></p>
-
-<hr>
-
-<h2>Looking Ahead</h2>
-<p><strong>Next week (Week 13):</strong> <a href="week13.html">Policy Advocacy Plan</a> (10 pts). You'll design an advocacy strategy for a policy issue affecting your population, drawing on your PAD 6142 coursework. Your website gets an "Advocacy / Take Action" page.</p>
-<p><strong>Week 14 (Dec 3):</strong> <a href="week14.html">Final Pitch Presentation</a> (15 pts). You'll walk through your entire website live, presenting your nonprofit to the class as if pitching to a funder or partner. Everything you've built leads to this.</p>
+<hr />
+<h2 id="looking-ahead">Looking Ahead</h2>
+<p><strong>Next week (Week 13):</strong> Policy Advocacy Plan (10 pts). You'll design an advocacy strategy for a policy issue affecting your population, drawing on your PAD 6142 coursework. Your website gets an "Advocacy / Take Action" page.</p>
+<p><strong>Week 14 (Dec 3):</strong> Final Pitch Presentation (15 pts). You'll walk through your entire website live, presenting your nonprofit to the class as if pitching to a funder or partner. Everything you've built leads to this.</p>
 
 </div>
 </main>
@@ -429,7 +419,6 @@ a real organization launch.</pre>
 </footer>
 
 <script>
-// Close mobile menu on nav click
 document.querySelectorAll('.sidebar a').forEach(a=>{
   a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
 });

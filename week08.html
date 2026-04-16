@@ -22,14 +22,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
 .brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
-
-/* Sidebar */
-.sidebar{
-  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
-  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
-  padding:var(--lg) 0 var(--xl);z-index:100;
-  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
-}
+.sidebar{width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;padding:var(--lg) 0 var(--xl);z-index:100;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
 .sidebar::-webkit-scrollbar{width:5px}
 .sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
 .sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
@@ -43,23 +36,9 @@ body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);ba
 .sidebar a.active .wk{color:rgba(255,201,4,.5)}
 .sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
 .sidebar a.active .pts{color:rgba(255,201,4,.4)}
-
-/* Mobile toggle */
 .menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
-
-/* Main */
 .main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
 .content{max-width:var(--w);margin:0 auto}
-
-/* Hero */
-.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
-.hero .content{max-width:var(--w)}
-.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
-.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
-.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
-.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
-
-/* Typography */
 h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
 h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
 h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
@@ -70,19 +49,8 @@ li{margin-bottom:6px}
 li::marker{color:var(--muted)}
 a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
 a:hover{text-decoration-color:var(--accent);color:var(--text)}
-strong{font-weight:700}
-em{font-style:italic}
+strong{font-weight:700}em{font-style:italic}
 hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
-
-/* Key facts card */
-.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
-.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.fact:nth-child(3n){border-right:none}
-.fact:nth-last-child(-n+3){border-bottom:none}
-.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
-.fact-value{font-size:15px;font-weight:500}
-
-/* Tables */
 table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 thead{background:var(--nav-bg);color:var(--nav-text)}
 th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
@@ -90,62 +58,29 @@ td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:t
 tbody tr:last-child td{border-bottom:none}
 tbody tr:nth-child(even) td{background:var(--surface-alt)}
 tbody tr:hover td{background:var(--accent-soft)}
-.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
 .pts-col{font-family:var(--mono);text-align:center;font-weight:500}
-tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
-tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
-tfoot td{background:var(--surface-alt);font-weight:700}
-
-/* Cards */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
 .card:hover{box-shadow:var(--shadow)}
-.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
-
-/* Badge */
+.card-warn{border-left:4px solid var(--danger)}
+.card-info{border-left:4px solid var(--info)}
+.card-note{border-left:4px solid var(--accent)}
+.card-example{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
 .badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
 .badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
-.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
-
-/* Competency table */
-.comp-table td:first-child{font-weight:600;width:38%}
-
-/* Steps */
-.steps{counter-reset:step;list-style:none;padding-left:0}
-.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
-.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-
-/* Grade grid */
-.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
-.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
-.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
-.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
-
-/* Details / collapsible */
 details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
 summary:hover{background:var(--surface-alt)}
 summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
 details[open] summary::before{transform:rotate(90deg)}
 details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
-
-/* Footer */
 footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
-
-/* Responsive */
+.subtitle{font-size:15px;color:var(--muted);margin-bottom:var(--xl)}
 @media(max-width:900px){
   .sidebar{transform:translateX(-100%);transition:transform .25s ease}
   .sidebar.open{transform:translateX(0)}
   .menu-toggle{display:block}
   .main{margin-left:0;padding:var(--2xl) var(--lg)}
-  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
-  .hero h1{font-size:32px}
   footer{margin-left:0}
-  .facts{grid-template-columns:1fr 1fr}
-  .fact:nth-child(2n){border-right:none}
-  .fact:nth-child(3n){border-right:1px solid var(--border)}
-  .grade-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
@@ -185,315 +120,421 @@ footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px so
 
 <p><span class="badge badge-gold">Week 8</span> <span class="badge">3 pts</span></p>
 <h1>Fundraising Strategy</h1>
-<p style="font-size:15px;color:var(--muted)"><strong>Due:</strong> October 12, 2026 &middot; <strong>Source coursework:</strong> PAD 5146 – Resource Development</p>
+<p class="subtitle">Due: October 12, 2026 · 3 pts</p>
 
-<hr>
-
-<h2>Deliverables</h2>
-
+<p><strong>Source coursework:</strong> PAD 5146 – Resource Development (Fundraising Plan)</p>
+<hr />
+<h2 id="deliverables">Deliverables</h2>
 <table>
-  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
-  <tbody>
-    <tr><td>Fundraising Strategy</td><td>Webcourses &rarr; Assignments &rarr; Week 8</td><td>Word (.docx), 3–5 pages, double-spaced</td></tr>
-    <tr><td>Website update</td><td>Your live website</td><td>"Donate / Support Us" page with giving levels + case for support</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fundraising Strategy</td>
+<td>Webcourses → Assignments → Week 8</td>
+<td>Word (.docx), 3–5 pages, double-spaced</td>
+</tr>
+<tr>
+<td>Website update</td>
+<td>Your live website</td>
+<td>"Donate / Support Us" page with giving levels + case for support</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>What Is This Assignment?</h2>
-
+<hr />
+<h2 id="what-is-this-assignment">What Is This Assignment?</h2>
 <p>You have a budget (Week 7). Now the harder question: <strong>where does the money actually come from, and how do you get it?</strong></p>
-
 <p>You submit your strategy document to Webcourses. Your fundraising strategy feeds directly into the <strong>Strategic Plan (Week 9, 10 pts)</strong>, so build it with that level of seriousness.</p>
-
 <p>In PAD 5146, you produced a comprehensive Fundraising Plan — including a fundraising audit, SWOT analysis, donor cultivation strategies, and an ethics and stewardship narrative. That was for an established organization. Now you're designing a fundraising strategy for your own startup, where you have no donor history, no track record, and no brand recognition. The challenge is fundamentally different.</p>
-
-<hr>
-
-<h2>The Process</h2>
-
-<h3>Step 1: Revisit Your PAD 5146 Fundraising Plan</h3>
-
+<hr />
+<h2 id="the-process">The Process</h2>
+<h3 id="step-1-revisit-your-pad-5146-fundraising-plan">Step 1: Revisit Your PAD 5146 Fundraising Plan</h3>
 <p>Pull up your PAD 5146 Fundraising Plan. What did you learn about donor cultivation, grant prospecting, and fundraising ethics? What strategies worked for the organization you studied? What would you adapt for a startup with no existing donor base?</p>
-
-<h3>Step 2: Upload to NotebookLM</h3>
-
-<p>Upload your PAD 5146 Fundraising Plan to <strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong>. Then explore:</p>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">Using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> for Fundraising Strategy</h4>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Based on my PAD 5146 fundraising plan, what were the most effective
+<h3 id="step-2-upload-to-notebooklm">Step 2: Upload to NotebookLM</h3>
+<p>Upload your PAD 5146 Fundraising Plan to <strong>Google NotebookLM</strong>. Then explore:</p>
+<div class="card card-note">
+<h4 style="margin-top:0">Using NotebookLM for Fundraising Strategy</h4>
+<pre><code>Based on my PAD 5146 fundraising plan, what were the most effective
 fundraising strategies I identified? How would I adapt these for a
 brand-new nonprofit with no donor history and a Year 1 budget of
-$200,000?</pre>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap;margin-top:var(--sm)">In my fundraising plan, I analyzed the donor cultivation pipeline
+$200,000?</code></pre>
+<pre><code>In my fundraising plan, I analyzed the donor cultivation pipeline
 for [organization]. What elements of that pipeline apply to a startup
 nonprofit serving immigrant communities, where many potential donors
-may not have a tradition of formal charitable giving?</pre>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap;margin-top:var(--sm)">My PAD 5146 plan included a SWOT analysis of the organization's
+may not have a tradition of formal charitable giving?</code></pre>
+<pre><code>My PAD 5146 plan included a SWOT analysis of the organization&#39;s
 fundraising capacity. Help me create a SWOT analysis for fundraising
 at my new nonprofit, considering that I have no track record but
-do have a clear mission and a growing community need.</pre>
-</div>
-
-<h3>Step 3: Build Your Fundraising Strategy</h3>
-
-<p>Use your <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> insights and the sections below to draft your fundraising strategy document.</p>
-
-<h3>Step 4: Update Your Website</h3>
-
+do have a clear mission and a growing community need.</code></pre></div>
+<h3 id="step-3-build-your-fundraising-strategy">Step 3: Build Your Fundraising Strategy</h3>
+<p>Use your NotebookLM insights and the sections below to draft your fundraising strategy document.</p>
+<h3 id="step-4-update-your-website">Step 4: Update Your Website</h3>
 <p>Build the "Donate / Support Us" page on your website (see Website Update section below).</p>
-
-<hr>
-
-<h2>What Do I Submit?</h2>
-
-<h3>1. Fundraising SWOT Analysis</h3>
-
+<hr />
+<h2 id="what-do-i-submit">What Do I Submit?</h2>
+<h3 id="fundraising-swot-analysis">1. Fundraising SWOT Analysis</h3>
 <p>Before designing your strategy, assess your starting position honestly.</p>
-
 <table>
-  <thead><tr><th></th><th>Helpful</th><th>Harmful</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Internal</strong></td><td><strong>Strengths</strong> — What assets do you have? (passionate founder, clear mission, board connections, community trust)</td><td><strong>Weaknesses</strong> — What's missing? (no donor database, no brand recognition, no fundraising staff, limited network)</td></tr>
-    <tr><td><strong>External</strong></td><td><strong>Opportunities</strong> — What's in your favor? (growing community need, foundations prioritizing your issue, local corporate interest)</td><td><strong>Threats</strong> — What could block you? (competition for grants, economic downturn, donor fatigue, political climate)</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Helpful</th>
+<th>Harmful</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internal</strong></td>
+<td><strong>Strengths</strong> — What assets do you have? (passionate founder, clear mission, board connections, community trust)</td>
+<td><strong>Weaknesses</strong> — What's missing? (no donor database, no brand recognition, no fundraising staff, limited network)</td>
+</tr>
+<tr>
+<td><strong>External</strong></td>
+<td><strong>Opportunities</strong> — What's in your favor? (growing community need, foundations prioritizing your issue, local corporate interest)</td>
+<td><strong>Threats</strong> — What could block you? (competition for grants, economic downturn, donor fatigue, political climate)</td>
+</tr>
+</tbody>
 </table>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Fundraising SWOT</summary>
-  <div>
-    <table>
-      <thead><tr><th></th><th>Helpful</th><th>Harmful</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Internal</strong></td><td>Strong mission alignment with growing community need; board includes members with fundraising and legal expertise; bilingual capacity builds community trust</td><td>No fundraising track record; no existing donor database; limited staff capacity for development; brand is unknown</td></tr>
-        <tr><td><strong>External</strong></td><td>Several foundations (e.g., Asian Americans/Pacific Islanders in Philanthropy) specifically fund AAPI-serving organizations; Central Florida corporate community is growing; UCF partnership opportunities</td><td>Competitive grant landscape for immigrant services; economic uncertainty may reduce individual giving; political polarization around immigration</td></tr>
-      </tbody>
-    </table>
-  </div>
-</details>
-
-<h3>2. Revenue Strategy by Source</h3>
-
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Fundraising SWOT</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Helpful</th>
+<th>Harmful</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internal</strong></td>
+<td>Strong mission alignment with growing community need; board includes members with fundraising and legal expertise; bilingual capacity builds community trust</td>
+<td>No fundraising track record; no existing donor database; limited staff capacity for development; brand is unknown</td>
+</tr>
+<tr>
+<td><strong>External</strong></td>
+<td>Several foundations (e.g., Asian Americans/Pacific Islanders in Philanthropy) specifically fund AAPI-serving organizations; Central Florida corporate community is growing; UCF partnership opportunities</td>
+<td>Competitive grant landscape for immigrant services; economic uncertainty may reduce individual giving; political polarization around immigration</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="revenue-strategy-by-source">2. Revenue Strategy by Source</h3>
 <p>For each revenue source in your Week 7 budget, develop a specific plan for how you'll actually secure that funding. Don't just list amounts — describe the <strong>who, what, and how</strong>.</p>
-
-<h4>Foundation Grants</h4>
-
+<h4 id="foundation-grants">Foundation Grants</h4>
 <ul>
-  <li>Identify <strong>3–5 specific foundations</strong> that fund organizations like yours. Use <strong><a href="https://candid.org" target="_blank">Candid's Foundation Directory</a></strong> (free through UCF Library databases) and <strong>Candid's free 990 search</strong> (<a href="https://candid.org" target="_blank">candid.org</a>) to find foundations that have funded similar organizations in your area.</li>
-  <li>For each foundation, note: name, typical grant size, focus area, and application timeline</li>
-  <li>Which grants will you apply for in Year 1? Be realistic — most foundations have 6–12 month cycles</li>
+<li>Identify <strong>3–5 specific foundations</strong> that fund organizations like yours. Use <strong>Candid's Foundation Directory</strong> (free through UCF Library databases) and <strong>Candid's free 990 search</strong> (candid.org) to find foundations that have funded similar organizations in your area.</li>
+<li>For each foundation, note: name, typical grant size, focus area, and application timeline</li>
+<li>Which grants will you apply for in Year 1? Be realistic — most foundations have 6–12 month cycles</li>
 </ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Grant Prospects</summary>
-  <div>
-    <table>
-      <thead><tr><th>Foundation</th><th>Typical Grant Size</th><th>Focus Area</th><th>Timeline</th></tr></thead>
-      <tbody>
-        <tr><td>Asian Americans/Pacific Islanders in Philanthropy (AAPIP)</td><td>$10,000–$50,000</td><td>AAPI community organizations</td><td>Rolling applications</td></tr>
-        <tr><td>Community Foundation of Central Florida</td><td>$5,000–$25,000</td><td>Local community services</td><td>March &amp; September cycles</td></tr>
-        <tr><td>Blue Cross Blue Shield Foundation of Florida</td><td>$25,000–$75,000</td><td>Health access for underserved populations</td><td>Annual cycle, January deadline</td></tr>
-        <tr><td>Walt Disney Company Foundation</td><td>$10,000–$50,000</td><td>Community strengthening in Central Florida</td><td>By invitation; LOI accepted year-round</td></tr>
-        <tr><td>Florida Humanities Council</td><td>$5,000–$15,000</td><td>Cultural programs, community dialogue</td><td>Quarterly deadlines</td></tr>
-      </tbody>
-    </table>
-    <p><em>Year 1 target: 2 grants totaling $80,000. Realistic given that several of these foundations explicitly fund new organizations, and our mission aligns directly with their stated priorities.</em></p>
-  </div>
-</details>
-
-<h4>Individual Donations</h4>
-
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Grant Prospects</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Foundation</th>
+<th>Typical Grant Size</th>
+<th>Focus Area</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asian Americans/Pacific Islanders in Philanthropy (AAPIP)</td>
+<td>$10,000–$50,000</td>
+<td>AAPI community organizations</td>
+<td>Rolling applications</td>
+</tr>
+<tr>
+<td>Community Foundation of Central Florida</td>
+<td>$5,000–$25,000</td>
+<td>Local community services</td>
+<td>March &amp; September cycles</td>
+</tr>
+<tr>
+<td>Blue Cross Blue Shield Foundation of Florida</td>
+<td>$25,000–$75,000</td>
+<td>Health access for underserved populations</td>
+<td>Annual cycle, January deadline</td>
+</tr>
+<tr>
+<td>Walt Disney Company Foundation</td>
+<td>$10,000–$50,000</td>
+<td>Community strengthening in Central Florida</td>
+<td>By invitation; LOI accepted year-round</td>
+</tr>
+<tr>
+<td>Florida Humanities Council</td>
+<td>$5,000–$15,000</td>
+<td>Cultural programs, community dialogue</td>
+<td>Quarterly deadlines</td>
+</tr>
+</tbody>
+</table>
+<p><em>Year 1 target: 2 grants totaling $80,000. Realistic given that several of these foundations explicitly fund new organizations, and our mission aligns directly with their stated priorities.</em></p></div>
+<h4 id="individual-donations">Individual Donations</h4>
 <ul>
-  <li>Who are your first donors? (Board members, personal networks, community leaders)</li>
-  <li>What is your <strong>give/get policy</strong> for board members?</li>
-  <li>How will you build a donor pipeline from zero? Describe your donor cultivation strategy using <strong><a href="https://perplexity.ai" target="_blank">Perplexity.ai</a></strong> to research best practices for startup nonprofit fundraising</li>
+<li>Who are your first donors? (Board members, personal networks, community leaders)</li>
+<li>What is your <strong>give/get policy</strong> for board members?</li>
+<li>How will you build a donor pipeline from zero? Describe your donor cultivation strategy using <strong>Perplexity.ai</strong> to research best practices for startup nonprofit fundraising</li>
 </ul>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">AI Tip: Donor Cultivation Pipeline</h4>
-  <p>Use <strong>ChatGPT or Claude</strong> to help design your pipeline:</p>
-  <pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Design a donor cultivation pipeline for a startup nonprofit with
+<div class="card card-note">
+<h4 style="margin-top:0">AI Tip: Donor Cultivation Pipeline</h4>
+<p>Use <strong>ChatGPT or Claude</strong> to help design your pipeline:</p>
+<pre><code>Design a donor cultivation pipeline for a startup nonprofit with
 no existing donor base. The organization serves Asian American and
 immigrant families in Central Florida. Year 1 individual giving
 target: $40,000. Include: identification, cultivation, solicitation,
-and stewardship stages with specific tactics for each.</pre>
-</div>
-
-<h4>Corporate Sponsorships</h4>
-
+and stewardship stages with specific tactics for each.</code></pre></div>
+<h4 id="corporate-sponsorships">Corporate Sponsorships</h4>
 <ul>
-  <li>Identify 3–5 local businesses that might sponsor your organization</li>
-  <li>What do you offer in return? (Logo on website, event naming, social media mentions, community goodwill)</li>
-  <li>Research corporate giving programs using <strong><a href="https://perplexity.ai" target="_blank">Perplexity.ai</a></strong>: <em>"What corporations in the Orlando area have community giving programs that support immigrant services or social services?"</em></li>
+<li>Identify 3–5 local businesses that might sponsor your organization</li>
+<li>What do you offer in return? (Logo on website, event naming, social media mentions, community goodwill)</li>
+<li>Research corporate giving programs using <strong>Perplexity.ai</strong>: <em>"What corporations in the Orlando area have community giving programs that support immigrant services or social services?"</em></li>
 </ul>
-
-<h4>Events and Community Fundraising</h4>
-
+<h4 id="events-and-community-fundraising">Events and Community Fundraising</h4>
 <ul>
-  <li>Plan one fundraising event for Year 1</li>
-  <li>Estimated gross revenue vs. net revenue (events are expensive — be honest about costs)</li>
-  <li>Use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to design a mock event flyer or save-the-date graphic</li>
+<li>Plan one fundraising event for Year 1</li>
+<li>Estimated gross revenue vs. net revenue (events are expensive — be honest about costs)</li>
+<li>Use <strong>Canva</strong> to design a mock event flyer or save-the-date graphic</li>
 </ul>
-
-<h4>Government Grants and Contracts</h4>
-
+<h4 id="government-grants-and-contracts">Government Grants and Contracts</h4>
 <ul>
-  <li>Are there local, state, or federal funding opportunities for your services?</li>
-  <li>Search <strong><a href="https://grants.gov" target="_blank">Grants.gov</a></strong> (<a href="https://grants.gov" target="_blank">grants.gov</a>) for federal opportunities and your county/city government website for local RFPs</li>
-  <li>Be honest: most government funding requires an established track record. What's your path to eligibility?</li>
+<li>Are there local, state, or federal funding opportunities for your services?</li>
+<li>Search <strong>Grants.gov</strong> (grants.gov) for federal opportunities and your county/city government website for local RFPs</li>
+<li>Be honest: most government funding requires an established track record. What's your path to eligibility?</li>
 </ul>
-
-<h3>3. Donor Communications Plan</h3>
-
+<h3 id="donor-communications-plan">3. Donor Communications Plan</h3>
 <p>How will you communicate with donors and prospects?</p>
-
 <ul>
-  <li><strong>Email newsletter</strong> — What platform will you use? (<a href="https://mailchimp.com" target="_blank">Mailchimp</a> offers a free tier for up to 500 contacts.) How often will you send it? What content?</li>
-  <li><strong>Social media</strong> — Which platforms? What's your posting strategy?</li>
-  <li><strong>Annual report</strong> — Even in Year 1, plan for a simple impact report to send to all donors and prospects</li>
-  <li><strong>Thank-you process</strong> — How quickly will you acknowledge gifts? Through what channels?</li>
+<li><strong>Email newsletter</strong> — What platform will you use? (Mailchimp offers a free tier for up to 500 contacts.) How often will you send it? What content?</li>
+<li><strong>Social media</strong> — Which platforms? What's your posting strategy?</li>
+<li><strong>Annual report</strong> — Even in Year 1, plan for a simple impact report to send to all donors and prospects</li>
+<li><strong>Thank-you process</strong> — How quickly will you acknowledge gifts? Through what channels?</li>
 </ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Donor Communications</summary>
-  <div>
-    <ul>
-      <li><strong>Email:</strong> Monthly newsletter via <strong><a href="https://mailchimp.com" target="_blank">Mailchimp</a></strong> (free tier) — community impact stories, upcoming events, volunteer spotlights</li>
-      <li><strong>Social media:</strong> Instagram (primary — visual storytelling) + Facebook (community groups, event promotion) + <a href="https://linkedin.com" target="_blank">LinkedIn</a> (professional network, corporate prospects). Use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to create templated social media graphics that maintain brand consistency</li>
-      <li><strong>Annual report:</strong> Simple 4-page PDF designed in <strong><a href="https://canva.com" target="_blank">Canva</a></strong> — distributed by email and posted on website by December Year 1</li>
-      <li><strong>Thank-you:</strong> Personalized email within 48 hours of any gift; handwritten note from ED for gifts over $100; board chair call for gifts over $500</li>
-    </ul>
-  </div>
-</details>
-
-<h3>4. Ethics and Stewardship</h3>
-
-<p>Draw on the ethics and stewardship narrative from your PAD 5146 plan:</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Donor Communications</h4>
 <ul>
-  <li>What are your organization's ethical commitments around fundraising?</li>
-  <li>How will you ensure donor intent is honored?</li>
-  <li>What gifts would you decline, and why?</li>
-  <li>How will you maintain transparency with donors about how funds are used?</li>
-</ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Ethics Statement</summary>
-  <div>
-    <p>Asian Bridge Orlando commits to ethical fundraising aligned with the Association of Fundraising Professionals (AFP) Code of Ethics. Specifically:</p>
-    <ul>
-      <li>We will not accept gifts from organizations whose activities conflict with our mission or the interests of the communities we serve</li>
-      <li>All donor-restricted gifts will be used exclusively for the stated purpose</li>
-      <li>We will publish annual financial summaries on our website's Transparency page</li>
-      <li>We will not share donor information with third parties without explicit consent</li>
-    </ul>
-    <p><em>This ethics framework was informed by my PAD 5146 analysis, where I found that the organization I studied lacked a clear gift acceptance policy — leading to a situation where they accepted a corporate sponsorship that created a perceived conflict of interest with their advocacy work.</em></p>
-  </div>
-</details>
-
-<h3>5. Year 1 Fundraising Calendar</h3>
-
-<p>Map out your fundraising activities by month. Use <strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong> to create a visual timeline.</p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Year 1 Calendar</summary>
-  <div>
-    <table>
-      <thead><tr><th>Month</th><th>Activity</th></tr></thead>
-      <tbody>
-        <tr><td>January</td><td>Board giving campaign; grant research begins</td></tr>
-        <tr><td>February</td><td>Submit LOI to Community Foundation of Central Florida</td></tr>
-        <tr><td>March</td><td>Launch social media; begin individual donor outreach</td></tr>
-        <tr><td>April</td><td>Submit AAPIP grant application</td></tr>
-        <tr><td>May</td><td>Corporate sponsorship outreach (5 local businesses)</td></tr>
-        <tr><td>June</td><td>Mid-year donor update email</td></tr>
-        <tr><td>July</td><td>Plan fall fundraising event</td></tr>
-        <tr><td>August</td><td>Submit BCBS Foundation application</td></tr>
-        <tr><td>September</td><td>Community fundraising event</td></tr>
-        <tr><td>October</td><td>Year-end giving campaign design</td></tr>
-        <tr><td>November</td><td>Giving Tuesday campaign</td></tr>
-        <tr><td>December</td><td>Year-end appeal; annual report published</td></tr>
-      </tbody>
-    </table>
-  </div>
-</details>
-
-<hr>
-
-<h2>Website Update</h2>
-
+<li><strong>Email:</strong> Monthly newsletter via <strong>Mailchimp</strong> (free tier) — community impact stories, upcoming events, volunteer spotlights</li>
+<li><strong>Social media:</strong> Instagram (primary — visual storytelling) + Facebook (community groups, event promotion) + LinkedIn (professional network, corporate prospects). Use <strong>Canva</strong> to create templated social media graphics that maintain brand consistency</li>
+<li><strong>Annual report:</strong> Simple 4-page PDF designed in <strong>Canva</strong> — distributed by email and posted on website by December Year 1</li>
+<li><strong>Thank-you:</strong> Personalized email within 48 hours of any gift; handwritten note from ED for gifts over $100; board chair call for gifts over $500</li>
+</ul></div>
+<h3 id="ethics-and-stewardship">4. Ethics and Stewardship</h3>
+<p>Draw on the ethics and stewardship narrative from your PAD 5146 plan: - What are your organization's ethical commitments around fundraising? - How will you ensure donor intent is honored? - What gifts would you decline, and why? - How will you maintain transparency with donors about how funds are used?</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Ethics Statement</h4>
+<p>Asian Bridge Orlando commits to ethical fundraising aligned with the Association of Fundraising Professionals (AFP) Code of Ethics. Specifically: - We will not accept gifts from organizations whose activities conflict with our mission or the interests of the communities we serve - All donor-restricted gifts will be used exclusively for the stated purpose - We will publish annual financial summaries on our website's Transparency page - We will not share donor information with third parties without explicit consent</p>
+<p><em>This ethics framework was informed by my PAD 5146 analysis, where I found that the organization I studied lacked a clear gift acceptance policy — leading to a situation where they accepted a corporate sponsorship that created a perceived conflict of interest with their advocacy work.</em></p></div>
+<h3 id="year-1-fundraising-calendar">5. Year 1 Fundraising Calendar</h3>
+<p>Map out your fundraising activities by month. Use <strong>Google Sheets</strong> to create a visual timeline.</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Year 1 Calendar</h4>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>January</td>
+<td>Board giving campaign; grant research begins</td>
+</tr>
+<tr>
+<td>February</td>
+<td>Submit LOI to Community Foundation of Central Florida</td>
+</tr>
+<tr>
+<td>March</td>
+<td>Launch social media; begin individual donor outreach</td>
+</tr>
+<tr>
+<td>April</td>
+<td>Submit AAPIP grant application</td>
+</tr>
+<tr>
+<td>May</td>
+<td>Corporate sponsorship outreach (5 local businesses)</td>
+</tr>
+<tr>
+<td>June</td>
+<td>Mid-year donor update email</td>
+</tr>
+<tr>
+<td>July</td>
+<td>Plan fall fundraising event</td>
+</tr>
+<tr>
+<td>August</td>
+<td>Submit BCBS Foundation application</td>
+</tr>
+<tr>
+<td>September</td>
+<td>Community fundraising event</td>
+</tr>
+<tr>
+<td>October</td>
+<td>Year-end giving campaign design</td>
+</tr>
+<tr>
+<td>November</td>
+<td>Giving Tuesday campaign</td>
+</tr>
+<tr>
+<td>December</td>
+<td>Year-end appeal; annual report published</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="website-update">Website Update</h2>
 <p>Add a <strong>"Donate" or "Support Us"</strong> page to your website. This page should make it easy for someone who's ready to give — and compelling for someone who's still deciding.</p>
-
-<p><strong>Your page should include:</strong></p>
-<ul>
-  <li>A clear statement of why donations matter — connect giving to impact, not to your budget gap</li>
-  <li>Giving levels with descriptions of what each level supports (e.g., "$50 covers translation services for one family intake session")</li>
-  <li>A call to action — even without a real payment processor, include a "Donate" button or a "Contact us to give" prompt</li>
-  <li>Information about other ways to support: volunteering, corporate sponsorships, in-kind donations</li>
-  <li>Use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to design a visual giving-level graphic or impact infographic for the page</li>
-</ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando — Donate Page</summary>
-  <div>
-    <p><strong>Page title:</strong> Support Our Work</p>
-    <p><strong>Intro:</strong> "Every dollar you give helps an immigrant family navigate a system that wasn't designed with them in mind. Your support funds translation services, community navigation, legal clinic referrals, and the infrastructure that makes it all possible."</p>
-    <p><strong>Giving Levels:</strong></p>
-    <ul>
-      <li><strong>$25 — Welcome Kit:</strong> Covers a multilingual resource packet for one newly arrived family</li>
-      <li><strong>$50 — First Steps:</strong> Funds one family intake and navigation session with a bilingual community navigator</li>
-      <li><strong>$150 — Bridge Builder:</strong> Supports one family through a full month of community navigation services</li>
-      <li><strong>$500 — Community Champion:</strong> Sponsors a community workshop (healthcare enrollment, school registration, or civic participation)</li>
-      <li><strong>$1,000 — Founding Circle:</strong> Become a founding donor — your name on our annual report and an invitation to our year-end celebration</li>
-    </ul>
-    <p><strong>Other Ways to Give:</strong> Corporate sponsorships &middot; In-kind donations &middot; Volunteer your time &middot; Include us in your will</p>
-    <p><a href="#">Download our Case for Support (PDF)</a></p>
-  </div>
-</details>
-
-<hr>
-
-<h2>Useful AI &amp; Online Tools This Week</h2>
-
+<p><strong>Your page should include:</strong> - A clear statement of why donations matter — connect giving to impact, not to your budget gap - Giving levels with descriptions of what each level supports (e.g., "$50 covers translation services for one family intake session") - A call to action — even without a real payment processor, include a "Donate" button or a "Contact us to give" prompt - Information about other ways to support: volunteering, corporate sponsorships, in-kind donations - Use <strong>Canva</strong> to design a visual giving-level graphic or impact infographic for the page</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Donate Page</h4>
+<p><strong>Page title:</strong> Support Our Work</p>
+<p><strong>Intro:</strong> "Every dollar you give helps an immigrant family navigate a system that wasn't designed with them in mind. Your support funds translation services, community navigation, legal clinic referrals, and the infrastructure that makes it all possible."</p>
+<p><strong>Giving Levels:</strong> - <strong>$25 — Welcome Kit:</strong> Covers a multilingual resource packet for one newly arrived family - <strong>$50 — First Steps:</strong> Funds one family intake and navigation session with a bilingual community navigator - <strong>$150 — Bridge Builder:</strong> Supports one family through a full month of community navigation services - <strong>$500 — Community Champion:</strong> Sponsors a community workshop (healthcare enrollment, school registration, or civic participation) - <strong>$1,000 — Founding Circle:</strong> Become a founding donor — your name on our annual report and an invitation to our year-end celebration</p>
+<p><strong>Other Ways to Give:</strong> Corporate sponsorships · In-kind donations · Volunteer your time · Include us in your will</p>
+<p>📄 [Download our Case for Support (PDF)]</p></div>
+<hr />
+<h2 id="useful-ai-online-tools-this-week">Useful AI &amp; Online Tools This Week</h2>
 <table>
-  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
-  <tbody>
-    <tr><td><strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong></td><td>Adapting your PAD 5146 fundraising plan</td><td>Upload your fundraising plan &rarr; discuss how to adapt strategies for a startup with no donor history</td></tr>
-    <tr><td><strong><a href="https://candid.org" target="_blank">Candid's Foundation Directory</a></strong> (via UCF Library)</td><td>Grant prospect research</td><td>Search by focus area, geography, and grant size to identify foundations that fund organizations like yours — free through UCF Library databases</td></tr>
-    <tr><td><strong><a href="https://candid.org" target="_blank">Candid / GuideStar</a></strong> (<a href="https://candid.org" target="_blank">candid.org</a>)</td><td>990 lookup for comparable nonprofits</td><td>See how similar organizations structure their revenue — free basic search</td></tr>
-    <tr><td><strong><a href="https://grants.gov" target="_blank">Grants.gov</a></strong></td><td>Federal grant opportunities</td><td>Search for federal funding relevant to your mission area — completely free</td></tr>
-    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Donor pipeline design, communications drafts</td><td>Use prompts in this assignment to draft cultivation strategies and donor communications — then customize</td></tr>
-    <tr><td><strong><a href="https://perplexity.ai" target="_blank">Perplexity.ai</a></strong></td><td>Corporate giving research, fundraising best practices</td><td>Research local corporate sponsors and startup fundraising strategies — cited sources let you verify claims</td></tr>
-    <tr><td><strong><a href="https://mailchimp.com" target="_blank">Mailchimp</a></strong> (<a href="https://mailchimp.com" target="_blank">mailchimp.com</a>)</td><td>Email newsletter setup</td><td>Free tier supports up to 500 contacts — set up your donor communications list and design your first newsletter template</td></tr>
-    <tr><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong> (<a href="https://canva.com" target="_blank">canva.com</a>)</td><td>Event flyers, social graphics, giving infographics</td><td>Design donor-facing materials: giving level graphics, event save-the-dates, annual report templates — free tier</td></tr>
-    <tr><td><strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong></td><td>Fundraising calendar and tracking</td><td>Build a visual Year 1 fundraising timeline; track grant deadlines and donor outreach</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It's Good For</th>
+<th>How to Use It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://notebooklm.google.com">Google NotebookLM</a></strong></td>
+<td>Adapting your PAD 5146 fundraising plan</td>
+<td>Upload your fundraising plan → discuss how to adapt strategies for a startup with no donor history</td>
+</tr>
+<tr>
+<td><strong>Candid's Foundation Directory</strong> (via UCF Library)</td>
+<td>Grant prospect research</td>
+<td>Search by focus area, geography, and grant size to identify foundations that fund organizations like yours — free through UCF Library databases</td>
+</tr>
+<tr>
+<td><strong><a href="https://candid.org">Candid / GuideStar</a></strong></td>
+<td>990 lookup for comparable nonprofits</td>
+<td>See how similar organizations structure their revenue — free basic search</td>
+</tr>
+<tr>
+<td><strong><a href="https://grants.gov">Grants.gov</a></strong></td>
+<td>Federal grant opportunities</td>
+<td>Search for federal funding relevant to your mission area — completely free</td>
+</tr>
+<tr>
+<td><strong><a href="https://chatgpt.com">ChatGPT</a> / <a href="https://claude.ai">Claude</a></strong></td>
+<td>Donor pipeline design, communications drafts</td>
+<td>Use prompts in this assignment to draft cultivation strategies and donor communications — then customize</td>
+</tr>
+<tr>
+<td><strong><a href="https://perplexity.ai">Perplexity.ai</a></strong></td>
+<td>Corporate giving research, fundraising best practices</td>
+<td>Research local corporate sponsors and startup fundraising strategies — cited sources let you verify claims</td>
+</tr>
+<tr>
+<td><strong><a href="https://mailchimp.com">Mailchimp</a></strong></td>
+<td>Email newsletter setup</td>
+<td>Free tier supports up to 500 contacts — set up your donor communications list and design your first newsletter template</td>
+</tr>
+<tr>
+<td><strong><a href="https://canva.com">Canva</a></strong></td>
+<td>Event flyers, social graphics, giving infographics</td>
+<td>Design donor-facing materials: giving level graphics, event save-the-dates, annual report templates — free tier</td>
+</tr>
+<tr>
+<td><strong><a href="https://sheets.google.com">Google Sheets</a></strong></td>
+<td>Fundraising calendar and tracking</td>
+<td>Build a visual Year 1 fundraising timeline; track grant deadlines and donor outreach</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>Grading Rubric (3 pts)</h2>
-
+<hr />
+<h2 id="grading-rubric-3-pts">Grading Rubric (3 pts)</h2>
 <table>
-  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
-  <tbody>
-    <tr><td>Fundraising SWOT and revenue strategy identify specific, researched funding sources</td><td class="pts-col">1 pt</td></tr>
-    <tr><td>Donor communications plan and ethics statement are substantive</td><td class="pts-col">1 pt</td></tr>
-    <tr><td>Website Donate page includes giving levels, impact statements, and call to action</td><td class="pts-col">1 pt</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fundraising SWOT and revenue strategy identify specific, researched funding sources</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>Donor communications plan and ethics statement are substantive</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>Website Donate page includes giving levels, impact statements, and call to action</td>
+<td>1 pt</td>
+</tr>
+</tbody>
 </table>
+<hr />
+<h2 id="video-demo-researching-grant-prospects-on-candid">Video Demo: Researching Grant Prospects on Candid</h2>
+<!--
+RECORDING SCRIPT — Week 8 Video (approximately 2 minutes)
 
-<hr>
+SCREEN RECORDING (Cmd+Shift+5, no audio):
+1. Open browser → go to candid.org
+2. Click "Find Nonprofits" → search for a nonprofit similar to yours in your area
+3. Show the profile: revenue, expenses, funding sources
+4. Go to UCF Library databases → search "Foundation Directory Online"
+5. Log in with UCF credentials → show search by focus area + geography
+6. Show a foundation profile: grant ranges, past recipients, application info
+7. Open Mailchimp → show creating a free account and designing a simple newsletter template
 
-<h2>Video Demo: Researching Grant Prospects on Candid</h2>
-
+IPHONE VOICEOVER:
+"Let's find real funders for your nonprofit. I'll start on Candid's free search to see how similar organizations in my area are funded — their 990s show actual revenue breakdowns. Next, I'll use Foundation Directory Online through the UCF Library — free for students. I'll search by issue area and geography to find foundations that specifically fund organizations like mine. Notice I'm looking at grant sizes, past recipients, and application timelines — this is how you build a realistic grant prospect list, not a wish list. Finally, I'll set up a free Mailchimp account for donor communications — even before you have donors, having the infrastructure ready signals that you're organized and serious."
+-->
 <p><em>Video coming soon.</em></p>
-
-<hr>
-
-<h2>Looking Ahead</h2>
-
+<hr />
+<h2 id="looking-ahead">Looking Ahead</h2>
 <p><strong>Next week (Week 9):</strong> The <strong>Strategic Plan is due (10 pts)</strong>. This is the big integration assignment — it pulls together governance (Week 4), HR (Week 5), identity (Week 6), budget (Week 7), and fundraising (this week) into a cohesive organizational strategy. You'll conduct a SWOT analysis, define strategic goals, and articulate how all the pieces fit together. Start reviewing your previous submissions now.</p>
 
 </div>
@@ -504,7 +545,6 @@ and stewardship stages with specific tactics for each.</pre>
 </footer>
 
 <script>
-// Close mobile menu on nav click
 document.querySelectorAll('.sidebar a').forEach(a=>{
   a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
 });

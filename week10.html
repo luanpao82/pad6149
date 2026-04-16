@@ -22,14 +22,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}
 .brand-bar{height:4px;background:linear-gradient(90deg,var(--accent) 0%,#FFD54F 50%,var(--accent) 100%);position:fixed;top:0;left:0;right:0;z-index:200}
-
-/* Sidebar */
-.sidebar{
-  width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);
-  position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;
-  padding:var(--lg) 0 var(--xl);z-index:100;
-  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
-}
+.sidebar{width:var(--sidebar);background:var(--nav-bg);color:var(--nav-text);position:fixed;top:4px;left:0;bottom:0;overflow-y:auto;padding:var(--lg) 0 var(--xl);z-index:100;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
 .sidebar::-webkit-scrollbar{width:5px}
 .sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
 .sb-brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.05em;padding:0 var(--lg);margin-bottom:2px;color:var(--accent)}
@@ -43,23 +36,9 @@ body{font-family:var(--font);font-size:17px;line-height:1.7;color:var(--text);ba
 .sidebar a.active .wk{color:rgba(255,201,4,.5)}
 .sidebar .pts{font-family:var(--mono);font-size:11px;color:rgba(250,250,247,.25);margin-left:auto;flex-shrink:0}
 .sidebar a.active .pts{color:rgba(255,201,4,.4)}
-
-/* Mobile toggle */
 .menu-toggle{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--nav-bg);color:var(--accent);border:none;border-radius:var(--r);padding:8px 14px;font-family:var(--mono);font-size:14px;cursor:pointer;box-shadow:var(--shadow-md)}
-
-/* Main */
 .main{margin-left:var(--sidebar);padding:var(--3xl) var(--2xl) var(--3xl)}
 .content{max-width:var(--w);margin:0 auto}
-
-/* Hero */
-.hero{background:var(--nav-bg);color:var(--nav-text);margin:calc(-1 * var(--3xl)) calc(-1 * var(--2xl)) var(--2xl);padding:var(--3xl) var(--2xl)}
-.hero .content{max-width:var(--w)}
-.hero .badge{background:rgba(255,201,4,.2);color:var(--accent);border:1px solid rgba(255,201,4,.25)}
-.hero .badge-muted{background:rgba(255,255,255,.1);color:rgba(250,250,247,.7);border:1px solid rgba(255,255,255,.1)}
-.hero h1{color:var(--nav-text);font-size:44px;line-height:1.1;margin-top:var(--md);margin-bottom:var(--sm);letter-spacing:-.03em}
-.hero .subtitle{font-size:18px;color:rgba(250,250,247,.5);margin-bottom:0;font-weight:400}
-
-/* Typography */
 h1{font-size:40px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:var(--sm)}
 h2{font-size:22px;font-weight:700;margin-top:var(--3xl);margin-bottom:var(--lg);padding-left:var(--md);border-left:4px solid var(--accent);line-height:1.3}
 h3{font-size:18px;font-weight:700;margin-top:var(--xl);margin-bottom:var(--sm);color:var(--text)}
@@ -70,19 +49,8 @@ li{margin-bottom:6px}
 li::marker{color:var(--muted)}
 a{color:var(--text);text-decoration:underline;text-decoration-color:rgba(255,201,4,.5);text-underline-offset:3px;transition:text-decoration-color .15s}
 a:hover{text-decoration-color:var(--accent);color:var(--text)}
-strong{font-weight:700}
-em{font-style:italic}
+strong{font-weight:700}em{font-style:italic}
 hr{border:none;border-top:1px solid var(--border);margin:var(--2xl) 0}
-
-/* Key facts card */
-.facts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:var(--xl) 0;box-shadow:var(--shadow)}
-.fact{padding:var(--md) var(--lg);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.fact:nth-child(3n){border-right:none}
-.fact:nth-last-child(-n+3){border-bottom:none}
-.fact-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px}
-.fact-value{font-size:15px;font-weight:500}
-
-/* Tables */
 table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:var(--lg);font-size:15px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 thead{background:var(--nav-bg);color:var(--nav-text)}
 th{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-align:left;padding:10px var(--md)}
@@ -90,68 +58,35 @@ td{padding:10px var(--md);border-bottom:1px solid var(--border);vertical-align:t
 tbody tr:last-child td{border-bottom:none}
 tbody tr:nth-child(even) td{background:var(--surface-alt)}
 tbody tr:hover td{background:var(--accent-soft)}
-.schedule-table td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap;color:var(--muted)}
 .pts-col{font-family:var(--mono);text-align:center;font-weight:500}
-tr.highlight td{background:rgba(255,201,4,.08);border-left:4px solid var(--accent)}
-tr.break-row td{background:var(--surface-alt);color:var(--muted);font-style:italic}
-tfoot td{background:var(--surface-alt);font-weight:700}
-
-/* Cards */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--lg);margin-bottom:var(--lg);box-shadow:var(--shadow-sm);transition:box-shadow .15s}
 .card:hover{box-shadow:var(--shadow)}
-.card-accent{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
-
-/* Badge */
+.card-warn{border-left:4px solid var(--danger)}
+.card-info{border-left:4px solid var(--info)}
+.card-note{border-left:4px solid var(--accent)}
+.card-example{border-left:4px solid var(--accent);background:linear-gradient(135deg,rgba(255,201,4,.03) 0%,var(--surface) 100%)}
 .badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:4px;background:var(--border);color:var(--muted)}
 .badge-gold{background:rgba(255,201,4,.2);color:#7C5E00;font-weight:500}
-.badge-dark{background:var(--nav-bg);color:var(--nav-text)}
-
-/* Competency table */
-.comp-table td:first-child{font-weight:600;width:38%}
-
-/* Steps */
-.steps{counter-reset:step;list-style:none;padding-left:0}
-.steps li{counter-increment:step;padding-left:var(--2xl);position:relative;margin-bottom:var(--md);padding-bottom:var(--md);border-bottom:1px solid var(--border)}
-.steps li:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--nav-bg);color:var(--accent);font-family:var(--mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-
-/* Grade grid */
-.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sm)}
-.grade-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:var(--sm) var(--md);text-align:center;box-shadow:var(--shadow-sm);transition:transform .1s,box-shadow .1s}
-.grade-card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-.grade-card .letter{font-size:20px;font-weight:700;line-height:1.3}
-.grade-card .range{font-family:var(--mono);font-size:12px;color:var(--muted)}
-
-/* Details / collapsible */
 details{margin-bottom:var(--md);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm)}
 summary{padding:var(--sm) var(--md);font-weight:600;cursor:pointer;background:var(--surface);font-size:15px;list-style:none;display:flex;align-items:center;gap:var(--sm);transition:background .1s}
 summary:hover{background:var(--surface-alt)}
 summary::before{content:'▸';font-family:var(--mono);color:var(--accent);font-size:14px;transition:transform .15s}
 details[open] summary::before{transform:rotate(90deg)}
 details>div{padding:var(--lg);font-size:15px;border-top:1px solid var(--border);background:var(--surface-alt)}
-
-/* Footer */
 footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px solid var(--accent);font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center;background:var(--surface-alt)}
-
-/* Responsive */
+.subtitle{font-size:15px;color:var(--muted);margin-bottom:var(--xl)}
 @media(max-width:900px){
   .sidebar{transform:translateX(-100%);transition:transform .25s ease}
   .sidebar.open{transform:translateX(0)}
   .menu-toggle{display:block}
   .main{margin-left:0;padding:var(--2xl) var(--lg)}
-  .hero{margin:calc(-1 * var(--2xl)) calc(-1 * var(--lg)) var(--xl);padding:var(--2xl) var(--lg)}
-  .hero h1{font-size:32px}
   footer{margin-left:0}
-  .facts{grid-template-columns:1fr 1fr}
-  .fact:nth-child(2n){border-right:none}
-  .fact:nth-child(3n){border-right:1px solid var(--border)}
-  .grade-grid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
 <body>
 <div class="brand-bar"></div>
-<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle menu">&#9776; Menu</button>
+<button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Toggle menu">☰ Menu</button>
 
 <nav class="sidebar">
   <div class="sb-brand">PAD 6149</div>
@@ -183,288 +118,377 @@ footer{margin-left:var(--sidebar);padding:var(--xl) var(--2xl);border-top:2px so
 <main class="main">
 <div class="content">
 
-<p><span class="badge badge-gold">Week 10</span> <span class="badge">8 pts</span> <span class="badge badge-dark">NASPAA C2</span></p>
+<p><span class="badge badge-gold">Week 10</span> <span class="badge">8 pts</span></p>
 <h1>Program Evaluation Framework</h1>
-<p style="font-size:15px;color:var(--muted)">Due: October 26, 2026 &middot; 5&ndash;7 pages &middot; Source: PAD 6327 &ndash; Program Evaluation</p>
+<p class="subtitle">Due: October 26, 2026 · 8 pts · 5–7 pages</p>
 
-<hr>
-
-<h2>Deliverables</h2>
+<p><strong>NASPAA Competency 2:</strong> Analyze, synthesize, think critically, solve problems, and make decisions <strong>Source coursework:</strong> PAD 6327 – Program Evaluation (Program Evaluation Plan)</p>
+<hr />
+<h2 id="deliverables">Deliverables</h2>
 <table>
-  <thead><tr><th>What</th><th>Where</th><th>Format</th></tr></thead>
-  <tbody>
-    <tr><td>Program Evaluation Framework</td><td>Webcourses &rarr; Assignments &rarr; Week 10</td><td>Word (.docx), 5&ndash;7 pages, double-spaced</td></tr>
-    <tr><td>Website update</td><td>Your live website</td><td>&ldquo;Programs&rdquo; page with program descriptions, outcomes, and PDF download link</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Program Evaluation Framework</td>
+<td>Webcourses → Assignments → Week 10</td>
+<td>Word (.docx), 5–7 pages, double-spaced</td>
+</tr>
+<tr>
+<td>Website update</td>
+<td>Your live website</td>
+<td>"Programs" page with program descriptions, outcomes, and PDF download link</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>What Is This Assignment?</h2>
+<hr />
+<h2 id="what-is-this-assignment">What Is This Assignment?</h2>
 <p>You have a strategic plan with goals and objectives. Now the question every funder, board member, and stakeholder will ask: <strong>how do you know it's working?</strong></p>
-<p>In PAD 6327, you developed a Program Evaluation Plan for an existing nonprofit &mdash; designing evaluation questions, selecting methods, identifying data sources, and proposing an analysis framework. Now you're designing evaluation from the ground up for your own organization, with the advantage of building measurement into your programs from day one instead of retrofitting it later.</p>
-<p>This is a significant advantage. Most nonprofits struggle with evaluation because they design programs first and think about measurement after. You're doing it the right way &mdash; defining what success looks like before you launch.</p>
-
-<hr>
-
-<h2>The Process</h2>
-
-<h3>Step 1: Revisit Your PAD 6327 Program Evaluation Plan</h3>
+<p>In PAD 6327, you developed a Program Evaluation Plan for an existing nonprofit — designing evaluation questions, selecting methods, identifying data sources, and proposing an analysis framework. Now you're designing evaluation from the ground up for your own organization, with the advantage of building measurement into your programs from day one instead of retrofitting it later.</p>
+<p>This is a significant advantage. Most nonprofits struggle with evaluation because they design programs first and think about measurement after. You're doing it the right way — defining what success looks like before you launch.</p>
+<hr />
+<h2 id="the-process">The Process</h2>
+<h3 id="step-1-revisit-your-pad-6327-program-evaluation-plan">Step 1: Revisit Your PAD 6327 Program Evaluation Plan</h3>
 <p>Pull up your PAD 6327 assignment. What evaluation frameworks did you use? What data collection methods did you recommend? What challenges did you identify in measuring the organization's outcomes?</p>
-
-<h3>Step 2: Upload to NotebookLM</h3>
-<p>Upload your PAD 6327 Program Evaluation Plan along with your Strategic Plan (Week 9) to <strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong>. The strategic plan defines your goals &mdash; the evaluation framework defines how you'll measure them.</p>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">Using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> for Evaluation Design</h4>
-<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Based on my PAD 6327 evaluation plan, what were the strongest
+<h3 id="step-2-upload-to-notebooklm">Step 2: Upload to NotebookLM</h3>
+<p>Upload your PAD 6327 Program Evaluation Plan along with your Strategic Plan (Week 9) to <strong>Google NotebookLM</strong>. The strategic plan defines your goals — the evaluation framework defines how you'll measure them.</p>
+<div class="card card-note">
+<h4 style="margin-top:0">Using NotebookLM for Evaluation Design</h4>
+<pre><code>Based on my PAD 6327 evaluation plan, what were the strongest
 evaluation methods I recommended? How would I adapt those for a
-startup nonprofit that has no baseline data yet?</pre>
-<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">Look at the strategic goals in my Week 9 Strategic Plan. For each
+startup nonprofit that has no baseline data yet?</code></pre>
+<pre><code>Look at the strategic goals in my Week 9 Strategic Plan. For each
 goal, what specific outcomes should I measure, and what data
 collection methods are realistic for a small organization with
-limited staff and budget?</pre>
-<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">In my PAD 6327 plan, I identified challenges with [specific issue].
+limited staff and budget?</code></pre>
+<pre><code>In my PAD 6327 plan, I identified challenges with [specific issue].
 How should I design my evaluation framework to avoid those problems
-from the start?</pre>
-</div>
-
-<h3>Step 3: Draft Your Evaluation Framework</h3>
-
-<h3>Step 4: Update Your Website</h3>
-<p>Build the &ldquo;Programs&rdquo; page on your website with program descriptions and outcome measures.</p>
-
-<hr>
-
-<h2>What Do I Submit?</h2>
-
-<h3>1. Program Descriptions (1&ndash;2 pages)</h3>
-<p>Before you can evaluate, you need to clearly define what you're evaluating. Describe your organization's <strong>2&ndash;3 core programs or service areas</strong>. For each program, include:</p>
+from the start?</code></pre></div>
+<h3 id="step-3-draft-your-evaluation-framework">Step 3: Draft Your Evaluation Framework</h3>
+<h3 id="step-4-update-your-website">Step 4: Update Your Website</h3>
+<p>Build the "Programs" page on your website with program descriptions and outcome measures.</p>
+<hr />
+<h2 id="what-do-i-submit">What Do I Submit?</h2>
+<h3 id="program-descriptions-12-pages">1. Program Descriptions (1–2 pages)</h3>
+<p>Before you can evaluate, you need to clearly define what you're evaluating. Describe your organization's <strong>2–3 core programs or service areas</strong>. For each program, include:</p>
 <ul>
-  <li>Program name</li>
-  <li>Target population for this specific program</li>
-  <li>Activities and services provided</li>
-  <li>Expected outputs (what you produce &mdash; numbers of sessions, workshops, referrals)</li>
-  <li>Expected outcomes (what changes &mdash; knowledge gained, services accessed, barriers reduced)</li>
+<li>Program name</li>
+<li>Target population for this specific program</li>
+<li>Activities and services provided</li>
+<li>Expected outputs (what you produce — numbers of sessions, workshops, referrals)</li>
+<li>Expected outcomes (what changes — knowledge gained, services accessed, barriers reduced)</li>
 </ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando &mdash; Program 1</summary>
-  <div>
-    <p><strong>Program: Community Navigation Services</strong></p>
-    <p><strong>Target population:</strong> First-generation Asian American and immigrant families with limited English proficiency in the Orlando metro area</p>
-    <p><strong>Activities:</strong></p>
-    <ul>
-      <li>One-on-one navigation sessions with bilingual Community Navigators</li>
-      <li>Intake assessments in client's preferred language</li>
-      <li>Referrals to healthcare, legal, educational, and social service providers</li>
-      <li>Follow-up contacts to ensure successful service connection</li>
-    </ul>
-    <p><strong>Expected outputs (Year 1):</strong></p>
-    <ul>
-      <li>150 families served through individual navigation</li>
-      <li>600+ referrals made to partner agencies</li>
-      <li>85% of clients contacted for at least one follow-up</li>
-    </ul>
-    <p><strong>Expected outcomes:</strong></p>
-    <ul style="margin-bottom:0">
-      <li>70% of referred clients successfully connect with the service they were referred to</li>
-      <li>Clients report reduced barriers to service access (pre/post survey)</li>
-      <li>Clients report increased knowledge of available community resources</li>
-    </ul>
-  </div>
-</details>
-
-<h3>2. Logic Model (1 page)</h3>
-<p>Create a logic model for your primary program. A logic model maps the relationship between resources, activities, outputs, and outcomes &mdash; it's the visual blueprint for how your program creates change.</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Program 1</h4>
+<p><strong>Program: Community Navigation Services</strong></p>
+<p><strong>Target population:</strong> First-generation Asian American and immigrant families with limited English proficiency in the Orlando metro area</p>
+<p><strong>Activities:</strong> - One-on-one navigation sessions with bilingual Community Navigators - Intake assessments in client's preferred language - Referrals to healthcare, legal, educational, and social service providers - Follow-up contacts to ensure successful service connection</p>
+<p><strong>Expected outputs (Year 1):</strong> - 150 families served through individual navigation - 600+ referrals made to partner agencies - 85% of clients contacted for at least one follow-up</p>
+<p><strong>Expected outcomes:</strong> - 70% of referred clients successfully connect with the service they were referred to - Clients report reduced barriers to service access (pre/post survey) - Clients report increased knowledge of available community resources</p></div>
+<h3 id="logic-model-1-page">2. Logic Model (1 page)</h3>
+<p>Create a logic model for your primary program. A logic model maps the relationship between resources, activities, outputs, and outcomes — it's the visual blueprint for how your program creates change.</p>
 <table>
-  <thead><tr><th>Inputs</th><th>Activities</th><th>Outputs</th><th>Short-term Outcomes</th><th>Long-term Outcomes</th></tr></thead>
-  <tbody>
-    <tr><td>What you invest</td><td>What you do</td><td>What you produce</td><td>What changes immediately</td><td>What changes over time</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Inputs</th>
+<th>Activities</th>
+<th>Outputs</th>
+<th>Short-term Outcomes</th>
+<th>Long-term Outcomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What you invest</td>
+<td>What you do</td>
+<td>What you produce</td>
+<td>What changes immediately</td>
+<td>What changes over time</td>
+</tr>
+</tbody>
 </table>
-<p>Use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to create a clean, visual logic model &mdash; or build it as a table in your document.</p>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando &mdash; Logic Model (Community Navigation)</summary>
-  <div>
-    <table>
-      <thead><tr><th>Inputs</th><th>Activities</th><th>Outputs</th><th>Short-term Outcomes</th><th>Long-term Outcomes</th></tr></thead>
-      <tbody>
-        <tr><td>2 FTE Community Navigators; $18K program budget; partnerships with 10+ agencies; multilingual materials</td><td>One-on-one navigation sessions; intake assessments; referrals; follow-ups; community workshops</td><td>150 families served; 600+ referrals; 6 workshops; multilingual resource library</td><td>Families connect to needed services; increased knowledge of resources; reduced language barriers in service access</td><td>Improved health outcomes; increased civic participation; greater community integration; reduced isolation</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-bottom:0"><em>The logic model makes visible the theory of change: bilingual navigation &rarr; service connection &rarr; reduced barriers &rarr; improved life outcomes. Each link in this chain needs to be measured.</em></p>
-  </div>
-</details>
-
-<h3>3. Evaluation Questions (half a page)</h3>
-<p>Define <strong>3&ndash;5 evaluation questions</strong> that your framework is designed to answer. Good evaluation questions are:</p>
-<ul>
-  <li>Directly tied to your strategic goals (<a href="week09.html">Week 9</a>)</li>
-  <li>Answerable with data you can realistically collect</li>
-  <li>Useful for decision-making &mdash; the answers should tell you what to do next</li>
-</ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando &mdash; Evaluation Questions</summary>
-  <div>
-    <ol>
-      <li>Are community navigation services reaching the populations most in need (particularly families with limited English proficiency)?</li>
-      <li>Are referred clients successfully connecting with the services they were referred to, and if not, what barriers remain?</li>
-      <li>Do clients report reduced barriers to service access and increased knowledge of community resources after receiving navigation services?</li>
-      <li>Are community workshops increasing participants' ability to independently navigate systems (healthcare, education, civic participation)?</li>
-      <li>Is our volunteer program effectively supporting service delivery without compromising quality?</li>
-    </ol>
-  </div>
-</details>
-
-<h3>4. Data Collection Plan (1&ndash;2 pages)</h3>
-<p>For each evaluation question, describe:</p>
-<ul>
-  <li><strong>What data</strong> you'll collect (quantitative, qualitative, or both)</li>
-  <li><strong>How</strong> you'll collect it (surveys, interviews, case file review, observation, administrative data)</li>
-  <li><strong>When</strong> you'll collect it (intake, discharge, quarterly, annually)</li>
-  <li><strong>Who</strong> is responsible for data collection</li>
-</ul>
+<p>Use <strong>Canva</strong> to create a clean, visual logic model — or build it as a table in your document.</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Logic Model (Community Navigation)</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Inputs</th>
+<th>Activities</th>
+<th>Outputs</th>
+<th>Short-term Outcomes</th>
+<th>Long-term Outcomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 FTE Community Navigators; $18K program budget; partnerships with 10+ agencies; multilingual materials</td>
+<td>One-on-one navigation sessions; intake assessments; referrals; follow-ups; community workshops</td>
+<td>150 families served; 600+ referrals; 6 workshops; multilingual resource library</td>
+<td>Families connect to needed services; increased knowledge of resources; reduced language barriers in service access</td>
+<td>Improved health outcomes; increased civic participation; greater community integration; reduced isolation</td>
+</tr>
+</tbody>
+</table>
+<p><em>The logic model makes visible the theory of change: bilingual navigation → service connection → reduced barriers → improved life outcomes. Each link in this chain needs to be measured.</em></p></div>
+<h3 id="evaluation-questions-half-a-page">3. Evaluation Questions (half a page)</h3>
+<p>Define <strong>3–5 evaluation questions</strong> that your framework is designed to answer. Good evaluation questions are: - Directly tied to your strategic goals (Week 9) - Answerable with data you can realistically collect - Useful for decision-making — the answers should tell you what to do next</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Evaluation Questions</h4>
+<ol type="1">
+<li>Are community navigation services reaching the populations most in need (particularly families with limited English proficiency)?</li>
+<li>Are referred clients successfully connecting with the services they were referred to, and if not, what barriers remain?</li>
+<li>Do clients report reduced barriers to service access and increased knowledge of community resources after receiving navigation services?</li>
+<li>Are community workshops increasing participants' ability to independently navigate systems (healthcare, education, civic participation)?</li>
+<li>Is our volunteer program effectively supporting service delivery without compromising quality?</li>
+</ol></div>
+<h3 id="data-collection-plan-12-pages">4. Data Collection Plan (1–2 pages)</h3>
+<p>For each evaluation question, describe: - <strong>What data</strong> you'll collect (quantitative, qualitative, or both) - <strong>How</strong> you'll collect it (surveys, interviews, case file review, observation, administrative data) - <strong>When</strong> you'll collect it (intake, discharge, quarterly, annually) - <strong>Who</strong> is responsible for data collection</p>
 <p>Be realistic about capacity. A 5-person startup cannot run a randomized controlled trial. Focus on methods that are practical, low-cost, and built into your existing service delivery workflow.</p>
-
-<div class="card card-accent">
-  <h4 style="margin-top:0">AI Tip: Data Collection Methods</h4>
-  <p>Use <strong>ChatGPT or Claude</strong> to brainstorm realistic methods:</p>
-<pre style="background:var(--nav-bg);color:var(--nav-text);padding:var(--md);border-radius:var(--r);font-family:var(--mono);font-size:14px;overflow-x:auto;white-space:pre-wrap">I run a small nonprofit with 5 staff serving 150 families per year
+<div class="card card-note">
+<h4 style="margin-top:0">AI Tip: Data Collection Methods</h4>
+<p>Use <strong>ChatGPT or Claude</strong> to brainstorm realistic methods:</p>
+<pre><code>I run a small nonprofit with 5 staff serving 150 families per year
 through community navigation services. I need to measure whether
 clients are successfully connecting with referred services and
 whether they report reduced barriers to access. What low-cost,
 practical data collection methods can I build into our existing
-workflow without adding significant staff burden?</pre>
-</div>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando &mdash; Data Collection Plan</summary>
-  <div>
-    <table>
-      <thead><tr><th>Evaluation Question</th><th>Data Source</th><th>Method</th><th>Timing</th><th>Responsible</th></tr></thead>
-      <tbody>
-        <tr><td>Are we reaching the right populations?</td><td>Client intake forms</td><td>Administrative data review</td><td>Ongoing; quarterly analysis</td><td>Program Director</td></tr>
-        <tr><td>Are referrals successful?</td><td>Follow-up contact logs</td><td>Phone/text follow-up within 2 weeks of referral</td><td>After each referral</td><td>Community Navigators</td></tr>
-        <tr><td>Do clients report reduced barriers?</td><td>Client satisfaction survey</td><td>10-question survey (Likert scale + open-ended) via <strong><a href="https://forms.google.com" target="_blank">Google Forms</a></strong></td><td>At discharge or 3-month mark</td><td>Program Director</td></tr>
-        <tr><td>Are workshops effective?</td><td>Pre/post assessment</td><td>Short knowledge quiz via <strong><a href="https://forms.google.com" target="_blank">Google Forms</a></strong> administered at start and end of each workshop</td><td>Each workshop</td><td>Workshop facilitator</td></tr>
-        <tr><td>Is the volunteer program working?</td><td>Volunteer logs + staff feedback</td><td>Monthly volunteer hour tracking via <strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong>; quarterly staff check-ins</td><td>Monthly/Quarterly</td><td>Development Coordinator</td></tr>
-      </tbody>
-    </table>
-  </div>
-</details>
-
-<h3>5. Analysis and Reporting Plan (half a page)</h3>
+workflow without adding significant staff burden?</code></pre></div>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Data Collection Plan</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Evaluation Question</th>
+<th>Data Source</th>
+<th>Method</th>
+<th>Timing</th>
+<th>Responsible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Are we reaching the right populations?</td>
+<td>Client intake forms</td>
+<td>Administrative data review</td>
+<td>Ongoing; quarterly analysis</td>
+<td>Program Director</td>
+</tr>
+<tr>
+<td>Are referrals successful?</td>
+<td>Follow-up contact logs</td>
+<td>Phone/text follow-up within 2 weeks of referral</td>
+<td>After each referral</td>
+<td>Community Navigators</td>
+</tr>
+<tr>
+<td>Do clients report reduced barriers?</td>
+<td>Client satisfaction survey</td>
+<td>10-question survey (Likert scale + open-ended) via <strong>Google Forms</strong></td>
+<td>At discharge or 3-month mark</td>
+<td>Program Director</td>
+</tr>
+<tr>
+<td>Are workshops effective?</td>
+<td>Pre/post assessment</td>
+<td>Short knowledge quiz via <strong>Google Forms</strong> administered at start and end of each workshop</td>
+<td>Each workshop</td>
+<td>Workshop facilitator</td>
+</tr>
+<tr>
+<td>Is the volunteer program working?</td>
+<td>Volunteer logs + staff feedback</td>
+<td>Monthly volunteer hour tracking via <strong>Google Sheets</strong>; quarterly staff check-ins</td>
+<td>Monthly/Quarterly</td>
+<td>Development Coordinator</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="analysis-and-reporting-plan-half-a-page">5. Analysis and Reporting Plan (half a page)</h3>
 <p>How will you make sense of the data and communicate findings?</p>
 <ul>
-  <li>How often will you analyze and review data? (quarterly is standard for a startup)</li>
-  <li>Who reviews the findings? (ED, board, program staff)</li>
-  <li>How will findings be shared? (board reports, annual report, funder reports, website updates)</li>
-  <li>How will evaluation results inform program improvements? (describe a feedback loop)</li>
+<li>How often will you analyze and review data? (quarterly is standard for a startup)</li>
+<li>Who reviews the findings? (ED, board, program staff)</li>
+<li>How will findings be shared? (board reports, annual report, funder reports, website updates)</li>
+<li>How will evaluation results inform program improvements? (describe a feedback loop)</li>
 </ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando &mdash; Reporting Cycle</summary>
-  <div>
-    <ul>
-      <li><strong>Monthly:</strong> Community Navigators log service data in <strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong>; Program Director reviews for trends</li>
-      <li><strong>Quarterly:</strong> Program Director compiles a 2-page dashboard for the board (# families served, referral success rate, client satisfaction scores)</li>
-      <li><strong>Annually:</strong> ED produces a public impact report summarizing Year 1 outcomes &mdash; published on website and shared with all donors and funders</li>
-      <li><strong>Continuous improvement:</strong> Quarterly staff meetings review evaluation data and identify program adjustments. If referral success rate drops below 60%, the team investigates barriers and modifies the process.</li>
-    </ul>
-  </div>
-</details>
-
-<h3>6. Ethical Considerations (half a page)</h3>
-<p>Address evaluation ethics specific to your population:</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Reporting Cycle</h4>
 <ul>
-  <li>How will you protect client confidentiality, especially for vulnerable populations?</li>
-  <li>How will you obtain informed consent for data collection?</li>
-  <li>What cultural considerations apply to your evaluation methods? (e.g., survey language, interview norms, trust building)</li>
-  <li>How will you ensure evaluation doesn't create burden for the people you serve?</li>
-</ul>
-<p>Use <strong><a href="https://www.perplexity.ai" target="_blank">Perplexity.ai</a></strong> to research ethical evaluation practices for your specific population: <em>&ldquo;What are the ethical considerations for evaluating programs serving immigrant families with limited English proficiency? How should informed consent processes be adapted?&rdquo;</em></p>
-
-<hr>
-
-<h2>Website Update</h2>
-<p>Add a <strong>&ldquo;Programs&rdquo;</strong> page to your website. This is the page visitors go to when they want to understand what your organization actually <em>does</em>.</p>
-<p><strong>Your page should include:</strong></p>
-<ul>
-  <li>Descriptions of your 2&ndash;3 core programs (adapted from Section 1 &mdash; written for a public audience, not an academic one)</li>
-  <li>For each program: who it serves, what it provides, and what outcomes it aims to achieve</li>
-  <li>A visual element &mdash; use <strong><a href="https://canva.com" target="_blank">Canva</a></strong> to create a program overview graphic or impact infographic</li>
-  <li>Download link to the full Program Evaluation Framework (PDF)</li>
-</ul>
-
-<details>
-  <summary>Running Example: Asian Bridge Orlando &mdash; Programs Page</summary>
-  <div>
-    <p><strong>Page title:</strong> Our Programs</p>
-    <p><strong>Program 1: Community Navigation</strong><br>
-    &ldquo;Our bilingual Community Navigators help immigrant families access healthcare, legal services, education, and public benefits &mdash; in their language, with cultural understanding. We don't just refer; we walk alongside families until they're connected.&rdquo;</p>
-    <ul><li><em>Year 1 goal: Serve 150 families</em></li></ul>
-    <p><strong>Program 2: Community Workshops</strong><br>
-    &ldquo;Free workshops on healthcare enrollment, school registration, and civic participation &mdash; designed for and with the communities we serve.&rdquo;</p>
-    <ul><li><em>Year 1 goal: 6 workshops reaching 120+ participants</em></li></ul>
-    <p><strong>Program 3: Multilingual Resource Library</strong><br>
-    &ldquo;Translated guides and resource packets in Mandarin, Vietnamese, Burmese/Karen, and Nepali &mdash; available in print and online.&rdquo;</p>
-    <p style="margin-bottom:0">[Download our Program Evaluation Framework (PDF)]</p>
-  </div>
-</details>
-
-<hr>
-
-<h2>Grading Rubric (8 pts)</h2>
+<li><strong>Monthly:</strong> Community Navigators log service data in <strong>Google Sheets</strong>; Program Director reviews for trends</li>
+<li><strong>Quarterly:</strong> Program Director compiles a 2-page dashboard for the board (# families served, referral success rate, client satisfaction scores)</li>
+<li><strong>Annually:</strong> ED produces a public impact report summarizing Year 1 outcomes — published on website and shared with all donors and funders</li>
+<li><strong>Continuous improvement:</strong> Quarterly staff meetings review evaluation data and identify program adjustments. If referral success rate drops below 60%, the team investigates barriers and modifies the process.</li>
+</ul></div>
+<h3 id="ethical-considerations-half-a-page">6. Ethical Considerations (half a page)</h3>
+<p>Address evaluation ethics specific to your population: - How will you protect client confidentiality, especially for vulnerable populations? - How will you obtain informed consent for data collection? - What cultural considerations apply to your evaluation methods? (e.g., survey language, interview norms, trust building) - How will you ensure evaluation doesn't create burden for the people you serve?</p>
+<p>Use <strong>Perplexity.ai</strong> to research ethical evaluation practices for your specific population: <em>"What are the ethical considerations for evaluating programs serving immigrant families with limited English proficiency? How should informed consent processes be adapted?"</em></p>
+<hr />
+<h2 id="website-update">Website Update</h2>
+<p>Add a <strong>"Programs"</strong> page to your website. This is the page visitors go to when they want to understand what your organization actually <em>does</em>.</p>
+<p><strong>Your page should include:</strong> - Descriptions of your 2–3 core programs (adapted from Section 1 — written for a public audience, not an academic one) - For each program: who it serves, what it provides, and what outcomes it aims to achieve - A visual element — use <strong>Canva</strong> to create a program overview graphic or impact infographic - Download link to the full Program Evaluation Framework (PDF)</p>
+<div class="card card-example">
+<h4 style="margin-top:0">Running Example: Asian Bridge Orlando — Programs Page</h4>
+<p><strong>Page title:</strong> Our Programs</p>
+<p><strong>Program 1: Community Navigation</strong> "Our bilingual Community Navigators help immigrant families access healthcare, legal services, education, and public benefits — in their language, with cultural understanding. We don't just refer; we walk alongside families until they're connected." - <em>Year 1 goal: Serve 150 families</em></p>
+<p><strong>Program 2: Community Workshops</strong> "Free workshops on healthcare enrollment, school registration, and civic participation — designed for and with the communities we serve." - <em>Year 1 goal: 6 workshops reaching 120+ participants</em></p>
+<p><strong>Program 3: Multilingual Resource Library</strong> "Translated guides and resource packets in Mandarin, Vietnamese, Burmese/Karen, and Nepali — available in print and online."</p>
+<p>📄 [Download our Program Evaluation Framework (PDF)]</p></div>
+<hr />
+<h2 id="grading-rubric-8-pts">Grading Rubric (8 pts)</h2>
 <table>
-  <thead><tr><th>Criteria</th><th>Points</th></tr></thead>
-  <tbody>
-    <tr><td>Program descriptions are clear with well-defined outputs and outcomes</td><td>2 pts</td></tr>
-    <tr><td>Logic model accurately represents the theory of change</td><td>2 pts</td></tr>
-    <tr><td>Evaluation questions are specific, answerable, and tied to strategic goals</td><td>1 pt</td></tr>
-    <tr><td>Data collection plan is realistic, practical, and appropriate for organizational capacity</td><td>2 pts</td></tr>
-    <tr><td>Document demonstrates meaningful application of PAD 6327 evaluation frameworks</td><td>1 pt</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Program descriptions are clear with well-defined outputs and outcomes</td>
+<td>2 pts</td>
+</tr>
+<tr>
+<td>Logic model accurately represents the theory of change</td>
+<td>2 pts</td>
+</tr>
+<tr>
+<td>Evaluation questions are specific, answerable, and tied to strategic goals</td>
+<td>1 pt</td>
+</tr>
+<tr>
+<td>Data collection plan is realistic, practical, and appropriate for organizational capacity</td>
+<td>2 pts</td>
+</tr>
+<tr>
+<td>Document demonstrates meaningful application of PAD 6327 evaluation frameworks</td>
+<td>1 pt</td>
+</tr>
+</tbody>
 </table>
-
-<hr>
-
-<h2>Submission Details</h2>
+<hr />
+<h2 id="submission-details">Submission Details</h2>
 <ul>
-  <li><strong>Length:</strong> 5&ndash;7 pages (double-spaced, 12pt font)</li>
-  <li><strong>Format:</strong> Word (.docx)</li>
-  <li><strong>File name:</strong> <code>[YourLastName]_ProgramEvaluation.docx</code></li>
-  <li><strong>Submit to:</strong> Webcourses@UCF &rarr; Assignments &rarr; Week 10: Program Evaluation Framework</li>
+<li><strong>Length:</strong> 5–7 pages (double-spaced, 12pt font)</li>
+<li><strong>Format:</strong> Word (.docx)</li>
+<li><strong>File name:</strong> <code>[YourLastName]_ProgramEvaluation.docx</code></li>
+<li><strong>Submit to:</strong> Webcourses@UCF → Assignments → Week 10: Program Evaluation Framework</li>
 </ul>
-
-<hr>
-
-<h2>Useful AI &amp; Online Tools This Week</h2>
+<hr />
+<h2 id="useful-ai-online-tools-this-week">Useful AI &amp; Online Tools This Week</h2>
 <table>
-  <thead><tr><th>Tool</th><th>What It's Good For</th><th>How to Use It</th></tr></thead>
-  <tbody>
-    <tr><td><strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong></td><td>Connecting PAD 6327 frameworks to your strategic plan</td><td>Upload both documents &rarr; ask how to design evaluation that matches your goals and capacity</td></tr>
-    <tr><td><strong><a href="https://chatgpt.com" target="_blank">ChatGPT</a> / <a href="https://claude.ai" target="_blank">Claude</a></strong></td><td>Brainstorming evaluation methods and survey questions</td><td>Generate practical, low-cost data collection ideas for small nonprofits &mdash; then adapt for your context</td></tr>
-    <tr><td><strong><a href="https://forms.google.com" target="_blank">Google Forms</a></strong></td><td>Client surveys and workshop assessments</td><td>Build intake forms, satisfaction surveys, and pre/post assessments &mdash; free, easy to share, data exports to Sheets</td></tr>
-    <tr><td><strong><a href="https://docs.google.com/spreadsheets" target="_blank">Google Sheets</a></strong></td><td>Data tracking and analysis</td><td>Create service tracking templates, volunteer hour logs, and quarterly dashboard reports</td></tr>
-    <tr><td><strong><a href="https://canva.com" target="_blank">Canva</a></strong></td><td>Logic model visuals and program infographics</td><td>Design a visual logic model for your document and a program overview graphic for your website</td></tr>
-    <tr><td><strong><a href="https://www.perplexity.ai" target="_blank">Perplexity.ai</a></strong></td><td>Ethical evaluation practices</td><td>Research culturally appropriate evaluation methods and informed consent practices for your population</td></tr>
-    <tr><td><strong><a href="https://surveymonkey.com" target="_blank">SurveyMonkey</a></strong></td><td>Alternative survey platform</td><td>Free tier allows up to 10 questions per survey &mdash; more polished design options than Google Forms</td></tr>
-    <tr><td><strong><a href="https://grammarly.com" target="_blank">Grammarly</a></strong></td><td>Document polish</td><td>Run your framework through <a href="https://grammarly.com" target="_blank">Grammarly</a> for clarity and consistency before submission</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It's Good For</th>
+<th>How to Use It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://notebooklm.google.com">Google NotebookLM</a></strong></td>
+<td>Connecting PAD 6327 frameworks to your strategic plan</td>
+<td>Upload both documents → ask how to design evaluation that matches your goals and capacity</td>
+</tr>
+<tr>
+<td><strong><a href="https://chatgpt.com">ChatGPT</a> / <a href="https://claude.ai">Claude</a></strong></td>
+<td>Brainstorming evaluation methods and survey questions</td>
+<td>Generate practical, low-cost data collection ideas for small nonprofits — then adapt for your context</td>
+</tr>
+<tr>
+<td><strong><a href="https://forms.google.com">Google Forms</a></strong></td>
+<td>Client surveys and workshop assessments</td>
+<td>Build intake forms, satisfaction surveys, and pre/post assessments — free, easy to share, data exports to Sheets</td>
+</tr>
+<tr>
+<td><strong><a href="https://sheets.google.com">Google Sheets</a></strong></td>
+<td>Data tracking and analysis</td>
+<td>Create service tracking templates, volunteer hour logs, and quarterly dashboard reports</td>
+</tr>
+<tr>
+<td><strong><a href="https://canva.com">Canva</a></strong></td>
+<td>Logic model visuals and program infographics</td>
+<td>Design a visual logic model for your document and a program overview graphic for your website</td>
+</tr>
+<tr>
+<td><strong><a href="https://perplexity.ai">Perplexity.ai</a></strong></td>
+<td>Ethical evaluation practices</td>
+<td>Research culturally appropriate evaluation methods and informed consent practices for your population</td>
+</tr>
+<tr>
+<td><strong><a href="https://surveymonkey.com">SurveyMonkey</a></strong></td>
+<td>Alternative survey platform</td>
+<td>Free tier allows up to 10 questions per survey — more polished design options than Google Forms</td>
+</tr>
+<tr>
+<td><strong><a href="https://grammarly.com">Grammarly</a></strong></td>
+<td>Document polish</td>
+<td>Run your framework through Grammarly for clarity and consistency before submission</td>
+</tr>
+</tbody>
 </table>
+<hr />
+<h2 id="video-demo-building-a-client-survey-with-google-forms">Video Demo: Building a Client Survey with Google Forms</h2>
+<!--
+RECORDING SCRIPT — Week 10 Video (approximately 2 minutes)
 
-<hr>
+SCREEN RECORDING (Cmd+Shift+5, no audio):
+1. Open Google Forms → create new form
+2. Title it "[Org Name] Client Satisfaction Survey"
+3. Add a multiple choice question: "How did you hear about our services?"
+4. Add a Likert scale question: "After receiving navigation services, I feel more confident accessing community resources" (Strongly Disagree → Strongly Agree)
+5. Add an open-ended question: "What could we do better?"
+6. Show Settings → make responses anonymous
+7. Show the "Responses" tab → show how data appears in a spreadsheet
+8. Click Send → show sharing via link
 
-<h2>Video Demo: Building a Client Survey with Google Forms</h2>
+IPHONE VOICEOVER:
+"Let me show you how to build a simple client satisfaction survey in Google Forms — this is one of the most practical evaluation tools for a small nonprofit. I'll add a mix of multiple choice, Likert scale, and open-ended questions. Notice I'm keeping it short — 10 questions maximum. Clients who are navigating language barriers and complex systems don't have time for a 30-question survey. In Settings, I'll make responses anonymous to protect client confidentiality. The Responses tab automatically generates a spreadsheet — that's your data ready for quarterly analysis. Total setup time: about 15 minutes."
+-->
 <p><em>Video coming soon.</em></p>
-
-<hr>
-
-<h2>Looking Ahead</h2>
-<p><strong>Next week (<a href="week11.html">Week 11</a>):</strong> Leadership Case Study (15 pts) &mdash; the largest single assignment in the course. You'll analyze a real nonprofit leadership challenge using course frameworks and connect it to your own organizational design. This is an individual analytical paper, not a component of your nonprofit website.</p>
+<hr />
+<h2 id="looking-ahead">Looking Ahead</h2>
+<p><strong>Next week (Week 11):</strong> Leadership Case Study (20 pts) — the largest single assignment in the course. You'll analyze a real nonprofit leadership challenge using course frameworks and connect it to your own organizational design. This is an individual analytical paper, not a component of your nonprofit website.</p>
 
 </div>
 </main>
@@ -474,7 +498,6 @@ workflow without adding significant staff burden?</pre>
 </footer>
 
 <script>
-// Close mobile menu on nav click
 document.querySelectorAll('.sidebar a').forEach(a=>{
   a.addEventListener('click',()=>{document.querySelector('.sidebar').classList.remove('open')})
 });
