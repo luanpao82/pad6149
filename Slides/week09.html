@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 9: Strategic Planning & Management</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* SWOT grid */
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 16px 0;
+    background: var(--ucf-light-gray);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .swot-cell {
+    padding: 16px;
+    background: var(--ucf-bg);
+  }
+
+  .swot-cell h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .swot-cell ul {
+    font-size: 0.85em;
+    padding-left: 1em;
+  }
+
+  .swot-cell li {
+    font-size: 0.85em;
+    margin-bottom: 4px;
+  }
+
+  .swot-cell.positive { border-left: 3px solid var(--ucf-gold); }
+  .swot-cell.negative { border-left: 3px solid var(--ucf-gray); }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+
+  .flow-step {
+    background: var(--ucf-gold-light);
+    border: 1px solid var(--ucf-gold);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.4em;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .flow-arrow {
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+  }
+
+  /* Integration map */
+  .integration-map {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .integration-item {
+    background: #fff;
+    border: 1px solid var(--ucf-light-gray);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 0.5em;
+    text-align: center;
+  }
+
+  .integration-item .week-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+    color: var(--ucf-gray);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .integration-item strong {
+    font-size: 1.05em;
+  }
+
+  .integration-center {
+    grid-column: 1 / -1;
+    background: var(--ucf-gold);
+    color: var(--ucf-dark);
+    border: none;
+    font-weight: 600;
+    font-size: 0.55em;
+    padding: 16px;
+  }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Week 9</span>
+  <h1>Strategic Planning<br>& Your Strategic Plan</h1>
+  <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    October 19, 2026
+  </div>
+  <aside class="notes">
+    Welcome to Week 9 — this is the week everything comes together. For the past eight weeks, you've been building individual components of your nonprofit: mission, governance, staffing, marketing, budget, and fundraising strategy. This week, you integrate all of it into a strategic plan. This is your first major competency assignment, worth 10 points, and it maps to NASPAA Competency 1: the ability to lead and manage in a dynamic, mission-driven nonprofit sector. Strategic planning is where leadership meets management — it's where vision becomes actionable. Let's dig in.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <span class="label">Week 9</span>
+  <h2>Agenda</h2>
+  <ol>
+    <li>What Is Strategic Planning?</li>
+    <li>Research on Strategic Management in Nonprofits</li>
+    <li>The Strategic Planning Process</li>
+    <li>SWOT Analysis Deep Dive</li>
+    <li>From SWOT to Strategy</li>
+    <li>Your Strategic Plan Assignment (C1: 10 pts)</li>
+    <li>How This All Connects</li>
+    <li>AI Demos: SWOT Brainstorming & Strategic Goals</li>
+    <li>Website Update: "Our Strategy" Page</li>
+  </ol>
+
+  <div class="gold-bg">
+    <p><strong>Readings:</strong> Worth Ch. 7 (pg. 181–198) · Wolf Ch. 9 · Stone, Bigelow & Crittenden (1999)</p>
+    <p><strong>Due:</strong> C1: Strategic Plan (10 pts) · NASPAA Competency 1</p>
+  </div>
+
+  <aside class="notes">
+    Here's our agenda. We'll ground the discussion in the research — Stone, Bigelow, and Crittenden's 1999 synthesis of strategic management literature is essential reading. Then we'll walk through the strategic planning process step by step, with a deep dive into SWOT analysis. I'll show you exactly what the strategic plan assignment requires, demonstrate how all your prior work feeds into it, and run AI demos for SWOT brainstorming and goal writing. Let's start with the basics.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: WHAT IS STRATEGIC PLANNING ==================== -->
+<section>
+  <span class="label">Foundations</span>
+  <h2>What Is Strategic Planning?</h2>
+
+  <p>Strategic planning is not a document — it is a <strong>process</strong> of deliberate choices about an organization's future direction.</p>
+
+  <div class="flow">
+    <div class="flow-step">Vision &<br>Mission</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step">Environmental<br>Scan</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step">Strategic<br>Goals</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step">Strategies &<br>Actions</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step">Implementation<br>Timeline</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step">Evaluation &<br>Revision</div>
+  </div>
+
+  <ul>
+    <li><strong>It answers three questions:</strong> Where are we now? Where do we want to be? How do we get there?</li>
+    <li><strong>It is iterative:</strong> Plans change as environments change — the process matters as much as the product</li>
+    <li><strong>It is participatory:</strong> Board, staff, constituents, and stakeholders should all have input</li>
+    <li><strong>It is honest:</strong> A good strategic plan acknowledges constraints, not just aspirations</li>
+  </ul>
+
+  <p><em>Worth Ch. 7, pg. 181–198</em></p>
+
+  <aside class="notes">
+    Worth's Chapter 7 gives us the conceptual framework for strategic planning. I want to emphasize something that many people miss: strategic planning is a process, not a product. Yes, you produce a document at the end. But the real value is in the thinking that goes into it — the honest assessment of your environment, the difficult choices about priorities, the alignment of resources with goals. The process I've outlined here — vision, environmental scan, goals, strategies, implementation, evaluation — is cyclical. You don't do it once and put it on a shelf. Effective organizations revisit their strategic plan regularly, adjusting as conditions change. For your assignment, you're producing a document. But I want you to engage with the process — think deeply about the choices you're making and why.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: RESEARCH ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Research on Nonprofit Strategic Management</h2>
+
+  <p>Stone, Bigelow & Crittenden (1999) synthesized decades of strategic management research in the nonprofit sector. Their key findings challenge simplistic approaches.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>How Nonprofits Differ</h3>
+      <ul>
+        <li><strong>Multiple stakeholders</strong> with competing interests — donors want efficiency, staff want autonomy, constituents want responsiveness</li>
+        <li><strong>Mission constraints</strong> limit strategic options — you can't just pivot to whatever's profitable</li>
+        <li><strong>Resource dependency</strong> shapes strategy — whoever funds you influences your direction</li>
+        <li><strong>Ambiguous performance metrics</strong> — "success" is harder to define than profit</li>
+      </ul>
+    </div>
+    <div>
+      <h3>What the Research Shows</h3>
+      <ul>
+        <li>Formal strategic planning <em>does</em> improve organizational performance — but only if implementation follows</li>
+        <li>Board engagement in strategy is critical — boards that only do oversight underperform</li>
+        <li>External environment matters more than internal factors for many nonprofits</li>
+        <li>Strategy formulation and strategy implementation are <em>different competencies</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Stone, Bigelow, and Crittenden's synthesis is foundational. They reviewed the entire body of research on nonprofit strategic management and found some important patterns. First, you cannot simply apply business strategy frameworks to nonprofits without modification. Nonprofits operate with multiple stakeholders who often want different things. Your donors might prioritize low overhead, while your staff prioritize competitive salaries, and your constituents prioritize program quality. Strategy requires balancing these tensions, not resolving them. Second, the research shows that formal planning does improve outcomes — but only when organizations actually implement their plans. The number of nonprofits with beautiful strategic plans gathering dust on a shelf is staggering. Third, and this is crucial for your assignment: strategy formulation and strategy implementation are different skills. Knowing what to do and knowing how to do it are not the same thing. Your strategic plan needs both.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: THE PROCESS ==================== -->
+<section>
+  <span class="label">Process</span>
+  <h2>The Strategic Planning Process</h2>
+
+  <table>
+    <thead>
+      <tr><th>Step</th><th>Activity</th><th>Output</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>1. Clarify Mission & Vision</strong></td><td>Confirm or revise your mission and vision statements</td><td>Mission/vision statements</td></tr>
+      <tr><td><strong>2. Environmental Scan (SWOT)</strong></td><td>Analyze internal strengths/weaknesses, external opportunities/threats</td><td>SWOT matrix</td></tr>
+      <tr><td><strong>3. Set Strategic Goals</strong></td><td>Define 3–5 high-level goals for the planning period (1–3 years)</td><td>Goal statements</td></tr>
+      <tr><td><strong>4. Define Strategies</strong></td><td>For each goal, identify specific strategies and action steps</td><td>Strategy narratives</td></tr>
+      <tr><td><strong>5. Implementation Timeline</strong></td><td>Assign responsibilities, deadlines, and milestones</td><td>Year 1 action plan</td></tr>
+      <tr><td><strong>6. Resource Alignment</strong></td><td>Match budget, staff, and infrastructure to strategies</td><td>Resource map</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Prior coursework:</strong> Your PAD 6335 Strategic Plan gave you the framework. This assignment applies it to the nonprofit you're building. Revisit your SWOT analysis from that course as a starting point.</p>
+  </div>
+
+  <aside class="notes">
+    Let me walk you through the six steps of strategic planning as they apply to your assignment. Step 1: confirm your mission and vision. You've already written these, but take a moment to revisit them. Has your thinking evolved since Week 2? Step 2: the environmental scan, which we'll do as a SWOT analysis. Step 3: set three to five strategic goals. These should be high-level, aspirational but achievable, and directly connected to your mission. Step 4: for each goal, define specific strategies — the concrete things you'll do. Step 5: create an implementation timeline for Year 1 with milestones and responsibilities. Step 6: align your resources — budget, staff, technology — with your strategies. This last step is where your Week 7 budget and Week 8 fundraising strategy become directly relevant. You already did strategic planning in PAD 6335. Pull that work out and use it as your foundation.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: SWOT DEEP DIVE ==================== -->
+<section>
+  <span class="label">Analysis</span>
+  <h2>SWOT Analysis Deep Dive</h2>
+
+  <p>For your nonprofit, be <strong>honest</strong> about where you're starting from. Every organization has weaknesses and threats — acknowledging them is a sign of maturity, not failure.</p>
+
+  <div class="swot-grid">
+    <div class="swot-cell positive">
+      <h4>Strengths (Internal)</h4>
+      <ul>
+        <li>Founder expertise and passion</li>
+        <li>Clear, compelling mission</li>
+        <li>Engaged board members</li>
+        <li>Strong community relationships</li>
+      </ul>
+    </div>
+    <div class="swot-cell negative">
+      <h4>Weaknesses (Internal)</h4>
+      <ul>
+        <li>No track record or brand recognition</li>
+        <li>Limited funding and staff</li>
+        <li>Unproven programs</li>
+        <li>Heavy reliance on founder</li>
+      </ul>
+    </div>
+    <div class="swot-cell positive">
+      <h4>Opportunities (External)</h4>
+      <ul>
+        <li>Growing awareness of issue area</li>
+        <li>New funding streams available</li>
+        <li>Potential community partnerships</li>
+        <li>Policy changes that support mission</li>
+      </ul>
+    </div>
+    <div class="swot-cell negative">
+      <h4>Threats (External)</h4>
+      <ul>
+        <li>Established competitors</li>
+        <li>Economic uncertainty</li>
+        <li>Donor fatigue in your issue area</li>
+        <li>Regulatory barriers</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><em>These are examples. Your SWOT should reflect your specific nonprofit's context.</em></p>
+
+  <aside class="notes">
+    The SWOT analysis is the analytical engine of your strategic plan. Strengths and weaknesses are internal — things about your organization that you can control. Opportunities and threats are external — forces in your environment that you can respond to but not control. The examples I'm showing are common for startup nonprofits, but yours should be specific to your situation. Be honest. If your weakness is that you have no track record and no funding, say so. If the threat is that three established organizations already serve your target population, acknowledge it. The strategic plan is more credible when it demonstrates awareness of challenges, not just aspirations. A plan that only lists strengths and opportunities is a marketing brochure, not a strategic document.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: SWOT TO STRATEGY ==================== -->
+<section>
+  <span class="label">Application</span>
+  <h2>From SWOT to Strategy</h2>
+
+  <p>The power of SWOT is in the <strong>cross-analysis</strong> — matching internal factors with external factors to generate strategies.</p>
+
+  <table>
+    <thead>
+      <tr><th>Combination</th><th>Strategic Approach</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Strength + Opportunity</strong></td>
+        <td>Leverage — use strengths to capitalize on opportunities</td>
+        <td>Strong community ties + growing awareness = grassroots fundraising campaign</td>
+      </tr>
+      <tr>
+        <td><strong>Weakness + Opportunity</strong></td>
+        <td>Improve — address weaknesses to take advantage of opportunities</td>
+        <td>No track record + new grant program = pilot project to build evidence</td>
+      </tr>
+      <tr>
+        <td><strong>Strength + Threat</strong></td>
+        <td>Defend — use strengths to mitigate threats</td>
+        <td>Compelling mission + donor fatigue = differentiated storytelling strategy</td>
+      </tr>
+      <tr>
+        <td><strong>Weakness + Threat</strong></td>
+        <td>Avoid — minimize risk exposure</td>
+        <td>Limited funding + economic downturn = conservative Year 1 budget with reserves</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Your task:</strong> For each strategic goal in your plan, show how it connects to specific SWOT findings. This demonstrates analytical rigor, not just aspiration.</p>
+  </div>
+
+  <aside class="notes">
+    This is where SWOT becomes genuinely useful. Many people do SWOT analysis as a brainstorming exercise and then ignore it when writing their goals. That's backwards. The whole point is to generate strategies from the intersection of internal and external factors. The four combinations give you four strategic approaches. Strength plus opportunity is your leverage zone — where you can be most aggressive. Weakness plus threat is your danger zone — where you need to be most cautious. The example I use often: if your threat is limited funding and your strength is strong community ties, the strategic response is a grassroots fundraising campaign that leverages your community relationships. That's a strategy that directly addresses a threat using an existing strength. In your strategic plan, I want to see this kind of analytical connection. Don't just list goals — show me how each goal responds to your SWOT findings.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: STRATEGIC PLAN ASSIGNMENT ==================== -->
+<section>
+  <span class="label">C1 Assignment</span>
+  <h2>Your Strategic Plan (10 pts)</h2>
+
+  <p><strong>NASPAA Competency 1:</strong> Lead and manage in a dynamic, mission-driven nonprofit sector.</p>
+
+  <table>
+    <thead>
+      <tr><th>Section</th><th>Content</th><th>Length</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Executive Summary</strong></td><td>Mission, vision, overview of strategic direction</td><td>1 page</td></tr>
+      <tr><td><strong>Environmental Scan</strong></td><td>SWOT analysis with evidence and analysis</td><td>1–2 pages</td></tr>
+      <tr><td><strong>Strategic Goals</strong></td><td>3 goals with strategies, action steps, and milestones</td><td>2–3 pages</td></tr>
+      <tr><td><strong>Year 1 Timeline</strong></td><td>Quarterly milestones with responsible parties</td><td>1 page</td></tr>
+      <tr><td><strong>Resource Alignment</strong></td><td>Budget and staffing matched to strategies</td><td>0.5–1 page</td></tr>
+      <tr><td><strong>Governance Overview</strong></td><td>Board's role in strategy oversight</td><td>0.5 page</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Total: 6–8 pages.</strong> This integrates EVERYTHING you've built so far. Reference your prior coursework from PAD 6335 (Strategic Plan / SWOT Analysis).</p>
+  </div>
+
+  <aside class="notes">
+    Let me walk through the assignment requirements. Your strategic plan should be 6 to 8 pages and include six sections. The executive summary gives a one-page overview of your organization and its strategic direction. The environmental scan is your SWOT analysis with actual evidence — not just bullet points, but analysis of why these factors matter. The strategic goals section is the heart of the plan: three goals, each with specific strategies, action steps, and measurable milestones. The Year 1 timeline breaks this into quarterly milestones with assigned responsibilities. Resource alignment shows how your budget from Week 7 and fundraising strategy from Week 8 support your strategies. And the governance overview explains how your board from Week 4 will oversee strategic implementation. This is deliberately integrative. I'm looking for you to demonstrate that you can pull together multiple organizational components into a coherent whole. That's the capstone competency.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: HOW THIS CONNECTS ==================== -->
+<section>
+  <span class="label">Integration</span>
+  <h2>How This All Connects</h2>
+
+  <p>Your strategic plan is the <strong>integration point</strong> for everything you've built in Weeks 1–8.</p>
+
+  <div class="integration-map">
+    <div class="integration-item">
+      <span class="week-num">Week 4</span>
+      <strong>Governance</strong><br>
+      Board structure, bylaws, fiduciary oversight
+    </div>
+    <div class="integration-item">
+      <span class="week-num">Week 5</span>
+      <strong>Human Resources</strong><br>
+      Staffing plan, org chart, compensation
+    </div>
+    <div class="integration-item">
+      <span class="week-num">Week 6</span>
+      <strong>Marketing</strong><br>
+      Brand identity, communications, audience
+    </div>
+    <div class="integration-item">
+      <span class="week-num">Week 7</span>
+      <strong>Budget</strong><br>
+      Operating budget, revenue projections
+    </div>
+    <div class="integration-item">
+      <span class="week-num">Week 8</span>
+      <strong>Fundraising</strong><br>
+      Revenue streams, donor strategy, grants
+    </div>
+    <div class="integration-item">
+      <span class="week-num">Weeks 1–3</span>
+      <strong>Foundation</strong><br>
+      Mission, vision, concept, website
+    </div>
+    <div class="integration-center">
+      Week 9: Strategic Plan — the document that ties it all together
+    </div>
+  </div>
+
+  <aside class="notes">
+    I want to make the connection explicit. Your strategic plan doesn't exist in isolation. Your governance structure from Week 4 appears in the governance overview section. Your HR plan from Week 5 informs your resource alignment. Your marketing strategy from Week 6 may be one of your strategic goals or strategies. Your budget from Week 7 is the financial foundation. Your fundraising strategy from Week 8 is how you'll fund everything. And your mission and vision from Weeks 1 through 3 are the starting point for the entire plan. If you've been doing the work each week, you have most of the raw material already. The strategic plan is about organizing and connecting those pieces into a coherent narrative. If you haven't been keeping up, this is where it catches up with you — and that's by design. The capstone is cumulative.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: AI DEMO — SWOT ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>SWOT Brainstorming with AI</h2>
+
+  <p>Use AI to generate SWOT items — then critically evaluate and filter.</p>
+
+  <div class="prompt-box">
+    <span class="prompt-label">ChatGPT Prompt</span>
+I'm developing a strategic plan for a new nonprofit
+focused on [your issue area] in [your city/region].
+Generate a SWOT analysis with 5 items for each category
+(Strengths, Weaknesses, Opportunities, Threats). Consider
+the current funding environment, policy landscape,
+community needs, and competitive landscape for nonprofits
+in this space.</div>
+
+  <h3>Critical evaluation checklist:</h3>
+  <ul>
+    <li><strong>Is it specific to your context?</strong> Generic items like "passionate leadership" don't add value</li>
+    <li><strong>Is it evidence-based?</strong> Can you cite a source for external factors?</li>
+    <li><strong>Is it honest?</strong> AI tends to be optimistic — add the hard truths it misses</li>
+    <li><strong>Is it actionable?</strong> If a SWOT item doesn't suggest a strategic response, reconsider it</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Process:</strong> Use AI output as a brainstorming starting point. Keep the items that are specific and verifiable. Replace the generic items with your own research. Document everything in your AI Process Log.</p>
+  </div>
+
+  <aside class="notes">
+    AI is genuinely useful for SWOT brainstorming because it can quickly surface factors you might not have considered. But — and this is a big but — AI tends to produce generic SWOT items. "Passionate leadership" as a strength, "limited funding" as a weakness — these appear in literally every nonprofit SWOT analysis ever written. They're not wrong, but they're not useful. What I'm looking for in your strategic plan is specificity. Not "growing awareness of the issue" as an opportunity, but "the 2026 Florida legislative session includes three proposed bills related to our issue area, creating potential advocacy partnerships and state funding." Not "established competitors" as a threat, but "XYZ Organization has operated in our target community for 15 years with a $2 million annual budget and strong name recognition." Use AI to get started, then make every item specific, evidence-based, and actionable.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: AI DEMO — STRATEGIC GOALS ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Draft Strategic Goal Narratives</h2>
+
+  <p>AI can help you articulate strategic goals — but the strategic thinking must be yours.</p>
+
+  <div class="prompt-box">
+    <span class="prompt-label">Claude Prompt</span>
+Write a strategic goal narrative for a nonprofit strategic
+plan. The goal is: [your goal]. Context: [brief description
+of your nonprofit and its stage of development]. Include:
+(1) goal statement, (2) rationale connecting to mission,
+(3) 3 specific strategies to achieve this goal,
+(4) measurable milestones for Year 1. Write in a
+professional, concise tone appropriate for a strategic
+planning document.</div>
+
+  <h3>Revision process:</h3>
+  <ul>
+    <li><strong>Check alignment:</strong> Does the goal connect to your SWOT findings?</li>
+    <li><strong>Check feasibility:</strong> Can you realistically accomplish this in your Year 1 timeline with your budget?</li>
+    <li><strong>Check measurability:</strong> Will you know if you've succeeded? What's the indicator?</li>
+    <li><strong>Revise for voice:</strong> The final document should sound like <em>you</em>, not like AI</li>
+  </ul>
+
+  <aside class="notes">
+    For the strategic goal narratives, AI can help you with structure and language, but the substance has to come from you. Use this prompt to generate a first draft of each goal narrative, then revise extensively. The revision process is where the learning happens. Check each goal against three criteria: alignment with your SWOT, feasibility given your resources, and measurability. If you can't measure progress toward a goal, it's an aspiration, not a strategy. And please — revise for your own voice. I've been reading your work all semester. If your strategic plan suddenly reads like a corporate consulting report, I'll notice. Use AI as a drafting assistant, but make the final product yours.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: WEBSITE UPDATE ==================== -->
+<section>
+  <span class="label">Website</span>
+  <h2>Website Update: "Our Strategy" or "Impact" Page</h2>
+
+  <p>Add a page to your website that communicates your strategic direction to external stakeholders.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>"Our Strategy" Page</h3>
+      <ul>
+        <li>Mission and vision statements</li>
+        <li>3 strategic goals (public-facing language)</li>
+        <li>Year 1 milestones</li>
+        <li>Visual: simple timeline or roadmap</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Also Update: "Donate" Page</h3>
+      <ul>
+        <li>Connect giving to strategic goals</li>
+        <li>"Your donation supports our Year 1 goal of..."</li>
+        <li>Add urgency tied to milestones</li>
+        <li>Refresh giving levels with updated impact data</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>Note:</strong> Your website strategy page is the <em>public version</em> of your strategic plan — shorter, more visual, and focused on impact. Your assignment document is the <em>internal version</em> with full analysis and detail.</p>
+  </div>
+
+  <aside class="notes">
+    Your website update this week has two parts. First, add an "Our Strategy" or "Impact" page that communicates your strategic direction in public-facing language. This is not the same as your strategic plan document — it's shorter, more visual, and focused on impact rather than analysis. Think of it as what you'd want a potential donor or partner to see when they visit your site. Second, update your donate page from last week. Connect giving to your strategic goals — donors are more likely to give when they can see how their contribution advances a specific, measurable objective. "Your donation supports our goal of launching a youth mentoring program serving 50 students by June 2027" is much more compelling than "support our mission."
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 13: NEXT WEEK ==================== -->
+<section>
+  <span class="label">Looking Ahead</span>
+  <h2>Next Week: Managing Nonprofit Performance</h2>
+
+  <p>Week 10 focuses on <strong>program evaluation</strong> — how do you know if your nonprofit is actually making a difference?</p>
+
+  <ul>
+    <li><strong>Key deliverable:</strong> Program Evaluation Framework (10 pts)</li>
+    <li><strong>Start thinking about:</strong> Your logic model — inputs, activities, outputs, outcomes, impact</li>
+    <li><strong>The question to answer:</strong> How will you measure success beyond counting heads?</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Prepare now:</strong></p>
+    <ul>
+      <li>Review your program design from earlier weeks — what outcomes did you promise?</li>
+      <li>Think about what data you would collect and how</li>
+      <li>Consider both quantitative metrics and qualitative evidence</li>
+      <li>Draft a preliminary logic model before next week</li>
+    </ul>
+  </div>
+
+  <aside class="notes">
+    Next week we move from strategy to accountability. Your strategic plan says what you'll do. Your program evaluation framework says how you'll know if it worked. This is the next major competency assignment — also worth 10 points — so give it the same level of attention as this week's strategic plan. Start thinking about your logic model now. A logic model maps the connection from inputs to activities to outputs to outcomes to long-term impact. If you've never built one, we'll cover it in detail next week. But if you can sketch a preliminary version before class, you'll be ahead of the game. The key question: beyond counting how many people you serve, how will you demonstrate that your programs actually changed something? That's the evaluation challenge.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 14: QUESTIONS ==================== -->
+<section>
+  <span class="label">Week 9</span>
+  <h2>Questions?</h2>
+
+  <p>Reach out anytime via Webcourses inbox or during office hours.</p>
+
+  <div class="gold-bg">
+    <p><strong>This week's deliverable:</strong> C1: Strategic Plan (10 pts)</p>
+    <p><strong>Key resources:</strong> Worth Ch. 7 (pg. 181–198) · Wolf Ch. 9 · Stone, Bigelow & Crittenden (1999)</p>
+    <p><strong>NASPAA Competency 1:</strong> Lead and manage in a dynamic, mission-driven nonprofit sector</p>
+  </div>
+
+  <div class="meta" style="margin-top: 40px; font-family: 'DM Mono', monospace; font-size: 0.5em; color: var(--ucf-gray);">
+    Dr. Seongho An<br>
+    PAD 6149 – Nonprofit Administration: Build Your Nonprofit<br>
+    University of Central Florida · Fall 2026
+  </div>
+
+  <aside class="notes">
+    That's it for this week. The strategic plan is your most important deliverable to date — 10 points, integrating eight weeks of work. Take it seriously, start early, and use your prior coursework as a foundation. If you have questions about the assignment requirements, the SWOT analysis, or how to connect your components, reach out. Office hours are a great place to talk through your strategic goals before you commit them to paper. Good luck, and I'll see you in Week 10.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 · Dr. Seongho An</span>
+  <span>Week 9 — Strategic Planning & Management</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    transition: 'none',
+    showNotes: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    center: false
+  });
+</script>
+</body>
+</html>

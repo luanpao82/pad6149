@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 13: Nonprofit Effectiveness & Your Advocacy Plan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .checklist li {
+    padding-left: 1.4em;
+    position: relative;
+  }
+
+  .checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--ucf-gold);
+    font-weight: 700;
+  }
+
+  /* Dimension grid */
+  .dimension-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 16px 0;
+    background: var(--ucf-light-gray);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .dimension-cell {
+    padding: 16px;
+    background: var(--ucf-bg);
+  }
+
+  .dimension-cell h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .dimension-cell p {
+    font-size: 0.85em;
+    margin: 0;
+  }
+
+  .dimension-cell.highlight {
+    border-left: 3px solid var(--ucf-gold);
+  }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Week 13</span>
+  <h1>Nonprofit Effectiveness<br>& Your Advocacy Plan</h1>
+  <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    November 16, 2026
+  </div>
+  <aside class="notes">
+    Welcome to Week 13. We have two themes today. First, we tackle one of the most important — and most difficult — questions in the nonprofit sector: What makes a nonprofit effective? This is not a simple question, and the research shows there is no single answer. Second, we turn to your Policy Advocacy Plan, Competency 5, worth 10 points. This assignment asks you to demonstrate that your nonprofit can participate in the policy process — that you understand not just how to serve clients, but how to change the systems that affect them. A reminder: next week is Thanksgiving Break, so our final class — Week 14, the Final Pitch — is November 30. Start preparing now.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <span class="label">Week 13</span>
+  <h2>Agenda</h2>
+  <ol>
+    <li>What Makes Nonprofits Effective?</li>
+    <li>Measuring Success: Sawhill & Williamson (2001)</li>
+    <li>Multi-Dimensional Effectiveness: Herman & Renz (2004)</li>
+    <li>Nine Theses on Effectiveness: Herman & Renz (2008)</li>
+    <li>Ethics and Effectiveness</li>
+    <li>Nonprofit Advocacy: Why Policy Matters</li>
+    <li>Your Policy Advocacy Plan (C5: 10 pts)</li>
+    <li>AI Demos: Policy Brief & Advocacy One-Pager</li>
+    <li>Website Update: "Advocacy" or "Take Action" Page</li>
+    <li>Looking Ahead: Final Pitch After Thanksgiving</li>
+  </ol>
+
+  <div class="gold-bg">
+    <p><strong>Readings:</strong> Worth Ch. 16 · Herman & Renz (2004) PAR · Sawhill & Williamson (2001) NML · Wolf Ch. 11 · Herman & Renz (2008) NML · Malloy & Agarwal (2001) NML · Rhode & Packel (2009) SSIR</p>
+    <p><strong>Due:</strong> C5: Policy Advocacy Plan (10 pts) · NASPAA Competency 5</p>
+  </div>
+
+  <aside class="notes">
+    Here is our agenda for the week. We begin with the academic literature on nonprofit effectiveness — four key readings that complicate the idea of "measuring success" in the sector. Then we pivot to your Competency 5 assignment: the Policy Advocacy Plan. I will walk through the requirements, show you AI demos for drafting a policy brief and an advocacy one-pager, and discuss the final website update. We will end by previewing the Final Pitch, which happens after Thanksgiving in Week 14.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: MEASURING EFFECTIVENESS ==================== -->
+<section>
+  <span class="label">Effectiveness</span>
+  <h2>Measuring Nonprofit Effectiveness:<br>Mission Impossible?</h2>
+
+  <p><strong>Sawhill & Williamson (2001)</strong> asked a deceptively simple question: Can nonprofits measure their success in achieving their mission?</p>
+
+  <ul>
+    <li><strong>The problem:</strong> Nonprofit missions are often aspirational and long-term — "end homelessness," "promote justice," "protect the environment"</li>
+    <li><strong>Three levels of measurement:</strong> Mission-level impact (hardest), program-level outcomes (manageable), organizational capacity (easiest)</li>
+    <li><strong>Most nonprofits default to measuring activity</strong> (outputs) rather than impact (outcomes) — because impact is expensive and hard to attribute</li>
+    <li><strong>Their solution:</strong> Organizations should develop mission-aligned metrics even if they cannot measure ultimate impact directly</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>For your nonprofit:</strong> What metrics would show your organization is moving toward its mission? Not just "number served" — but what changed?</p>
+  </div>
+
+  <aside class="notes">
+    Sawhill and Williamson's 2001 article in Nonprofit Management and Leadership is one of the most cited pieces on this topic. Their argument is that measuring mission-level impact is genuinely difficult — sometimes impossible — for nonprofits working on complex social problems. But that does not excuse organizations from trying. They propose a hierarchy: at the base, you measure organizational capacity — are you financially healthy, well-governed, adequately staffed? In the middle, you measure program outcomes — did participants achieve specific results? At the top, you try to measure mission impact — is the larger problem getting better because of your work? Most organizations stay at the bottom because it is easiest. The challenge for you, as you build your nonprofit, is to think about what genuine effectiveness looks like beyond counting outputs.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: HERMAN & RENZ (2004) ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Doing Things Right:<br>Herman & Renz (2004)</h2>
+
+  <p>A panel study of local nonprofits in the Kansas City area — one of the few <strong>longitudinal studies</strong> of nonprofit effectiveness.</p>
+
+  <div class="dimension-grid">
+    <div class="dimension-cell highlight">
+      <h4>Management Effectiveness</h4>
+      <p>Quality of internal operations, planning, and leadership</p>
+    </div>
+    <div class="dimension-cell highlight">
+      <h4>Program Effectiveness</h4>
+      <p>Outcomes achieved by programs and services</p>
+    </div>
+    <div class="dimension-cell">
+      <h4>Stakeholder Satisfaction</h4>
+      <p>Board, donors, clients, community members — all evaluate differently</p>
+    </div>
+    <div class="dimension-cell">
+      <h4>Financial Health</h4>
+      <p>Revenue diversification, reserves, efficiency ratios</p>
+    </div>
+  </div>
+
+  <p><strong>Key finding:</strong> No single metric captures effectiveness. Organizations rated highly on one dimension were not necessarily rated highly on others. Effectiveness is <strong>multi-dimensional</strong>.</p>
+
+  <aside class="notes">
+    Herman and Renz published this in Public Administration Review in 2004. What makes it notable is the longitudinal design — they studied the same organizations over time, which is rare in nonprofit research. Their four dimensions of effectiveness show that an organization can be financially healthy but have poor programs, or have excellent programs but weak governance. The implication is that you cannot reduce effectiveness to a single number or rating. This is why systems like Charity Navigator's star ratings have been criticized — they tend to overweight financial efficiency at the expense of program quality. For your nonprofit, think about which dimensions matter most to your stakeholders. A funder may care about financial health; a client may care about program quality; your board may care about organizational reputation. You need to manage all of these simultaneously.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: NINE THESES ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Nine Theses on Nonprofit Effectiveness:<br>Herman & Renz (2008)</h2>
+
+  <p>Building on a decade of research, Herman & Renz offered nine propositions to advance the field:</p>
+
+  <ol>
+    <li>Nonprofit organizational effectiveness is <strong>always comparative</strong></li>
+    <li>Effectiveness is <strong>multidimensional</strong> — it cannot be reduced to a single measure</li>
+    <li>Effectiveness is related to <strong>board effectiveness</strong>, but the relationship is complex</li>
+    <li>Organizations that use <strong>correct management practices</strong> are more likely to be effective</li>
+    <li>Effectiveness is a <strong>social construction</strong> — stakeholders define it differently</li>
+    <li>It is unlikely that there are <strong>universal best practices</strong> that always lead to effectiveness</li>
+    <li>Effectiveness is <strong>responsive to the environment</strong> — context matters</li>
+    <li>Organizational effectiveness is related to <strong>program effectiveness</strong> but they are not the same</li>
+    <li>The more we study effectiveness, the <strong>more complex</strong> it becomes</li>
+  </ol>
+
+  <aside class="notes">
+    This 2008 article in Nonprofit Management and Leadership is essentially Herman and Renz's summary statement after years of studying this question. Thesis 5 is the most important for our purposes: effectiveness is socially constructed. That means your donors, your board, your clients, your community, and your regulators may all define "effective" differently. A homeless shelter's clients define effectiveness as "I got a safe bed tonight." A donor defines it as "my money produced measurable outcomes." A policymaker defines it as "the homelessness rate went down." Your nonprofit must navigate all of these definitions. Thesis 6 is also critical — there are no universal best practices. What works in one context may not work in another. This is why strategic planning, which we covered in Week 9, matters so much: you have to understand your specific context and design accordingly.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: ETHICS AND EFFECTIVENESS ==================== -->
+<section>
+  <span class="label">Ethics</span>
+  <h2>Ethics and Effectiveness</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>Malloy & Agarwal (2001)</h3>
+      <ul>
+        <li>Studied ethical climate in nonprofit organizations</li>
+        <li>Organizations with strong <strong>principled ethical climates</strong> demonstrated better decision-making</li>
+        <li>Ethical climate shapes how employees respond to dilemmas — rules-based vs. values-based</li>
+        <li>Values-driven nonprofits align ethics with mission, not just compliance</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Rhode & Packel (2009)</h3>
+      <ul>
+        <li>Stanford Social Innovation Review piece on ethics in the nonprofit sector</li>
+        <li>Nonprofits are not immune to <strong>ethical failures</strong> — conflicts of interest, financial mismanagement, mission drift</li>
+        <li>Public trust is the sector's most valuable asset</li>
+        <li>Strong ethics → better governance → better outcomes → <strong>sustained effectiveness</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>The connection:</strong> You cannot be effective without being ethical. And you cannot be ethical without intentional structures — codes of conduct, transparent governance, accountability mechanisms.</p>
+  </div>
+
+  <aside class="notes">
+    These two readings connect ethics to effectiveness in complementary ways. Malloy and Agarwal, writing in NML in 2001, found that the ethical climate of an organization — the shared perceptions of what is ethically correct — directly influences how staff behave when facing difficult decisions. Organizations with principled climates, where decisions are guided by values and professional standards rather than self-interest or organizational politics, tend to perform better. Rhode and Packel, writing in SSIR in 2009, take a more practical perspective. They catalog the ethical challenges nonprofits face — executive compensation controversies, conflicts of interest on boards, donor influence on programming, financial opacity — and argue that the nonprofit sector's legitimacy depends on maintaining ethical standards that exceed the for-profit sector. For your nonprofit, this means building ethics into your governance structure from day one. Your board's code of conduct, your conflict of interest policy, your financial transparency — these are not just compliance exercises. They are the foundation of your effectiveness.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: WHY POLICY MATTERS ==================== -->
+<section>
+  <span class="label">Advocacy</span>
+  <h2>Nonprofit Advocacy:<br>Why Policy Matters</h2>
+
+  <p>Your nonprofit does not just serve clients — it can <strong>change the systems</strong> that create the problems your clients face.</p>
+
+  <ul>
+    <li><strong>Advocacy is legal.</strong> 501(c)(3) organizations can and should advocate for policy change</li>
+    <li><strong>Lobbying has limits</strong> — direct lobbying (contacting legislators about specific legislation) is restricted, not prohibited</li>
+    <li><strong>Grassroots advocacy</strong> — educating the public, mobilizing constituents, issuing reports — has no expenditure limits</li>
+    <li><strong>Public education</strong> — research, data, issue framing — is not lobbying at all</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Activity</th>
+      <th>Type</th>
+      <th>Limit</th>
+    </tr>
+    <tr>
+      <td>Publishing research on an issue</td>
+      <td>Public education</td>
+      <td>No limit</td>
+    </tr>
+    <tr>
+      <td>Urging the public to contact legislators</td>
+      <td>Grassroots lobbying</td>
+      <td>Subject to expenditure test</td>
+    </tr>
+    <tr>
+      <td>Meeting with a legislator about a bill</td>
+      <td>Direct lobbying</td>
+      <td>Subject to expenditure test</td>
+    </tr>
+    <tr>
+      <td>Hosting a candidate forum (nonpartisan)</td>
+      <td>Voter education</td>
+      <td>No limit</td>
+    </tr>
+    <tr>
+      <td>Endorsing a candidate</td>
+      <td>Prohibited</td>
+      <td>Absolutely prohibited for 501(c)(3)</td>
+    </tr>
+  </table>
+
+  <aside class="notes">
+    This is one of the most misunderstood areas of nonprofit law. Many nonprofit leaders believe that 501(c)(3) organizations cannot engage in advocacy at all. That is wrong. The restriction is on excessive lobbying — meaning direct communication with legislators about specific legislation — and even that is permitted within limits. Under the 501(h) election, organizations can spend up to 20% of their first $500,000 on lobbying. Grassroots advocacy, public education, research, coalition building, media engagement — none of these are lobbying. Your advocacy plan should show that you understand these distinctions and can design a strategy that is both effective and legally compliant. Think about your prior coursework in PAD 6142 and PAD 5146 — you studied the policy process. Now you are applying it to your own organization.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: POLICY ADVOCACY PLAN ==================== -->
+<section>
+  <span class="label">Competency 5</span>
+  <h2>Your Policy Advocacy Plan (10 pts)</h2>
+
+  <p><strong>C5: Participate in and contribute to the policy process</strong></p>
+  <p>5–7 pages. Build on your prior coursework from PAD 6142 (Policy Advocacy Plan) and PAD 5146 (Policy Process Assignment).</p>
+
+  <table>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Issue Framing</td>
+      <td>Define the policy problem your nonprofit addresses. Use data.</td>
+    </tr>
+    <tr>
+      <td>Policy Goal</td>
+      <td>What specific policy change are you advocating for?</td>
+    </tr>
+    <tr>
+      <td>Stakeholder Map</td>
+      <td>Who are the allies, opponents, and decision-makers?</td>
+    </tr>
+    <tr>
+      <td>Advocacy Strategy</td>
+      <td>Tactics that are legal under 501(c)(3). Public education, grassroots, coalition.</td>
+    </tr>
+    <tr>
+      <td>Legislative Contact Plan</td>
+      <td>How will you engage elected officials? At what level?</td>
+    </tr>
+    <tr>
+      <td>Public Communication Plan</td>
+      <td>Media, social media, community engagement.</td>
+    </tr>
+    <tr>
+      <td>Evaluation</td>
+      <td>How will you measure the success of your advocacy efforts?</td>
+    </tr>
+  </table>
+
+  <aside class="notes">
+    This is your fifth and final competency assignment, worth 10 points. The advocacy plan should be 5 to 7 pages and should demonstrate that you can participate in and contribute to the policy process — NASPAA Competency 5. Each component builds on skills you have already developed. Issue framing draws on your mission and needs assessment. Stakeholder mapping draws on your governance and community analysis. The advocacy strategy requires you to understand the legal framework for 501(c)(3) advocacy. The legislative contact plan requires you to identify specific officials at the local, state, or federal level who have jurisdiction over your issue. And the evaluation section asks you to think about how you would know if your advocacy worked. This is not hypothetical — real nonprofits do this work every day. The National Council of Nonprofits, Independent Sector, and your state nonprofit association all provide resources for advocacy planning.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: AI DEMO — POLICY BRIEF ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>AI Demo: Draft a Policy Brief</h2>
+
+  <p>Use Claude to draft a structured policy brief for your advocacy plan:</p>
+
+  <div class="prompt-box"><span class="prompt-label">Claude Prompt</span>Draft a 2-page policy brief on [your issue] for [target audience — e.g., Florida state legislators].
+
+Include:
+- Problem statement with current data and trends
+- Policy recommendation (specific, actionable)
+- Implementation considerations
+- Fiscal impact estimate
+- Supporting evidence from peer-reviewed research
+
+Tone: professional, nonpartisan, evidence-based.
+Organization: [your nonprofit name].</div>
+
+  <ul>
+    <li><strong>Review the output critically</strong> — verify all data points, check that recommendations are realistic</li>
+    <li><strong>Revise for your voice</strong> — the brief should sound like your organization, not a generic AI output</li>
+    <li><strong>Add local context</strong> — Florida-specific data, local examples, state legislative history</li>
+  </ul>
+
+  <aside class="notes">
+    This AI demo shows you how to use Claude to draft a policy brief, which can be a component of or supplement to your advocacy plan. The key is the prompt structure — specifying the audience, the tone, and the required sections. A policy brief for a state legislator looks different from one written for a foundation or a community group. When you get the output, do not submit it as-is. Verify every data point. Check that the policy recommendation is actually feasible. Add Florida-specific context — legislators respond to local data, not national statistics. And make sure the voice matches your organization's brand. AI gives you a strong draft; you make it authentic and accurate.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: AI DEMO — ADVOCACY ONE-PAGER ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>AI Demo: Create an Advocacy One-Pager</h2>
+
+  <p>Use <strong>Canva AI</strong> to design a one-page advocacy handout for your nonprofit:</p>
+
+  <div class="two-col">
+    <div>
+      <h3>What to Include</h3>
+      <ul>
+        <li>Your organization's name and logo</li>
+        <li>The key message — one sentence</li>
+        <li>2–3 supporting data points</li>
+        <li>A clear call to action</li>
+        <li>Contact information</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Design Principles</h3>
+      <ul>
+        <li>One page, front only</li>
+        <li>Large, scannable text</li>
+        <li>Your brand colors and fonts</li>
+        <li>Visual hierarchy: message → data → action</li>
+        <li>No jargon — designed for a legislator's aide who has 30 seconds</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>This one-pager can be included in your advocacy plan appendix and linked from your website's advocacy page.</p>
+
+  <aside class="notes">
+    The advocacy one-pager is one of the most practical tools in a nonprofit's policy toolkit. When you visit a legislator's office — or send materials to their staff — you need something that communicates your message in 30 seconds or less. Canva's AI tools can generate a layout for you, but you need to supply the content. The key message should be one sentence that a staffer could repeat to the legislator. The data should be specific and local — "In Orange County, 1 in 5 children experiences food insecurity" is stronger than "hunger is a national problem." The call to action should be concrete — "Support HB 1234" or "Fund the state nutrition assistance program at $X million." This is a real deliverable that could go on your website and into your advocacy plan.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: WEBSITE UPDATE ==================== -->
+<section>
+  <span class="label">Website</span>
+  <h2>Website Update: Add Your Advocacy Page</h2>
+
+  <p>Add an <strong>"Advocacy"</strong> or <strong>"Take Action"</strong> page to your nonprofit website.</p>
+
+  <ul>
+    <li><strong>Policy goals:</strong> What issues does your nonprofit care about at the policy level?</li>
+    <li><strong>Key issues:</strong> Brief, accessible explanation of the problems and your position</li>
+    <li><strong>How supporters can take action:</strong>
+      <ul>
+        <li>Contact their legislators (provide names, links, phone numbers)</li>
+        <li>Sign petitions or join coalitions</li>
+        <li>Attend public hearings or community events</li>
+        <li>Share your advocacy materials on social media</li>
+      </ul>
+    </li>
+    <li><strong>Resources:</strong> Link to your policy brief, one-pager, and relevant reports</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Examples to study:</strong> Look at advocacy pages from organizations like the National Council of Nonprofits, Feeding America, or Habitat for Humanity. Notice how they make policy accessible to non-expert audiences.</p>
+  </div>
+
+  <aside class="notes">
+    This is your final major website addition. The advocacy page demonstrates that your nonprofit is not just a service provider — it is a voice for systemic change. A good advocacy page does three things: it educates visitors about the policy issues, it provides clear and specific actions they can take, and it positions your organization as a credible voice on the issue. Most of you have been building your websites week by week throughout the semester. After this addition, your site should have all the core pages: Home, About, Board, Team, Get Involved, Programs, Donate, Our Strategy, and now Advocacy. Use Thanksgiving break to polish everything before the final pitch.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: WEBSITE CHECKLIST ==================== -->
+<section>
+  <span class="label">Progress Check</span>
+  <h2>Your Website Is Almost Complete</h2>
+
+  <p>After this week, your nonprofit website should include all of the following pages:</p>
+
+  <div class="two-col">
+    <div>
+      <ul class="checklist">
+        <li><strong>Home</strong> — Mission, hero section, overview</li>
+        <li><strong>About</strong> — Story, theory of change, history</li>
+        <li><strong>Board of Directors</strong> — Bios, governance info</li>
+        <li><strong>Our Team</strong> — Staff, org chart</li>
+        <li><strong>Get Involved</strong> — Volunteer, partnerships</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="checklist">
+        <li><strong>Programs</strong> — Services, logic model</li>
+        <li><strong>Donate</strong> — Fundraising, impact</li>
+        <li><strong>Our Strategy</strong> — Strategic plan summary</li>
+        <li><strong>Advocacy / Take Action</strong> — Policy, action items</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>Thanksgiving break task:</strong> Review every page. Check for consistency in branding, messaging, and navigation. Fix broken links. Ask a friend or family member to navigate the site and give you feedback.</p>
+  </div>
+
+  <aside class="notes">
+    Take a moment to assess where you are. Your website has been built incrementally — each week adding a new page that corresponds to a component of your nonprofit. By now, you should have nine substantive pages. During Thanksgiving break, your task is to polish. Read every page as if you were a potential donor or board member visiting for the first time. Is the navigation intuitive? Is the messaging consistent? Do the pages load properly? Are there typos or broken links? This website is part of your final pitch presentation — you will walk the audience through it live. Make sure it represents your best work.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 13: LOOKING AHEAD ==================== -->
+<section>
+  <span class="label">What's Next</span>
+  <h2>After Thanksgiving: Final Nonprofit Pitch</h2>
+
+  <p><strong>Week 14 — November 30, 2026</strong></p>
+  <p>Your capstone moment: the <strong>Final Nonprofit Pitch Presentation</strong> (15 pts).</p>
+
+  <ul>
+    <li><strong>10-minute recorded or live presentation</strong></li>
+    <li>You are pitching to potential funders, board members, and community partners</li>
+    <li>Include a <strong>live website walkthrough</strong></li>
+    <li>Submit your <strong>Nonprofit Builder Workbook</strong> as an appendix</li>
+    <li>Submit your <strong>final AI Process Log</strong></li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Start preparing now.</strong> Do not wait until after Thanksgiving. Draft your script, organize your slides, rehearse your delivery. This is the culmination of 14 weeks of work — give it the preparation it deserves.</p>
+  </div>
+
+  <p><strong>Readings for Week 14:</strong> Worth Ch. 17 · Hudson Ch. 7 (pg. 209–234) · Gottlieb (2009) pp. 329–355</p>
+
+  <aside class="notes">
+    I want to be very clear about the timeline. Next week is Thanksgiving — no class. The week after that, November 30, is our final class: the Final Nonprofit Pitch Presentation, worth 15 points. This is the highest-stakes deliverable of the semester. You are presenting your nonprofit as if you were pitching it to real funders and community partners. You will walk through your website live, summarize your theory of change, organizational structure, programs, budget, and advocacy strategy, and reflect on what you learned. Start preparing now. Draft your script this week. Build your slide deck over the break. Rehearse multiple times. This is your capstone of the capstone — make it count.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 14: CLOSING ==================== -->
+<section>
+  <span class="label">Closing</span>
+  <h2>Questions + Happy Thanksgiving</h2>
+
+  <div class="gold-bg">
+    <p><strong>This week's deliverable:</strong> C5: Policy Advocacy Plan (10 pts)</p>
+    <p><strong>Key readings:</strong> Worth Ch. 16 · Herman & Renz (2004) PAR · Sawhill & Williamson (2001) NML · Wolf Ch. 11 · Herman & Renz (2008) NML · Malloy & Agarwal (2001) NML · Rhode & Packel (2009) SSIR</p>
+    <p><strong>NASPAA Competency 5:</strong> Participate in and contribute to the policy process</p>
+  </div>
+
+  <p><strong>Thanksgiving Break:</strong> November 23–28. No class meeting.</p>
+  <p><strong>Use the break to:</strong> Polish your website, prepare your pitch presentation, compile your workbook appendix, finalize your AI Process Log.</p>
+
+  <div class="meta" style="margin-top: 40px; font-family: 'DM Mono', monospace; font-size: 0.5em; color: var(--ucf-gray);">
+    Dr. Seongho An<br>
+    PAD 6149 – Nonprofit Administration: Build Your Nonprofit<br>
+    University of Central Florida · Fall 2026
+  </div>
+
+  <aside class="notes">
+    That wraps up Week 13. Submit your Policy Advocacy Plan on time — it is worth 10 points and is your final competency assignment before the pitch. Update your website with the advocacy page. And please, start working on your final presentation now. I know Thanksgiving is a busy time, but the pitch is November 30 — that is only two weeks away. If you have questions about the advocacy plan, the pitch format, or anything else, reach out during office hours or by email. Have a wonderful Thanksgiving, and I will see you in Week 14 for your final presentations.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 · Dr. Seongho An</span>
+  <span>Week 13 — Nonprofit Effectiveness & Advocacy</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    transition: 'none',
+    showNotes: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    center: false
+  });
+</script>
+</body>
+</html>

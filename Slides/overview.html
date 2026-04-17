@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Capstone Redesign: Faculty & Board Briefing</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+    --ucf-muted: #A8A29E;
+  }
+
+  .reveal-viewport { background: var(--ucf-bg); }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.9em; line-height: 1.1; letter-spacing: -0.025em; }
+  .reveal h2 {
+    font-size: 1.3em;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    padding-bottom: 6px;
+    position: relative;
+  }
+  .reveal h2::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 28px; height: 2px;
+    background: var(--ucf-gold);
+  }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent { color: var(--ucf-gold); }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+  .reveal .gold-bg p, .reveal .gold-bg li { font-size: 0.65em; }
+
+  .reveal .dark-bg {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 18px 22px;
+    margin: 16px 0;
+    border-radius: 6px;
+  }
+  .reveal .dark-bg p, .reveal .dark-bg li { color: #E7E5E4; font-size: 0.65em; }
+  .reveal .dark-bg strong { color: var(--ucf-gold); }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.58em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+    vertical-align: top;
+  }
+
+  .reveal table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  .reveal .title-slide h1 { font-size: 1.7em; margin-bottom: 0.2em; }
+  .reveal .title-slide .subtitle {
+    font-size: 0.75em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+  .two-col p, .two-col li { font-size: 0.68em; line-height: 1.6; }
+
+  /* Compare panes (old vs new) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 10px;
+  }
+  .compare .pane {
+    padding: 16px 18px;
+    border-radius: 6px;
+    border: 1px solid var(--ucf-light-gray);
+    background: #fff;
+  }
+  .compare .pane.old {
+    background: #F5F5F0;
+    border-color: var(--ucf-light-gray);
+  }
+  .compare .pane.new {
+    border-left: 3px solid var(--ucf-gold);
+  }
+  .compare .pane h3 {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'DM Mono', monospace;
+  }
+  .compare .pane.old h3 { color: var(--ucf-gray); }
+  .compare .pane.new h3 { color: var(--ucf-dark); }
+  .compare .pane ul { padding-left: 1em; }
+  .compare .pane li { font-size: 0.62em; margin-bottom: 7px; line-height: 1.55; }
+  .compare .pane p { font-size: 0.62em; line-height: 1.55; }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin: 28px 0 14px;
+    padding: 0;
+  }
+  .timeline-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding-top: 24px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 0; right: 0;
+    height: 3px;
+    background: var(--ucf-light-gray);
+  }
+  .timeline-item:first-child::before { left: 50%; }
+  .timeline-item:last-child::before { right: 50%; }
+  .timeline-item .dot {
+    width: 14px; height: 14px;
+    background: var(--ucf-gold);
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    position: relative; z-index: 1;
+  }
+  .timeline-item:first-child .dot { background: var(--ucf-dark); }
+  .timeline-item .timeline-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--ucf-gray);
+    line-height: 1.35;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--ucf-dark);
+    line-height: 1.35;
+    margin: 28px 0 20px;
+    padding-left: 18px;
+    border-left: 4px solid var(--ucf-gold);
+  }
+  .pull-quote .attrib {
+    display: block;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    font-weight: 400;
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* Outcome tiles */
+  .tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .tile {
+    background: #fff;
+    border: 1px solid var(--ucf-light-gray);
+    border-top: 3px solid var(--ucf-gold);
+    border-radius: 4px;
+    padding: 14px 16px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    cursor: default;
+  }
+  .tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    border-color: var(--ucf-gold);
+  }
+  .tile h4 {
+    font-size: 0.7em;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--ucf-dark);
+  }
+  .tile p {
+    font-size: 0.56em;
+    margin: 0;
+    color: var(--ucf-gray);
+    line-height: 1.55;
+  }
+
+  /* Stat row */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 22px 0 14px;
+  }
+  .stat {
+    text-align: center;
+    padding: 14px 8px;
+    border: 1px solid var(--ucf-light-gray);
+    border-radius: 6px;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .stat:hover {
+    transform: translateY(-2px);
+    border-color: var(--ucf-gold);
+    box-shadow: 0 4px 12px rgba(255,201,4,0.15);
+  }
+  .stat .num {
+    display: block;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--ucf-dark);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat .lbl {
+    display: block;
+    font-size: 11.5px;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ucf-gray);
+    margin-top: 7px;
+  }
+
+  /* Website showcase (slide 7) */
+  .site-showcase {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 28px;
+    align-items: center;
+    margin-top: 18px;
+  }
+  .site-showcase .showcase-text p { font-size: 0.62em; line-height: 1.6; }
+  .browser-mockup {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.08);
+    background: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .browser-mockup:hover {
+    transform: translateY(-3px) rotate(-0.5deg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1), 0 24px 50px rgba(0,0,0,0.12);
+  }
+
+  /* Workflow diagram (slide 8) */
+  .workflow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+    align-items: stretch;
+  }
+  .workflow .node {
+    position: relative;
+    padding: 14px 12px;
+    background: #fff;
+    border: 1px solid var(--ucf-light-gray);
+    border-radius: 6px;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .workflow .node:hover {
+    border-color: var(--ucf-gold);
+    box-shadow: 0 4px 12px rgba(255,201,4,0.15);
+    transform: translateY(-2px);
+  }
+  .workflow .node .n-step {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ucf-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .workflow .node .n-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ucf-dark);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .workflow .node .n-desc {
+    font-size: 10.5px;
+    color: var(--ucf-gray);
+    line-height: 1.4;
+  }
+  .workflow .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ucf-gold);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .workflow .node.final {
+    background: var(--ucf-dark);
+    border-color: var(--ucf-dark);
+  }
+  .workflow .node.final .n-step { color: var(--ucf-gold); }
+  .workflow .node.final .n-title { color: var(--ucf-bg); }
+  .workflow .node.final .n-desc { color: rgba(250,250,247,0.7); }
+
+  /* Compare panes hover polish */
+  .compare .pane {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .compare .pane.new:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255,201,4,0.12);
+  }
+  .compare .pane.old:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  }
+
+  /* Interactive grade chart (slide 12) */
+  .grade-chart { margin: 22px 0 10px; }
+  .grade-bar {
+    display: flex;
+    height: 56px;
+    border-radius: 6px;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    position: relative;
+  }
+  .grade-bar .seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+    transition: filter 0.18s ease, transform 0.18s ease;
+  }
+  .grade-bar .seg:first-child { border-radius: 6px 0 0 6px; }
+  .grade-bar .seg:last-child { border-radius: 0 6px 6px 0; }
+  .grade-bar .seg:hover {
+    filter: brightness(1.08) saturate(1.15);
+    z-index: 2;
+  }
+  .grade-bar .seg::after {
+    content: attr(data-label) ' · ' attr(data-pts) ' pts';
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: var(--ucf-dark);
+    color: var(--ucf-bg);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .grade-bar .seg::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: var(--ucf-dark);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    z-index: 20;
+  }
+  .grade-bar .seg:hover::after,
+  .grade-bar .seg:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  .grade-bar .seg .pts-label {
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .grade-legend {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--ucf-gray);
+    margin-top: 44px;
+  }
+  .grade-legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    line-height: 1.3;
+    transition: color 0.15s ease;
+  }
+  .grade-legend .legend-item:hover { color: var(--ucf-dark); }
+  .grade-legend .swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .grade-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ucf-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .grade-summary .total-mark strong {
+    color: var(--ucf-dark);
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+
+  /* Tool matrix — interactive hover */
+  .tool-matrix { position: relative; }
+  .tool-matrix { margin-top: 18px; }
+  .tool-matrix table {
+    table-layout: fixed;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px !important;
+    border: 1px solid var(--ucf-light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .tool-matrix thead { background: var(--ucf-dark) !important; }
+  .tool-matrix th {
+    color: var(--ucf-bg) !important;
+    font-family: 'DM Mono', monospace !important;
+    font-size: 11px !important;
+    padding: 7px 2px !important;
+    text-align: center !important;
+    text-transform: none !important;
+    letter-spacing: 0.02em !important;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .tool-matrix th:first-child {
+    text-align: left !important;
+    padding-left: 12px !important;
+    width: 170px;
+  }
+  .tool-matrix td {
+    padding: 7px 2px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    color: var(--ucf-dark) !important;
+    font-weight: 600;
+    line-height: 1;
+    vertical-align: middle !important;
+    border-bottom: 1px solid var(--ucf-light-gray) !important;
+    border-right: 1px solid rgba(0,0,0,0.04);
+  }
+  .tool-matrix tr:last-child td { border-bottom: none !important; }
+  .tool-matrix tbody tr:nth-child(even) td { background: #fff !important; }
+  .tool-matrix tbody tr td { background: #fff !important; }
+  .tool-matrix td:first-child {
+    text-align: left !important;
+    padding-left: 12px !important;
+    padding-right: 6px !important;
+    color: var(--ucf-dark) !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+    font-weight: 500;
+    background: var(--ucf-bg) !important;
+    border-right: 2px solid var(--ucf-gold) !important;
+  }
+  .tool-matrix td:not(:first-child):not(:empty) {
+    background: var(--ucf-gold-light) !important;
+    color: #A07C00 !important;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .tool-matrix tbody tr {
+    transition: background 0.15s ease;
+  }
+  .tool-matrix tbody tr:hover td {
+    background: #FFFCE8 !important;
+  }
+  .tool-matrix tbody tr:hover td:first-child {
+    color: var(--ucf-dark) !important;
+    border-right-color: var(--ucf-dark) !important;
+  }
+  .tool-matrix tbody tr:hover td:not(:first-child):not(:empty) {
+    background: var(--ucf-gold) !important;
+    color: var(--ucf-dark) !important;
+  }
+  .tool-matrix td:first-child.has-tip {
+    cursor: help;
+    position: relative;
+  }
+  .tool-matrix td:first-child.has-tip::after {
+    content: attr(data-tip);
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 14px);
+    transform: translateY(-50%);
+    background: var(--ucf-dark);
+    color: var(--ucf-bg);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-align: left;
+    white-space: normal;
+    width: 320px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    z-index: 30;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    line-height: 1.4;
+  }
+  .tool-matrix td:first-child.has-tip:hover::after { opacity: 1; }
+  .tool-matrix .mx-legend {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ucf-gray);
+    margin-top: 10px;
+    line-height: 1.55;
+  }
+
+  /* Competency list */
+  .competency-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  .competency-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    font-size: 0.62em;
+    line-height: 1.55;
+  }
+  .competency-list li:last-child { border-bottom: none; }
+  .c-code {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--ucf-dark);
+    display: inline-block;
+    width: 2.5em;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ucf-muted);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  .reveal .slides section .fragment { transition: none; }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">MNM Faculty & Board Briefing · Fall 2026</span>
+  <h1>Redesigning the MNM Capstone</h1>
+  <p class="subtitle">PAD 6149 — Nonprofit Administration: <em>Build Your Nonprofit with AI</em></p>
+  <div class="meta">
+<p>Dr. Seongho An<br />
+School of Public Administration<br />
+University of Central Florida</p>
+</div>
+  <aside class="notes">
+<p>Thank you for the time today. I want to walk you through a ground-up redesign of PAD 6149, our MNM capstone. The redesign takes effect in Fall 2026. My goal in the next fifteen minutes is simple: explain what has changed, why, and what students will walk out of this course with that they did not before. I'll save questions for the end.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Starting Point</span>
+  <h2>The Capstone We Inherited</h2>
+<p>Under its current design, PAD 6149 was organized around <strong>three retrospective activities</strong>:</p>
+<ul>
+<li><strong>Discussion Board Participation — 50%.</strong> Students posted ~1,000 words per week reacting to readings.</li>
+<li><strong>ePortfolio Assignment — 30%.</strong> Students uploaded prior MNM coursework with short reflection papers organized by NASPAA competency.</li>
+<li><strong>Leadership Case Study — 20%.</strong> A single written case analysis.</li>
+</ul>
+<p>AI tools were explicitly <strong>prohibited</strong>: "The use of Artificial Intelligence (AI) tools… is not permitted in this class."</p>
+<aside class="notes">
+<p>This is where we were. The course was effectively a review semester: students looked backward at work they had already done, reflected on it, and posted in discussion boards. That design had integrity when it was built — the ePortfolio was the intended synthesis artifact. But it leaves students with no new, forward-facing deliverable. And the explicit AI prohibition, written in 2024, is now out of step with what every practicing nonprofit leader actually does on the job.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">The Redesign</span>
+  <h2>One Sentence</h2>
+<div class="pull-quote">
+Students do not write <em>about</em> nonprofit management. They <span class="gold-accent">build a nonprofit</span>.
+<span class="attrib">— Core Design Principle, PAD 6149 (Fall 2026)</span>
+</div>
+<p>Every weekly deliverable in the redesigned course adds a real component to a single cohesive organization — governance documents, budget, staffing plan, strategic plan, program design, fundraising strategy, advocacy plan, and a public-facing website. By Week 14, the student has produced a complete nonprofit blueprint.</p>
+<aside class="notes">
+<p>If you take only one idea from this briefing, let it be this one. The capstone is no longer a retrospective. It is a design studio. Students spend fifteen weeks building one nonprofit organization from scratch — a real one, documented publicly. Every textbook concept, every prior assignment they've written for other MNM courses, gets reactivated in service of that one organization. It's the difference between writing a memoir and producing a working prototype.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Side-by-Side</span>
+  <h2>What Changed</h2>
+<div class="compare">
+  <div class="pane old">
+    <h3>Current</h3>
+    <ul>
+      <li>3 assessments (discussion boards, ePortfolio, one case study)</li>
+      <li>Retrospective synthesis of prior coursework</li>
+      <li>50% of grade = weekly discussion posts</li>
+      <li>AI use <strong>prohibited</strong></li>
+      <li>No public deliverable</li>
+      <li>No practitioner engagement</li>
+    </ul>
+  </div>
+  <div class="pane new">
+    <h3>Fall 2026</h3>
+    <ul>
+      <li>15 weekly deliverables, all feeding one organization</li>
+      <li>Prior coursework <strong>reactivated</strong> into a new, student-owned org</li>
+      <li>No discussion boards; no standalone ePortfolio</li>
+      <li>AI use <strong>required</strong>, with ethical framework</li>
+      <li>Public website + YouTube pitch video</li>
+      <li>Service learning: practitioner mentor interview</li>
+    </ul>
+  </div>
+</div>
+<aside class="notes">
+<p>Every dimension of the course changed. The assessment model shifted from three large bundled items to fifteen linked weekly deliverables, each one small enough to be submitted well but additive enough that by the end of the term, the student has something substantial. We removed the discussion boards, which accounted for half the prior grade, because the signal-to-noise ratio on asynchronous 1,000-word posts was poor. We replaced the retrospective ePortfolio with a forward-facing public website. And we reversed the AI policy — I'll explain the rationale in a moment.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Design Philosophy</span>
+  <h2>Two Ideas Driving the Redesign</h2>
+<div class="two-col">
+  <div>
+    <h3>1. Execution is the capstone competency</h3>
+    <p>Graduate students in a professional program don't need more exposure to concepts. They need repeated practice <strong>producing</strong> the artifacts a nonprofit leader actually produces — bylaws, budgets, logic models, pitch decks.</p>
+  </div>
+  <div>
+    <h3>2. AI fluency is a professional competency</h3>
+    <p>Nonprofit managers already use AI for grant writing, donor communications, program evaluation, and strategic planning. Prohibiting it leaves graduates unprepared. Requiring it — with a documented ethical framework — prepares them.</p>
+  </div>
+</div>
+<div class="gold-bg">
+<p>Both ideas point in the same direction: a capstone measured by what students can <strong>do</strong>, not what they can recall.</p>
+</div>
+<aside class="notes">
+<p>The redesign rests on two claims. The first is pedagogical: at the end of a professional master's degree, the right evidence of mastery is a produced artifact, not a recalled fact. The second is environmental: our graduates enter a sector that already uses AI daily, so we need to teach them to use it responsibly rather than pretend it doesn't exist. These two ideas are complementary — building a real nonprofit is the natural context in which to learn applied AI use, because both require judgment, iteration, and critique rather than memorization.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Semester Arc</span>
+  <h2>What Gets Built, Week by Week</h2>
+<div class="timeline">
+  <div class="timeline-item"><div class="dot"></div><div class="timeline-label">Wk 1–2<br><strong>Concept &amp;<br>Interview Plan</strong></div></div>
+  <div class="timeline-item"><div class="dot"></div><div class="timeline-label">Wk 3–4<br><strong>Website &amp;<br>Governance</strong></div></div>
+  <div class="timeline-item"><div class="dot"></div><div class="timeline-label">Wk 5–6<br><strong>HR, Volunteers,<br>Identity</strong></div></div>
+  <div class="timeline-item"><div class="dot"></div><div class="timeline-label">Wk 7–8<br><strong>Budget &amp;<br>Fundraising</strong></div></div>
+  <div class="timeline-item"><div class="dot"></div><div class="timeline-label">Wk 9–10<br><strong>Strategy &amp;<br>Evaluation</strong></div></div>
+  <div class="timeline-item"><div class="dot"></div><div class="timeline-label">Wk 11–13<br><strong>Leadership, AI,<br>Advocacy</strong></div></div>
+  <div class="timeline-item"><div class="dot"></div><div class="timeline-label">Wk 14<br><strong>Final Pitch<br>(YouTube)</strong></div></div>
+</div>
+<p>The sequence mirrors how a founder would actually develop an organization: concept → structure → people → money → strategy → programs → voice → pitch. Prior MNM coursework is reactivated at each stage rather than reviewed in isolation.</p>
+<div class="tool-matrix">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th style="text-align: center;">W1</th>
+<th style="text-align: center;">W2</th>
+<th style="text-align: center;">W3</th>
+<th style="text-align: center;">W4</th>
+<th style="text-align: center;">W5</th>
+<th style="text-align: center;">W6</th>
+<th style="text-align: center;">W7</th>
+<th style="text-align: center;">W8</th>
+<th style="text-align: center;">W9</th>
+<th style="text-align: center;">W10</th>
+<th style="text-align: center;">W11</th>
+<th style="text-align: center;">W12</th>
+<th style="text-align: center;">W13</th>
+<th style="text-align: center;">W14</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ChatGPT · Claude</strong></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+</tr>
+<tr>
+<td><strong>NotebookLM</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><strong>Canva</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+</tr>
+<tr>
+<td><strong>Web Builder</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><strong>DALL·E / Image Gen</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><strong>Video Tools</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+</tr>
+</tbody>
+</table>
+<p class="mx-legend">● = tool used that week. ChatGPT/Claude runs throughout for drafting and revision; NotebookLM activates when adapting prior MNM coursework (governance, HR, finance, fundraising, strategy, evaluation, advocacy); Canva for every visual deliverable. All tools have free tiers.</p>
+:::
+</div>
+<aside class="notes">
+<p>The semester follows the arc a real nonprofit founder would follow. We start with concept and mentor-practitioner research in weeks one and two. Weeks three and four establish the structural spine — the website and governance documents. Weeks five and six address people and identity. Weeks seven and eight cover money. Weeks nine and ten move into strategy and evaluation. The closing stretch covers leadership, AI-enabled communications, advocacy, and the final pitch. At no point is a student starting from a blank page; each week builds on the previous one.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">The Artifact</span>
+  <h2>One Integrating Deliverable: A Live Website</h2>
+<p>From Week 3 forward, every major assignment produces <strong>two outputs</strong>: a document submitted to Webcourses, and a corresponding page on the student's public nonprofit website.</p>
+<div class="stats">
+  <div class="stat"><span class="num" data-target="1">1</span><span class="lbl">nonprofit per student</span></div>
+  <div class="stat"><span class="num" data-target="11">11</span><span class="lbl">website sections</span></div>
+  <div class="stat"><span class="num" data-target="14">14</span><span class="lbl">weekly builds</span></div>
+  <div class="stat"><span class="num" data-target="1">1</span><span class="lbl">final pitch video</span></div>
+</div>
+<div class="site-showcase">
+  <div class="showcase-text">
+    <p>Platform choice is the student's — Wix, Squarespace, WordPress, Google Sites, or a code-based option. The website is <strong>graded on content and professionalism</strong>, not technology.</p>
+    <p>At the end of the term, it is a public artifact the student can show a future employer or funder.</p>
+  </div>
+  <svg class="browser-mockup" viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="420" height="280" rx="8" fill="#FFFFFF"/>
+    <rect x="0" y="0" width="420" height="28" rx="8" fill="#F5F5F0"/>
+    <rect x="0" y="20" width="420" height="8" fill="#F5F5F0"/>
+    <circle cx="16" cy="14" r="4" fill="#FF6058"/>
+    <circle cx="30" cy="14" r="4" fill="#FFBD2E"/>
+    <circle cx="44" cy="14" r="4" fill="#28C840"/>
+    <rect x="70" y="7" width="300" height="14" rx="3" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <text x="80" y="17" font-family="DM Mono, monospace" font-size="8" fill="#78716C">yourorg.org</text>
+    <rect x="0" y="28" width="420" height="92" fill="#1C1917"/>
+    <rect x="0" y="28" width="420" height="3" fill="#FFC904"/>
+    <text x="20" y="64" font-family="DM Sans, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Your Nonprofit</text>
+    <text x="20" y="82" font-family="DM Sans, sans-serif" font-size="9" fill="rgba(255,255,255,0.65)">One-line mission statement goes here.</text>
+    <rect x="20" y="90" width="64" height="20" rx="3" fill="#FFC904"/>
+    <text x="34" y="104" font-family="DM Sans, sans-serif" font-size="9" font-weight="600" fill="#1C1917">Donate</text>
+    <g font-family="DM Mono, monospace" font-size="9" fill="rgba(255,255,255,0.55)">
+      <text x="245" y="46">About</text>
+      <text x="280" y="46">Programs</text>
+      <text x="325" y="46">Impact</text>
+      <text x="360" y="46">Give</text>
+    </g>
+    <g>
+      <rect x="20" y="138" width="120" height="78" rx="4" fill="#FAFAF7" stroke="#E7E5E4"/>
+      <rect x="20" y="138" width="120" height="3" fill="#FFC904"/>
+      <text x="30" y="158" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#1C1917">Our Mission</text>
+      <rect x="30" y="168" width="88" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="30" y="176" width="72" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="30" y="184" width="92" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="30" y="192" width="60" height="3" rx="1" fill="#D4CFCA"/>
+    </g>
+    <g>
+      <rect x="150" y="138" width="120" height="78" rx="4" fill="#FAFAF7" stroke="#E7E5E4"/>
+      <rect x="150" y="138" width="120" height="3" fill="#FFC904"/>
+      <text x="160" y="158" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#1C1917">Our Programs</text>
+      <rect x="160" y="168" width="88" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="160" y="176" width="72" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="160" y="184" width="92" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="160" y="192" width="60" height="3" rx="1" fill="#D4CFCA"/>
+    </g>
+    <g>
+      <rect x="280" y="138" width="120" height="78" rx="4" fill="#FAFAF7" stroke="#E7E5E4"/>
+      <rect x="280" y="138" width="120" height="3" fill="#FFC904"/>
+      <text x="290" y="158" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#1C1917">Take Action</text>
+      <rect x="290" y="168" width="88" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="290" y="176" width="72" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="290" y="184" width="92" height="3" rx="1" fill="#D4CFCA"/>
+      <rect x="290" y="192" width="60" height="3" rx="1" fill="#D4CFCA"/>
+    </g>
+    <g fill="#E7E5E4">
+      <rect x="20" y="232" width="380" height="6" rx="2"/>
+      <rect x="20" y="244" width="380" height="6" rx="2"/>
+      <rect x="20" y="256" width="260" height="6" rx="2"/>
+    </g>
+  </svg>
+</div>
+<aside class="notes">
+<p>The website is what holds the course together. Every document a student submits has a corresponding public-facing summary on their nonprofit's website. We're not asking students to learn web development — they can use any no-code tool. What we're asking is that they treat their work as something a stranger will see, which raises the quality bar naturally. And because the website is public, it doubles as a portfolio piece. A student going into a job interview can point a hiring manager to a live URL showing a complete organizational blueprint they designed.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Curricular Integration</span>
+  <h2>Reactivating Prior MNM Coursework</h2>
+<p>Every major capstone assignment begins by pulling a specific prior assignment the student already wrote for another MNM course — then adapting it to their own organization.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Capstone Assignment</th>
+<th>Prior Coursework Reactivated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Board Governance Policy (Wk 4)</td>
+<td>PAD 6237 Governance Case Study</td>
+</tr>
+<tr>
+<td>HR &amp; Volunteer Management Plan (Wk 5)</td>
+<td>PAD 6417 HR Case Study · PAD 5145 Volunteer Case Study</td>
+</tr>
+<tr>
+<td>Financial Plan &amp; Budget (Wk 7)</td>
+<td>PAD 6208 Budgeting</td>
+</tr>
+<tr>
+<td>Fundraising Strategy (Wk 8)</td>
+<td>PAD 5146 Resource Development</td>
+</tr>
+<tr>
+<td>Strategic Plan (Wk 9)</td>
+<td>PAD 6335 Strategic Plan</td>
+</tr>
+<tr>
+<td>Program Evaluation Framework (Wk 10)</td>
+<td>PAD 6327 Program Evaluation Plan</td>
+</tr>
+<tr>
+<td>Policy Advocacy Plan (Wk 13)</td>
+<td>PAD 6142 Policy Advocacy · PAD 5146 Policy Process</td>
+</tr>
+</tbody>
+</table>
+<div class="workflow">
+  <div class="node">
+    <div class="n-step">Step 1</div>
+    <div class="n-title">Open prior assignment</div>
+    <div class="n-desc">Pull the original .docx from an earlier PAD course</div>
+  </div>
+  <div class="node">
+    <div class="n-step">Step 2</div>
+    <div class="n-title">Adapt in NotebookLM</div>
+    <div class="n-desc">Upload and discuss how to reshape it for the new org</div>
+  </div>
+  <div class="node">
+    <div class="n-step">Step 3</div>
+    <div class="n-title">Draft new document</div>
+    <div class="n-desc">Write the capstone version — submit to Webcourses</div>
+  </div>
+  <div class="node final">
+    <div class="n-step">Step 4</div>
+    <div class="n-title">Publish to website</div>
+    <div class="n-desc">Add a public-facing summary + PDF download</div>
+  </div>
+</div>
+<aside class="notes">
+<p>This slide answers a question I expect from this room: is the new course losing the synthesis function of the old ePortfolio? The answer is that the synthesis is now forward-facing. Instead of reflecting on an old strategic plan, the student reopens their PAD 6335 strategic plan and uses it as raw material for a new plan tailored to their own organization. The same is true across governance, HR, finance, evaluation, advocacy. The student's entire MNM transcript is put to work in service of one coherent project. That is what a capstone should do.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Service Learning</span>
+  <h2>Mentor Interview: Grounding the Semester in Practice</h2>
+<div class="two-col">
+  <div>
+    <h3>What students do</h3>
+    <ul>
+      <li><strong>Week 2 — Interview Plan.</strong> Identify a practicing nonprofit leader in their focus area; draft 8–10 research questions.</li>
+      <li><strong>Week 4 — Mentor Interview Report (8 pts).</strong> A 4–5 page report synthesizing the interview and applying insights to their own nonprofit design.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Why it matters</h3>
+    <ul>
+      <li>Grounds abstract course concepts in practitioner reality</li>
+      <li>Builds a professional network before graduation</li>
+      <li>Reconnects MNM students to the Central Florida nonprofit ecosystem</li>
+    </ul>
+  </div>
+</div>
+<div class="gold-bg">
+<p>This is the <strong>only new component</strong> not adapted from prior MNM coursework. It is service learning in the formal sense — applied engagement with the community the program serves.</p>
+</div>
+<aside class="notes">
+<p>The mentor interview is the one piece of the redesigned course that isn't pulled from prior MNM coursework — and it's deliberately the piece that puts students in contact with practitioners. Every student identifies a working nonprofit leader, prepares a structured interview, conducts it, and writes up what they learned. This does three things. It grounds the semester in real practice rather than abstraction. It gives students a networking artifact they can cite in job interviews. And it quietly rebuilds the program's visible presence in the Central Florida nonprofit community, because each semester adds a new cohort of students reaching out to local leaders.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">AI Policy</span>
+  <h2>AI as Required Professional Competency</h2>
+<div class="compare">
+  <div class="pane old">
+    <h3>Current Policy </h3>
+    <p>"The use of Artificial Intelligence (AI) tools, via website, app, or any other access, is <strong>not permitted</strong> in this class."</p>
+  </div>
+  <div class="pane new">
+    <h3>New Policy (2026)</h3>
+    <p>AI use is <strong>required</strong>. Students document their AI use on every major deliverable and are graded on the quality of their judgment, not the volume of their output.</p>
+  </div>
+</div>
+<h3>The Four Rules</h3>
+<ul>
+<li><strong>Authorship.</strong> Students must author, direct, critically evaluate, and own all AI-assisted work.</li>
+<li><strong>No raw output.</strong> Submitting unrevised AI text is treated as academic dishonesty.</li>
+<li><strong>Disclosure.</strong> AI-generated images that could be mistaken for photographs must be labeled.</li>
+<li><strong>Privacy.</strong> No real donor, client, or personnel data in AI tools — fictional only.</li>
+</ul>
+<p>All required tools have free tiers. No paid subscriptions.</p>
+<aside class="notes">
+<p>This is the policy change I expect most discussion on. The rationale: practicing nonprofit leaders are already using AI for grant drafting, donor communications, program evaluation, and social media. A graduate who cannot use these tools ethically and critically is already behind. Prohibiting AI in a capstone course in 2026 would be the equivalent of prohibiting spreadsheets in a finance course in 2005. The policy has guardrails — authorship, disclosure, privacy, and an ethical framework that treats AI as a tool the student directs, not an author that replaces them. We use only free-tier tools, so there is no financial barrier for students.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Accreditation</span>
+  <h2>NASPAA Competency Alignment</h2>
+<p>Every major capstone deliverable maps to one of the five NASPAA universal competencies. Each rubric names the competency being assessed.</p>
+<ul class="competency-list">
+  <li><span class="c-code">C1</span><strong> Lead and manage in a mission-driven sector</strong> — Strategic Plan, Leadership Case Study, Final Pitch</li>
+  <li><span class="c-code">C2</span><strong> Analyze, synthesize, think critically</strong> — Program Evaluation Framework</li>
+  <li><span class="c-code">C3</span><strong> Communicate with a diverse workforce and citizenry</strong> — HR &amp; Volunteer Management Plan</li>
+  <li><span class="c-code">C4</span><strong> Articulate a public service perspective</strong> — Board Governance Policy</li>
+  <li><span class="c-code">C5</span><strong> Participate in the policy process</strong> — Policy Advocacy Plan</li>
+</ul>
+<div class="gold-bg">
+<p>The redesign preserves the competency coverage of the ePortfolio but moves the evidence from <em>reflection on past work</em> to <em>demonstration in new work</em>.</p>
+</div>
+<aside class="notes">
+<p>Because PAD 6149 is the capstone in a NASPAA-accredited program, the redesign had to preserve competency coverage. It does. Every one of the five universal competencies has a specific anchor deliverable in the new course — and in every case, the evidence is stronger than it was under the ePortfolio model. The old model asked students to reflect on past competency. The new model asks them to demonstrate it, freshly, on an organization they designed. For accreditation review, the artifacts produced in this course are far more defensible.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Assessment</span>
+  <h2>100 Points, 15 Deliverables</h2>
+<div class="grade-chart">
+  <div class="grade-summary">
+    <span>Points allocation across 15 deliverables</span>
+    <span class="total-mark">Total · <strong>100 pts</strong></span>
+  </div>
+  <div class="grade-bar">
+    <div class="seg" style="flex: 4; background: #F5F5F0; color: #1C1917" data-label="Foundation (Wk 1–2)" data-pts="4">4</div>
+    <div class="seg" style="flex: 8; background: #E7E5E4; color: #1C1917" data-label="Practitioner Grounding (Wk 4)" data-pts="8">8</div>
+    <div class="seg" style="flex: 22; background: #C8C2BD; color: #1C1917" data-label="Structure (Wk 3–6)" data-pts="22">22</div>
+    <div class="seg" style="flex: 6; background: #A8A29E; color: #fff" data-label="Resources (Wk 7–8)" data-pts="6">6</div>
+    <div class="seg" style="flex: 18; background: #78716C; color: #fff" data-label="Strategy & Programs (Wk 9–10)" data-pts="18">18</div>
+    <div class="seg" style="flex: 28; background: #1C1917; color: #fff" data-label="Leadership · AI · Advocacy (Wk 11–13)" data-pts="28">28</div>
+    <div class="seg" style="flex: 14; background: #FFC904; color: #1C1917" data-label="Final Pitch (Wk 14)" data-pts="14">14</div>
+  </div>
+  <div class="grade-legend">
+    <div class="legend-item"><span class="swatch" style="background:#F5F5F0"></span>Foundation · <strong>4</strong></div>
+    <div class="legend-item"><span class="swatch" style="background:#E7E5E4"></span>Practitioner Grounding · <strong>8</strong></div>
+    <div class="legend-item"><span class="swatch" style="background:#C8C2BD"></span>Structure · <strong>22</strong></div>
+    <div class="legend-item"><span class="swatch" style="background:#A8A29E"></span>Resources · <strong>6</strong></div>
+    <div class="legend-item"><span class="swatch" style="background:#78716C"></span>Strategy & Programs · <strong>18</strong></div>
+    <div class="legend-item"><span class="swatch" style="background:#1C1917"></span>Leadership · AI · Advocacy · <strong>28</strong></div>
+    <div class="legend-item"><span class="swatch" style="background:#FFC904"></span>Final Pitch · <strong>14</strong></div>
+  </div>
+</div>
+<p>No discussion board grade. No standalone ePortfolio. The website and pitch video are the portfolio.</p>
+<aside class="notes">
+<p>Here is the grading map. Points are weighted toward the larger integrative deliverables — the strategic plan, leadership case, policy advocacy, and final pitch. The smaller weekly items scaffold those larger pieces. Note what is no longer on the grade sheet: no discussion boards, no separate ePortfolio assignment. The student's website is the ePortfolio. The final YouTube pitch is the oral defense. Both are public, both are durable, and both outperform the prior artifacts for accreditation, employability, and alumni engagement purposes.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Outcomes</span>
+  <h2>What Students Take With Them</h2>
+<div class="tiles">
+  <div class="tile">
+    <h4>A complete organizational blueprint</h4>
+    <p>Mission, governance, staffing, budget, strategy, programs, evaluation, fundraising, advocacy — for an organization of their own design.</p>
+  </div>
+  <div class="tile">
+    <h4>A public nonprofit website</h4>
+    <p>Live, shareable, and linked from a résumé. Functions as a portfolio piece for employers and funders.</p>
+  </div>
+  <div class="tile">
+    <h4>A final pitch video</h4>
+    <p>A YouTube-hosted pitch presenting the organization to potential supporters — usable as a writing sample or interview artifact.</p>
+  </div>
+  <div class="tile">
+    <h4>Documented AI fluency</h4>
+    <p>Demonstrated, critical use of AI tools across fourteen weeks of professional deliverables — a growing sector requirement.</p>
+  </div>
+  <div class="tile">
+    <h4>A practitioner network connection</h4>
+    <p>A completed mentor interview and relationship with a working nonprofit leader in their focus area.</p>
+  </div>
+  <div class="tile">
+    <h4>Evidence of NASPAA mastery</h4>
+    <p>Fresh, rubric-aligned demonstration across all five competencies, not retrospective reflection on prior work.</p>
+  </div>
+</div>
+<aside class="notes">
+<p>This is the "so what" slide. The old capstone produced a reflection paper and a collection of prior assignments. The new capstone produces six distinct, durable assets — a blueprint, a live website, a pitch video, documented AI fluency, a practitioner connection, and fresh competency evidence. In some cases, students will actually launch the organization they designed. Even when they don't, every one of these assets is portable into a job application, a funder conversation, or a next-degree application.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Program Value</span>
+  <h2>Why This Matters for the MNM Program</h2>
+<div class="two-col">
+  <div>
+    <h3>Differentiation</h3>
+    <p>Most MNM and MPA capstones are reflective. A design-studio capstone where students build and publish a real nonprofit is a distinctive recruitment and reputation asset.</p>
+    <h3>Recruitment</h3>
+    <p>Every cohort produces visible alumni work — live websites and pitch videos — that can be showcased to prospective students and during accreditation review.</p>
+  </div>
+  <div>
+    <h3>Community presence</h3>
+    <p>The mentor interview component re-engages MNM students with Central Florida nonprofit leaders every semester.</p>
+    <h3>Accreditation readiness</h3>
+    <p>NASPAA competency evidence is demonstrated on new, original work rather than reflected upon retrospectively — stronger artifacts for site visits.</p>
+  </div>
+</div>
+<aside class="notes">
+<p>Zooming out from the individual student: why is this worth the program's time and the board's attention. Four reasons. One, it differentiates us — few MNM programs in the country structure their capstone as a design studio, and the ones that do tend to be elite private programs. Two, it gives us visible outputs every semester we can point prospective students to. Three, it quietly reinforces our community presence through the mentor interview. And four, for NASPAA site visits, fresh original artifacts are stronger evidence than reflection papers on work produced in other classes.</p>
+</aside>
+</section>
+
+<section>
+  <span class="label">Discussion</span>
+  <h2>Questions & Feedback</h2>
+<p>I would especially welcome input on:</p>
+<ul>
+<li>The AI-required policy — any concerns from an academic-integrity or equity perspective?</li>
+<li>The public-website requirement — implications for student privacy, branding, or UCF marks?</li>
+<li>The mentor interview — suggested Central Florida practitioners we should be connecting students with?</li>
+<li>Assessment weighting and NASPAA evidence — does anything look underweighted for accreditation purposes?</li>
+<li>Alumni follow-through — how should the program track students who actually launch their designed organizations?</li>
+</ul>
+<div class="dark-bg">
+<p><strong>Dr. Seongho An</strong> · School of Public Administration · University of Central Florida<br />
+<span class="mono">seongho.an@ucf.edu</span> · DPAC Suite 448D · (407) 823-5832</p>
+</div>
+<aside class="notes">
+<p>I'll stop there and open it up. I've put five prompts on the screen because I know this group moves quickly, but please feel free to take the conversation anywhere useful. The redesign is locked for Fall 2026, but I treat the first run as a pilot — concrete feedback from this room now can shape the second offering. Thank you.</p>
+</aside>
+</section>
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 – Capstone Redesign | Faculty & Board Briefing | Dr. Seongho An</span>
+  <span>UCF School of Public Administration</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+
+  const deck = Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    showNotes: false,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    width: 1200,
+    height: 700,
+    margin: 0.06,
+    center: false,
+    controls: true,
+    progress: true,
+    history: true,
+    overview: true,
+  });
+
+  // ---- Tool matrix tooltips ----
+  // Row order follows the rows in md/overview.md's `::: tool-matrix` table.
+  const TOOL_MATRIX_TIPS = [
+    "Drafting and revision across all 14 weeks. Students use ChatGPT and Claude to draft mission language, policies, job descriptions, budget narratives, donor communications, pitch scripts — then revise in their own voice.",
+    "Reactivation engine for prior MNM coursework. Students upload old PAD assignments (6237 Governance, 6417 HR, 6208 Budgeting, 5146 Fundraising, 6335 Strategy, 6327 Evaluation, 6142 Advocacy) to NotebookLM, then have grounded conversations about how to adapt each document to their new organization.",
+    "Visual design across the semester: logos (Wk 3), org charts (Wk 5), ED/board profiles (Wk 6), budget charts (Wk 7), donor graphics (Wk 8), strategy visuals (Wk 9), logic models (Wk 10), principles graphics (Wk 11), social media (Wk 12), advocacy infographics (Wk 13), pitch video graphics (Wk 14).",
+    "Website builder of the student's choice — Wix, Squarespace, WordPress, Google Sites, or hand-coded. Used only in Week 3 to launch the organization's website; all subsequent updates happen on the chosen platform.",
+    "AI image generation (DALL·E, Imagen, Canva Magic Media) for the Week 12 AI Content Creation & Social Media assignment. Students generate and label AI imagery for their nonprofit's digital presence.",
+    "Video production suite for the Week 14 Final Pitch — Canva Video for title cards and graphics, CapCut for timeline editing, Descript for transcript-based editing and Studio Sound audio cleanup.",
+  ];
+
+  function hydrateToolMatrix() {
+    document.querySelectorAll('.tool-matrix table tbody tr').forEach((tr, idx) => {
+      const tip = TOOL_MATRIX_TIPS[idx];
+      const firstCell = tr.querySelector('td:first-child');
+      if (tip && firstCell && !firstCell.classList.contains('has-tip')) {
+        firstCell.classList.add('has-tip');
+        firstCell.setAttribute('data-tip', tip);
+      }
+    });
+  }
+
+  // ---- Animated count-up for .stat .num elements ----
+  function animateNum(el) {
+    const target = parseInt(el.dataset.target || el.textContent, 10);
+    if (!isFinite(target)) return;
+    if (!el.dataset.target) el.dataset.target = String(target);
+    const duration = 700;
+    const start = performance.now();
+    const from = 0;
+    function tick(now) {
+      const t = Math.min(1, (now - start) / duration);
+      // easeOutCubic
+      const eased = 1 - Math.pow(1 - t, 3);
+      const value = Math.round(from + (target - from) * eased);
+      el.textContent = value;
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = String(target);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function animateSlideStats(slide) {
+    if (!slide) return;
+    slide.querySelectorAll('.stat .num').forEach(animateNum);
+  }
+
+  deck.then(() => {
+    hydrateToolMatrix();
+    animateSlideStats(Reveal.getCurrentSlide());
+    Reveal.on('slidechanged', (event) => {
+      animateSlideStats(event.currentSlide);
+    });
+  });
+</script>
+</body>
+</html>

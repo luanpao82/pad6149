@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 12: Capacity Building & Managing Change</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+
+  .flow-step {
+    background: var(--ucf-gold-light);
+    border: 1px solid var(--ucf-gold);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.4em;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .flow-arrow {
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+  }
+
+  /* Checklist grid */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 16px 0;
+    background: var(--ucf-light-gray);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .checklist-cell {
+    padding: 14px 16px;
+    background: var(--ucf-bg);
+  }
+
+  .checklist-cell h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .checklist-cell ul {
+    font-size: 0.85em;
+    padding-left: 1em;
+  }
+
+  .checklist-cell li {
+    font-size: 0.85em;
+    margin-bottom: 4px;
+  }
+
+  .checklist-cell.has-gold { border-left: 3px solid var(--ucf-gold); }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Week 12</span>
+  <h1>Capacity Building &<br>Managing Change</h1>
+  <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    November 9, 2026
+  </div>
+  <aside class="notes">
+    Welcome to Week 12. We have three weeks left in the semester, and today we tackle one of the most practical topics for anyone building a new nonprofit: capacity building. Your organization can have a great mission, a committed board, and a solid program — but without the infrastructure, systems, and partnerships to deliver at scale, you won't be sustainable. This week's readings are extensive — seven sources — because capacity building draws on multiple theoretical traditions: organizational theory, resource dependency, institutional theory, network theory, and change management. The workbook task this week asks you to develop a capacity building plan for your nonprofit, thinking about what you need in Year 1 and what you'll need by Year 3. Let's get into it.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <span class="label">Week 12</span>
+  <h2>Agenda</h2>
+  <ol>
+    <li>What Is Nonprofit Capacity?</li>
+    <li>Why Engage in Capacity Building?</li>
+    <li>Collaboration as Capacity</li>
+    <li>Adaptive Capacity</li>
+    <li>Managing Organizational Change</li>
+    <li>Your Capacity Building Workbook Task</li>
+    <li>AI Demo: Capacity Assessment</li>
+    <li>Website Status Check</li>
+    <li>Looking Ahead: Final Stretch</li>
+  </ol>
+
+  <div class="gold-bg">
+    <p><strong>Readings:</strong> Worth Ch. 7 (pg. 198–208) · Hudson Ch. 1 & Ch. 3 · Millesen, Carman & Bies (2010) · Wolf Ch. 10 · Gottlieb pp. 279–324 · Guo & Acar (2005) · Strichman, Bickel & Marshood (2008)</p>
+    <p><strong>Due:</strong> Workbook — capacity building plan</p>
+  </div>
+
+  <aside class="notes">
+    Here's our roadmap. We'll define capacity and explore why nonprofits invest in it — both for internal reasons and because funders increasingly demand it. Then we'll look at collaboration as a form of capacity building, drawing on Guo and Acar's research. Strichman, Bickel, and Marshood give us the concept of adaptive capacity — the ability to respond to changing environments. We'll connect everything to managing organizational change, and I'll walk you through the workbook task. The AI demo this week is a capacity assessment checklist, and we'll do a website status check to see where you stand heading into the final weeks. Seven readings is a lot — but each one brings a distinct perspective that matters for your capacity building plan.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: WHAT IS NONPROFIT CAPACITY ==================== -->
+<section>
+  <span class="label">Foundations</span>
+  <h2>What Is Nonprofit Capacity?</h2>
+
+  <h3>Worth Ch. 7 (pg. 198–208)</h3>
+
+  <p><strong>Organizational capacity</strong> = the ability to fulfill your mission effectively and sustain that ability over time.</p>
+
+  <table>
+    <thead>
+      <tr><th>Capacity Area</th><th>What It Includes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Financial</strong></td><td>Revenue diversification, reserves, budgeting systems, financial reporting</td></tr>
+      <tr><td><strong>Human Resources</strong></td><td>Staff skills, volunteer management, training, succession planning</td></tr>
+      <tr><td><strong>Infrastructure</strong></td><td>Technology, facilities, data systems, administrative processes</td></tr>
+      <tr><td><strong>Programmatic</strong></td><td>Program design, evaluation, quality assurance, evidence base</td></tr>
+      <tr><td><strong>Networks & Partnerships</strong></td><td>Cross-sector relationships, coalition membership, community connections</td></tr>
+    </tbody>
+  </table>
+
+  <p>Capacity is not a fixed state — it's a <strong>continuum</strong>. Organizations build capacity incrementally as they grow from startup to mature institutions.</p>
+
+  <aside class="notes">
+    Worth's Chapter 7 defines organizational capacity in five interconnected areas. Financial capacity goes beyond having money — it's about having diversified revenue streams, adequate reserves, and the financial management systems to track and report accurately. Human resource capacity includes not just having staff, but having staff with the right skills, and systems for recruiting, training, and retaining them. Infrastructure capacity is often overlooked by new nonprofits — technology, data systems, office space, administrative processes. Programmatic capacity is what we covered in Week 10 with your evaluation frameworks — the ability to design, deliver, and evaluate effective programs. And network capacity — your relationships, partnerships, and coalition memberships — is a form of organizational capital that many funders now explicitly recognize. The key insight is that capacity is a continuum. You don't wake up one day with a fully capacitated organization. You build it deliberately, over time, and you prioritize based on where your gaps are most critical.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: WHY ENGAGE IN CAPACITY BUILDING ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Why Engage in Capacity Building?</h2>
+
+  <h3>Millesen, Carman & Bies (2010)</h3>
+
+  <p>Understanding the <strong>incentives</strong> that drive capacity building.</p>
+
+  <div class="two-col">
+    <div>
+      <p><strong>External Drivers</strong></p>
+      <ul>
+        <li>Funder requirements and grants specifically for capacity building</li>
+        <li>Accreditation standards</li>
+        <li>Government contract compliance</li>
+        <li>Competitive pressure from peer organizations</li>
+        <li>Community expectations for professionalism</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Internal Drivers</strong></p>
+      <ul>
+        <li>Board and leadership commitment to growth</li>
+        <li>Staff desire for professional development</li>
+        <li>Organizational learning culture</li>
+        <li>Recognition of gaps between current and needed capacity</li>
+        <li>Strategic plan goals requiring new capabilities</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><strong>Key finding:</strong> Organizations driven primarily by external pressures tend to build capacity that satisfies funders. Organizations driven by internal motivation tend to build capacity that serves their mission.</p>
+
+  <aside class="notes">
+    Millesen, Carman, and Bies investigated why nonprofits engage in capacity building, and they found two distinct sets of drivers. External drivers include funder requirements — many foundations now offer capacity building grants or require grantees to demonstrate organizational development plans. Government contracts may require certain infrastructure. And competitive pressure matters — if your peer organizations are professionalizing, you risk falling behind. Internal drivers are about organizational will — board commitment, staff aspirations, a genuine culture of learning and improvement. The most important finding is that the motivation matters for what gets built. Externally driven capacity building tends to produce what funders want to see — better financial reporting, outcome measurement systems, strategic plans. Internally driven capacity building tends to produce what the organization actually needs — could be the same things, but chosen for the right reasons. For your nonprofits, think about both. What will funders expect? And what do you genuinely need to fulfill your mission?
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: COLLABORATION AS CAPACITY ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Collaboration as Capacity</h2>
+
+  <h3>Guo & Acar (2005) — Understanding inter-organizational collaboration</h3>
+
+  <p>Your partners are part of your capacity. Three theoretical lenses:</p>
+
+  <table>
+    <thead>
+      <tr><th>Theory</th><th>Why Organizations Collaborate</th><th>Implication</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Resource Dependency</strong></td><td>You need resources you don't have — funding, expertise, access, legitimacy</td><td>Partnerships fill resource gaps without building everything in-house</td></tr>
+      <tr><td><strong>Institutional Theory</strong></td><td>Funders and regulators expect collaboration; it signals legitimacy</td><td>Partnerships demonstrate community embeddedness to stakeholders</td></tr>
+      <tr><td><strong>Network Theory</strong></td><td>Position in a network determines access to information, influence, and opportunities</td><td>Well-connected organizations learn faster and adapt better</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Remember Week 3?</strong> You identified cross-sector partners. Those partnerships are not just nice to have — they are a <strong>core capacity</strong> of your organization. Include them in your capacity building plan.</p>
+  </div>
+
+  <aside class="notes">
+    Guo and Acar's 2005 study brings three theoretical frameworks to explain why nonprofits collaborate. Resource dependency theory says organizations collaborate because they need resources they can't generate alone — money, expertise, access to populations, political legitimacy. Institutional theory says collaboration happens because the environment expects it — funders want to see partnerships, government agencies require them, and organizations that collaborate are seen as more legitimate. Network theory says your position in a web of relationships determines what information, opportunities, and influence you can access. All three perspectives are useful for your capacity building plan. Think back to Week 3 when you identified cross-sector partners. Those relationships are not separate from your organizational capacity — they ARE your organizational capacity. A startup nonprofit with strong partnerships has more effective capacity than a larger organization working in isolation. When you write your capacity building plan, include partnership development as a capacity area.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: ADAPTIVE CAPACITY ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Adaptive Capacity</h2>
+
+  <h3>Strichman, Bickel & Marshood (2008) — Israeli social change nonprofits</h3>
+
+  <p>How do organizations adapt to <strong>changing environments</strong>?</p>
+
+  <ul>
+    <li><strong>Resilience:</strong> The ability to absorb shocks — funding cuts, leadership transitions, policy changes — without losing core functions</li>
+    <li><strong>Flexibility:</strong> Willingness to modify programs, structures, and strategies when the environment demands it</li>
+    <li><strong>Learning orientation:</strong> Organizations that systematically reflect on their experience and apply lessons to future decisions</li>
+    <li><strong>Environmental scanning:</strong> Continuously monitoring the political, economic, and social landscape for threats and opportunities</li>
+  </ul>
+
+  <p><strong>Adaptive capacity is not the same as capacity.</strong> An organization can be highly capacitated but rigid — unable to respond when conditions change. Adaptability is the meta-capacity that makes all other capacities useful in a dynamic world.</p>
+
+  <aside class="notes">
+    Strichman, Bickel, and Marshood studied social change nonprofits in Israel — organizations operating in an extremely volatile political and social environment. They found that the organizations that thrived were not necessarily the largest or best-funded, but the most adaptive. Adaptive capacity has four components. Resilience is about absorbing shocks without breaking down. Flexibility is about willingness to change course when the data or the environment tells you to. Learning orientation means you don't just do things — you reflect on what worked, what didn't, and why. And environmental scanning means you're paying attention to what's happening around you, not just inside your organization. The crucial insight is that adaptive capacity is a meta-capacity — it's what makes all your other capacities useful. You can have great financial systems, strong programs, and excellent staff, but if your organization can't adapt when conditions change — a major funder pulls out, a new policy shifts the landscape, a pandemic hits — all that capacity becomes brittle. Build adaptability into your organizational DNA from the start.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: MANAGING CHANGE ==================== -->
+<section>
+  <span class="label">Change Management</span>
+  <h2>Managing Organizational Change</h2>
+
+  <h3>Gottlieb (2009) — Creating futures requires managing transitions</h3>
+
+  <p>Capacity building IS change management. Every new system, process, or partnership requires people to do something differently.</p>
+
+  <ul>
+    <li><strong>Resistance is normal:</strong> People resist change not because they're difficult, but because change threatens routines, relationships, and identity</li>
+    <li><strong>Communication is foundational:</strong> People can't support what they don't understand. Over-communicate the why, the what, and the how</li>
+    <li><strong>Stakeholder engagement:</strong> Those affected by change should participate in designing it. Top-down change breeds resentment; participatory change builds ownership</li>
+    <li><strong>Phased implementation:</strong> Don't try to change everything at once. Sequence your capacity building priorities and celebrate incremental wins</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Gottlieb's insight:</strong> Transformative change is not about fixing problems — it's about creating new possibilities. Frame capacity building as <em>building toward a vision</em>, not fixing deficiencies.</p>
+  </div>
+
+  <aside class="notes">
+    Gottlieb's final chapters — pages 279 through 324 — connect capacity building to change management, and this is where the rubber meets the road. Every capacity building initiative is fundamentally a change initiative. When you implement a new CRM system, you're asking staff to change how they work. When you restructure your board committees, you're asking board members to change how they govern. When you add new programs, you're asking the organization to stretch. Resistance is the natural human response to change, and effective leaders anticipate it. Communication is the single most important tool — people need to understand not just what's changing but why, and they need to see how the change connects to the mission they care about. Gottlieb adds an important reframe: don't position capacity building as fixing what's wrong. Position it as building toward what's possible. That's the difference between a deficit mindset and an abundance mindset, and it affects how people experience the change process.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: WORKBOOK TASK ==================== -->
+<section>
+  <span class="label">Workbook</span>
+  <h2>Capacity Building Plan</h2>
+
+  <p>What infrastructure and systems does your organization need to <strong>scale from Year 1 to Year 3</strong>?</p>
+
+  <div class="checklist-grid">
+    <div class="checklist-cell has-gold">
+      <h4>Technology</h4>
+      <ul>
+        <li>CRM / donor management</li>
+        <li>Website and digital presence</li>
+        <li>Data collection and analysis</li>
+        <li>Communication tools</li>
+      </ul>
+    </div>
+    <div class="checklist-cell">
+      <h4>Facilities</h4>
+      <ul>
+        <li>Office space needs</li>
+        <li>Program delivery space</li>
+        <li>Equipment and supplies</li>
+        <li>Accessibility requirements</li>
+      </ul>
+    </div>
+    <div class="checklist-cell">
+      <h4>Funding Pipeline</h4>
+      <ul>
+        <li>Grant readiness</li>
+        <li>Individual donor cultivation</li>
+        <li>Earned revenue potential</li>
+        <li>Reserve building plan</li>
+      </ul>
+    </div>
+    <div class="checklist-cell has-gold">
+      <h4>People & Partners</h4>
+      <ul>
+        <li>Staff development plan</li>
+        <li>Volunteer recruitment</li>
+        <li>Board development</li>
+        <li>Partnership cultivation</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><strong>Think growth:</strong> What do you need in Year 1 to launch? What do you need by Year 3 to sustain and scale?</p>
+
+  <aside class="notes">
+    Your workbook task this week is to develop a capacity building plan organized around four areas: technology, facilities, funding pipeline, and people and partners. For each area, I want you to think about two time horizons: Year 1 — what's the minimum viable capacity you need to launch? And Year 3 — what do you need to sustain your programs and potentially grow? For technology, most startups need at minimum a basic CRM for donor and constituent management, a functional website, and some way to collect and analyze program data. By Year 3, you'll need more sophisticated systems. For facilities, think about what your programs actually require — do you need physical space, or can you operate virtually or in shared spaces initially? For your funding pipeline, this connects directly to your fundraising strategy from Week 8 — what capacity do you need to implement that strategy? And for people and partners, think about staff hiring, volunteer systems, board development, and the partnerships from Week 3. This is about realistic planning, not wish-listing. Be specific about what you need and when.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: AI DEMO ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Capacity Assessment Checklist</h2>
+
+  <p>Generate a customized capacity assessment for your nonprofit.</p>
+
+  <div class="prompt-box"><span class="prompt-label">ChatGPT / Claude Prompt</span>Create a capacity assessment checklist for a new nonprofit focused on [your focus area, e.g., "youth mentoring in underserved communities"].
+
+Cover these areas:
+1. Governance (board structure, policies, bylaws)
+2. Human resources (staff, volunteers, training)
+3. Financial management (budgeting, reporting, controls)
+4. Technology (CRM, data systems, website)
+5. Programs (design, delivery, evaluation)
+6. Fundraising (donor management, grant readiness)
+7. Communications (branding, outreach, social media)
+
+For each area, list 3-5 indicators of:
+- BASIC capacity (minimum viable for Year 1)
+- STRONG capacity (target for Year 3)
+
+Format as a table.</div>
+
+  <p><strong>Use this as a diagnostic tool</strong> — identify where your nonprofit currently falls and where you need to invest. Customize the output for your specific context.</p>
+
+  <aside class="notes">
+    This AI demo generates a capacity assessment checklist tailored to your specific nonprofit. The prompt asks for seven capacity areas with indicators at two levels: basic capacity, meaning what you need minimally to launch in Year 1, and strong capacity, meaning what you should target by Year 3. The AI output will be generic at first, so your job is to customize it. Does the checklist include the specific technology your programs need? Does it account for the particular regulatory requirements in your service area? Does it reflect the partnerships you've already identified? Use this as a diagnostic tool — go through the checklist and honestly assess where your capstone nonprofit currently stands. The gaps between where you are and where you need to be become the priorities in your capacity building plan. This is a practical exercise that directly feeds into your workbook task.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: WEBSITE STATUS CHECK ==================== -->
+<section>
+  <span class="label">Website</span>
+  <h2>Website Status Check</h2>
+
+  <p>By now, your nonprofit website should have these pages:</p>
+
+  <table>
+    <thead>
+      <tr><th>Page</th><th>Added In</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Home</td><td>Week 2</td><td>Should be complete</td></tr>
+      <tr><td>About (Mission & Vision)</td><td>Week 2</td><td>Should be complete</td></tr>
+      <tr><td>Board of Directors</td><td>Week 4</td><td>Should be complete</td></tr>
+      <tr><td>Our Team</td><td>Week 5</td><td>Should be complete</td></tr>
+      <tr><td>Get Involved (Volunteers)</td><td>Week 6</td><td>Should be complete</td></tr>
+      <tr><td>Programs</td><td>Week 10</td><td>Should be complete</td></tr>
+      <tr><td>Donate / Support</td><td>Week 8</td><td>Should be complete</td></tr>
+      <tr><td>Our Strategy</td><td>Week 9</td><td>Should be complete</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Next week:</strong> Add an "Advocacy" page. Then your website is nearly complete for the Final Pitch.</p>
+  </div>
+
+  <aside class="notes">
+    Let's do a quick website status check. By this point in the semester, your nonprofit website should have eight pages covering the major components of your organization. If you're behind on any of these, now is the time to catch up — the final pitch is in Week 14, and your website is part of that presentation. Take a few minutes this week to review your site as a whole. Does it tell a coherent story? Does the navigation make sense? Is the design consistent? Would a potential donor or partner visiting your site understand what you do, why it matters, and how they can help? Next week, you'll add an Advocacy page tied to your policy advocacy plan, and that will bring your site to its final form. Almost there.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: LOOKING AHEAD ==================== -->
+<section>
+  <span class="label">Looking Ahead</span>
+  <h2>The Final Stretch</h2>
+
+  <p>Three weeks remain:</p>
+
+  <table>
+    <thead>
+      <tr><th>Week</th><th>Topic</th><th>Due</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>13</strong> (Nov 16)</td><td>Nonprofit Effectiveness — Policy & Advocacy</td><td>C3: Policy Advocacy Plan (10 pts)</td></tr>
+      <tr><td></td><td colspan="2"><em>Thanksgiving Break: Nov 23–27</em></td></tr>
+      <tr><td><strong>14</strong> (Nov 30)</td><td>Final Pitch Presentations</td><td>Final Nonprofit Pitch (20 pts)</td></tr>
+      <tr><td><strong>15</strong> (Dec 7)</td><td>Course Wrap-Up</td><td>Final Workbook Submission (20 pts)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Next week — C3: Policy Advocacy Plan (10 pts):</strong> NASPAA Competency 3 assignment. Identify a policy issue affecting your nonprofit's constituents, analyze the advocacy landscape, and propose an advocacy strategy. Website update: add "Advocacy" page.</p>
+  </div>
+
+  <aside class="notes">
+    We're in the home stretch. Next week is your third competency assignment — the Policy Advocacy Plan, worth 10 points, mapping to NASPAA Competency 3. You'll identify a policy issue relevant to your nonprofit's mission and constituents, analyze the current advocacy landscape, and propose a strategy for engaging in policy advocacy. After that, Thanksgiving break gives you a week to prepare for the Final Pitch in Week 14 — worth 20 points, where you present your complete nonprofit to the class. And Week 15 is the final workbook submission, also worth 20 points. The workbook brings together everything you've built over the semester. Start thinking about your pitch now — you've done the work, the pitch is about presenting it compellingly.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: QUESTIONS ==================== -->
+<section>
+  <span class="label">Week 12</span>
+  <h2>Questions?</h2>
+
+  <p>Reminders for this week:</p>
+
+  <ul>
+    <li><strong>Submit:</strong> Workbook — capacity building plan</li>
+    <li><strong>Review:</strong> Website — make sure all 8 pages are complete and consistent</li>
+    <li><strong>Prepare:</strong> Next week's readings for Policy Advocacy Plan (C3: 10 pts)</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Veterans Day — November 11:</strong> We honor and thank all who have served. If you are a veteran or active service member, thank you for your service to our country.</p>
+  </div>
+
+  <p>Office hours by appointment via Webcourses. See you next week.</p>
+
+  <aside class="notes">
+    That wraps up Week 12. Three things to focus on: submit your capacity building plan in the workbook, do a comprehensive review of your website to make sure all eight pages are in good shape, and start reading for next week's policy advocacy discussion. Before we close, I want to acknowledge Veterans Day this Wednesday, November 11. We honor all who have served and continue to serve. If you are a veteran or active service member in this class, thank you for your service. Many nonprofits serve veteran populations or were founded by veterans — it's a community deeply connected to our sector. Alright — questions? Otherwise, have a good week and I'll see you next Monday for nonprofit effectiveness and policy advocacy.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 · Dr. Seongho An · UCF</span>
+  <span>Week 12</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    transition: 'none',
+    showNotes: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08
+  });
+</script>
+</body>
+</html>

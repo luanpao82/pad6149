@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5 — HR &amp; Volunteer Management | PAD 6149</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --gold: #FFC904;
+    --dark: #1C1917;
+    --bg: #FAFAF7;
+    --gray-600: #57534E;
+    --gray-400: #A8A29E;
+    --gray-200: #E7E5E4;
+    --red: #DC2626;
+    --green: #16A34A;
+    --blue: #2563EB;
+  }
+
+  .reveal-viewport {
+    background: var(--bg);
+    border-top: 4px solid var(--gold);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .reveal h1 { font-size: 2.2em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.5em; line-height: 1.2; margin-bottom: 0.6em; }
+  .reveal h3 { font-size: 1.15em; line-height: 1.3; color: var(--gray-600); }
+
+  .reveal p, .reveal li {
+    font-size: 0.72em;
+    line-height: 1.6;
+    color: var(--dark);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0.6em;
+  }
+
+  .reveal li { margin-bottom: 0.35em; }
+
+  .reveal code, .reveal .mono {
+    font-family: 'DM Mono', monospace;
+  }
+
+  .reveal code {
+    background: var(--gray-200);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--dark);
+  }
+
+  .reveal .slide-number {
+    font-family: 'DM Mono', monospace;
+    color: var(--gray-400);
+    font-size: 14px;
+    right: 24px;
+    bottom: 50px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-top: 3px solid var(--gold);
+  }
+  .footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gray-400);
+    letter-spacing: 0.02em;
+  }
+
+  .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25em 0.7em;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+  .label--gold { background: var(--gold); color: var(--dark); }
+  .label--dark { background: var(--dark); color: #fff; }
+  .label--outline { border: 1.5px solid var(--gray-400); color: var(--gray-600); }
+  .label--red { background: var(--red); color: #fff; }
+  .label--green { background: var(--green); color: #fff; }
+  .label--blue { background: var(--blue); color: #fff; }
+
+  .callout {
+    border-left: 4px solid var(--gold);
+    background: #FFFEF5;
+    padding: 0.7em 1em;
+    margin: 0.6em 0;
+    border-radius: 0 6px 6px 0;
+    text-align: left;
+  }
+  .callout p { margin: 0; font-size: 0.68em; }
+
+  .card-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 0.5em;
+  }
+  .card {
+    flex: 1;
+    max-width: 300px;
+    background: #fff;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1em 1.1em;
+    text-align: left;
+  }
+  .card h4 {
+    font-size: 0.72em;
+    margin: 0 0 0.3em 0;
+  }
+  .card p, .card li {
+    font-size: 0.58em;
+    margin: 0;
+    color: var(--gray-600);
+  }
+  .card ul { margin-left: 0.4em; padding-left: 0.8em; }
+
+  .reveal table {
+    font-size: 0.6em;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.4em auto;
+  }
+  .reveal table th {
+    background: var(--dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+  }
+  .reveal table td {
+    padding: 0.45em 0.7em;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+  }
+  .reveal table tr:nth-child(even) td {
+    background: #fff;
+  }
+
+  .step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 0.55em;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    font-size: 0.65em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-text {
+    font-size: 0.62em;
+    line-height: 1.5;
+    padding-top: 0.15em;
+  }
+  .step-text strong { color: var(--dark); }
+
+  .checklist {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0.4em 0;
+  }
+  .checklist li {
+    font-size: 0.65em;
+    padding: 0.3em 0;
+    border-bottom: 1px solid var(--gray-200);
+    padding-left: 1.6em;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gray-400);
+    border-radius: 3px;
+  }
+
+  .prompt-box {
+    background: var(--dark);
+    color: #E7E5E4;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52em;
+    line-height: 1.65;
+    padding: 1em 1.2em;
+    border-radius: 8px;
+    text-align: left;
+    margin: 0.5em 0;
+    border-left: 4px solid var(--gold);
+  }
+  .prompt-box .highlight {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .part-divider h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.2em;
+  }
+
+  .two-col {
+    display: flex;
+    gap: 30px;
+    text-align: left;
+  }
+  .two-col > div { flex: 1; }
+
+  .rec {
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7em;
+    font-weight: 600;
+    padding: 0.1em 0.5em;
+    border-radius: 3px;
+    margin-left: 0.3em;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ========== SLIDE 1: TITLE ========== -->
+<section>
+  <div>
+    <span class="label label--gold">Week 5 &middot; September 21, 2026</span>
+    <h1 style="margin-top: 0.2em;">Assembling the Workforce:<br>HR &amp; Volunteer Management</h1>
+    <h3 style="margin-top: 0.4em;">PAD 6149 &mdash; Nonprofit Administration: Build Your Nonprofit</h3>
+    <p style="font-size: 0.6em; color: var(--gray-600); margin-top: 1.2em;">
+      Dr. Seongho An &middot; University of Central Florida<br>
+      Master of Nonprofit Management
+    </p>
+  </div>
+  <aside class="notes">
+    Welcome to Week 5. Last week you designed your board — the people who govern. This week you design the people who do the work: paid staff and volunteers. Nonprofits have a unique workforce challenge: they typically operate with small, mission-driven teams supplemented by volunteers. Getting this right — the structure, the roles, the policies, and the culture — determines whether your organization can actually deliver on its mission. You have one graded deliverable this week: the HR and Volunteer Management Plan, worth 10 points.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 2: AGENDA ========== -->
+<section>
+  <span class="label label--dark">Agenda</span>
+  <h2>Today's Plan</h2>
+  <div class="card-row">
+    <div class="card">
+      <h4 style="color: var(--dark);">Part 1 &mdash; Theory</h4>
+      <p><strong>Nonprofit HR Landscape</strong></p>
+      <ul>
+        <li>HR in nonprofits vs. corporate</li>
+        <li>Post-crisis HR challenges</li>
+        <li>Paid staff vs. volunteers</li>
+        <li>Workforce sustainability</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color: var(--dark);">Part 2 &mdash; Application</h4>
+      <p><strong>Build Your Workforce</strong></p>
+      <ul>
+        <li>C3: HR &amp; Volunteer Plan (10 pts)</li>
+        <li>AI Demo: Org chart in Canva</li>
+        <li>AI Demo: Job descriptions</li>
+        <li>Website: Team &amp; Get Involved pages</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.6em;">
+    <p><span class="label label--blue" style="font-size: 0.8em; margin: 0;">NASPAA C3</span> &ensp;Communicate and interact productively with a diverse and changing workforce and citizenry.</p>
+  </div>
+  <aside class="notes">
+    Two parts as usual. Part 1 covers the theory — Worth Chapter 9 on nonprofit HR, Dicke and Ott on post-crisis challenges, Handy, Mook, and Quarter on the paid staff versus volunteer question, and the broader challenges facing nonprofit managers. Part 2 is practical: what the HR and Volunteer Plan requires, plus two AI demos on creating org charts and job descriptions. This week's NASPAA competency is C3 — working with a diverse workforce. That should be woven throughout your plan.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 3: HR IN NONPROFITS ========== -->
+<section>
+  <span class="label label--outline">Worth Ch. 9</span>
+  <h2>HR in Nonprofits: A Different World</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">Nonprofit HR operates under unique conditions that differ fundamentally from corporate settings.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th>Corporate Sector</th>
+        <th>Nonprofit Sector</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Motivation</strong></td>
+        <td>Salary, bonuses, equity</td>
+        <td>Mission alignment, intrinsic rewards, public service</td>
+      </tr>
+      <tr>
+        <td><strong>Compensation</strong></td>
+        <td>Market-rate or above</td>
+        <td>Typically 15&ndash;30% below market; offset by benefits, flexibility, meaning</td>
+      </tr>
+      <tr>
+        <td><strong>Team Size</strong></td>
+        <td>Specialized departments</td>
+        <td>Small teams wearing many hats; ED as generalist</td>
+      </tr>
+      <tr>
+        <td><strong>Workforce Mix</strong></td>
+        <td>All paid employees</td>
+        <td>Paid staff + volunteers + interns + AmeriCorps + contractors</td>
+      </tr>
+      <tr>
+        <td><strong>HR Infrastructure</strong></td>
+        <td>Dedicated HR department</td>
+        <td>Often no HR staff; ED or office manager handles everything</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>Key insight:</strong> People join nonprofits for the mission. They leave because of burnout, low pay, and poor management. Your HR plan must address both retention and recruitment.</p>
+  </div>
+  <aside class="notes">
+    Worth Chapter 9 frames the nonprofit HR challenge. People don't work at nonprofits for the money — they come for the mission. But mission alone doesn't pay rent. The nonprofit sector has chronic compensation gaps, small teams where everyone wears multiple hats, and often no formal HR infrastructure at all. The executive director might be the recruiter, the HR manager, the volunteer coordinator, and the program director all in one. Your HR plan needs to be realistic about these constraints while still creating a professional, supportive work environment. The number one reason people leave nonprofits is burnout, not pay. Design systems that prevent it.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 4: POST-CRISIS HR ========== -->
+<section>
+  <span class="label label--outline">Dicke &amp; Ott (2003)</span>
+  <h2>Post-9/11 HR Challenges</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">How crisis events reshape nonprofit human resource management — and why it still matters today.</p>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.72em;">What Changed After 9/11</h4>
+      <ul>
+        <li><strong>Background checks:</strong> Became standard practice, especially for organizations serving vulnerable populations</li>
+        <li><strong>Liability awareness:</strong> Organizations faced new scrutiny around volunteer screening and supervision</li>
+        <li><strong>Security protocols:</strong> Physical safety, data protection, emergency preparedness</li>
+        <li><strong>Government contracting:</strong> Stricter compliance requirements for nonprofits receiving federal funds</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size: 0.72em;">Still Relevant Today</h4>
+      <ul>
+        <li>COVID-19 brought another wave of HR transformation: remote work, hybrid models, mental health support</li>
+        <li>Increased emphasis on <strong>duty of care</strong> — not just to clients but to staff and volunteers</li>
+        <li>HR compliance is now a <strong>funder expectation</strong> — grant applications ask about HR policies, background checks, and volunteer management</li>
+      </ul>
+      <div class="callout" style="margin-top: 0.4em;">
+        <p>Every crisis raises the bar for nonprofit HR. Your HR plan should anticipate, not just react.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    Dicke and Ott wrote this in 2003, but the pattern they identified repeats. After 9/11, nonprofits had to dramatically upgrade their HR practices — background checks became standard, liability insurance became essential, and government contracts came with new compliance strings attached. We saw the same thing after COVID: remote work policies, mental health accommodations, flexible scheduling. Each crisis raises the baseline expectation for how nonprofits manage their people. For your HR plan, don't just design for normal operations — think about what policies you need for crisis situations, for remote work, for protecting both your staff and your clients.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 5: PAID STAFF VS. VOLUNTEERS ========== -->
+<section>
+  <span class="label label--outline">Handy, Mook &amp; Quarter (2008)</span>
+  <h2>Paid Staff vs. Volunteers</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">The interchangeability question: When can volunteers replace paid staff? When can't they?</p>
+  <div class="card-row">
+    <div class="card" style="border-top: 3px solid var(--green);">
+      <h4>Volunteers Can</h4>
+      <ul>
+        <li>Supplement capacity during events and campaigns</li>
+        <li>Bring specialized pro bono expertise (legal, accounting, IT)</li>
+        <li>Serve on boards and advisory committees</li>
+        <li>Provide community connection and credibility</li>
+        <li>Mentor, tutor, or provide peer support</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--red);">
+      <h4>Volunteers Cannot</h4>
+      <ul>
+        <li>Replace core staff performing daily operations</li>
+        <li>Be relied on for consistent, long-term availability</li>
+        <li>Handle sensitive HR, finance, or compliance functions</li>
+        <li>Be managed the same way as employees (no disciplinary authority)</li>
+        <li>Work under conditions that violate labor laws (DOL guidelines)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>Ethical consideration:</strong> Using volunteers to avoid paying staff is exploitation, not efficiency. Your plan should clearly distinguish volunteer roles from paid positions.</p>
+  </div>
+  <aside class="notes">
+    Handy, Mook, and Quarter's research asks a question every nonprofit leader faces: when is it appropriate to use volunteers instead of paid staff? The answer has both practical and ethical dimensions. Practically, volunteers are unreliable for core operations — they have other commitments, they come and go, you can't discipline them the way you can employees. Ethically, substituting volunteers for paid staff to save money is a form of labor exploitation that undermines the sector. Your HR plan should have clear role boundaries: these are paid positions because they require consistency, expertise, and accountability; these are volunteer roles because they supplement our capacity and provide meaningful community engagement. The Department of Labor has clear guidelines about this distinction — violating them can result in serious legal consequences.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 6: WORKFORCE CHALLENGES ========== -->
+<section>
+  <span class="label label--outline">NML &middot; Challenges for Nonprofit Managers</span>
+  <h2>Building a Sustainable Workforce</h2>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.72em;">The Big Challenges</h4>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Retention &amp; Burnout:</strong> Average nonprofit turnover is 19%. Emotional labor, understaffing, and low pay drive people out.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Compensation Gaps:</strong> Nonprofits compete with government and private sector for talent but can't match salaries. Must compete on mission, culture, and flexibility.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>DEI in Hiring:</strong> The sector is predominantly white in leadership despite serving diverse communities. Intentional recruitment, equitable pay, and inclusive culture are essential.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Remote &amp; Hybrid Work:</strong> Post-COVID, staff expect flexibility. How do you maintain culture and accountability in distributed teams?</div>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size: 0.72em;">Strategies That Work</h4>
+      <ul>
+        <li><strong>Invest in professional development</strong> — training budgets, conference attendance, tuition support</li>
+        <li><strong>Create clear advancement paths</strong> — even in small organizations, define growth opportunities</li>
+        <li><strong>Prioritize work-life balance</strong> — flexible schedules, mental health days, reasonable workloads</li>
+        <li><strong>Pay as well as you can</strong> — research market rates, be transparent about constraints, offer non-monetary benefits</li>
+        <li><strong>Build inclusive culture</strong> — DEI is not a checkbox; it's how decisions are made daily</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    The Nonprofit Management and Leadership article on workforce challenges paints a sobering picture. Nearly one in five nonprofit employees turns over each year. The causes are well-documented: burnout from doing too much with too little, compensation that doesn't keep pace with the cost of living, and organizational cultures that sometimes prioritize mission over people. The DEI challenge is particularly important — nonprofit leadership remains disproportionately white even though many organizations serve communities of color. Your HR plan needs to address these issues head-on. What's your retention strategy? How will you approach equitable compensation? What does your DEI commitment look like in practice, not just on paper? These are the questions that separate a thoughtful plan from a generic one.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 7: HR & VOLUNTEER PLAN ========== -->
+<section>
+  <span class="label label--red">C3 &middot; 10 Points</span>
+  <h2>HR &amp; Volunteer Management Plan</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.3em;">5&ndash;7 pages. Design the workforce for your nonprofit.</p>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.68em;">Required Sections</h4>
+      <ul class="checklist">
+        <li>Organizational chart (visual)</li>
+        <li>3 job descriptions (ED + 2 key positions)</li>
+        <li>Volunteer program design (roles, recruitment, training, recognition)</li>
+        <li>DEI statement and hiring practices</li>
+        <li>HR policies (onboarding, performance review, grievance, termination)</li>
+        <li>Supervision and accountability structure</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size: 0.68em;">Connect to Prior Coursework</h4>
+      <div class="callout">
+        <p><strong>PAD 6417:</strong> Your HR Case Study analyzed real HR challenges. Apply those lessons here.</p>
+      </div>
+      <div class="callout">
+        <p><strong>PAD 5145:</strong> Your Volunteer Case Study and Volunteer Motivation Literature Review explored why people volunteer. Use that research to design your volunteer program.</p>
+      </div>
+      <p style="font-size: 0.62em; color: var(--gray-600); margin-top: 0.4em;"><strong>NASPAA C3:</strong> Your plan should demonstrate that you can manage a diverse workforce — be explicit about how diversity, equity, and inclusion shape your HR decisions.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    The HR and Volunteer Management Plan is 5 to 7 pages and has six required components. First, an organizational chart — this should be a visual showing your reporting structure. Second, three job descriptions: always include the Executive Director, plus two other key positions for your organization. Third, a volunteer program design covering roles, recruitment, training, and recognition. Fourth, a DEI statement that goes beyond boilerplate. Fifth, core HR policies. Sixth, your supervision structure. Connect this to your PAD 6417 HR Case Study and PAD 5145 volunteer coursework. You've already studied these topics in depth — now you're applying them to your own organization.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 8: AI DEMO — ORG CHART ========== -->
+<section>
+  <span class="label label--gold">AI Demo</span>
+  <h2>Create an Org Chart with Canva</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">Step-by-step: building a professional organizational chart for your nonprofit.</p>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text"><strong>Go to Canva.com</strong> &mdash; free account is sufficient. Search templates for "organizational chart" or "org chart."</div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text"><strong>Choose a clean template</strong> &mdash; pick a simple, professional design. Avoid overly colorful or corporate templates. You want it to look nonprofit-appropriate.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text"><strong>Customize the structure</strong> &mdash; Board of Directors at top, Executive Director below, then program staff, admin staff, and volunteer coordinator. Add your specific positions.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-text"><strong>Use Canva AI (Magic Write)</strong> &mdash; ask it to suggest position titles based on your nonprofit's mission area. Review and adjust.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-text"><strong>Export as PNG or PDF</strong> &mdash; include in your HR plan document and on your website's Team page.</div>
+  </div>
+  <aside class="notes">
+    Let me walk you through creating an org chart in Canva. This is a practical skill you'll use repeatedly. Open Canva, search for org chart templates, and pick something clean and professional. Your structure should show: Board of Directors at the top, reporting down to the Executive Director, then your program staff and administrative staff. Add a volunteer coordinator position if volunteers are a significant part of your model. Canva's AI features can help suggest position titles, but you need to customize them for your specific organization. Export the final chart as a PNG for your website and as part of your HR plan submission.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 9: AI DEMO — JOB DESCRIPTIONS ========== -->
+<section>
+  <span class="label label--gold">AI Demo</span>
+  <h2>Draft Job Descriptions with AI</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">Use Claude to draft professional nonprofit job descriptions, then refine.</p>
+  <div class="prompt-box">
+    <span class="highlight">Prompt:</span><br><br>
+    "Draft a job description for an Executive Director of a small nonprofit called <span class="highlight">[Your Org Name]</span> focused on <span class="highlight">[mission area]</span> in <span class="highlight">[location]</span>. Include: job title, reports to (Board of Directors), position summary, key responsibilities (6&ndash;8), qualifications (required and preferred), compensation range, and benefits. The organization has a budget of approximately <span class="highlight">[$X]</span> and a team of <span class="highlight">[N]</span> staff plus volunteers."
+  </div>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>Salary research:</strong> Use GuideStar/Candid compensation reports, Bureau of Labor Statistics, and Idealist.org salary data to validate the AI's compensation suggestions. <strong>Florida-specific:</strong> check Indeed and LinkedIn for Central Florida nonprofit salary ranges.</p>
+  </div>
+  <aside class="notes">
+    Here's the second AI demo. Job descriptions are another area where AI is genuinely useful as a starting point. The prompt includes the key details Claude needs: organization name, mission, location, budget size, and team size. The output will give you a solid first draft, but you need to customize it. Most importantly, validate the salary range — AI doesn't know current local market rates. Use GuideStar's compensation reports, the Bureau of Labor Statistics, Indeed, and LinkedIn salary data for Central Florida nonprofits. Your job descriptions should be realistic — don't list an ED salary of $120,000 if your budget is $200,000. That's not credible.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 10: WEBSITE UPDATE ========== -->
+<section>
+  <span class="label label--gold">Website</span>
+  <h2>Add Team &amp; Get Involved Pages</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.5em;">Two new pages for your nonprofit website this week.</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Team Page</h4>
+      <ul>
+        <li>Organizational chart (from Canva)</li>
+        <li>Key leadership positions and roles</li>
+        <li>Brief descriptions of each role's purpose</li>
+        <li>Professional, clean layout</li>
+        <li>Shows organizational capacity to funders</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Get Involved / Volunteer Page</h4>
+      <ul>
+        <li>Volunteer opportunities and roles</li>
+        <li>Skills needed and time commitment</li>
+        <li>Sign-up call to action (form or email)</li>
+        <li>Testimonial placeholder (future volunteers)</li>
+        <li>Makes community engagement easy and visible</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>Site progress check:</strong> By end of Week 5, your website should have: Home, About, Board/Leadership, Team, and Get Involved. Five core pages showing your organization is real and structured.</p>
+  </div>
+  <aside class="notes">
+    Two website additions this week. First, a Team page that shows your organizational structure — embed the org chart from Canva, list key positions, and briefly describe what each role does. This tells funders and partners that you've thought carefully about capacity. Second, a Get Involved or Volunteer page. This is your public-facing volunteer recruitment tool. List specific volunteer opportunities, what skills you're looking for, expected time commitments, and how to sign up. Even if your nonprofit is hypothetical, this page demonstrates that you understand community engagement. By the end of this week, you should have five core pages on your site.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 11: NEXT WEEK ========== -->
+<section>
+  <span class="label label--dark">Looking Ahead</span>
+  <h2>Next Week: Marketing &amp;<br>Nonprofit Identity</h2>
+  <div class="callout">
+    <p><strong>Week 6 readings:</strong> Worth Ch. 10; Pope, Isely &amp; Asamoa-Tutu (2009); Wolf Ch. 5; Stater (2009)</p>
+  </div>
+  <ul>
+    <li><strong>Due next week:</strong> Workbook only — draft marketing identity (no graded deliverable, but critical content)</li>
+    <li>Topics: marketing strategy, brand identity, digital marketing tools, mission statement refinement</li>
+    <li>Website update: Refine branding and visual identity across all pages</li>
+  </ul>
+  <div class="callout" style="margin-top: 0.5em;">
+    <p><strong>This week's priority:</strong> Submit the HR &amp; Volunteer Management Plan (10 pts). Update your workbook. Add Team and Get Involved pages to your website.</p>
+  </div>
+  <p style="font-size: 0.65em; color: var(--gray-600); margin-top: 0.6em;">
+    Questions? Post in the discussion board or email Dr. An.
+  </p>
+  <aside class="notes">
+    Next week is a workbook week — no graded deliverable, but the content is important. We'll cover marketing and nonprofit identity: how you tell your story, who your audiences are, and how to build a consistent brand. You'll finalize your mission statement, develop a tagline, think about your logo and visual identity, and refine your website's branding. It's a lighter workload week, which gives you space to catch up if you need it. For this week, focus on the HR and Volunteer Management Plan, your workbook updates, and getting those two new pages on your website. See you next week.
+  </aside>
+</section>
+
+</div><!-- end slides -->
+</div><!-- end reveal -->
+
+<!-- Footer -->
+<div class="footer">
+  <span>PAD 6149 &ndash; Build Your Nonprofit &ensp;|&ensp; Week 5 &ensp;|&ensp; Dr. Seongho An</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    showNotes: false,
+    width: 1100,
+    height: 700,
+    margin: 0.08,
+    center: true,
+    transition: 'none',
+    pdfSeparateFragments: false,
+  });
+</script>
+
+</body>
+</html>

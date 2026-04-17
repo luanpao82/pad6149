@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4 — Boards of Directors &amp; Nonprofit Governance | PAD 6149</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --gold: #FFC904;
+    --dark: #1C1917;
+    --bg: #FAFAF7;
+    --gray-600: #57534E;
+    --gray-400: #A8A29E;
+    --gray-200: #E7E5E4;
+    --red: #DC2626;
+    --green: #16A34A;
+    --blue: #2563EB;
+  }
+
+  .reveal-viewport {
+    background: var(--bg);
+    border-top: 4px solid var(--gold);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .reveal h1 { font-size: 2.2em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.5em; line-height: 1.2; margin-bottom: 0.6em; }
+  .reveal h3 { font-size: 1.15em; line-height: 1.3; color: var(--gray-600); }
+
+  .reveal p, .reveal li {
+    font-size: 0.72em;
+    line-height: 1.6;
+    color: var(--dark);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0.6em;
+  }
+
+  .reveal li { margin-bottom: 0.35em; }
+
+  .reveal code, .reveal .mono {
+    font-family: 'DM Mono', monospace;
+  }
+
+  .reveal code {
+    background: var(--gray-200);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--dark);
+  }
+
+  .reveal .slide-number {
+    font-family: 'DM Mono', monospace;
+    color: var(--gray-400);
+    font-size: 14px;
+    right: 24px;
+    bottom: 50px;
+  }
+
+  /* Footer */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-top: 3px solid var(--gold);
+  }
+  .footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gray-400);
+    letter-spacing: 0.02em;
+  }
+
+  /* Label / pill */
+  .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25em 0.7em;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+  .label--gold { background: var(--gold); color: var(--dark); }
+  .label--dark { background: var(--dark); color: #fff; }
+  .label--outline { border: 1.5px solid var(--gray-400); color: var(--gray-600); }
+  .label--red { background: var(--red); color: #fff; }
+  .label--green { background: var(--green); color: #fff; }
+  .label--blue { background: var(--blue); color: #fff; }
+
+  /* Gold left-border box */
+  .callout {
+    border-left: 4px solid var(--gold);
+    background: #FFFEF5;
+    padding: 0.7em 1em;
+    margin: 0.6em 0;
+    border-radius: 0 6px 6px 0;
+    text-align: left;
+  }
+  .callout p { margin: 0; font-size: 0.68em; }
+
+  /* Card grid */
+  .card-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 0.5em;
+  }
+  .card {
+    flex: 1;
+    max-width: 300px;
+    background: #fff;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1em 1.1em;
+    text-align: left;
+  }
+  .card h4 {
+    font-size: 0.72em;
+    margin: 0 0 0.3em 0;
+  }
+  .card p, .card li {
+    font-size: 0.58em;
+    margin: 0;
+    color: var(--gray-600);
+  }
+  .card ul { margin-left: 0.4em; padding-left: 0.8em; }
+
+  /* Table */
+  .reveal table {
+    font-size: 0.6em;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.4em auto;
+  }
+  .reveal table th {
+    background: var(--dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+  }
+  .reveal table td {
+    padding: 0.45em 0.7em;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+  }
+  .reveal table tr:nth-child(even) td {
+    background: #fff;
+  }
+
+  /* Steps */
+  .step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 0.55em;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    font-size: 0.65em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-text {
+    font-size: 0.62em;
+    line-height: 1.5;
+    padding-top: 0.15em;
+  }
+  .step-text strong { color: var(--dark); }
+
+  /* Checklist */
+  .checklist {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0.4em 0;
+  }
+  .checklist li {
+    font-size: 0.65em;
+    padding: 0.3em 0;
+    border-bottom: 1px solid var(--gray-200);
+    padding-left: 1.6em;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gray-400);
+    border-radius: 3px;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--dark);
+    color: #E7E5E4;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52em;
+    line-height: 1.65;
+    padding: 1em 1.2em;
+    border-radius: 8px;
+    text-align: left;
+    margin: 0.5em 0;
+    border-left: 4px solid var(--gold);
+  }
+  .prompt-box .highlight {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* Divider */
+  .part-divider h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.2em;
+  }
+
+  /* Two-col */
+  .two-col {
+    display: flex;
+    gap: 30px;
+    text-align: left;
+  }
+  .two-col > div { flex: 1; }
+
+  /* Rec badge */
+  .rec {
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7em;
+    font-weight: 600;
+    padding: 0.1em 0.5em;
+    border-radius: 3px;
+    margin-left: 0.3em;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ========== SLIDE 1: TITLE ========== -->
+<section>
+  <div>
+    <span class="label label--gold">Week 4 &middot; September 14, 2026</span>
+    <h1 style="margin-top: 0.2em;">Boards of Directors &amp;<br>Nonprofit Governance</h1>
+    <h3 style="margin-top: 0.4em;">PAD 6149 &mdash; Nonprofit Administration: Build Your Nonprofit</h3>
+    <p style="font-size: 0.6em; color: var(--gray-600); margin-top: 1.2em;">
+      Dr. Seongho An &middot; University of Central Florida<br>
+      Master of Nonprofit Management
+    </p>
+  </div>
+  <aside class="notes">
+    Welcome to Week 4. This is one of the heaviest weeks of the semester — you have two graded deliverables due: the Mentor Interview Report and C4: Board Governance Policy, each worth 10 points. Today we focus on why governance matters, the theoretical frameworks behind board behavior, and then I'll walk you through exactly what each assignment requires. Let's get started.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 2: AGENDA ========== -->
+<section>
+  <span class="label label--dark">Agenda</span>
+  <h2>What We Cover Today</h2>
+  <div class="card-row">
+    <div class="card">
+      <h4 style="color: var(--dark);">Part 1 &mdash; Theory</h4>
+      <p><strong>Governance &amp; Board Behavior</strong></p>
+      <ul>
+        <li>Why governance matters</li>
+        <li>Board roles &amp; responsibilities</li>
+        <li>Composition &amp; diversity</li>
+        <li>New governance models</li>
+        <li>Accountability &amp; public interest</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color: var(--dark);">Part 2 &mdash; Deliverables</h4>
+      <p><strong>Two Graded Assignments</strong></p>
+      <ul>
+        <li>C4: Board Governance Policy (10 pts)</li>
+        <li>Mentor Interview Report (10 pts)</li>
+        <li>AI Demo: Conflict of Interest Policy</li>
+        <li>Website update: Board page</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.6em;">
+    <p><span class="label label--red" style="font-size: 0.8em; margin: 0;">Heavy Week</span> &ensp;Two graded deliverables due this week. Start early and plan your time carefully.</p>
+  </div>
+  <aside class="notes">
+    Two parts today. First, we'll work through the governance literature — Worth Chapter 4, Miller-Millesen, Abzug and Galaskiewicz, Hall and Kennedy, and Stone and Ostrower. Then we'll pivot to the practical: what exactly you need to submit for the Board Governance Policy and the Mentor Interview Report. This is a heavy week, so I want to make sure the expectations are crystal clear.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 3: WHY GOVERNANCE MATTERS ========== -->
+<section>
+  <span class="label label--outline">Worth Ch. 4</span>
+  <h2>Why Governance Matters</h2>
+  <p style="text-align: left; font-size: 0.75em; color: var(--gray-600); margin-bottom: 0.6em;">The board is the <strong>legal and ethical backbone</strong> of every nonprofit organization.</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Fiduciary Duty</h4>
+      <p>Ensuring the organization's resources are used properly and in furtherance of its mission. Financial oversight, audit responsibility, asset protection.</p>
+    </div>
+    <div class="card">
+      <h4>Duty of Care</h4>
+      <p>Exercising reasonable care in decision-making. Attending meetings, reviewing materials, asking informed questions, staying engaged.</p>
+    </div>
+    <div class="card">
+      <h4>Duty of Loyalty</h4>
+      <p>Putting the organization's interests above personal interests. Disclosing conflicts, avoiding self-dealing, acting in good faith.</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.5em;">
+    <p>Board members are <strong>stewards, not owners</strong>. They hold the organization in trust for the community it serves.</p>
+  </div>
+  <aside class="notes">
+    Worth Chapter 4 lays the foundation. A nonprofit's board of directors is not advisory — it is the legal governing body. Board members bear three fundamental duties: fiduciary duty (protecting assets and managing money responsibly), duty of care (making informed decisions, actually reading the financials before meetings), and duty of loyalty (no conflicts of interest, no self-dealing). When boards fail at these, you get scandals — think of the United Way controversy in the 1990s or more recent cases. For your nonprofit, you need to design a board that takes these duties seriously from day one.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 4: BOARD ROLES — MILLER-MILLESEN ========== -->
+<section>
+  <span class="label label--outline">Miller-Millesen (2003)</span>
+  <h2>Board Roles &amp; Responsibilities</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.5em;">Three theoretical lenses explain <em>why</em> boards behave the way they do:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Theory</th>
+        <th>Board Role</th>
+        <th>Key Focus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Agency Theory</strong></td>
+        <td>Monitoring &amp; oversight</td>
+        <td>Ensure management acts in the organization's interest; reduce information asymmetry between staff and board</td>
+      </tr>
+      <tr>
+        <td><strong>Resource Dependency</strong></td>
+        <td>Resource acquisition</td>
+        <td>Board members bring money, connections, expertise, and legitimacy; link the organization to its environment</td>
+      </tr>
+      <tr>
+        <td><strong>Institutional Theory</strong></td>
+        <td>Conformity &amp; legitimacy</td>
+        <td>Boards adopt structures and practices that signal legitimacy to funders, regulators, and the public</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>Implication for your nonprofit:</strong> When you design your board, think about which role you need most right now. A startup board is usually heavy on resource dependency — you need people who can open doors.</p>
+  </div>
+  <aside class="notes">
+    Miller-Millesen's 2003 article is one of the most-cited pieces on board behavior. She synthesizes three major theories. Agency theory says boards exist to monitor management — think of it as a principal-agent problem. Resource dependency theory says boards exist to bring in resources: money, expertise, political connections, community legitimacy. Institutional theory says boards adopt certain structures because that's what funders and regulators expect — you have a board because you're supposed to have a board. In reality, all three operate simultaneously. For your startup nonprofit, resource dependency is probably the most critical lens. You need board members who can actually help you get things done, not just rubber-stamp decisions.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 5: BOARD COMPOSITION ========== -->
+<section>
+  <span class="label label--outline">Abzug &amp; Galaskiewicz (2001)</span>
+  <h2>Board Composition</h2>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.72em;">Expertise vs. Local Identity</h4>
+      <ul>
+        <li><strong>Expertise model:</strong> Recruit for skills — legal, finance, fundraising, marketing, program area knowledge</li>
+        <li><strong>Identity model:</strong> Recruit for representation — community members, constituents, demographic diversity</li>
+        <li><strong>Effective boards balance both</strong> — skills the organization needs AND voices from communities it serves</li>
+      </ul>
+      <h4 style="font-size: 0.72em; margin-top: 0.5em;">Recruitment Strategies</h4>
+      <ul>
+        <li>Skills matrix: map current gaps</li>
+        <li>Term limits: ensure rotation</li>
+        <li>Pipeline: advisory boards, committees</li>
+        <li>Intentional diversity: race, gender, age, sector, lived experience</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size: 0.72em;">For Your Workbook</h4>
+      <p style="font-size: 0.62em; color: var(--gray-600);">Draft a board composition plan. Consider:</p>
+      <ul class="checklist">
+        <li>Board size (5&ndash;15 for a startup)</li>
+        <li>Desired expertise areas</li>
+        <li>Community representation goals</li>
+        <li>Term length and limits</li>
+        <li>Officer positions (Chair, Vice-Chair, Secretary, Treasurer)</li>
+        <li>Standing committees (Finance, Governance, Programs, Fundraising)</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    Abzug and Galaskiewicz's research shows a tension in board recruitment: do you prioritize expertise or community identity? The answer is both, but how you balance them depends on your organization's stage and mission. A startup might lean toward expertise — you need someone who understands nonprofit accounting, someone with legal knowledge, someone with fundraising experience. But if you're serving a specific community, having board members from that community is not optional — it's an equity and accountability issue. In your workbook this week, you should be drafting your ideal board composition. Use a skills matrix approach: list the competencies you need, then identify the gaps. Most small nonprofits start with 5 to 9 board members. You can grow from there.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 6: THE "NEW GOVERNANCE" ========== -->
+<section>
+  <span class="label label--outline">Hall &amp; Kennedy (2008)</span>
+  <h2>The &ldquo;New Governance&rdquo;</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.5em;">Public and nonprofit governance is evolving beyond the traditional hierarchical board model.</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Collaborative Governance</h4>
+      <p>Decision-making shared across organizations, sectors, and stakeholders. Boards as <em>conveners</em>, not just directors.</p>
+    </div>
+    <div class="card">
+      <h4>Network Governance</h4>
+      <p>Nonprofits operate in networks — funders, government agencies, peer organizations. Board members serve as <em>boundary spanners</em>.</p>
+    </div>
+    <div class="card">
+      <h4>Adaptive Governance</h4>
+      <p>Governance structures must evolve as the organization grows. What works for a startup board won't work at scale.</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.5em;">
+    <p><strong>Key takeaway:</strong> Your board structure should be designed for where your nonprofit is <em>now</em>, with a plan for how it will evolve. Build in flexibility through bylaws and governance policies.</p>
+  </div>
+  <aside class="notes">
+    Hall and Kennedy argue that the old model — a board that meets quarterly, reviews financials, and rubber-stamps the ED's decisions — is dying. The new governance is collaborative, networked, and adaptive. Your board members need to be connectors who bring your organization into larger conversations. They need to collaborate with other organizations, government partners, and community stakeholders. And your governance structure needs to evolve. The bylaws you write for a three-person founding board should have provisions for growth — adding seats, creating committees, changing term structures. This is directly relevant to your governance policy this week.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 7: ACCOUNTABILITY & PUBLIC INTEREST ========== -->
+<section>
+  <span class="label label--outline">Stone &amp; Ostrower (2007)</span> <span class="label label--blue">NASPAA C4</span>
+  <h2>Accountability &amp; Public Interest</h2>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.72em;">Boards Acting in the Public Interest</h4>
+      <ul>
+        <li>Nonprofits receive <strong>public trust</strong> through tax-exempt status — boards must honor that trust</li>
+        <li>Accountability is multi-directional: to donors, to constituents, to regulators, to the public</li>
+        <li>Transparency mechanisms: Form 990, annual reports, open meetings, conflict of interest policies</li>
+      </ul>
+      <h4 style="font-size: 0.72em; margin-top: 0.5em;">Democratic Governance</h4>
+      <ul>
+        <li>Civil society depends on nonprofits acting as democratic institutions</li>
+        <li>Community voice, constituent representation, participatory decision-making</li>
+      </ul>
+    </div>
+    <div>
+      <div class="callout">
+        <p><strong>NASPAA Competency 4:</strong> Articulate and apply a public service perspective. Your board governance policy should reflect your nonprofit's commitment to democratic governance, transparency, and accountability to the communities you serve.</p>
+      </div>
+      <p style="font-size: 0.62em; color: var(--gray-600); margin-top: 0.6em;"><strong>Connect to prior coursework:</strong> Your PAD 6237 Governance Case Study examined these tensions in a real organization. Now you're designing governance from scratch — apply what you learned.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    Stone and Ostrower push us to think about boards not just as management structures but as accountability mechanisms. Nonprofits exist because the public grants them tax-exempt status. In exchange, the public expects transparency and accountability. Your board is the primary vehicle for that accountability. This connects directly to NASPAA Competency 4 — the public service perspective. Your governance policy should explicitly address how your board will maintain transparency, avoid conflicts of interest, represent community interests, and hold itself accountable. Don't just write boilerplate — think about what democratic governance actually means for your specific nonprofit and the community you're trying to serve.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 8: PART 2 DIVIDER ========== -->
+<section class="part-divider">
+  <span class="label label--gold">Part 2 &middot; Deliverables</span>
+  <h2>Your Assignments<br>This Week</h2>
+  <div style="display: flex; gap: 30px; justify-content: center; margin-top: 0.8em;">
+    <div style="text-align: center;">
+      <p style="font-size: 1.8em; font-family: 'DM Mono', monospace; font-weight: 700; color: var(--dark); margin: 0;">2</p>
+      <p style="font-size: 0.55em; color: var(--gray-600); margin: 0;">graded deliverables</p>
+    </div>
+    <div style="text-align: center;">
+      <p style="font-size: 1.8em; font-family: 'DM Mono', monospace; font-weight: 700; color: var(--dark); margin: 0;">20</p>
+      <p style="font-size: 0.55em; color: var(--gray-600); margin: 0;">total points at stake</p>
+    </div>
+    <div style="text-align: center;">
+      <p style="font-size: 1.8em; font-family: 'DM Mono', monospace; font-weight: 700; color: var(--dark); margin: 0;">+</p>
+      <p style="font-size: 0.55em; color: var(--gray-600); margin: 0;">workbook &amp; website update</p>
+    </div>
+  </div>
+  <aside class="notes">
+    Let's shift to the practical. You have two graded deliverables worth 10 points each, plus your workbook entries and a website update. I'll walk through each one now so there's no ambiguity about expectations.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 9: BOARD GOVERNANCE POLICY ========== -->
+<section>
+  <span class="label label--red">C4 &middot; 10 Points</span>
+  <h2>Board Governance Policy</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.3em;">5&ndash;7 pages. Your founding governance document for the board of directors.</p>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.68em;">Required Sections</h4>
+      <ul class="checklist">
+        <li>Board mission and purpose</li>
+        <li>Board composition (size, skills, diversity goals)</li>
+        <li>Committee structure and responsibilities</li>
+        <li>Board member roles and duties</li>
+        <li>Conflict of interest policy</li>
+        <li>Meeting rules and decision-making process</li>
+        <li>Term length and succession plan</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size: 0.68em;">Reflection Component</h4>
+      <ul>
+        <li>How does your board structure reflect democratic governance? (NASPAA C4)</li>
+        <li>What did you learn from your PAD 6237 governance case that you're applying here?</li>
+        <li>How will your board ensure accountability to the community?</li>
+      </ul>
+      <div class="callout" style="margin-top: 0.5em;">
+        <p><strong>Tip:</strong> This is not a generic template. Your policy should be tailored to your specific nonprofit — its mission, size, stage, and community context.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    The Board Governance Policy is 5 to 7 pages and is essentially your founding governance document. This is what you would hand to a new board member on their first day. It needs to cover: why the board exists and what its mission is, who should be on the board, what committees you'll have, what each member's responsibilities are, your conflict of interest policy, how meetings work, and term lengths. The reflection component is important — connect this to NASPAA Competency 4 and your PAD 6237 case study. Don't just list rules; explain why you designed governance this way for your specific organization.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 10: AI DEMO — CONFLICT OF INTEREST POLICY ========== -->
+<section>
+  <span class="label label--gold">AI Demo</span>
+  <h2>Draft a Conflict of Interest Policy</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">Use Claude to generate a first draft, then customize it for your organization.</p>
+  <div class="prompt-box">
+    <span class="highlight">Prompt:</span><br><br>
+    "I am starting a nonprofit called <span class="highlight">[Your Org Name]</span> that focuses on <span class="highlight">[mission area]</span>. Draft a board conflict of interest policy that includes: (1) definition of conflict of interest, (2) disclosure requirements, (3) procedures for managing conflicts, (4) annual disclosure form requirement, and (5) consequences for violations. The policy should be appropriate for a small, newly formed 501(c)(3)."
+  </div>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>Remember:</strong> AI gives you a starting point. You must customize the output for your specific organization, review it for accuracy, and ensure it aligns with your state's nonprofit laws. Never submit AI-generated text without revision and your own professional judgment.</p>
+  </div>
+  <aside class="notes">
+    Here's a practical AI demonstration. A conflict of interest policy is one of the most important governance documents, and it's also one where a template is genuinely helpful as a starting point. Show students the Claude prompt on screen. The key elements are: define what counts as a conflict, require annual disclosure, establish procedures for when conflicts arise, and specify consequences. After getting the AI output, you need to customize it — add your organization's name, adjust the language to fit your context, check it against Florida nonprofit law requirements. This is a great example of AI as a drafting tool, not a final product.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 11: MENTOR INTERVIEW REPORT ========== -->
+<section>
+  <span class="label label--red">Also Due &middot; 10 Points</span>
+  <h2>Mentor Interview Report</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">4&ndash;5 pages. Reflect on your conversation with a real nonprofit leader.</p>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.68em;">Required Components</h4>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Organization Profile:</strong> Overview of the mentor's organization — mission, size, programs, funding model, governance structure.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Interview Summary:</strong> Key questions and responses. What did you learn about their leadership, challenges, and governance experience?</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>3&ndash;5 Key Takeaways:</strong> The most important insights for your own nonprofit project.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Reflection:</strong> How will this interview shape your approach to building your nonprofit?</div>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size: 0.68em;">Tips for a Strong Report</h4>
+      <ul>
+        <li>Prepare 8&ndash;10 questions in advance, focused on governance, leadership, and operations</li>
+        <li>Ask follow-up questions — don't just read from a script</li>
+        <li>Take notes during or immediately after the interview</li>
+        <li>Connect takeaways to course readings (especially this week's governance material)</li>
+        <li>Be specific — "I learned that small boards are more agile" is weak; describe the <em>example</em> they gave</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    The Mentor Interview Report is your other 10-point deliverable this week. By now you should have conducted your interview with a nonprofit leader. The report is 4 to 5 pages and has four components: an organization profile, an interview summary, 3 to 5 key takeaways, and a reflection on how this shapes your own nonprofit project. The strongest reports connect the interview insights back to the course material — if your mentor talked about board challenges, connect it to Miller-Millesen or Stone and Ostrower. Be specific and detailed. Generic summaries earn generic grades.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 12: WEBSITE UPDATE ========== -->
+<section>
+  <span class="label label--gold">Website</span>
+  <h2>Add Your Board / Leadership Page</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.5em;">Your nonprofit website should now include a dedicated governance page.</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Board Members</h4>
+      <ul>
+        <li>Names and titles (even if fictional for now)</li>
+        <li>Brief bios showing relevant expertise</li>
+        <li>Professional photos or placeholders</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Committee Structure</h4>
+      <ul>
+        <li>Standing committees and their purpose</li>
+        <li>Visual org chart showing governance structure</li>
+        <li>How the board relates to staff leadership</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Governance Principles</h4>
+      <ul>
+        <li>Transparency commitment</li>
+        <li>Conflict of interest statement</li>
+        <li>Community accountability language</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p>A public governance page signals <strong>credibility and transparency</strong> to donors, funders, and community partners. Most major funders check for this.</p>
+  </div>
+  <aside class="notes">
+    This week's website update is to add a Board or Leadership page. This is what donors and funders look for — they want to know who is governing the organization. Include board member names and bios (these can be aspirational or fictional for now — the point is to show the structure you're designing), committee descriptions, and a brief statement about your governance principles. Look at real nonprofit websites for examples — organizations like Feeding America, United Way, or local Central Florida nonprofits. See how they present their board. Keep it clean and professional.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 13: NEXT WEEK ========== -->
+<section>
+  <span class="label label--dark">Looking Ahead</span>
+  <h2>Next Week: HR &amp; Volunteer Management</h2>
+  <div class="callout">
+    <p><strong>Week 5 readings:</strong> Worth Ch. 9; Dicke &amp; Ott (2003); "Challenges for Nonprofit Managers" NML; Handy, Mook &amp; Quarter (2008)</p>
+  </div>
+  <ul>
+    <li><strong>Due next week:</strong> C3: HR &amp; Volunteer Management Plan (10 pts)</li>
+    <li>Topics: staffing a nonprofit, volunteer programs, org charts, job descriptions, DEI in hiring</li>
+    <li>Website update: Add "Team" and "Get Involved" pages</li>
+  </ul>
+  <div class="callout" style="margin-top: 0.5em;">
+    <p><strong>This week's priorities:</strong> Submit the Mentor Interview Report and Board Governance Policy. Update your workbook with board composition and bylaws outline. Add a Board page to your website.</p>
+  </div>
+  <p style="font-size: 0.65em; color: var(--gray-600); margin-top: 0.6em;">
+    Questions? Post in the discussion board or email Dr. An.
+  </p>
+  <aside class="notes">
+    Next week we move from governance to operations — specifically, human resources and volunteer management. Another graded deliverable: the HR and Volunteer Management Plan. Start reading Worth Chapter 9 and the Dicke and Ott article. For this week, your priorities are clear: finish and submit both the Mentor Interview Report and the Board Governance Policy, update your workbook with board composition ideas and a bylaws outline, and add a Board or Leadership page to your website. That's a lot, so manage your time. Reach out if you have questions. See you next week.
+  </aside>
+</section>
+
+</div><!-- end slides -->
+</div><!-- end reveal -->
+
+<!-- Footer -->
+<div class="footer">
+  <span>PAD 6149 &ndash; Build Your Nonprofit &ensp;|&ensp; Week 4 &ensp;|&ensp; Dr. Seongho An</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    showNotes: false,
+    width: 1100,
+    height: 700,
+    margin: 0.08,
+    center: true,
+    transition: 'none',
+    pdfSeparateFragments: false,
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 7: Financial Management & Accountability</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Week 7</span>
+  <h1>Financial Management<br>& Accountability</h1>
+  <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    October 5, 2026
+  </div>
+  <aside class="notes">
+    Welcome to Week 7. We're past the midpoint of the semester, and this week we turn to one of the most critical areas of nonprofit management: financial management and accountability. I know many of you have taken PAD 6208, so you have a foundation in financial and budget analysis. This week, we're applying those concepts specifically to the nonprofit context — which has unique characteristics like restricted funds, fund accounting, and public accountability requirements. By the end of this week, you'll have a draft operating budget for your nonprofit.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <span class="label">Week 7</span>
+  <h2>Agenda</h2>
+  <ol>
+    <li>Nonprofit Financial Management Overview</li>
+    <li>Revenue Structure & Diversification</li>
+    <li>Accountability Requirements</li>
+    <li>Budgeting for Nonprofits</li>
+    <li>Financial Oversight & Governance</li>
+    <li>Your Budget Workbook Task</li>
+    <li>AI Demos: Budget Template & Grant Research</li>
+    <li>Website Update: Transparency Page</li>
+  </ol>
+
+  <div class="gold-bg">
+    <p><strong>Readings:</strong> Worth Ch. 12, 14, 15 · Benjamin (2008) · Wolf Ch. 6 & 7 · Yan, Denison & Butler (2008)</p>
+    <p><strong>Due:</strong> Workbook — Draft Operating Budget</p>
+  </div>
+
+  <aside class="notes">
+    Here's our roadmap for the week. We'll start with a broad overview of what makes nonprofit financial management distinct from for-profit finance, then dig into revenue structures and accountability. I'll walk you through budgeting fundamentals and the board's fiduciary role. Then we'll get practical — you'll see your workbook task for drafting an operating budget, and I'll demo some AI tools for budget templates and grant research. Let's get into it.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: FINANCIAL MANAGEMENT OVERVIEW ==================== -->
+<section>
+  <span class="label">Foundations</span>
+  <h2>Nonprofit Financial Management Overview</h2>
+
+  <p>Nonprofit finance operates under fundamentally different rules than the for-profit sector.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Key Differences</h3>
+      <ul>
+        <li><strong>No shareholders</strong> — surplus is reinvested in mission, not distributed</li>
+        <li><strong>Restricted vs. unrestricted funds</strong> — donors and grantors dictate how money is used</li>
+        <li><strong>Fund accounting</strong> — tracks money by purpose, not just by category</li>
+        <li><strong>Tax-exempt status</strong> — brings obligations, not just benefits</li>
+      </ul>
+    </div>
+    <div>
+      <h3>The Bottom Line</h3>
+      <ul>
+        <li>"No margin, no mission" — financial health enables impact</li>
+        <li>Breakeven is not the goal; <strong>sustainable reserves</strong> are</li>
+        <li>Financial management is a <strong>leadership competency</strong>, not just an accounting function</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><em>Worth Ch. 12</em></p>
+
+  <aside class="notes">
+    Let's start with the fundamentals. If you're coming from PAD 6208, you already understand budget analysis. But nonprofit finance has some unique characteristics. First, there are no shareholders. Any surplus goes back into the mission. Second, much of your funding comes with strings attached — restricted funds can only be used for specific purposes. This creates a system called fund accounting, where you track money by its designated purpose. Worth's Chapter 12 does an excellent job laying out these distinctions. The key message: financial management isn't optional for nonprofit leaders. You can't delegate this entirely to your accountant and hope for the best. Understanding your finances is a core leadership competency.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: REVENUE STRUCTURE ==================== -->
+<section>
+  <span class="label">Revenue</span>
+  <h2>Revenue Structure & Diversification</h2>
+
+  <p>Yan, Denison & Butler (2008) found that <strong>revenue diversification</strong> is a key predictor of nonprofit financial health — but it comes with trade-offs.</p>
+
+  <table>
+    <thead>
+      <tr><th>Revenue Source</th><th>Advantages</th><th>Risks</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Government Grants</td><td>Large amounts, multi-year</td><td>Reporting burden, political shifts</td></tr>
+      <tr><td>Foundation Grants</td><td>Aligned with mission</td><td>Competitive, time-limited</td></tr>
+      <tr><td>Individual Donations</td><td>Flexible, unrestricted</td><td>Unpredictable, cultivation costs</td></tr>
+      <tr><td>Earned Income</td><td>Self-sustaining, unrestricted</td><td>Mission drift risk, startup costs</td></tr>
+      <tr><td>Corporate Sponsors</td><td>Visibility, in-kind support</td><td>Reputation risk, strings attached</td></tr>
+      <tr><td>Investment Income</td><td>Passive, compounding</td><td>Requires endowment, market risk</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Key finding:</strong> Organizations with diversified revenue and the capacity to borrow perform better during economic downturns. Don't put all your eggs in one basket.</p>
+  </div>
+
+  <aside class="notes">
+    Yan, Denison, and Butler's 2008 study gives us important evidence about revenue structure. They found that nonprofits with diversified revenue streams are more financially resilient. But diversification isn't free — each source requires different skills, staff time, and infrastructure. Government grants require extensive reporting. Individual fundraising requires cultivation and stewardship. Earned income requires business acumen. The research also highlights borrowing capacity as an underappreciated factor. Nonprofits that can access lines of credit or bridge loans weather cash flow disruptions better. For your nonprofit, think carefully about which revenue sources make sense given your mission, capacity, and stage of development. A startup nonprofit can't realistically pursue all six of these simultaneously.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: ACCOUNTABILITY ==================== -->
+<section>
+  <span class="label">Accountability</span>
+  <h2>Accountability Requirements</h2>
+
+  <p>Benjamin (2008) argues that accountability is not merely compliance — it <strong>actively shapes organizational practice</strong> and identity.</p>
+
+  <ul>
+    <li><strong>Upward accountability:</strong> IRS Form 990, state registration, audit requirements — the legal minimum</li>
+    <li><strong>Lateral accountability:</strong> Peer standards, industry benchmarks (e.g., Charity Navigator, Candid)</li>
+    <li><strong>Downward accountability:</strong> To constituents, communities, and beneficiaries — the most neglected</li>
+  </ul>
+
+  <div class="two-col">
+    <div>
+      <h3>Compliance Essentials</h3>
+      <ul>
+        <li>IRS Form 990 (public document)</li>
+        <li>State charitable solicitation registration</li>
+        <li>Annual audit (if revenue > threshold)</li>
+        <li>Donor acknowledgment letters</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Transparency as Trust</h3>
+      <ul>
+        <li>Publish your Form 990 and financials voluntarily</li>
+        <li>Program-level outcome reporting</li>
+        <li>Clear communication about overhead</li>
+        <li>Proactive, not reactive, disclosure</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Benjamin's 2008 article in NVSQ is one of those readings that reframes how you think about accountability. It's not just about filing your Form 990 on time. Benjamin shows that accountability systems actually shape what organizations do and how they think about their work. The three directions of accountability are useful: upward to regulators and funders, lateral to peers and standards bodies, and downward to the communities you serve. Most nonprofits are decent at upward accountability because there are penalties for noncompliance. But downward accountability — truly being answerable to the people your mission serves — is where most organizations fall short. For your nonprofit, I want you to think about all three directions. How will you demonstrate accountability not just to the IRS, but to your constituents?
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: BUDGETING ==================== -->
+<section>
+  <span class="label">Budgeting</span>
+  <h2>Budgeting for Nonprofits</h2>
+
+  <p>A budget is not just a spreadsheet — it is a <strong>statement of organizational priorities</strong>.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Operating Budget</h3>
+      <p>Your organization's annual plan for revenue and expenses across all programs and operations.</p>
+      <ul>
+        <li><strong>Revenue side:</strong> All income sources with realistic projections</li>
+        <li><strong>Expense side:</strong> Personnel, occupancy, program costs, admin, fundraising</li>
+        <li><strong>Goal:</strong> Balanced or modest surplus for reserves</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Program Budget</h3>
+      <p>Revenue and expenses for a specific program or grant — a subset of the operating budget.</p>
+      <ul>
+        <li>Direct program costs (staff, materials, travel)</li>
+        <li>Allocated indirect costs (rent, admin, IT)</li>
+        <li>Required for most grant applications</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><strong>Common line items:</strong> Personnel (typically 60–75%), rent/utilities, program supplies, insurance, technology, professional development, fundraising costs, administrative overhead.</p>
+
+  <p><em>Worth Ch. 14–15</em></p>
+
+  <aside class="notes">
+    Worth's Chapters 14 and 15 walk through nonprofit budgeting in detail, and I want to highlight a few key points. First, there are two main types of budgets you need to understand: the operating budget, which covers your entire organization for a fiscal year, and program budgets, which break out costs for specific programs or grants. Most grant applications will require a program budget, so you need to know how to allocate indirect costs — things like rent, admin staff, and technology — across programs. On the expense side, personnel is almost always the biggest line item, typically 60 to 75 percent of total expenses for service-delivery nonprofits. That's not a sign of inefficiency — it reflects the reality that nonprofits are labor-intensive organizations. For this week's workbook task, you'll focus on the operating budget.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: FINANCIAL OVERSIGHT ==================== -->
+<section>
+  <span class="label">Governance</span>
+  <h2>Financial Oversight</h2>
+
+  <p>The board of directors has <strong>fiduciary responsibility</strong> — the legal obligation to act in the organization's financial interest.</p>
+
+  <ul>
+    <li><strong>Duty of Care:</strong> Make informed financial decisions; review budgets and financial statements regularly</li>
+    <li><strong>Duty of Loyalty:</strong> Put the organization's interests ahead of personal interests; manage conflicts of interest</li>
+    <li><strong>Duty of Obedience:</strong> Ensure resources are used in accordance with the mission and donor intent</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Board financial oversight practices (Wolf Ch. 6–7):</strong></p>
+    <ul>
+      <li>Finance committee reviews monthly statements</li>
+      <li>Full board approves annual budget and audit</li>
+      <li>Internal controls separate financial duties (no single person controls all money)</li>
+      <li>Whistleblower and document retention policies</li>
+      <li>Investment policy for reserves and endowment</li>
+    </ul>
+  </div>
+
+  <aside class="notes">
+    Wolf's Chapters 6 and 7 focus on the board's role in financial oversight, and this connects directly to what you built in Week 4 with your governance structure. The three fiduciary duties — care, loyalty, and obedience — are not abstract legal concepts. They have real operational implications. Duty of care means board members actually need to read and understand financial statements. Duty of loyalty means they must disclose conflicts of interest. Duty of obedience means they must ensure restricted funds are used as donors intended. Practically, this means your nonprofit needs a finance committee, regular financial reporting to the board, separation of financial duties, and policies for whistleblowers and document retention. These aren't bureaucratic overhead — they're the foundation of organizational trustworthiness.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: WORKBOOK TASK ==================== -->
+<section>
+  <span class="label">Workbook</span>
+  <h2>Your Budget Workbook Task</h2>
+
+  <p>Draft a <strong>first-year operating budget</strong> for your nonprofit organization.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Revenue</h3>
+      <ul>
+        <li>Government/foundation grants</li>
+        <li>Individual donations</li>
+        <li>Corporate sponsors</li>
+        <li>Earned income (fees, sales)</li>
+        <li>Special events</li>
+        <li>In-kind contributions</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Expenses</h3>
+      <ul>
+        <li>Staff salaries and benefits</li>
+        <li>Rent and utilities</li>
+        <li>Program materials and supplies</li>
+        <li>Marketing and communications</li>
+        <li>Insurance (liability, D&O)</li>
+        <li>Technology (website, software)</li>
+        <li>Professional development</li>
+        <li>Fundraising costs</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>Format:</strong> Use a simple spreadsheet (Google Sheets or Excel). Revenue and expenses should balance or show a modest surplus. Include notes explaining your assumptions for each line item.</p>
+  </div>
+
+  <aside class="notes">
+    This is your main deliverable for the week. You're drafting a first-year operating budget for your nonprofit. This doesn't need to be perfect — it's a draft — but it does need to be realistic. Don't just make up numbers. Research what things actually cost: salaries in your area for similar positions, commercial rent, insurance costs, technology subscriptions. On the revenue side, be conservative. A brand-new nonprofit is unlikely to raise $500,000 in its first year unless you have very specific commitments. Most startups operate on $50,000 to $200,000 initially. Include notes explaining your assumptions. If you say you'll raise $30,000 from individual donors, explain how — how many donors at what average gift size? This is where the thinking matters more than the numbers themselves.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: AI DEMO — BUDGET TEMPLATE ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Create a Nonprofit Budget Template</h2>
+
+  <p>Use AI to generate a starting framework, then customize it with your own research.</p>
+
+  <div class="prompt-box">
+    <span class="prompt-label">ChatGPT Prompt</span>
+Create a first-year operating budget template for a small
+nonprofit focused on [your issue area] with an annual
+budget of $150,000. Include revenue sources and expense
+categories with estimated amounts. Format as a table with
+line items, amounts, and percentage of total budget.</div>
+
+  <h3>What to do with the output:</h3>
+  <ul>
+    <li><strong>Copy into Google Sheets</strong> and adjust amounts based on local research</li>
+    <li><strong>Verify salary estimates</strong> with Indeed, Glassdoor, or Idealist for your region</li>
+    <li><strong>Check rent costs</strong> in your target location (or justify remote/virtual model)</li>
+    <li><strong>Add line items</strong> the AI missed (insurance, professional development, contingency)</li>
+    <li><strong>Document your process</strong> in your AI Process Log</li>
+  </ul>
+
+  <aside class="notes">
+    Let me show you how to use AI productively for this task. The prompt I'm showing here will generate a reasonable starting template. But here's the critical point: the AI output is a starting point, not a finished product. You need to customize it based on actual research. Look up real salary ranges for your positions in your geographic area. Check commercial rental rates. Get actual insurance quotes or estimates. The AI is good at giving you a comprehensive list of categories you might forget — like D&O insurance or fiscal sponsorship fees — but it's terrible at estimating costs for your specific context. Use it for structure, then replace the numbers with researched figures.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: AI DEMO — GRANT RESEARCH ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Research Grant Opportunities</h2>
+
+  <p>AI can help you identify potential grant sources — but verification is essential.</p>
+
+  <div class="prompt-box">
+    <span class="prompt-label">Perplexity Prompt</span>
+What federal, state, and foundation grants are available
+for nonprofits focused on [your issue area] in Florida?
+Include grant name, funder, typical award amount, and
+application deadlines if available.</div>
+
+  <h3>Verification steps:</h3>
+  <ul>
+    <li><strong>Candid / Foundation Directory Online:</strong> Verify foundation names and giving areas</li>
+    <li><strong>Grants.gov:</strong> Confirm federal grant opportunities and deadlines</li>
+    <li><strong>GrantStation:</strong> UCF library provides access — use it</li>
+    <li><strong>Florida Division of Cultural Affairs / FDLE / DOH:</strong> State-specific opportunities</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Warning:</strong> AI frequently fabricates grant names and deadlines. <em>Always</em> verify through official sources before including in your budget or fundraising plan.</p>
+  </div>
+
+  <aside class="notes">
+    This is one of the most useful and most dangerous applications of AI in nonprofit work. Perplexity is particularly good for this because it cites sources, but even Perplexity can hallucinate grant programs that don't exist. I've seen students submit fundraising plans referencing grants that were discontinued five years ago or never existed at all. So the workflow is: use AI to generate leads, then verify every single one. Candid's Foundation Directory Online is the gold standard for foundation research. Grants.gov is the authoritative source for federal opportunities. And GrantStation, which UCF's library gives you access to, is excellent for state and local opportunities. Never put a grant in your budget that you haven't verified through an official source.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: WEBSITE UPDATE ==================== -->
+<section>
+  <span class="label">Website</span>
+  <h2>Website Update: Transparency Page</h2>
+
+  <p>Consider adding a <strong>"Transparency"</strong> or <strong>"Financials"</strong> page to your nonprofit website.</p>
+
+  <ul>
+    <li><strong>Why it matters:</strong> Donors increasingly check financial transparency before giving — Charity Navigator, GuideStar, and your own website are the first places they look</li>
+    <li><strong>What to include:</strong></li>
+  </ul>
+
+  <div class="two-col">
+    <div>
+      <ul>
+        <li>Budget summary or annual report</li>
+        <li>Revenue breakdown (pie chart or table)</li>
+        <li>Program spending percentages</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Board and leadership information</li>
+        <li>Financial policies overview</li>
+        <li>Link to GuideStar/Candid profile (when available)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>This is optional for this week</strong> — but if you add it now, it strengthens your portfolio for the strategic plan due in Week 9.</p>
+  </div>
+
+  <aside class="notes">
+    This week's website update is optional, but I strongly recommend it. A transparency or financials page signals to donors, funders, and stakeholders that your organization takes accountability seriously. You don't need audited financial statements for a startup — a clear budget summary, a revenue breakdown, and an explanation of how you allocate resources to programs is sufficient. If you built this page now, it directly supports your strategic plan that's due in Week 9, because you'll be able to reference your financial projections as part of your resource alignment section. Think of it as an investment in your portfolio's coherence.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: NEXT WEEK ==================== -->
+<section>
+  <span class="label">Looking Ahead</span>
+  <h2>Next Week: Resources Development & Management</h2>
+
+  <p>Week 8 focuses on <strong>fundraising strategy</strong> — the development side of your nonprofit.</p>
+
+  <ul>
+    <li><strong>Readings:</strong> Worth Ch. 13 · Hudson Ch. 4 · Wolf Ch. 8 · Thornton (2006) · Van Slyke, Ashley & Johnson (2007) · Barman (2008) · Stephenson et al. (2008) · Tuckman & Chang (1998)</li>
+    <li><strong>Workbook:</strong> Draft fundraising strategy — three revenue streams with targets</li>
+    <li><strong>Prior coursework:</strong> Reference your PAD 5146 Fundraising Plan (C4)</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Reminder:</strong> Your <strong>C1: Strategic Plan (10 pts)</strong> is due in Week 9. Start pulling together your SWOT analysis, strategic goals, and resource alignment now. Everything you've built — governance, HR, marketing, budget — feeds into that plan.</p>
+  </div>
+
+  <aside class="notes">
+    Next week we tackle fundraising and resources development. It's a heavy reading week — eight sources — but they're all essential to understanding the fundraising landscape. You'll be drawing on your PAD 5146 fundraising plan as prior coursework. And I want to flag the big deadline: your Strategic Plan, worth 10 points, is due in Week 9. That assignment integrates everything you've built so far — governance from Week 4, HR from Week 5, marketing from Week 6, your budget from this week, and your fundraising strategy from next week. Start organizing your materials now so you're not scrambling in Week 9. See you next week.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 13: QUESTIONS ==================== -->
+<section>
+  <span class="label">Week 7</span>
+  <h2>Questions?</h2>
+
+  <p>Reach out anytime via Webcourses inbox or during office hours.</p>
+
+  <div class="gold-bg">
+    <p><strong>This week's deliverable:</strong> Workbook — Draft Operating Budget</p>
+    <p><strong>Key resources:</strong> Worth Ch. 12, 14, 15 · Benjamin (2008) · Yan, Denison & Butler (2008) · Wolf Ch. 6–7</p>
+  </div>
+
+  <div class="meta" style="margin-top: 40px; font-family: 'DM Mono', monospace; font-size: 0.5em; color: var(--ucf-gray);">
+    Dr. Seongho An<br>
+    PAD 6149 – Nonprofit Administration: Build Your Nonprofit<br>
+    University of Central Florida · Fall 2026
+  </div>
+
+  <aside class="notes">
+    That's it for this week. Remember, your workbook task is to draft an operating budget for your nonprofit. Use the AI demo prompts as starting points, but do your own research to make the numbers realistic. If you have questions about budget categories, revenue projections, or anything else, reach out through Webcourses or come to office hours. Good luck with your budgets.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 · Dr. Seongho An</span>
+  <span>Week 7 — Financial Management & Accountability</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    transition: 'none',
+    showNotes: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    center: false
+  });
+</script>
+</body>
+</html>

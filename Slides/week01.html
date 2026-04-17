@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 1: Introduction to the Course and Syllabus</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin: 20px 0;
+    padding: 0;
+  }
+
+  .timeline-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding-top: 24px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--ucf-light-gray);
+  }
+
+  .timeline-item:first-child::before { left: 50%; }
+  .timeline-item:last-child::before { right: 50%; }
+
+  .timeline-item .dot {
+    width: 16px;
+    height: 16px;
+    background: var(--ucf-gold);
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-item .timeline-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ucf-gray);
+    line-height: 1.3;
+  }
+
+  .timeline-item:first-child .dot {
+    background: var(--ucf-dark);
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: #fff;
+    border: 1px solid var(--ucf-light-gray);
+    border-radius: 6px;
+    padding: 24px;
+    margin: 16px 0;
+    max-width: 500px;
+  }
+
+  .contact-card p {
+    font-size: 0.55em;
+    margin: 4px 0;
+  }
+
+  /* Competency list */
+  .competency-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .competency-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    font-size: 0.6em;
+  }
+
+  .competency-list li:last-child { border-bottom: none; }
+
+  .c-code {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--ucf-dark);
+    display: inline-block;
+    width: 2.5em;
+  }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Online (W)</span>
+  <h1>PAD 6149<br>Nonprofit Administration:<br>Build Your Nonprofit</h1>
+  <p class="subtitle">Master of Nonprofit Management Capstone</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    August 24, 2026
+  </div>
+  <aside class="notes">
+    Welcome everyone to PAD 6149, your capstone course for the Master of Nonprofit Management program. My name is Dr. Seongho An, and I'll be guiding you through this course. This is a fully online course. Today we'll walk through the syllabus, the structure of the course, and what you'll be building over the next 15 weeks. I'm genuinely excited about this course because it's different from anything you've done so far in the program — you're going to create something real.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: WELCOME ==================== -->
+<section>
+  <span class="label">Week 1</span>
+  <h2>Welcome to the Capstone</h2>
+  <p>This is the final course in your MNM journey. You've spent the program learning <em>about</em> nonprofits — now you're going to <strong>build one</strong>.</p>
+
+  <div class="gold-bg">
+    <p><strong>The "Build Your Nonprofit" Concept:</strong> Over 15 weeks, you will design a complete nonprofit organization from the ground up — mission, governance, budget, programs, website, and a final pitch.</p>
+  </div>
+
+  <p>Every assignment in this course adds a real component to your organization. By the end of the semester, you'll have a professional-quality organizational portfolio that demonstrates your mastery of nonprofit management.</p>
+
+  <aside class="notes">
+    Let me be clear about what makes this capstone different. This isn't a course where you write disconnected papers about nonprofit theory. Everything you produce in this class contributes to a single, cohesive project: your nonprofit organization. Think of it as an extended exercise in organizational design. You've taken courses in governance, finance, fundraising, program evaluation — now you're going to integrate all of that knowledge into one comprehensive deliverable. The portfolio you build can serve as a writing sample, a job interview talking point, or even the foundation for an actual organization if you choose to pursue it.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: COURSE PHILOSOPHY ==================== -->
+<section>
+  <span class="label">Philosophy</span>
+  <h2>Two Ideas That Drive This Course</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>1. Learning by Doing</h3>
+      <p>You will build a nonprofit organization from scratch. Each week's deliverable becomes a real component — a board structure, a budget, a strategic plan, a website page.</p>
+      <p>This is applied learning at the graduate level. Theory matters, but <strong>execution is the capstone competency</strong>.</p>
+    </div>
+    <div>
+      <h3>2. AI as Professional Competency</h3>
+      <p>AI tools are <strong>required</strong> in this course, not prohibited. Nonprofit professionals are already using AI for grant writing, communications, and data analysis.</p>
+      <p>You will learn to use AI critically — as a collaborator, not a replacement for your judgment.</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    I want to set the tone right away with two foundational ideas. First, this is a doing course. You are not going to write a 20-page paper analyzing someone else's nonprofit. You are going to design your own. That means every week you're producing something tangible — a governance document, a budget spreadsheet, a marketing plan, a website. Second, and this may surprise you: I require you to use AI tools in this course. The nonprofit sector is already adopting AI for grant writing, donor communications, program evaluation, and more. If we're preparing you for the real world, we need to prepare you to use these tools responsibly and critically. You'll document your AI use in process logs so we can have honest conversations about what works and what doesn't.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: WHAT YOU'LL BUILD ==================== -->
+<section>
+  <span class="label">Semester Arc</span>
+  <h2>What You'll Build This Semester</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <div class="timeline-label">Wk 1–2<br><strong>Concept</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <div class="timeline-label">Wk 3–4<br><strong>Website<br>&amp; Governance</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <div class="timeline-label">Wk 5–6<br><strong>Team &amp;<br>Budget</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <div class="timeline-label">Wk 7–9<br><strong>Strategy &amp;<br>Programs</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <div class="timeline-label">Wk 10–12<br><strong>Fundraising<br>&amp; Advocacy</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <div class="timeline-label">Wk 13–14<br><strong>Evaluation<br>&amp; Portfolio</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="dot"></div>
+      <div class="timeline-label">Wk 15<br><strong>Final<br>Pitch</strong></div>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p>Each week's assignment adds a new section to your nonprofit. By Week 15, your website becomes a <strong>complete organizational portfolio</strong> — ready to present to stakeholders, funders, or employers.</p>
+  </div>
+
+  <aside class="notes">
+    Here's the semester at a glance. We start with the concept — that's this week. You'll define what kind of nonprofit you want to build and why. Then we move into the structural components: your website framework, governance documents like bylaws and a board matrix, then staffing plans and budgets. Mid-semester, we focus on strategy and program design — what will your nonprofit actually do, and how will you know if it's working? The final third covers fundraising, advocacy, and evaluation. And in Week 15, you'll deliver a final pitch presentation. Notice how it builds progressively. You're never starting from zero each week — you're adding to what you've already created.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: YOUR NONPROFIT WEBSITE ==================== -->
+<section>
+  <span class="label">Key Deliverable</span>
+  <h2>Your Nonprofit Website</h2>
+
+  <p>Throughout the semester, you will build and maintain a <strong>live website</strong> for your nonprofit organization.</p>
+
+  <ul>
+    <li><strong>Week 3:</strong> Launch your website with mission, About Us, and initial branding</li>
+    <li><strong>Ongoing:</strong> Each major deliverable becomes a page or section on the site</li>
+    <li><strong>Week 14:</strong> Final portfolio — a complete, professional organizational website</li>
+  </ul>
+
+  <p>By the end of the course, your website will include:</p>
+
+  <div class="two-col">
+    <div>
+      <ul>
+        <li>Mission and vision statements</li>
+        <li>Board of directors page</li>
+        <li>Programs and services</li>
+        <li>Strategic plan summary</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Budget overview</li>
+        <li>Fundraising/donation page</li>
+        <li>Advocacy and policy positions</li>
+        <li>Impact and evaluation data</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    The website is the backbone of this course. Think of it as both a deliverable and a portfolio container. In Week 3, you'll launch a basic site with your nonprofit's name, mission, and branding. From there, each assignment feeds into the website. When you write bylaws, those get summarized on a governance page. When you create a budget, a summary goes on the site. When you design programs, they get their own page. By Week 14, you'll have a fully built-out organizational website that looks and reads like a real nonprofit. You can use any platform — Wix, WordPress, Squarespace, Google Sites, GitHub Pages, or code it yourself. I don't care about the tool. I care about the quality of the content and the professionalism of the presentation.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: NASPAA COMPETENCIES ==================== -->
+<section>
+  <span class="label">Accreditation</span>
+  <h2>NASPAA Universal Competencies</h2>
+
+  <p>As a NASPAA-accredited program, our capstone maps to <strong>five core competencies</strong>:</p>
+
+  <ul class="competency-list">
+    <li><span class="c-code">C1</span> <strong>Lead and Manage in Public Governance</strong> — Board development, org structure, staffing plans</li>
+    <li><span class="c-code">C2</span> <strong>Participate in the Policy Process</strong> — Advocacy strategy, policy analysis, issue briefs</li>
+    <li><span class="c-code">C3</span> <strong>Analyze, Synthesize, Think Critically</strong> — Needs assessment, program evaluation, budgets</li>
+    <li><span class="c-code">C4</span> <strong>Articulate Public Service Values</strong> — Mission, DEI, ethics, civil society context</li>
+    <li><span class="c-code">C5</span> <strong>Communicate and Interact Productively</strong> — Website, pitch, professional documents</li>
+  </ul>
+
+  <p>Every assignment in this course maps to at least one competency. These appear on your rubrics.</p>
+
+  <aside class="notes">
+    Because the MNM program is housed in a NASPAA-accredited school, our capstone must demonstrate that you've achieved five universal competencies. I've designed each assignment to map to at least one of these. C1, leading and managing, shows up when you design your board and staffing plan. C2, the policy process, appears in your advocacy module. C3, analytical skills, drives your needs assessment and budget work. C4, public service values, is embedded in your mission and DEI commitments. And C5, communication, is threaded throughout — your website, your pitch, your professional documents. You'll see these competency codes on every rubric so you know exactly what's being assessed and why.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: GRADING OVERVIEW ==================== -->
+<section>
+  <span class="label">Assessment</span>
+  <h2>Grading Overview</h2>
+
+  <table>
+    <thead>
+      <tr><th>Assignment</th><th>Points</th><th>Due</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Nonprofit Concept Statement</td><td>3</td><td>Week 1</td></tr>
+      <tr><td>Service Learning: Mentor Interview (3 parts)</td><td>12</td><td>Wks 2, 6, 10</td></tr>
+      <tr><td>Nonprofit Website (3 checkpoints)</td><td>15</td><td>Wks 3, 8, 14</td></tr>
+      <tr><td>Governance Package (Bylaws + Board)</td><td>10</td><td>Week 4</td></tr>
+      <tr><td>Staffing &amp; Volunteer Plan</td><td>8</td><td>Week 5</td></tr>
+      <tr><td>Budget &amp; Financial Plan</td><td>10</td><td>Week 6</td></tr>
+      <tr><td>Strategic Plan</td><td>10</td><td>Week 9</td></tr>
+      <tr><td>Program Design &amp; Logic Model</td><td>8</td><td>Week 10</td></tr>
+      <tr><td>Fundraising &amp; Development Plan</td><td>8</td><td>Week 11</td></tr>
+      <tr><td>Advocacy &amp; Policy Brief</td><td>6</td><td>Week 12</td></tr>
+      <tr><td>Final Pitch Presentation</td><td>10</td><td>Week 15</td></tr>
+      <tr style="background: var(--ucf-gold-light); font-weight: 600;"><td><strong>Total</strong></td><td><strong>100</strong></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>No discussion boards. No ePortfolio.</strong> Everything feeds your nonprofit.</p>
+
+  <aside class="notes">
+    Here's the full grading breakdown. Notice a few things. First, the total is 100 points, which makes it easy to track your grade. Second, every single assignment contributes to your nonprofit — there's no busywork. No weekly discussion boards where you post 200 words and reply to two classmates. No separate ePortfolio assignment. Your nonprofit website IS your portfolio. Third, the points are weighted toward the bigger, more complex assignments — your website checkpoints, your governance package, your budget, your strategic plan, and your final pitch. The concept statement this week is only 3 points, but it's foundational. Take it seriously because everything else builds on it.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: SERVICE LEARNING ==================== -->
+<section>
+  <span class="label">Service Learning</span>
+  <h2>Mentor Interview (3 Parts)</h2>
+
+  <p>A required service learning component: connect with a <strong>real nonprofit practitioner</strong> and learn from their experience.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>The Three Parts</h3>
+      <ul>
+        <li><strong>Part 1 — Concept Statement</strong> (Wk 2): Identify your mentor and explain why you chose them</li>
+        <li><strong>Part 2 — Interview Plan</strong> (Wk 6): Develop questions aligned to your nonprofit's needs</li>
+        <li><strong>Part 3 — Report</strong> (Wk 10): Conduct the interview, reflect on insights, apply lessons</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Why This Matters</h3>
+      <ul>
+        <li>Real-world practitioners have knowledge that textbooks don't capture</li>
+        <li>Networking is a core professional skill in the sector</li>
+        <li>Insights from your mentor should inform your nonprofit's design</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    The service learning component is a three-part assignment spread across the semester. You'll identify a nonprofit professional — someone working in a leadership role at an organization related to your focus area — and conduct an informational interview with them. Part 1, due in Week 2, is a brief concept statement: who is your mentor, what organization do they work for, and why did you choose them? Part 2, in Week 6, is your interview plan with thoughtful questions. And Part 3, in Week 10, is the full interview report with reflections on what you learned and how it applies to your nonprofit. This assignment matters because you're building something from scratch, and real practitioners have insights that no textbook can give you. Start thinking now about who you might want to interview.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: AI TOOLS POLICY ==================== -->
+<section>
+  <span class="label">AI Policy</span>
+  <h2>AI Tools: Required, Not Prohibited</h2>
+
+  <p>This course <strong>requires</strong> the use of AI tools. You will document your AI use in an <strong>AI Process Log</strong> for every major deliverable.</p>
+
+  <h3>Recommended Free Tools</h3>
+  <div class="two-col">
+    <div>
+      <ul>
+        <li><strong>ChatGPT</strong> — drafting, brainstorming</li>
+        <li><strong>Claude.ai</strong> — analysis, writing</li>
+        <li><strong>Gemini</strong> — research, synthesis</li>
+        <li><strong>Perplexity</strong> — source finding</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><strong>Canva AI</strong> — design, branding</li>
+        <li><strong>Gamma.app</strong> — presentations</li>
+        <li><strong>Notion AI</strong> — organization</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>The Rule:</strong> You must author, evaluate, and own all work. AI is a tool — not the author. Use it to enhance your thinking, not replace it.</p>
+  </div>
+
+  <aside class="notes">
+    Let me be direct about AI. I am not going to pretend AI doesn't exist, and I'm not going to ban it. Instead, I'm going to teach you to use it like a professional. Every major assignment will include an AI Process Log where you document what tools you used, what prompts you wrote, and how you evaluated and revised the AI's output. This is important for two reasons. First, it teaches you to be transparent and reflective about AI use — which is an emerging ethical standard in our field. Second, it creates accountability. If you just copy-paste AI output without evaluation, that will be evident in your process log and in the quality of your work. The tools listed here are all free. You don't need to spend money. But you do need to engage seriously with at least one AI tool throughout the semester.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: THIS WEEK'S ASSIGNMENT ==================== -->
+<section>
+  <span class="label">Due This Week · 3 pts</span>
+  <h2>Assignment: Nonprofit Concept Statement</h2>
+
+  <p><strong>Length:</strong> 1 page (single-spaced) &nbsp;|&nbsp; <strong>Format:</strong> APA 7th &nbsp;|&nbsp; <strong>Submit via:</strong> Webcourses</p>
+
+  <h3>What to Include</h3>
+  <ul>
+    <li><strong>Field / Focus Area</strong> — What social issue will your nonprofit address?</li>
+    <li><strong>Mission</strong> — A draft mission statement (1–2 sentences)</li>
+    <li><strong>Target Population</strong> — Who will your organization serve?</li>
+    <li><strong>Organization Name</strong> — A working name for your nonprofit</li>
+    <li><strong>Personal Connection</strong> — Why does this cause matter to you?</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p>This is your foundation. Everything else in the course builds on the concept you establish this week. Choose something you genuinely care about.</p>
+  </div>
+
+  <aside class="notes">
+    Your first assignment is due this week: a one-page Nonprofit Concept Statement worth 3 points. This is intentionally simple, but don't underestimate its importance. You are choosing the cause, the population, and the organizational direction that will drive every assignment for the rest of the semester. Your concept statement should include five things: the social issue you want to address, a draft mission statement, your target population, a working name for the organization, and a short explanation of why this cause matters to you personally. The personal connection piece is important — you'll be spending 15 weeks with this organization, so pick something you care about. It doesn't need to be perfect. You can refine your mission and even change your organization's name later. But you need a solid starting point.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: HOW TO CHOOSE YOUR CAUSE ==================== -->
+<section>
+  <span class="label">Guidance</span>
+  <h2>How to Choose Your Cause</h2>
+
+  <p>Ask yourself: <strong>What community problem keeps you up at night?</strong></p>
+
+  <div class="two-col">
+    <div>
+      <h3>Example Focus Areas</h3>
+      <ul>
+        <li>Youth education and mentorship</li>
+        <li>Housing insecurity and homelessness</li>
+        <li>Mental health access</li>
+        <li>Immigration and refugee services</li>
+        <li>Environmental justice</li>
+        <li>Arts and cultural access</li>
+        <li>Food security and nutrition</li>
+        <li>Workforce development</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Tips for Deciding</h3>
+      <ul>
+        <li><strong>Think local.</strong> What needs exist in your community?</li>
+        <li><strong>Think specific.</strong> "Youth education" is broad — "STEM mentoring for first-gen middle schoolers in Orlando" is a concept.</li>
+        <li><strong>Think feasible.</strong> Could this realistically be a small nonprofit?</li>
+        <li><strong>Think personal.</strong> Passion sustains you through 15 weeks of work.</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Choosing your cause is the most important decision you'll make this week, so let me offer some guidance. The examples on the left are common nonprofit focus areas, but these are starting points, not answers. The key is specificity. If you say "I want to help kids," that's not a nonprofit concept yet. If you say "I want to create an after-school STEM program for first-generation middle school students in the Pine Hills neighborhood of Orlando," now we're talking. Think about your community — where are the gaps? Think about your own experience — what populations or issues have you encountered professionally or personally? And think practically. You're designing an organization that could, in theory, actually exist. Keep the scope manageable. A small, focused nonprofit is more compelling than a vague, everything-for-everyone organization.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: AI DEMO ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Brainstorming Your Concept with AI</h2>
+
+  <p>Here's an example of <strong>productive AI use</strong> for this week's assignment:</p>
+
+  <div class="prompt-box"><span class="prompt-label">Sample Prompt</span>I'm a graduate student creating a nonprofit organization
+focused on food insecurity among college students.
+
+Help me brainstorm:
+- 3 mission statement options
+- Target population details
+- 3 potential program ideas
+- 5 creative organization names</div>
+
+  <h3>Good AI Use vs. Bad AI Use</h3>
+  <div class="two-col">
+    <div>
+      <p><strong>Good:</strong> Use AI to brainstorm, then select and refine with your own judgment. Document what you changed and why.</p>
+    </div>
+    <div>
+      <p><strong>Bad:</strong> Copy the AI's first output directly into your submission. No evaluation, no revision, no original thought.</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Let me show you what productive AI use looks like in practice. Say you're interested in food insecurity among college students. You might prompt ChatGPT or Claude with something like this: give me mission statement options, target population details, program ideas, and name suggestions. The AI will generate useful raw material. But here's the critical step: you evaluate it. Maybe the AI suggests a name that's already taken. Maybe the mission statement is too generic. Maybe one of the program ideas doesn't fit your local context. Your job is to curate, refine, and make it yours. In your AI Process Log, you'd note: I used Claude to brainstorm five organization names, selected "Knights Pantry Collective" as my working name because it reflects the UCF community, and modified the suggested mission statement to focus specifically on graduate students. That's the kind of critical engagement I'm looking for.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 13: COURSE LOGISTICS ==================== -->
+<section>
+  <span class="label">Logistics</span>
+  <h2>Course Logistics</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>Format &amp; Platform</h3>
+      <ul>
+        <li><strong>Modality:</strong> Online (W) — fully asynchronous</li>
+        <li><strong>Platform:</strong> Webcourses@UCF</li>
+        <li><strong>Modules:</strong> Open each Monday</li>
+        <li><strong>Deadlines:</strong> Sundays by 11:59 PM ET</li>
+      </ul>
+
+      <h3>Writing Standards</h3>
+      <ul>
+        <li>APA 7th edition for all citations</li>
+        <li>Professional, sector-appropriate language</li>
+        <li>All files submitted as .docx or .pdf</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Office Hours</h3>
+      <ul>
+        <li><strong>Tues &amp; Thurs, 12:00 – 3:00 PM</strong></li>
+        <li>Via Zoom (link in Webcourses)</li>
+        <li>No appointment needed — just drop in</li>
+      </ul>
+
+      <h3>Communication</h3>
+      <ul>
+        <li><strong>Email:</strong> Seongho.An@ucf.edu</li>
+        <li>Response time: within 24 hours (weekdays)</li>
+        <li>Use subject line: <span class="mono">[PAD 6149]</span> + topic</li>
+        <li>For quick questions, try office hours first</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    A few logistical notes. This is a fully online, asynchronous course delivered through Webcourses at UCF. New modules open every Monday, and assignments are due by Sunday at 11:59 PM Eastern. I hold office hours on Tuesdays and Thursdays from noon to 3 PM via Zoom — no appointment needed, just drop in. The Zoom link is in Webcourses. For email, please include PAD 6149 in the subject line so I can prioritize your message. I aim to respond within 24 hours on weekdays. All written work should follow APA 7th edition formatting and be submitted as Word documents or PDFs. If you have questions about APA, the Purdue OWL is your best free resource, and the UCF Writing Center can help as well.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 14: NEXT WEEK ==================== -->
+<section>
+  <span class="label">Looking Ahead</span>
+  <h2>Next Week: Understanding the Nonprofit Sector</h2>
+
+  <h3>Module 1 Readings</h3>
+  <ul>
+    <li>Worth, M. J. — <em>Nonprofit Management: Principles and Practice</em>, Chapters 1–3</li>
+    <li>Review: scope and scale of the U.S. nonprofit sector</li>
+    <li>Key concepts: 501(c)(3) status, civil society, public benefit</li>
+  </ul>
+
+  <h3>Start Thinking About</h3>
+  <ul>
+    <li>Which <strong>existing nonprofit organizations</strong> inspire you? (You'll need one for your Mentor Interview.)</li>
+    <li>What organizations work in your chosen focus area? Research 2–3 before next week.</li>
+    <li>How does your nonprofit idea fit within the broader sector landscape?</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Due next week:</strong> Service Learning Part 1 — Mentor Interview Concept Statement</p>
+  </div>
+
+  <aside class="notes">
+    Looking ahead to next week, we'll dive into Module 1 on understanding the nonprofit sector. Please read Chapters 1 through 3 of the Worth textbook, which covers the scope, scale, and structure of the U.S. nonprofit sector. This will ground your work in the broader context of civil society and tax-exempt organizations. I also want you to start thinking about your Mentor Interview. You'll need to identify a nonprofit professional you'd like to interview — someone working in a leadership role at an organization related to your focus area. Start researching organizations in your issue area now. Look at their websites, their leadership teams, their programs. This will help you with both your Mentor Interview concept statement, which is due next week, and with the design of your own nonprofit.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 15: QUESTIONS ==================== -->
+<section>
+  <span class="label">Contact</span>
+  <h2>Questions?</h2>
+
+  <div class="contact-card">
+    <p><strong>Dr. Seongho An</strong></p>
+    <p>School of Public Administration</p>
+    <p>University of Central Florida</p>
+    <p style="margin-top: 12px;"><span class="mono">Email:</span> Seongho.An@ucf.edu</p>
+    <p><span class="mono">Office Hours:</span> Tues &amp; Thurs, 12:00 – 3:00 PM (Zoom)</p>
+    <p><span class="mono">Course Site:</span> Webcourses@UCF</p>
+  </div>
+
+  <p>Don't forget:</p>
+  <ul>
+    <li><strong>Complete the Financial Aid Attendance Requirement</strong> this week</li>
+    <li><strong>Submit your Nonprofit Concept Statement</strong> (1 page, 3 pts)</li>
+    <li>Start thinking about your Mentor Interview subject</li>
+  </ul>
+
+  <aside class="notes">
+    That wraps up our Week 1 overview. Two action items for this week: first, make sure you complete the Financial Aid Attendance Requirement — this is a UCF requirement and must be done promptly. Second, submit your Nonprofit Concept Statement. It's one page, worth 3 points, and it sets the direction for your entire semester. If you have any questions about the course, the concept statement, or anything else, please don't hesitate to reach out via email or drop by office hours. I'm looking forward to seeing what you all build. Have a great first week.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<!-- Persistent footer -->
+<div class="slide-footer">
+  <span>PAD 6149 – Build Your Nonprofit &nbsp;|&nbsp; Week 1 &nbsp;|&nbsp; Dr. Seongho An</span>
+  <span>UCF School of Public Administration</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    showNotes: false,
+    transition: 'none',
+    transitionSpeed: 'fast',
+    width: 1200,
+    height: 700,
+    margin: 0.06,
+    center: false,
+    controls: true,
+    progress: true,
+    history: true,
+  });
+</script>
+</body>
+</html>

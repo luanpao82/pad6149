@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 14: Putting It Together — Your Nonprofit Pitch</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* Journey timeline */
+  .journey-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .journey-item {
+    background: #fff;
+    border: 1px solid var(--ucf-light-gray);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.42em;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .journey-item .week-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    color: var(--ucf-gray);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .journey-item strong {
+    font-size: 1.05em;
+  }
+
+  .journey-item.current {
+    background: var(--ucf-gold);
+    border-color: var(--ucf-gold);
+    color: var(--ucf-dark);
+  }
+
+  .journey-item.current .week-label {
+    color: var(--ucf-dark);
+  }
+
+  /* Submission checklist */
+  .submission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 16px 0;
+    background: var(--ucf-light-gray);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .submission-item {
+    padding: 14px 16px;
+    background: var(--ucf-bg);
+    font-size: 0.55em;
+  }
+
+  .submission-item .item-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+    color: var(--ucf-gold);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .submission-item.full-width {
+    grid-column: 1 / -1;
+    border-left: 3px solid var(--ucf-gold);
+  }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Week 14 · Final Week</span>
+  <h1>Putting It Together:<br>Your Nonprofit Pitch</h1>
+  <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    November 30, 2026
+  </div>
+  <aside class="notes">
+    Welcome to Week 14 — our final class meeting. Over the past thirteen weeks, you have built a nonprofit organization from the ground up. You started with a concept and a mission statement. You formed a board, hired a team, designed programs, built a budget, wrote a fundraising strategy, developed a strategic plan, and crafted a policy advocacy plan. You built a website that brings it all together. Today, we look at where the nonprofit sector is headed, I give you final guidance on your pitch presentation, and we celebrate what you have accomplished. This is the capstone of the capstone. Let's make it count.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <span class="label">Week 14</span>
+  <h2>Agenda</h2>
+  <ol>
+    <li>The Future of the Nonprofit Sector</li>
+    <li>Challenges Ahead: Hudson (2009)</li>
+    <li>Creating the Future: Gottlieb (2009)</li>
+    <li>Your Semester Journey — A Visual Recap</li>
+    <li>Final Nonprofit Pitch Presentation (15 pts)</li>
+    <li>What Your Pitch Must Cover</li>
+    <li>Presentation Tips</li>
+    <li>AI Integration: Your Required Slide</li>
+    <li>Required Submissions</li>
+    <li>Using AI for Your Pitch</li>
+    <li>What Comes Next? Actually Launching</li>
+    <li>Congratulations & Thank You</li>
+  </ol>
+
+  <div class="gold-bg">
+    <p><strong>Readings:</strong> Worth Ch. 17 · Hudson Ch. 7 (pg. 209–234) · Gottlieb (2009) pp. 329–355</p>
+    <p><strong>Due:</strong> Final Nonprofit Pitch Presentation (15 pts) + Workbook Appendix + AI Process Log</p>
+  </div>
+
+  <aside class="notes">
+    Here is our final agenda. We will begin with three readings that look forward — at the trends, challenges, and possibilities facing the nonprofit sector. Then I will walk you through the pitch presentation requirements in detail, share presentation tips, and discuss the required AI integration slide. We will cover all submission requirements and talk about what comes next — for those of you who may actually want to launch these organizations. We end with a moment of reflection on what you have accomplished this semester.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: FUTURE OF THE SECTOR ==================== -->
+<section>
+  <span class="label">Looking Forward</span>
+  <h2>The Future of the Nonprofit Sector</h2>
+
+  <p><strong>Worth Ch. 17</strong> — The sector faces profound changes in the coming decades:</p>
+
+  <ul>
+    <li><strong>Technology and AI:</strong> Transforming fundraising, program delivery, advocacy, and operations. Organizations that fail to adapt will fall behind.</li>
+    <li><strong>Demographic shifts:</strong> Aging donors, diversifying communities, changing volunteer patterns. The constituency of tomorrow looks different from today.</li>
+    <li><strong>Political environment:</strong> Shifting regulations, tax policy changes, government funding uncertainty. Nonprofits must be politically literate without being partisan.</li>
+    <li><strong>New forms of social enterprise:</strong> B Corps, LLCs for social good, impact investing — the boundary between nonprofit and for-profit is blurring.</li>
+    <li><strong>Demand for accountability:</strong> Donors, regulators, and the public expect transparency, measurable outcomes, and ethical governance.</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>The question for you:</strong> How does the nonprofit you built this semester position itself in this changing landscape?</p>
+  </div>
+
+  <aside class="notes">
+    Worth's final chapter is a forward-looking survey of the forces reshaping the nonprofit sector. What strikes me most is the convergence of pressures — technology, demographics, politics, and accountability are all moving simultaneously. The organizations that will thrive are those that can adapt across all of these dimensions. Think about your nonprofit: How will it use technology? How will it respond to demographic change in its community? How will it navigate political uncertainty? How will it demonstrate accountability to its stakeholders? These are not hypothetical questions — they are the strategic challenges every nonprofit leader faces. Your generation of nonprofit managers will inherit a sector that looks fundamentally different from the one described in textbooks written 20 years ago.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: HUDSON ==================== -->
+<section>
+  <span class="label">Looking Forward</span>
+  <h2>Future Challenges:<br>Hudson Ch. 7</h2>
+
+  <p>Hudson identifies five critical challenges for nonprofit management in the coming era:</p>
+
+  <table>
+    <tr>
+      <th>Challenge</th>
+      <th>What It Means</th>
+    </tr>
+    <tr>
+      <td>Competition for funding</td>
+      <td>More organizations competing for the same pool of philanthropic and government dollars. Revenue diversification is essential.</td>
+    </tr>
+    <tr>
+      <td>Demand for accountability</td>
+      <td>Outcome measurement, financial transparency, and governance standards are no longer optional — they are table stakes.</td>
+    </tr>
+    <tr>
+      <td>Technology transformation</td>
+      <td>AI, data analytics, digital communications, online fundraising — technology is infrastructure, not a luxury.</td>
+    </tr>
+    <tr>
+      <td>Workforce changes</td>
+      <td>Attracting and retaining talented staff in a sector known for low pay. Remote work, burnout, DEI expectations.</td>
+    </tr>
+    <tr>
+      <td>Cross-sector collaboration</td>
+      <td>The most complex problems require partnerships across nonprofit, government, and business sectors.</td>
+    </tr>
+  </table>
+
+  <aside class="notes">
+    Hudson's chapter, pages 209 to 234, is a pragmatic analysis of what nonprofit managers will actually face in their careers. Funding competition is intensifying — there are approximately 1.8 million registered nonprofits in the United States, and that number keeps growing. But philanthropic giving, while also growing, does not keep pace with the number of organizations seeking support. This means your fundraising strategy, which you developed earlier in the semester, is not a one-time exercise — it is an ongoing competitive challenge. The demand for accountability connects directly to our Week 13 discussion of effectiveness. And technology transformation is happening faster than most organizations can respond. Your generation has an advantage here — you are digital natives. But you also need to manage technology ethically, particularly AI, which we have been integrating throughout this course.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: GOTTLIEB ==================== -->
+<section>
+  <span class="label">Looking Forward</span>
+  <h2>Creating the Future:<br>Gottlieb (2009)</h2>
+
+  <p>Gottlieb's conclusion (pp. 329–355) argues that the nonprofit sector has the <strong>unique potential to create transformative social change</strong> — if it embraces its role boldly.</p>
+
+  <ul>
+    <li><strong>Nonprofits are not just service providers.</strong> They are advocates, innovators, community builders, and democratic institutions.</li>
+    <li><strong>The sector's strength is its proximity to communities.</strong> Nonprofits understand local problems in ways government and business cannot.</li>
+    <li><strong>Transformative change requires risk-taking.</strong> The sector tends toward conservatism — grant-dependent organizations avoid controversy. Bold leadership is needed.</li>
+    <li><strong>Your nonprofit is part of this future.</strong> You are not just completing an assignment. You are designing an organization that could exist, could serve, could change lives.</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>The question is not whether the sector will change. It is whether you will help shape that change.</strong></p>
+  </div>
+
+  <aside class="notes">
+    I want you to sit with Gottlieb's argument for a moment. The nonprofit sector in the United States employs over 12 million people and contributes roughly 6% of GDP. It operates everything from hospitals and universities to food banks and after-school programs. It holds an extraordinary amount of public trust. Gottlieb argues that this sector has the potential to do more than deliver services — it can create the conditions for transformative social change. But only if nonprofit leaders are willing to take risks, to advocate boldly, to innovate, and to hold themselves to the highest standards of accountability and ethics. Some of you in this class will go on to lead nonprofit organizations. Some of you will start your own. The organization you designed this semester is a blueprint — perhaps a rough one, but a real one. The skills you have developed — governance, finance, strategy, advocacy, technology — are the skills you need. The question now is what you will do with them.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: SEMESTER JOURNEY ==================== -->
+<section>
+  <span class="label">Your Journey</span>
+  <h2>14 Weeks: From Concept to Organization</h2>
+
+  <div class="journey-grid">
+    <div class="journey-item">
+      <span class="week-label">Week 1</span>
+      <strong>Concept &<br>Mission</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 2</span>
+      <strong>Legal<br>Formation</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 3</span>
+      <strong>Website<br>Launch</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 4</span>
+      <strong>Board &<br>Governance</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 5</span>
+      <strong>Team &<br>HR</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 6</span>
+      <strong>Marketing &<br>Branding</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 7</span>
+      <strong>Programs &<br>Evaluation</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 8</span>
+      <strong>Budget &<br>Finance</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 9</span>
+      <strong>Strategic<br>Plan</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 10</span>
+      <strong>Fundraising<br>Strategy</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 11</span>
+      <strong>Mentor<br>Interview</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 12</span>
+      <strong>Grant<br>Writing</strong>
+    </div>
+    <div class="journey-item">
+      <span class="week-label">Week 13</span>
+      <strong>Advocacy<br>Plan</strong>
+    </div>
+    <div class="journey-item current">
+      <span class="week-label">Week 14</span>
+      <strong>Final<br>Pitch</strong>
+    </div>
+  </div>
+
+  <p>Each week built on the last. Each component connects to the others. <strong>You did not just learn about nonprofits — you built one.</strong></p>
+
+  <aside class="notes">
+    Look at this grid. Fourteen weeks ago, you had an idea. Today, you have a fully designed nonprofit organization with governance structures, staffing plans, programs, a budget, a fundraising strategy, a strategic plan, an advocacy plan, and a public website. Each week added a layer of complexity and realism. The reason this course is structured as a capstone is that it requires you to integrate everything you have learned across the MNM program — law, finance, management, policy, evaluation, ethics. This visual should remind you of how far you have come. When you deliver your pitch, you are not presenting a paper — you are presenting an organization.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: PITCH OVERVIEW ==================== -->
+<section>
+  <span class="label">Final Pitch</span>
+  <h2>Final Nonprofit Pitch Presentation<br>(15 pts)</h2>
+
+  <p><strong>This is your capstone moment.</strong></p>
+
+  <ul>
+    <li><strong>Format:</strong> 10-minute recorded or live video presentation</li>
+    <li><strong>Audience:</strong> Imagine you are presenting to potential funders, board members, and community partners</li>
+    <li><strong>Purpose:</strong> Persuade your audience that this organization should exist, that it addresses a real need, and that you have a viable plan to make it work</li>
+    <li><strong>Weight:</strong> 15 points — the single largest assignment of the semester</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>This is not a book report.</strong> You are not summarizing what you did. You are making a case. You are selling a vision. You are demonstrating mastery.</p>
+  </div>
+
+  <aside class="notes">
+    Let me be direct about what this presentation is and is not. It is not a walkthrough of your assignments. It is not a summary of your workbook. It is a pitch — a persuasive, professional presentation designed to convince a room of stakeholders that your nonprofit deserves to exist and deserves their support. Think about how you would present if real money were on the line. Because in the real world, that is exactly how nonprofit pitches work. You stand before a foundation's program officers, or a group of potential board members, or a community audience, and you make the case. The best pitches are specific, data-driven, emotionally compelling, and honest about challenges. The worst pitches are vague, generic, and read from a script. You know your organization better than anyone. Let that confidence show.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: WHAT TO COVER ==================== -->
+<section>
+  <span class="label">Pitch Content</span>
+  <h2>What Your Pitch Must Cover</h2>
+
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Component</th>
+      <th>Time Guide</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><strong>Mission, vision, and the problem you solve</strong> — lead with the need</td>
+      <td>~1 min</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Target population and theory of change</strong> — who you serve and how change happens</td>
+      <td>~1 min</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Organizational structure</strong> — board, staff, governance</td>
+      <td>~1 min</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Programs and evaluation</strong> — what you do and how you measure it</td>
+      <td>~1.5 min</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>Funding strategy and 3-year budget</strong> — how you sustain the work</td>
+      <td>~1.5 min</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong>Advocacy and policy goals</strong> — your systems change strategy</td>
+      <td>~1 min</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><strong>Mentor interview insights</strong> — what you learned from a practicing leader</td>
+      <td>~1 min</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><strong>Live website walkthrough</strong> — show, don't just tell</td>
+      <td>~1.5 min</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><strong>What's next</strong> — if you were actually launching, what would Year 1 look like?</td>
+      <td>~0.5 min</td>
+    </tr>
+  </table>
+
+  <aside class="notes">
+    This table gives you a rough time allocation for a 10-minute pitch. You do not have to follow it exactly, but it gives you a sense of pacing. The most common mistake students make is spending too much time on background and not enough on the operational details that demonstrate mastery. Lead with the problem — make the audience feel the urgency. Then show them your solution, your structure, your financials, and your strategy. The website walkthrough is important because it shows that you can translate your plans into a public-facing product. And the "what's next" component is where you demonstrate that you have thought beyond the assignment — that this is a real organization with a real future, not just a semester project.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: PRESENTATION TIPS ==================== -->
+<section>
+  <span class="label">Delivery</span>
+  <h2>Presentation Tips</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>Structure</h3>
+      <ul>
+        <li><strong>Hook:</strong> Open with a story, a statistic, or a question that grabs attention</li>
+        <li><strong>Problem:</strong> Make the need visceral and specific — not abstract</li>
+        <li><strong>Solution:</strong> Your organization — clear, concrete, credible</li>
+        <li><strong>Team:</strong> Who makes this happen — governance and staff</li>
+        <li><strong>Impact:</strong> What changes because your organization exists</li>
+        <li><strong>Ask:</strong> What do you need from your audience?</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Delivery</h3>
+      <ul>
+        <li><strong>Storytelling:</strong> Lead with a real person, a real community, a real moment</li>
+        <li><strong>Visuals:</strong> Clean slides, not text-heavy — your voice carries the content</li>
+        <li><strong>Data:</strong> 2–3 compelling numbers, not a data dump</li>
+        <li><strong>Confidence:</strong> You know your organization better than anyone in the room</li>
+        <li><strong>Rehearse:</strong> Practice at least 3 times. Time yourself.</li>
+        <li><strong>Be yourself:</strong> Authenticity beats polish every time</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    The best nonprofit pitches I have seen follow a narrative arc — they start with a human story, zoom out to the systemic problem, present the organization as the solution, and end with a concrete ask. The worst pitches are slide-reading exercises. If your slides contain paragraphs of text, you have too much text. Your slides should support your voice, not replace it. Use images, charts, and key phrases — not full sentences. And please rehearse. A 10-minute pitch that runs 15 minutes signals poor preparation. A pitch delivered with eye contact and genuine passion signals leadership. You have been building this organization all semester. You are the expert. Present like one.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: AI INTEGRATION ==================== -->
+<section>
+  <span class="label">AI Competency</span>
+  <h2>Required Slide: "AI in My Nonprofit"</h2>
+
+  <p>Your pitch must include <strong>one slide</strong> titled "AI in My Nonprofit" that demonstrates your AI competency.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>What You Used This Semester</h3>
+      <ul>
+        <li>Which AI tools? (Claude, ChatGPT, Canva AI, Gamma, etc.)</li>
+        <li>For what tasks? (Drafting, research, design, analysis)</li>
+        <li>How did you evaluate and revise AI output?</li>
+        <li>What were the limitations you encountered?</li>
+      </ul>
+    </div>
+    <div>
+      <h3>How You Would Use AI Operationally</h3>
+      <ul>
+        <li>Grant writing and donor communications</li>
+        <li>Marketing content and social media</li>
+        <li>Program data analysis and reporting</li>
+        <li>Board meeting preparation</li>
+        <li>Volunteer management and scheduling</li>
+        <li>Policy research and advocacy materials</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>This is not optional.</strong> AI integration has been a thread throughout this course. This slide demonstrates that you can use AI tools critically and strategically — a competency every nonprofit leader now needs.</p>
+  </div>
+
+  <aside class="notes">
+    Throughout this semester, every weekly lecture has included AI demos showing how tools like Claude, Canva AI, and Gamma can support nonprofit work. This required slide asks you to synthesize that experience. The left column is backward-looking — what did you actually use, and how? The right column is forward-looking — if this nonprofit were real, how would you integrate AI into daily operations? Be specific. Do not just say "I would use AI for writing." Say "I would use Claude to draft quarterly donor updates, then edit for voice and accuracy." The point is to demonstrate critical, strategic use of AI — not uncritical dependence on it. Your AI Process Log, which you also submit, provides the detailed evidence.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: REQUIRED SUBMISSIONS ==================== -->
+<section>
+  <span class="label">Submissions</span>
+  <h2>Required Submissions</h2>
+
+  <div class="submission-grid">
+    <div class="submission-item">
+      <span class="item-num">01</span>
+      <strong>Presentation Video or Live Session</strong><br>
+      10-minute recorded video (preferred) or live Zoom presentation
+    </div>
+    <div class="submission-item">
+      <span class="item-num">02</span>
+      <strong>Slide Deck</strong><br>
+      Your presentation slides (.pptx or .pdf)
+    </div>
+    <div class="submission-item">
+      <span class="item-num">03</span>
+      <strong>Nonprofit Builder Workbook</strong><br>
+      Complete workbook as appendix — all competency assignments compiled
+    </div>
+    <div class="submission-item">
+      <span class="item-num">04</span>
+      <strong>Website URL</strong><br>
+      Live, functioning website with all required pages
+    </div>
+    <div class="submission-item full-width">
+      <span class="item-num">05</span>
+      <strong>Final AI Process Log</strong><br>
+      Complete log documenting all AI tool usage throughout the semester — prompts, outputs, revisions, reflections
+    </div>
+  </div>
+
+  <p><strong>All submissions due by end of Week 14.</strong> Late submissions will follow the syllabus late policy.</p>
+
+  <aside class="notes">
+    Let me be very clear about what you need to submit. Five items. First, your presentation — either a recorded video or a live Zoom session. I recommend recording because it lets you do multiple takes and submit your best version. Second, your slide deck. Third, your complete Nonprofit Builder Workbook, compiled as a single document or organized appendix. This includes all five competency assignments and any other materials you produced throughout the semester. Fourth, your website URL — it must be live and accessible when I review it. Fifth, your final AI Process Log, which documents how you used AI tools throughout the course. All five items are due by the end of Week 14. Do not wait until the last minute. If you have technical difficulties, reach out early.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: USING AI FOR YOUR PITCH ==================== -->
+<section>
+  <span class="label">AI Tools</span>
+  <h2>Using AI for Your Pitch</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>AI Can Help With</h3>
+      <ul>
+        <li><strong>Gamma.app</strong> — AI-assisted slide design with professional layouts</li>
+        <li><strong>Canva AI</strong> — Visual design, infographics, brand consistency</li>
+        <li><strong>Claude</strong> — Script drafting, talking points, anticipated Q&A</li>
+        <li><strong>Rehearsal feedback</strong> — Record yourself and ask Claude to critique your script for clarity and persuasiveness</li>
+      </ul>
+    </div>
+    <div>
+      <h3>But Remember</h3>
+      <ul>
+        <li><strong>Your voice.</strong> The pitch should sound like you, not like an AI.</li>
+        <li><strong>Your story.</strong> You designed this organization. You know why it matters.</li>
+        <li><strong>Your expertise.</strong> You can answer questions about every component because you built every component.</li>
+        <li><strong>AI helps — you lead.</strong> Use it as a tool, not a crutch.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="prompt-box"><span class="prompt-label">Claude Prompt for Rehearsal</span>I'm preparing a 10-minute pitch for a nonprofit called [name] that addresses [issue] in [location]. Here is my draft script: [paste script]. Please critique it for: clarity, persuasiveness, pacing (is it under 10 minutes?), and any weak arguments. Suggest specific improvements.</div>
+
+  <aside class="notes">
+    I want to model responsible AI use one final time. AI tools are genuinely useful for presentation preparation — Gamma can generate a professional slide layout in minutes, Claude can help you refine your talking points, and recording yourself and reviewing the transcript can reveal verbal tics and unclear passages. But the pitch must be authentically yours. The audience — whether it is me, your classmates, or in the future, real funders — can tell the difference between someone who is presenting their own work and someone who is reading an AI-generated script. Use AI to polish. Use AI to practice. But stand up and deliver the pitch as yourself, with your passion and your knowledge. That is what makes it compelling.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 13: WHAT COMES NEXT ==================== -->
+<section>
+  <span class="label">Beyond the Course</span>
+  <h2>What Comes Next?</h2>
+
+  <p>Some of you will actually launch these organizations. <strong>The blueprint is done. The question is: will you build it?</strong></p>
+
+  <table>
+    <tr>
+      <th>Step</th>
+      <th>Resource</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      <td>File Articles of Incorporation</td>
+      <td>Florida Division of Corporations</td>
+      <td>sunbiz.org — online filing, ~$70</td>
+    </tr>
+    <tr>
+      <td>Apply for EIN</td>
+      <td>IRS</td>
+      <td>Free, immediate online — irs.gov</td>
+    </tr>
+    <tr>
+      <td>Apply for 501(c)(3) Status</td>
+      <td>IRS Form 1023-EZ</td>
+      <td>Streamlined application for orgs under $50K revenue, $275 fee</td>
+    </tr>
+    <tr>
+      <td>Register for Florida Solicitation</td>
+      <td>FL Dept. of Agriculture</td>
+      <td>Required before fundraising in Florida</td>
+    </tr>
+    <tr>
+      <td>Connect with Local Support</td>
+      <td>Nonprofit Center of Central Florida</td>
+      <td>Training, networking, fiscal sponsorship options</td>
+    </tr>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>You have the knowledge.</strong> Mission, governance, programs, budget, strategy, advocacy, website. What you built this semester is not hypothetical — it is a launchable plan.</p>
+  </div>
+
+  <aside class="notes">
+    I include this slide every semester because some students actually do launch their organizations — and I want you to know how. In Florida, filing articles of incorporation is straightforward and inexpensive through sunbiz.org. Getting an EIN from the IRS is free and takes minutes online. The Form 1023-EZ is a streamlined 501(c)(3) application available to organizations expecting less than $50,000 in annual revenue — which covers most startups. You will also need to register with the Florida Department of Agriculture before soliciting donations. And the Nonprofit Center of Central Florida offers training, networking, and even fiscal sponsorship for organizations that want to start operating before their 501(c)(3) determination arrives. The point is: the path from classroom project to real organization is shorter than you think. You have already done the hard work of planning.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 14: NASPAA COMPETENCIES ==================== -->
+<section>
+  <span class="label">Capstone</span>
+  <h2>Five Competencies, Demonstrated Through Creation</h2>
+
+  <table>
+    <tr>
+      <th>NASPAA Competency</th>
+      <th>Your Demonstration</th>
+      <th>Assignment</th>
+    </tr>
+    <tr>
+      <td>C1: Lead & manage in public governance</td>
+      <td>Strategic Plan — integrating all components into a coherent direction</td>
+      <td>Week 9</td>
+    </tr>
+    <tr>
+      <td>C2: Participate in the public policy process</td>
+      <td>Policy Advocacy Plan — legal advocacy strategy for your org</td>
+      <td>Week 13</td>
+    </tr>
+    <tr>
+      <td>C3: Analyze, synthesize, think critically</td>
+      <td>Program Evaluation Plan — logic model, metrics, evidence</td>
+      <td>Week 7</td>
+    </tr>
+    <tr>
+      <td>C4: Articulate & apply a public service perspective</td>
+      <td>Mentor Interview Reflection — connecting practice to values</td>
+      <td>Week 11</td>
+    </tr>
+    <tr>
+      <td>C5: Communicate with diverse stakeholders</td>
+      <td>Marketing & Communications Plan — brand, messaging, outreach</td>
+      <td>Week 6</td>
+    </tr>
+  </table>
+
+  <p>You demonstrated these competencies not through reflection alone, but <strong>through building an organization</strong>.</p>
+
+  <aside class="notes">
+    This is the accreditation story of this course. NASPAA requires that MNM students demonstrate competency across five domains. In most courses, that demonstration happens through papers and exams. In this capstone, it happened through creation. You did not write about strategic planning — you wrote a strategic plan. You did not analyze someone else's advocacy strategy — you designed your own. You did not critique a program evaluation — you built a logic model for your own programs. This is what makes a capstone different from a regular course. And it is what makes your pitch presentation the right culminating assessment — because you are demonstrating all five competencies simultaneously, live, in 10 minutes.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 15: CONGRATULATIONS ==================== -->
+<section>
+  <span class="label">Final Week</span>
+  <h2>Congratulations</h2>
+
+  <p style="font-size: 0.75em; color: var(--ucf-dark); line-height: 1.7; margin-bottom: 24px;">You entered this course with knowledge.<br>You leave with a <strong>nonprofit organization</strong> — governance, team, programs, budget, strategy, advocacy, and a website.</p>
+
+  <p style="font-size: 0.75em; color: var(--ucf-dark); line-height: 1.7; margin-bottom: 24px;">You demonstrated all five NASPAA competencies not through reflection,<br>but through <strong>creation</strong>.</p>
+
+  <div class="gold-bg">
+    <p style="font-size: 0.65em;"><strong>Thank you</strong> for your commitment, your creativity, and your willingness to build something meaningful this semester. It has been a privilege to work with you.</p>
+  </div>
+
+  <div style="margin-top: 32px;">
+    <p><strong>Dr. Seongho An</strong></p>
+    <p>School of Public Administration · University of Central Florida</p>
+    <p>For future mentorship, questions, or if you decide to launch — please reach out.</p>
+  </div>
+
+  <p style="margin-top: 24px; font-size: 0.55em; color: var(--ucf-gray);">Please complete your course evaluation. Your feedback makes this course better for future students.</p>
+
+  <aside class="notes">
+    This is the last slide of the last class. I want to take a moment to acknowledge what you have accomplished. Building a nonprofit from scratch — even a hypothetical one — is genuinely difficult. It requires you to think across disciplines: law, finance, management, marketing, technology, policy, and ethics. It requires you to make decisions under uncertainty, to balance competing priorities, and to communicate your vision persuasively. You have done all of that. Some of you will pursue careers in the nonprofit sector. Some of you are already there. Wherever your career takes you, the skills and knowledge you developed this semester — and throughout the MNM program — will serve you well. Thank you for a wonderful semester. I mean that sincerely. And please, fill out the course evaluation. It genuinely helps me improve. Good luck with your pitches, and congratulations on completing your capstone.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 · Dr. Seongho An</span>
+  <span>Week 14 — Putting It Together: Final Pitch</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    transition: 'none',
+    showNotes: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    center: false
+  });
+</script>
+</body>
+</html>

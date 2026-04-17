@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 8: Resources Development & Fundraising</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* Pipeline */
+  .pipeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 20px 0;
+  }
+
+  .pipeline-step {
+    flex: 1;
+    text-align: center;
+    padding: 14px 8px;
+    background: var(--ucf-gold-light);
+    border-right: 2px solid var(--ucf-bg);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.4;
+  }
+
+  .pipeline-step:first-child {
+    border-radius: 6px 0 0 6px;
+    background: var(--ucf-gold);
+    color: var(--ucf-dark);
+    font-weight: 600;
+  }
+
+  .pipeline-step:last-child {
+    border-radius: 0 6px 6px 0;
+    border-right: none;
+  }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Week 8</span>
+  <h1>Resources Development<br>& Fundraising</h1>
+  <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    October 12, 2026
+  </div>
+  <aside class="notes">
+    Welcome to Week 8. Last week we built your operating budget. This week, we answer the fundamental question: where does the money come from? Resources development — what the sector calls fundraising — is both an art and a science. We'll draw on a rich set of readings this week to explore the competitive dynamics of donor markets, the ethics of fundraising, issues of diversity in philanthropy, and the strategic risks of donor dependence. By the end of this week, you'll have a draft fundraising strategy for your nonprofit.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <span class="label">Week 8</span>
+  <h2>Agenda</h2>
+  <ol>
+    <li>Fundraising in the Nonprofit Sector</li>
+    <li>Competitive Donor Markets</li>
+    <li>Diversity in Philanthropy</li>
+    <li>Donor Choice & Mission Drift</li>
+    <li>The Mega-Gift Question</li>
+    <li>Ethics in Fundraising</li>
+    <li>Three Revenue Streams for Your Nonprofit</li>
+    <li>Your Fundraising Workbook Task</li>
+    <li>AI Demos: Appeal Letter & Donate Page</li>
+    <li>Website Update: "Support Us" Page</li>
+  </ol>
+
+  <div class="gold-bg">
+    <p><strong>Readings:</strong> Worth Ch. 13 · Hudson Ch. 4 · Wolf Ch. 8 · Thornton (2006) · Van Slyke, Ashley & Johnson (2007) · Barman (2008) · Stephenson et al. (2008) · Tuckman & Chang (1998)</p>
+    <p><strong>Due:</strong> Workbook — Draft Fundraising Strategy</p>
+  </div>
+
+  <aside class="notes">
+    Big reading week — eight sources. But they each bring something different to the table, and together they give you a comprehensive view of the fundraising landscape. We'll move through the research literature, then get practical with your workbook task and AI demos. Let's get started.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: FUNDRAISING OVERVIEW ==================== -->
+<section>
+  <span class="label">Foundations</span>
+  <h2>Fundraising in the Nonprofit Sector</h2>
+
+  <p>In the nonprofit sector, we call it <strong>"development"</strong> — not sales, not begging, not hustling. It is the systematic cultivation of relationships that sustain mission-driven work.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Core Principles (Worth Ch. 13)</h3>
+      <ul>
+        <li><strong>Relationship-based:</strong> People give to people, not to organizations</li>
+        <li><strong>Mission-driven:</strong> The case for support starts with impact</li>
+        <li><strong>Ethical:</strong> Donor trust is your most valuable asset</li>
+        <li><strong>Strategic:</strong> Fundraising requires a plan, not just passion</li>
+      </ul>
+    </div>
+    <div>
+      <h3>The Development Office</h3>
+      <ul>
+        <li>Annual giving programs</li>
+        <li>Major gifts cultivation</li>
+        <li>Grant writing and management</li>
+        <li>Special events</li>
+        <li>Planned giving (bequests, endowments)</li>
+        <li>Donor stewardship and recognition</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Worth's Chapter 13 lays the foundation for understanding fundraising as a professional discipline. The first thing to internalize is the language: we say "development," not "fundraising sales." This isn't just semantics — it reflects a fundamentally different orientation. Development is about building long-term relationships with donors who share your mission. It's about making a compelling case for support based on the impact your organization creates. Worth outlines the major functions of a development office: annual giving, major gifts, grants, events, planned giving, and stewardship. Even if your nonprofit is too small for a formal development office, you need to think about all six of these functions. Who will be responsible for each? How will you prioritize given limited capacity?
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: COMPETITIVE DONOR MARKETS ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Competitive Donor Markets</h2>
+
+  <p>Thornton (2006) applies market competition theory to the nonprofit sector and finds that <strong>nonprofits compete for donors</strong> much like firms compete for customers.</p>
+
+  <ul>
+    <li><strong>Market dynamics:</strong> More nonprofits are competing for a relatively stable pool of philanthropic dollars</li>
+    <li><strong>Donor choice:</strong> Donors have limited resources and must choose among competing appeals</li>
+    <li><strong>Differentiation:</strong> Organizations that clearly articulate their unique value proposition attract more support</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Implications for your nonprofit:</strong></p>
+    <ul>
+      <li>Know your competitors — who else serves your population or issue area?</li>
+      <li>Articulate what makes your approach <em>different</em>, not just what makes it good</li>
+      <li>Build a recognizable brand identity (this connects to Week 6)</li>
+      <li>Invest in donor relationships, not just donor acquisition</li>
+    </ul>
+  </div>
+
+  <aside class="notes">
+    Thornton's 2006 article is a wake-up call for anyone who thinks nonprofits don't compete. They absolutely do — for donors, for grants, for media attention, for talented staff. The philanthropic pie is not infinite. When a donor gives $500 to the Red Cross, that's $500 they're not giving to your organization. So what does this mean for your nonprofit? You need to understand your competitive landscape. Who else is working on the same issue in your community? What do they offer that you don't, and vice versa? Your fundraising strategy needs a clear value proposition — not just "we do good work," but "here's specifically how our approach is different and why it matters." This connects directly to the branding and marketing work you did in Week 6.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: DIVERSITY IN PHILANTHROPY ==================== -->
+<section>
+  <span class="label">Equity</span>
+  <h2>Diversity in Philanthropy</h2>
+
+  <p>Van Slyke, Ashley & Johnson (2007) examine the <strong>engagement of African Americans in philanthropy</strong> — and challenge the dominant narrative about who gives and how.</p>
+
+  <ul>
+    <li><strong>Giving is universal:</strong> Communities of color give generously — but often through non-traditional channels (church, mutual aid, direct giving)</li>
+    <li><strong>Traditional fundraising models</strong> (galas, direct mail, major gift campaigns) were designed around white, wealthy donor bases</li>
+    <li><strong>Culturally responsive fundraising</strong> recognizes different giving traditions and motivations</li>
+  </ul>
+
+  <div class="two-col">
+    <div>
+      <h3>Barriers</h3>
+      <ul>
+        <li>Lack of representation on boards and in development offices</li>
+        <li>Fundraising materials that don't reflect diverse communities</li>
+        <li>Historical distrust of institutions</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Strategies</h3>
+      <ul>
+        <li>Diversify your board and fundraising committee</li>
+        <li>Partner with community institutions (churches, civic groups)</li>
+        <li>Create giving circles and peer-to-peer campaigns</li>
+        <li>Honor cultural giving traditions</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Van Slyke, Ashley, and Johnson's article is important because it challenges assumptions about who the philanthropic community is. The mainstream fundraising industry has historically centered wealthy white donors — the major gift model, the gala model, the planned giving model. But research consistently shows that communities of color give generously, often at higher proportions of income than wealthy white households. The difference is in the channels: giving through churches, mutual aid networks, direct support to family and community members. If your nonprofit serves diverse communities, your fundraising strategy needs to reflect that. Culturally responsive fundraising isn't a nice-to-have — it's a strategic imperative. It means diversifying your board, partnering with community institutions, and creating giving opportunities that meet people where they are.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: DONOR CHOICE & MISSION DRIFT ==================== -->
+<section>
+  <span class="label">Critical Issue</span>
+  <h2>Donor Choice & Strings Attached</h2>
+
+  <p>Barman (2008) examines how <strong>donor-directed giving</strong> shapes organizational behavior — sometimes in ways that undermine the mission.</p>
+
+  <table>
+    <thead>
+      <tr><th>Gift Type</th><th>Donor Control</th><th>Organizational Risk</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Unrestricted</td><td>None — spend as needed</td><td>Low — maximum flexibility</td></tr>
+      <tr><td>Temporarily restricted</td><td>Time or purpose limited</td><td>Moderate — must track and report</td></tr>
+      <tr><td>Permanently restricted</td><td>Endowment, specific use forever</td><td>High — locked in perpetuity</td></tr>
+      <tr><td>Donor-advised fund</td><td>Donor recommends, fund decides</td><td>Moderate — timing uncertainty</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Mission drift:</strong> When organizations chase funding that doesn't align with their core mission, they gradually become something they never intended to be. The antidote is a <strong>clear mission, strong board governance, and the willingness to say no</strong> to misaligned funding.</p>
+  </div>
+
+  <aside class="notes">
+    Barman's research is a cautionary tale. When donors attach conditions to their gifts, they're not just providing resources — they're shaping what the organization does and how it does it. The most dangerous scenario is mission drift: when an organization gradually shifts its programs to follow the money rather than its mission. I've seen this happen. A youth development organization starts accepting criminal justice grants because the money is available, and before long, half their programs look like a corrections agency. The solution isn't to refuse all restricted gifts — that's unrealistic. The solution is strong governance. Your board needs to evaluate every major gift against the mission. You need the institutional courage to say no to funding that pulls you away from your core purpose. For your nonprofit, think about what kind of funding you will and won't accept. Write it into your policies.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: MEGA-GIFTS ==================== -->
+<section>
+  <span class="label">Governance</span>
+  <h2>The Mega-Gift Question</h2>
+
+  <p>Stephenson, Schnitzer & Arroyave (2008) investigate the <strong>governance implications of large gifts</strong> — when one donor's generosity reshapes an entire organization.</p>
+
+  <ul>
+    <li><strong>The gift paradox:</strong> A transformative gift can simultaneously enable and constrain an organization</li>
+    <li><strong>Governance challenges:</strong> Mega-donors may expect board seats, naming rights, program influence, or veto power</li>
+    <li><strong>Dependency risk:</strong> When 30%+ of revenue comes from one source, you're one phone call away from a crisis</li>
+  </ul>
+
+  <h3>Lessons for your fundraising strategy:</h3>
+  <ul>
+    <li>Establish gift acceptance policies <em>before</em> you need them</li>
+    <li>Define board appointment criteria that cannot be overridden by donations</li>
+    <li>Set concentration limits — no single source should exceed a defined percentage of revenue</li>
+    <li>Document donor agreements in writing, including what happens if the relationship ends</li>
+  </ul>
+
+  <aside class="notes">
+    This article addresses something that sounds like a good problem to have — what happens when you receive a very large gift? But Stephenson and colleagues show that mega-gifts can create serious governance challenges. When a single donor provides a significant share of your budget, the power dynamic shifts. That donor may expect influence over programs, staffing, or even board composition. I've seen organizations where the founding donor essentially functions as a shadow executive director. The lesson for your nonprofit: put policies in place before you receive large gifts. A gift acceptance policy should specify who can accept gifts on behalf of the organization, what conditions are acceptable, and how the board will evaluate gifts that come with significant strings attached. This is governance infrastructure, and it's much easier to establish when the stakes are abstract than when someone is waving a check.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: ETHICS ==================== -->
+<section>
+  <span class="label">Ethics</span>
+  <h2>Ethics in Fundraising</h2>
+
+  <p>Tuckman & Chang (1998) document <strong>abuses in fundraising</strong> and make the case for ethical standards in the profession.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Common Ethical Violations</h3>
+      <ul>
+        <li>Misleading donors about how funds are used</li>
+        <li>Excessive fundraising costs (spending $0.80 to raise $1.00)</li>
+        <li>Percentage-based compensation for fundraisers</li>
+        <li>Pressure tactics with vulnerable populations</li>
+        <li>Failure to honor donor intent</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Professional Standards</h3>
+      <ul>
+        <li><strong>AFP Code of Ethics:</strong> Association of Fundraising Professionals</li>
+        <li><strong>Donor Bill of Rights:</strong> Transparency, privacy, informed giving</li>
+        <li><strong>Honest reporting:</strong> True cost of fundraising, accurate impact claims</li>
+        <li><strong>Compensation:</strong> Never commission-based — salary or flat fee only</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>The standard:</strong> Would you be comfortable if your fundraising practices were reported on the front page of the newspaper? If not, reconsider the approach.</p>
+  </div>
+
+  <aside class="notes">
+    Tuckman and Chang's work reminds us that fundraising is not an ethics-free zone. The sector has real problems: organizations that spend most of their fundraising dollars on the fundraising itself, consultants who take a percentage of what they raise, misleading appeals that exaggerate need or misrepresent how funds will be used. The AFP Code of Ethics and the Donor Bill of Rights are the profession's response to these problems. Two non-negotiable rules: first, never pay fundraisers on commission. It creates terrible incentives and it violates AFP standards. Fundraisers should be paid salaries or flat consulting fees. Second, always honor donor intent. If someone gives you $1,000 for your youth mentoring program, you cannot use it to cover your rent. These aren't just ethical guidelines — they have legal implications. For your nonprofit, build ethical fundraising practices into your organizational DNA from day one.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: THREE REVENUE STREAMS ==================== -->
+<section>
+  <span class="label">Strategy</span>
+  <h2>Three Revenue Streams for Your Nonprofit</h2>
+
+  <p>A sustainable nonprofit needs at least <strong>three distinct revenue streams</strong>. Each requires a different strategy.</p>
+
+  <table>
+    <thead>
+      <tr><th>Stream</th><th>Strategy</th><th>Timeline</th><th>Key Metric</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Individual Giving</strong></td><td>Annual appeals, online giving, events, peer-to-peer</td><td>Year 1 onward</td><td>Donor retention rate</td></tr>
+      <tr><td><strong>Grants & Foundations</strong></td><td>Prospect research, LOIs, proposals, reporting</td><td>6–18 month lag</td><td>Win rate, avg. award</td></tr>
+      <tr><td><strong>Earned Income</strong></td><td>Fee-for-service, consulting, training, merchandise</td><td>Year 2+ typically</td><td>Revenue margin</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Prior coursework connection:</strong> Your PAD 5146 Fundraising Plan (C4) explored these streams in depth. Revisit that work — it should inform your strategy here.</p>
+  </div>
+
+  <aside class="notes">
+    For your workbook task, I want you to identify three revenue streams for your nonprofit and develop a basic strategy for each. Individual giving is the most accessible starting point — you can begin cultivating donors from day one. Grants are powerful but slow — the typical grant cycle takes 6 to 18 months from prospect identification to award. Earned income is the most sustainable long-term but usually requires some organizational maturity. You already did significant work on this in PAD 5146. Go back to your fundraising plan from that course and use it as a foundation. Don't start from scratch — build on what you've already learned.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: WORKBOOK TASK ==================== -->
+<section>
+  <span class="label">Workbook</span>
+  <h2>Your Fundraising Workbook Task</h2>
+
+  <p>Draft a <strong>fundraising strategy</strong> for your nonprofit organization.</p>
+
+  <h3>Required elements:</h3>
+  <ul>
+    <li><strong>Three revenue streams</strong> with Year 1 dollar targets for each</li>
+    <li><strong>Donor cultivation pipeline:</strong></li>
+  </ul>
+
+  <div class="pipeline">
+    <div class="pipeline-step">Identify<br>prospects</div>
+    <div class="pipeline-step">Cultivate<br>relationships</div>
+    <div class="pipeline-step">Make the<br>solicitation</div>
+    <div class="pipeline-step">Steward<br>& thank</div>
+  </div>
+
+  <ul>
+    <li><strong>One specific grant prospect</strong> identified — name, funder, amount, deadline, application timeline</li>
+    <li><strong>Alignment with your budget</strong> from Week 7 — revenue targets should match</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Tip:</strong> Your fundraising strategy and your budget are two sides of the same coin. If your budget projects $40,000 in grant revenue, your fundraising strategy needs to show which grants you'll pursue and when.</p>
+  </div>
+
+  <aside class="notes">
+    Your workbook deliverable this week has three core elements. First, identify three revenue streams with specific dollar targets for Year 1. These targets should align with the revenue side of the operating budget you drafted last week. Second, outline a donor cultivation pipeline — the four-step process of identifying prospects, building relationships, making the ask, and stewarding donors after they give. Third, identify at least one specific grant prospect. This means a named foundation or government agency, the specific grant program, the typical award amount, and the application timeline. Use Candid, GrantStation, or Grants.gov to find a real opportunity. This is where the AI demo from last week becomes directly relevant — but remember to verify everything.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: AI DEMO — APPEAL LETTER ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Draft a Donor Appeal Letter</h2>
+
+  <p>AI can help you create a compelling first draft — but the personal touch is what converts.</p>
+
+  <div class="prompt-box">
+    <span class="prompt-label">Claude Prompt</span>
+Write a year-end appeal letter for [nonprofit name], a new
+nonprofit that [brief mission description]. The letter
+should be addressed to a prospective individual donor,
+describe our impact, explain why their gift matters now,
+and include a specific ask of $100. Tone should be warm
+but professional, about 400 words.</div>
+
+  <h3>Customize the output:</h3>
+  <ul>
+    <li><strong>Add a real story</strong> — donors respond to narrative, not statistics alone</li>
+    <li><strong>Personalize the salutation</strong> — "Dear [Name]" always outperforms "Dear Friend"</li>
+    <li><strong>Include a specific use of funds</strong> — "$100 provides mentoring materials for one student for a semester"</li>
+    <li><strong>Add a P.S.</strong> — the most-read part of any fundraising letter</li>
+  </ul>
+
+  <aside class="notes">
+    This AI demo shows you how to draft a donor appeal letter. Claude is quite good at generating fundraising copy — it understands the genre conventions, the emotional arc, the call to action. But the output needs significant customization to be effective. The most important things AI can't do for you: tell a real story about a real person your organization has helped, personalize the letter to the specific donor, and connect the ask to a tangible outcome. The P.S. is a classic fundraising technique — studies show it's often the first thing people read. Use it for your most compelling single sentence. And one more thing: never send an AI-generated letter without reading it aloud. If it sounds like a robot wrote it, your donors will notice.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: AI DEMO — DONATE PAGE ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Build a "Donate" Page</h2>
+
+  <p>Your website needs a compelling donation page — even before you can accept online payments.</p>
+
+  <div class="prompt-box">
+    <span class="prompt-label">Claude Prompt</span>
+Write website copy for a "Support Us" donation page for
+[nonprofit name]. Include: (1) a compelling impact statement,
+(2) three giving levels ($25, $50, $100) with specific impact
+descriptions, (3) a brief testimonial placeholder, and
+(4) information about other ways to give (volunteer, in-kind).
+Tone: mission-driven, warm, specific about impact.</div>
+
+  <h3>Design considerations:</h3>
+  <ul>
+    <li><strong>Impact framing:</strong> Show what each dollar amount accomplishes</li>
+    <li><strong>Giving levels:</strong> Anchor with a middle option (donors tend to choose it)</li>
+    <li><strong>Social proof:</strong> Testimonials, donor count, community support</li>
+    <li><strong>Visuals:</strong> Use Canva for images that reinforce the mission</li>
+  </ul>
+
+  <aside class="notes">
+    Even if your nonprofit isn't yet set up to accept online donations, your website should have a donation or support page. It signals legitimacy and shows donors you're serious. The key to an effective donate page is impact framing: don't just ask for money, show what the money does. Twenty-five dollars provides school supplies for one child. Fifty dollars funds a week of after-school programming. One hundred dollars sponsors a mentoring match for a month. These specific, tangible descriptions dramatically increase conversion. Giving levels are also strategic — behavioral research shows that presenting three options with an anchored middle amount is most effective. Most people choose the middle option. Use AI to draft the copy, then revise it with your specific impact data. And definitely add this page to your website this week.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 13: WEBSITE UPDATE ==================== -->
+<section>
+  <span class="label">Website</span>
+  <h2>Website Update: "Donate" or "Support Us" Page</h2>
+
+  <p>This week, add or refine your <strong>donation/support page</strong> on your nonprofit website.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Page Elements</h3>
+      <ul>
+        <li>Headline with emotional hook</li>
+        <li>One-paragraph case for support</li>
+        <li>Giving levels with impact descriptions</li>
+        <li>Testimonial or community endorsement</li>
+        <li>Alternative ways to support (volunteer, in-kind, share)</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Design Notes</h3>
+      <ul>
+        <li>Prominent placement — link from your main navigation</li>
+        <li>Clean, uncluttered layout</li>
+        <li>Strong call to action</li>
+        <li>Contact information for questions</li>
+        <li>Acknowledge tax-deductibility (if applicable)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gold-bg">
+    <p><strong>Why this matters:</strong> When potential funders, board members, or partners visit your site, the donate page shows you've thought about sustainability. It's a credibility signal as much as a fundraising tool.</p>
+  </div>
+
+  <aside class="notes">
+    Your website update this week is to add or significantly improve your donation or support page. This page serves a dual purpose. First, it's a fundraising tool — eventually, you want people to give through your website. Second, it's a credibility signal. When a foundation program officer reviews your grant application, they'll check your website. Having a professional support page shows organizational maturity. Include giving levels with impact descriptions, a clear case for support, and alternative ways to engage for people who aren't ready to donate. Make sure it's prominently linked from your main navigation — don't bury it.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 14: NEXT WEEK ==================== -->
+<section>
+  <span class="label">Looking Ahead</span>
+  <h2>Next Week: Strategic Planning</h2>
+
+  <p>Week 9 is the <strong>integration point</strong> — your Strategic Plan brings everything together.</p>
+
+  <ul>
+    <li><strong>Readings:</strong> Worth Ch. 7 (pg. 181–198) · Wolf Ch. 9 · Stone, Bigelow & Crittenden (1999)</li>
+    <li><strong>Due:</strong> <strong>C1: Strategic Plan (10 pts)</strong></li>
+    <li><strong>NASPAA Competency 1:</strong> Lead and manage in a dynamic, mission-driven nonprofit sector</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Start now:</strong> Your strategic plan integrates governance (Week 4), HR (Week 5), marketing (Week 6), budget (Week 7), and fundraising (Week 8). Draft your SWOT analysis this weekend. Identify 3 strategic goals. Align resources to strategies. This is the most important deliverable so far.</p>
+  </div>
+
+  <p><strong>Prior coursework:</strong> Revisit your PAD 6335 Strategic Plan and SWOT Analysis — that's your foundation.</p>
+
+  <aside class="notes">
+    I want to be very direct about next week. The Strategic Plan is your first major competency assignment — 10 points, and it's the most integrative deliverable in the course so far. It pulls together everything: your governance structure from Week 4, your HR plan from Week 5, your marketing strategy from Week 6, your budget from Week 7, and your fundraising strategy from this week. If you haven't started your SWOT analysis, start tonight. Identify three strategic goals that are specific, measurable, and aligned with your mission. Map your resources to your strategies. And revisit your PAD 6335 strategic plan — that coursework gave you the analytical framework you'll apply here. This is not a last-minute assignment. See you next week.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 15: QUESTIONS ==================== -->
+<section>
+  <span class="label">Week 8</span>
+  <h2>Questions?</h2>
+
+  <p>Reach out anytime via Webcourses inbox or during office hours.</p>
+
+  <div class="gold-bg">
+    <p><strong>This week's deliverable:</strong> Workbook — Draft Fundraising Strategy</p>
+    <p><strong>Key resources:</strong> Worth Ch. 13 · Thornton (2006) · Van Slyke et al. (2007) · Barman (2008) · Tuckman & Chang (1998)</p>
+  </div>
+
+  <div class="meta" style="margin-top: 40px; font-family: 'DM Mono', monospace; font-size: 0.5em; color: var(--ucf-gray);">
+    Dr. Seongho An<br>
+    PAD 6149 – Nonprofit Administration: Build Your Nonprofit<br>
+    University of Central Florida · Fall 2026
+  </div>
+
+  <aside class="notes">
+    That wraps up Week 8. Your workbook task is to draft a fundraising strategy with three revenue streams, dollar targets, a donor cultivation pipeline, and at least one identified grant prospect. Use the AI demos as tools, but do the strategic thinking yourself. And seriously — start on your strategic plan. It's due next week and it's worth the effort. Good luck, and I'll see you in Week 9.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 · Dr. Seongho An</span>
+  <span>Week 8 — Resources Development & Fundraising</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    transition: 'none',
+    showNotes: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    center: false
+  });
+</script>
+</body>
+</html>

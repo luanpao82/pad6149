@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 6 — Marketing: Images of Nonprofit Organizations | PAD 6149</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --gold: #FFC904;
+    --dark: #1C1917;
+    --bg: #FAFAF7;
+    --gray-600: #57534E;
+    --gray-400: #A8A29E;
+    --gray-200: #E7E5E4;
+    --red: #DC2626;
+    --green: #16A34A;
+    --blue: #2563EB;
+  }
+
+  .reveal-viewport {
+    background: var(--bg);
+    border-top: 4px solid var(--gold);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .reveal h1 { font-size: 2.2em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.5em; line-height: 1.2; margin-bottom: 0.6em; }
+  .reveal h3 { font-size: 1.15em; line-height: 1.3; color: var(--gray-600); }
+
+  .reveal p, .reveal li {
+    font-size: 0.72em;
+    line-height: 1.6;
+    color: var(--dark);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0.6em;
+  }
+
+  .reveal li { margin-bottom: 0.35em; }
+
+  .reveal code, .reveal .mono {
+    font-family: 'DM Mono', monospace;
+  }
+
+  .reveal code {
+    background: var(--gray-200);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--dark);
+  }
+
+  .reveal .slide-number {
+    font-family: 'DM Mono', monospace;
+    color: var(--gray-400);
+    font-size: 14px;
+    right: 24px;
+    bottom: 50px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-top: 3px solid var(--gold);
+  }
+  .footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gray-400);
+    letter-spacing: 0.02em;
+  }
+
+  .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25em 0.7em;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+  .label--gold { background: var(--gold); color: var(--dark); }
+  .label--dark { background: var(--dark); color: #fff; }
+  .label--outline { border: 1.5px solid var(--gray-400); color: var(--gray-600); }
+  .label--red { background: var(--red); color: #fff; }
+  .label--green { background: var(--green); color: #fff; }
+  .label--blue { background: var(--blue); color: #fff; }
+
+  .callout {
+    border-left: 4px solid var(--gold);
+    background: #FFFEF5;
+    padding: 0.7em 1em;
+    margin: 0.6em 0;
+    border-radius: 0 6px 6px 0;
+    text-align: left;
+  }
+  .callout p { margin: 0; font-size: 0.68em; }
+
+  .card-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 0.5em;
+  }
+  .card {
+    flex: 1;
+    max-width: 300px;
+    background: #fff;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1em 1.1em;
+    text-align: left;
+  }
+  .card h4 {
+    font-size: 0.72em;
+    margin: 0 0 0.3em 0;
+  }
+  .card p, .card li {
+    font-size: 0.58em;
+    margin: 0;
+    color: var(--gray-600);
+  }
+  .card ul { margin-left: 0.4em; padding-left: 0.8em; }
+
+  .reveal table {
+    font-size: 0.6em;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.4em auto;
+  }
+  .reveal table th {
+    background: var(--dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+  }
+  .reveal table td {
+    padding: 0.45em 0.7em;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+  }
+  .reveal table tr:nth-child(even) td {
+    background: #fff;
+  }
+
+  .step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 0.55em;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    font-size: 0.65em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-text {
+    font-size: 0.62em;
+    line-height: 1.5;
+    padding-top: 0.15em;
+  }
+  .step-text strong { color: var(--dark); }
+
+  .checklist {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0.4em 0;
+  }
+  .checklist li {
+    font-size: 0.65em;
+    padding: 0.3em 0;
+    border-bottom: 1px solid var(--gray-200);
+    padding-left: 1.6em;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gray-400);
+    border-radius: 3px;
+  }
+
+  .prompt-box {
+    background: var(--dark);
+    color: #E7E5E4;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52em;
+    line-height: 1.65;
+    padding: 1em 1.2em;
+    border-radius: 8px;
+    text-align: left;
+    margin: 0.5em 0;
+    border-left: 4px solid var(--gold);
+  }
+  .prompt-box .highlight {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .part-divider h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.2em;
+  }
+
+  .two-col {
+    display: flex;
+    gap: 30px;
+    text-align: left;
+  }
+  .two-col > div { flex: 1; }
+
+  .rec {
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7em;
+    font-weight: 600;
+    padding: 0.1em 0.5em;
+    border-radius: 3px;
+    margin-left: 0.3em;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ========== SLIDE 1: TITLE ========== -->
+<section>
+  <div>
+    <span class="label label--gold">Week 6 &middot; September 28, 2026</span>
+    <h1 style="margin-top: 0.2em;">Marketing: Images of<br>Nonprofit Organizations</h1>
+    <h3 style="margin-top: 0.4em;">PAD 6149 &mdash; Nonprofit Administration: Build Your Nonprofit</h3>
+    <p style="font-size: 0.6em; color: var(--gray-600); margin-top: 1.2em;">
+      Dr. Seongho An &middot; University of Central Florida<br>
+      Master of Nonprofit Management
+    </p>
+  </div>
+  <aside class="notes">
+    Welcome to Week 6. This is a workbook week — no graded deliverable, but the work you do this week is foundational. We're talking about marketing and nonprofit identity: how your organization presents itself to the world. By the end of this week, you should have a finalized mission statement, a tagline, a logo concept, a clear sense of your target audiences, and a website that reflects a consistent visual identity. These elements will carry through every document and deliverable for the rest of the semester.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 2: AGENDA ========== -->
+<section>
+  <span class="label label--dark">Agenda</span>
+  <h2>Today's Plan</h2>
+  <div class="card-row">
+    <div class="card">
+      <h4 style="color: var(--dark);">Part 1 &mdash; Theory</h4>
+      <p><strong>Nonprofit Marketing</strong></p>
+      <ul>
+        <li>Why marketing matters</li>
+        <li>Marketing strategy development</li>
+        <li>Revenue sources &amp; marketing behavior</li>
+        <li>Digital marketing tools</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="color: var(--dark);">Part 2 &mdash; Application</h4>
+      <p><strong>Build Your Brand</strong></p>
+      <ul>
+        <li>Brand identity elements</li>
+        <li>AI Demo: Mission statement refinement</li>
+        <li>AI Demo: Canva marketing materials</li>
+        <li>Workbook tasks &amp; website polish</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.6em;">
+    <p><span class="label label--green" style="font-size: 0.8em; margin: 0;">Workbook Week</span> &ensp;No graded deliverable — use this time to refine your nonprofit's identity and polish your website.</p>
+  </div>
+  <aside class="notes">
+    Two parts today. First, the theory of nonprofit marketing — Worth Chapter 10, Pope and colleagues on marketing strategy, and Stater on how funding sources shape marketing behavior. Then we pivot to application: brand identity, AI-assisted mission statement refinement, creating marketing materials in Canva, and your workbook tasks. This is a lighter grading week, which means it's a great week to invest in quality — take the time to get your mission statement right and make your website look professional.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 3: WHY MARKETING MATTERS ========== -->
+<section>
+  <span class="label label--outline">Worth Ch. 10</span>
+  <h2>Why Marketing Matters for Nonprofits</h2>
+  <p style="text-align: left; font-size: 0.72em; color: var(--gray-600); margin-bottom: 0.5em;">It's not selling — it's <strong>storytelling</strong>. Communicating mission, building trust, attracting support.</p>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.72em;">What Nonprofit Marketing Does</h4>
+      <ul>
+        <li><strong>Communicates mission:</strong> Tells your story in a way that resonates with different audiences</li>
+        <li><strong>Builds trust:</strong> Consistent, professional communication signals legitimacy</li>
+        <li><strong>Attracts resources:</strong> Donors, volunteers, partners, and funders find you through marketing</li>
+        <li><strong>Engages constituents:</strong> The people you serve need to know you exist and how to access your programs</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size: 0.72em;">Common Misconceptions</h4>
+      <table>
+        <thead>
+          <tr><th>Myth</th><th>Reality</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>"Marketing is for businesses"</td><td>Every nonprofit markets — the question is whether you do it well or poorly</td></tr>
+          <tr><td>"It's expensive"</td><td>Most effective nonprofit marketing is free or low-cost (social media, email, website)</td></tr>
+          <tr><td>"Our work speaks for itself"</td><td>It doesn't — if people don't know about you, your impact is limited</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <aside class="notes">
+    Worth Chapter 10 makes the case that marketing is not a luxury for nonprofits — it's a necessity. Some nonprofit leaders are uncomfortable with the word "marketing" because it feels commercial. But marketing is simply communication with purpose. You're telling your story, building trust, and making it easy for people to support your work. The alternative — not marketing — means you're invisible. The best programs in the world don't matter if no one knows they exist. Every nonprofit markets, whether they call it that or not. The question is whether you're doing it intentionally and well, or accidentally and poorly.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 4: MARKETING STRATEGY ========== -->
+<section>
+  <span class="label label--outline">Pope, Isely &amp; Asamoa-Tutu (2009)</span>
+  <h2>Developing a Marketing Strategy</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">An exploratory study of marketing practices in nonprofit organizations.</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Market Segmentation</h4>
+      <p>Who are your audiences? Not one monolithic "public" — segment by relationship to your organization:</p>
+      <ul>
+        <li><strong>Donors:</strong> Individual, corporate, foundation</li>
+        <li><strong>Volunteers:</strong> Skilled, general, episodic</li>
+        <li><strong>Beneficiaries:</strong> The people you serve</li>
+        <li><strong>Partners:</strong> Other organizations, government</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Positioning</h4>
+      <p>What makes your organization distinct? Your positioning statement answers:</p>
+      <ul>
+        <li>Who do we serve?</li>
+        <li>What need do we address?</li>
+        <li>How are we different from similar organizations?</li>
+        <li>Why should someone support us?</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Branding</h4>
+      <p>Your brand is not your logo — it's the <em>feeling</em> people have when they encounter your organization:</p>
+      <ul>
+        <li>Visual identity (logo, colors, fonts)</li>
+        <li>Voice and tone</li>
+        <li>Consistency across all touchpoints</li>
+        <li>Trust and reputation over time</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    Pope, Isely, and Asamoa-Tutu's exploratory study found that many nonprofits approach marketing haphazardly — they post on social media when they remember, send newsletters irregularly, and don't think strategically about who they're trying to reach. A real marketing strategy starts with segmentation: who are your audiences? Donors are different from volunteers, who are different from the people you serve. Each group needs different messages through different channels. Then positioning: what makes you distinctive? In a crowded nonprofit landscape, you need to clearly articulate why someone should support your organization over others doing similar work. And finally, branding: the consistent visual and verbal identity that makes your organization recognizable and trustworthy.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 5: REVENUE & MARKETING ========== -->
+<section>
+  <span class="label label--outline">Stater (2009)</span>
+  <h2>Revenue Sources Shape Marketing</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">How your funding model determines your marketing strategy.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Funding Model</th>
+        <th>Primary Audience</th>
+        <th>Marketing Focus</th>
+        <th>Key Channels</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Grant-dependent</strong></td>
+        <td>Foundations, government agencies</td>
+        <td>Outcomes data, program effectiveness, compliance track record</td>
+        <td>Grant portals, reports, conferences, Candid profile</td>
+      </tr>
+      <tr>
+        <td><strong>Donation-dependent</strong></td>
+        <td>Individual donors, community</td>
+        <td>Emotional storytelling, impact narratives, donor stewardship</td>
+        <td>Social media, email, events, website, direct mail</td>
+      </tr>
+      <tr>
+        <td><strong>Earned income</strong></td>
+        <td>Customers, fee-for-service clients</td>
+        <td>Value proposition, service quality, competitive pricing</td>
+        <td>Website, SEO, advertising, partnerships, referrals</td>
+      </tr>
+      <tr>
+        <td><strong>Diversified</strong></td>
+        <td>Multiple stakeholders</td>
+        <td>Different messages for different audiences; unified brand</td>
+        <td>All of the above, tailored by segment</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>For your workbook:</strong> Identify your nonprofit's likely funding model. How does that shape who you need to reach and what you need to communicate?</p>
+  </div>
+  <aside class="notes">
+    Stater's research reveals something important: your funding model determines your marketing strategy. A grant-dependent organization markets to program officers with data, outcomes, and compliance records. A donation-dependent organization markets to individual donors with emotional stories, impact narratives, and personal connection. An earned-income organization markets like a business — value proposition, service quality, competitive advantage. Most of your nonprofits will be diversified, which means you need multiple marketing approaches for different audiences, all tied together by a consistent brand identity. In your workbook, identify which funding model your nonprofit will primarily rely on and think about how that shapes your communication strategy.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 6: DIGITAL MARKETING ========== -->
+<section>
+  <span class="label label--dark">Practical</span>
+  <h2>Digital Marketing for Nonprofits</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">Free and low-cost tools every nonprofit should use.</p>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.72em;">Essential Channels</h4>
+      <ul>
+        <li><strong>Website:</strong> Your digital home base. Every other channel drives traffic here.</li>
+        <li><strong>Email newsletters:</strong> Highest ROI channel for nonprofits. Direct relationship with supporters.</li>
+        <li><strong>Social media:</strong> Choose 2&ndash;3 platforms where your audience actually is. Quality over quantity.</li>
+        <li><strong>SEO:</strong> When someone searches for your cause area, do they find you?</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size: 0.72em;">Free Tools</h4>
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Canva</strong> (free tier)</td><td>Graphics, social posts, flyers, presentations</td></tr>
+          <tr><td><strong>Mailchimp</strong> (free tier)</td><td>Email newsletters (up to 500 contacts)</td></tr>
+          <tr><td><strong>Google for Nonprofits</strong></td><td>$10K/month in Google Ads, Google Workspace</td></tr>
+          <tr><td><strong>Buffer / Later</strong></td><td>Social media scheduling</td></tr>
+          <tr><td><strong>Google Analytics</strong></td><td>Website traffic and behavior tracking</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <aside class="notes">
+    Let's get practical about digital marketing. Your website is the hub — every other marketing effort drives people to your site. Email newsletters have the highest return on investment of any nonprofit marketing channel because they create a direct, owned relationship with supporters — you're not at the mercy of an algorithm. Social media matters, but be strategic: pick two or three platforms where your target audience actually spends time. Don't try to be everywhere. And SEO — search engine optimization — is critical: when someone in your community searches for the problem you're solving, your organization should appear. All of these tools are free or nearly free. Google for Nonprofits alone provides $10,000 per month in Google Ads credits, which is transformative for visibility.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 7: BRAND IDENTITY ELEMENTS ========== -->
+<section>
+  <span class="label label--gold">Brand</span>
+  <h2>Brand Identity Elements</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">These should be <strong>consistent</strong> across your website, documents, and communications.</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Verbal Identity</h4>
+      <ul>
+        <li><strong>Mission statement</strong> (final version this week — under 25 words)</li>
+        <li><strong>Tagline</strong> (memorable, 5&ndash;8 words)</li>
+        <li><strong>Voice/tone guide</strong> (professional but warm? Urgent? Empowering?)</li>
+        <li><strong>Elevator pitch</strong> (30 seconds, conversational)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Visual Identity</h4>
+      <ul>
+        <li><strong>Logo</strong> (create in Canva — keep it simple and scalable)</li>
+        <li><strong>Color palette</strong> (2&ndash;3 primary colors + neutrals)</li>
+        <li><strong>Typography</strong> (one heading font, one body font)</li>
+        <li><strong>Photography style</strong> (real people? Illustrations? What mood?)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Application</h4>
+      <ul>
+        <li>Website (primary showcase)</li>
+        <li>Social media profiles</li>
+        <li>Letterhead and documents</li>
+        <li>Presentation templates</li>
+        <li>Event materials</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>The test:</strong> If someone sees your website, then your social media, then a printed flyer — do they instantly know it's the same organization? That's brand consistency.</p>
+  </div>
+  <aside class="notes">
+    Brand identity has two components: verbal and visual. Your verbal identity includes your mission statement — which you should finalize this week at under 25 words — a tagline, a voice and tone guide, and an elevator pitch. Your visual identity includes a logo, color palette, typography choices, and photography or imagery style. The key principle is consistency. Every touchpoint should feel like the same organization. When a donor visits your website and then sees your social media post, they should instantly recognize it as yours. This week in your workbook, you'll draft all of these elements. Use Canva to create a simple logo — don't overthink it; a clean wordmark with one accent color is better than a complicated design.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 8: AI DEMO — MISSION STATEMENT ========== -->
+<section>
+  <span class="label label--gold">AI Demo</span>
+  <h2>Finalize Your Mission Statement</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">Use Claude to refine your draft mission statement into a final, polished version.</p>
+  <div class="prompt-box">
+    <span class="highlight">Prompt:</span><br><br>
+    "Here is my nonprofit's draft mission statement: <span class="highlight">[paste your current draft]</span>.<br><br>
+    Help me refine it to be:<br>
+    &bull; Concise (under 25 words)<br>
+    &bull; Action-oriented (starts with a verb)<br>
+    &bull; Specific about who we serve and what we do<br>
+    &bull; Free of jargon and buzzwords<br><br>
+    Give me 3 options, each with a different emphasis."
+  </div>
+  <div class="two-col" style="margin-top: 0.5em;">
+    <div>
+      <h4 style="font-size: 0.68em;">Before (typical draft)</h4>
+      <p style="font-size: 0.6em; color: var(--gray-600); font-style: italic;">"Our organization seeks to provide comprehensive support services and educational programming to underserved youth in the Central Florida area to help them achieve their full potential."</p>
+      <p style="font-size: 0.55em; color: var(--red);">38 words. Vague. Passive. Jargon-heavy.</p>
+    </div>
+    <div>
+      <h4 style="font-size: 0.68em;">After (refined)</h4>
+      <p style="font-size: 0.6em; color: var(--dark); font-style: italic;">"Equipping Central Florida youth with mentorship, tutoring, and career skills to thrive beyond high school."</p>
+      <p style="font-size: 0.55em; color: var(--green);">15 words. Active verb. Specific. Clear audience and services.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    Here's a practical AI demo for refining your mission statement. Most first drafts are too long, too vague, and too full of jargon. The prompt asks Claude for three options with different emphases so you can choose the direction that feels right, then customize further. Look at the before and after on screen. The draft is 38 words of vague aspirational language. The refined version is 15 words that tell you exactly who the organization serves and what it does. Your mission statement should pass the "stranger test": if someone who knows nothing about your organization reads it, do they immediately understand what you do and for whom? If not, keep refining.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 9: AI DEMO — CANVA MARKETING ========== -->
+<section>
+  <span class="label label--gold">AI Demo</span>
+  <h2>Create Marketing Materials with Canva AI</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">Three materials every nonprofit needs — made in minutes.</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Social Media Post</h4>
+      <ul>
+        <li>Search "Instagram post" or "Facebook post" in Canva</li>
+        <li>Use Magic Design: describe your nonprofit and the post's purpose</li>
+        <li>Apply your brand colors and logo</li>
+        <li>Create a template you can reuse weekly</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>One-Pager</h4>
+      <ul>
+        <li>Search "nonprofit one-pager" or "fact sheet"</li>
+        <li>Include: mission, key programs, impact data, contact info</li>
+        <li>This is what you hand to a potential donor or partner</li>
+        <li>Export as PDF for email and print</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Event Flyer</h4>
+      <ul>
+        <li>Search "event flyer" or "fundraiser" template</li>
+        <li>Include: event name, date, location, purpose, RSVP info</li>
+        <li>Use Canva AI to generate copy if needed</li>
+        <li>Share digitally and print for community boards</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>Brand consistency tip:</strong> In Canva, create a Brand Kit (free tier allows one) — upload your logo, set your colors and fonts. Every new design will start with your brand elements.</p>
+  </div>
+  <aside class="notes">
+    Canva is your best friend for nonprofit marketing materials. Three essential pieces: a social media post template you can reuse, a one-pager that summarizes your organization for donors and partners, and an event flyer. For each one, start with a Canva template, use the Magic Design feature to get AI-generated options based on your description, then customize with your brand colors, fonts, and logo. The most important tip: set up a Brand Kit in Canva. Even the free tier allows one. Upload your logo, enter your brand colors and fonts, and every new design will automatically use your visual identity. This saves time and ensures consistency.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 10: WORKBOOK TASKS ========== -->
+<section>
+  <span class="label label--green">Workbook</span>
+  <h2>This Week's Workbook Tasks</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">Draft your nonprofit's marketing identity. These elements will carry through the rest of the semester.</p>
+  <div class="two-col">
+    <div>
+      <h4 style="font-size: 0.68em;">Complete These</h4>
+      <ul class="checklist">
+        <li>Finalized mission statement (under 25 words)</li>
+        <li>Tagline (5&ndash;8 words, memorable)</li>
+        <li>Logo concept (draft in Canva)</li>
+        <li>Color palette (2&ndash;3 colors + rationale)</li>
+        <li>Target audience profiles (donors, volunteers, beneficiaries, partners)</li>
+        <li>One-paragraph positioning statement</li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size: 0.68em;">Guiding Questions</h4>
+      <ul>
+        <li>What emotion do you want people to feel when they encounter your brand?</li>
+        <li>What 3 words describe your organization's personality?</li>
+        <li>Who is your most important audience right now — and in 3 years?</li>
+        <li>What's the one thing you want everyone to know about your nonprofit?</li>
+      </ul>
+      <div class="callout" style="margin-top: 0.5em;">
+        <p><strong>Pro tip:</strong> Look at 3&ndash;5 nonprofits you admire. What do their brands have in common? What makes them effective? Borrow strategies, not designs.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    Your workbook tasks this week are all about defining your nonprofit's identity. Finalize your mission statement — this is the version that will appear on your website, your letterhead, and every document you produce. Create a tagline: short, memorable, and distinct from your mission statement. Draft a logo in Canva. Define your color palette with a rationale — why did you choose these colors? What do they communicate? Write target audience profiles for each stakeholder group. And write a one-paragraph positioning statement that explains what makes your organization unique. Use the guiding questions to push your thinking beyond the obvious. And study organizations you admire — what makes their branding effective?
+  </aside>
+</section>
+
+<!-- ========== SLIDE 11: WEBSITE CHECKPOINT ========== -->
+<section>
+  <span class="label label--gold">Website</span>
+  <h2>Website Checkpoint: Week 6</h2>
+  <p style="text-align: left; font-size: 0.68em; color: var(--gray-600); margin-bottom: 0.4em;">By now, your site should have these core pages. This week, polish the visual identity.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>Added In</th>
+        <th>Status Check</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Home</strong></td>
+        <td>Week 3</td>
+        <td>Update with finalized mission statement and tagline</td>
+      </tr>
+      <tr>
+        <td><strong>About</strong></td>
+        <td>Week 3</td>
+        <td>Refine narrative, add positioning statement</td>
+      </tr>
+      <tr>
+        <td><strong>Board / Leadership</strong></td>
+        <td>Week 4</td>
+        <td>Ensure governance info is clear and complete</td>
+      </tr>
+      <tr>
+        <td><strong>Team</strong></td>
+        <td>Week 5</td>
+        <td>Org chart, key roles, professional presentation</td>
+      </tr>
+      <tr>
+        <td><strong>Get Involved</strong></td>
+        <td>Week 5</td>
+        <td>Volunteer opportunities, clear call to action</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top: 0.4em;">
+    <p><strong>This week's focus:</strong> Apply your new brand identity (logo, colors, fonts) consistently across <em>all</em> pages. Remove any placeholder text. Make it look like a real nonprofit website.</p>
+  </div>
+  <aside class="notes">
+    Let's do a website checkpoint. You should now have five pages live: Home, About, Board or Leadership, Team, and Get Involved. This week is about polish and consistency. Update your Home page with the finalized mission statement and tagline. Make sure your logo appears on every page. Apply your color palette consistently. Remove placeholder text — if a section isn't ready, it's better to remove it temporarily than to have "Lorem ipsum" on a professional site. The goal by end of this week is a website that looks like it belongs to a real, credible nonprofit organization. Funders and partners should be impressed, not skeptical.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 12: NEXT WEEK ========== -->
+<section>
+  <span class="label label--dark">Looking Ahead</span>
+  <h2>Next Week: Financial Management<br>&amp; Accountability</h2>
+  <div class="callout">
+    <p><strong>Week 7 readings:</strong> Start thinking about your nonprofit's budget — revenue projections, expense categories, and financial controls.</p>
+  </div>
+  <ul>
+    <li><strong>Coming up:</strong> Budget development, financial statements, fiscal accountability</li>
+    <li>You'll begin drafting your organization's operating budget</li>
+    <li>Start thinking about realistic revenue sources and expense projections</li>
+  </ul>
+  <div class="callout" style="margin-top: 0.5em;">
+    <p><strong>This week's priorities:</strong> Complete workbook tasks (mission, tagline, logo, audiences). Polish your website's visual identity. No graded deliverable — use this time to catch up and refine.</p>
+  </div>
+  <p style="font-size: 0.65em; color: var(--gray-600); margin-top: 0.6em;">
+    Questions? Post in the discussion board or email Dr. An.
+  </p>
+  <aside class="notes">
+    Next week we shift to the numbers: financial management and accountability. You'll start developing your nonprofit's operating budget, think about revenue projections, and learn about financial controls and accountability mechanisms. It's a significant shift from the creative work of this week, so enjoy the branding process now. For this week, your priorities are the workbook tasks — mission statement, tagline, logo, target audiences — and polishing your website. There's no graded deliverable, so if you're behind on anything from previous weeks, this is your catch-up opportunity. Don't waste it. See you next week for the financial deep dive.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 13: QUESTIONS ========== -->
+<section>
+  <h2>Questions?</h2>
+  <p style="font-size: 0.72em; color: var(--gray-600); margin-top: 1em;">
+    Dr. Seongho An &middot; University of Central Florida &middot; PAD 6149
+  </p>
+  <aside class="notes">
+    That's it for this week. Remember — no graded deliverable, but the workbook tasks are important. Your mission statement, tagline, logo, and brand identity will show up in every document for the rest of the semester. Invest the time now. Polish your website. And start thinking about money — next week is all about budgets and financial management. See you then.
+  </aside>
+</section>
+
+</div><!-- end slides -->
+</div><!-- end reveal -->
+
+<!-- Footer -->
+<div class="footer">
+  <span>PAD 6149 &ndash; Build Your Nonprofit &ensp;|&ensp; Week 6 &ensp;|&ensp; Dr. Seongho An</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    showNotes: false,
+    width: 1100,
+    height: 700,
+    margin: 0.08,
+    center: true,
+    transition: 'none',
+    pdfSeparateFragments: false,
+  });
+</script>
+
+</body>
+</html>

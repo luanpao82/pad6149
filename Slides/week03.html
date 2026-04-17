@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 3 — Cross-sector Collaborations &amp; Build Your Website | PAD 6149</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --gold: #FFC904;
+    --dark: #1C1917;
+    --bg: #FAFAF7;
+    --gray-600: #57534E;
+    --gray-400: #A8A29E;
+    --gray-200: #E7E5E4;
+    --red: #DC2626;
+    --green: #16A34A;
+    --blue: #2563EB;
+  }
+
+  .reveal-viewport {
+    background: var(--bg);
+    border-top: 4px solid var(--gold);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  .reveal h1 { font-size: 2.2em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.5em; line-height: 1.2; margin-bottom: 0.6em; }
+  .reveal h3 { font-size: 1.15em; line-height: 1.3; color: var(--gray-600); }
+
+  .reveal p, .reveal li {
+    font-size: 0.72em;
+    line-height: 1.6;
+    color: var(--dark);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0.6em;
+  }
+
+  .reveal li { margin-bottom: 0.35em; }
+
+  .reveal code, .reveal .mono {
+    font-family: 'DM Mono', monospace;
+  }
+
+  .reveal code {
+    background: var(--gray-200);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    color: var(--dark);
+  }
+
+  .reveal .slide-number {
+    font-family: 'DM Mono', monospace;
+    color: var(--gray-400);
+    font-size: 14px;
+    right: 24px;
+    bottom: 50px;
+  }
+
+  /* Footer */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-top: 3px solid var(--gold);
+  }
+  .footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gray-400);
+    letter-spacing: 0.02em;
+  }
+
+  /* Label / pill */
+  .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25em 0.7em;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+  .label--gold { background: var(--gold); color: var(--dark); }
+  .label--dark { background: var(--dark); color: #fff; }
+  .label--outline { border: 1.5px solid var(--gray-400); color: var(--gray-600); }
+  .label--red { background: var(--red); color: #fff; }
+  .label--green { background: var(--green); color: #fff; }
+  .label--blue { background: var(--blue); color: #fff; }
+
+  /* Gold left-border box */
+  .callout {
+    border-left: 4px solid var(--gold);
+    background: #FFFEF5;
+    padding: 0.7em 1em;
+    margin: 0.6em 0;
+    border-radius: 0 6px 6px 0;
+    text-align: left;
+  }
+  .callout p { margin: 0; font-size: 0.68em; }
+
+  /* Card grid */
+  .card-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 0.5em;
+  }
+  .card {
+    flex: 1;
+    max-width: 300px;
+    background: #fff;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 1em 1.1em;
+    text-align: left;
+  }
+  .card h4 {
+    font-size: 0.72em;
+    margin: 0 0 0.3em 0;
+  }
+  .card p, .card li {
+    font-size: 0.58em;
+    margin: 0;
+    color: var(--gray-600);
+  }
+  .card ul { margin-left: 0.4em; padding-left: 0.8em; }
+
+  /* Table */
+  .reveal table {
+    font-size: 0.6em;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.4em auto;
+  }
+  .reveal table th {
+    background: var(--dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+  }
+  .reveal table td {
+    padding: 0.45em 0.7em;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+  }
+  .reveal table tr:nth-child(even) td {
+    background: #fff;
+  }
+
+  /* Steps */
+  .step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 0.55em;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    font-size: 0.65em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-text {
+    font-size: 0.62em;
+    line-height: 1.5;
+    padding-top: 0.15em;
+  }
+  .step-text strong { color: var(--dark); }
+
+  /* Checklist */
+  .checklist {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0.4em 0;
+  }
+  .checklist li {
+    font-size: 0.65em;
+    padding: 0.3em 0;
+    border-bottom: 1px solid var(--gray-200);
+    padding-left: 1.6em;
+    position: relative;
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gray-400);
+    border-radius: 3px;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--dark);
+    color: #E7E5E4;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52em;
+    line-height: 1.65;
+    padding: 1em 1.2em;
+    border-radius: 8px;
+    text-align: left;
+    margin: 0.5em 0;
+    border-left: 4px solid var(--gold);
+  }
+  .prompt-box .highlight {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* Divider */
+  .part-divider h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.2em;
+  }
+
+  /* Two-col */
+  .two-col {
+    display: flex;
+    gap: 30px;
+    text-align: left;
+  }
+  .two-col > div { flex: 1; }
+
+  /* Rec badge */
+  .rec {
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7em;
+    font-weight: 600;
+    padding: 0.1em 0.5em;
+    border-radius: 3px;
+    margin-left: 0.3em;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ========== SLIDE 1: TITLE ========== -->
+<section>
+  <div>
+    <span class="label label--gold">Week 3 &middot; September 7, 2026</span>
+    <h1 style="margin-top: 0.2em;">Cross-sector Collaborations<br>&amp; Build Your Website</h1>
+    <h3 style="margin-top: 0.4em;">PAD 6149 &mdash; Nonprofit Administration: Build Your Nonprofit</h3>
+    <p style="font-size: 0.6em; color: var(--gray-600); margin-top: 1.2em;">
+      Dr. Seongho An &middot; University of Central Florida<br>
+      Master of Nonprofit Management
+    </p>
+  </div>
+  <aside class="notes">
+    Welcome to Week 3. This is one of the most hands-on weeks of the semester. We have two big goals today: understanding cross-sector relationships (government, business, nonprofit) and then actually building your nonprofit's website. By the end of this week, every student should have a live website URL for their nonprofit.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 2: AGENDA ========== -->
+<section>
+  <span class="label label--dark">Agenda</span>
+  <h2>Two Parts Today</h2>
+  <div class="card-row">
+    <div class="card">
+      <h4 style="color: var(--dark);">Part 1 &mdash; Theory</h4>
+      <p><strong>Cross-sector Collaborations</strong></p>
+      <ul>
+        <li>Government-nonprofit relations</li>
+        <li>Business-nonprofit relations</li>
+        <li>Collaboration models</li>
+        <li>Map your partners</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color: var(--gold); border-width: 2px;">
+      <h4 style="color: var(--dark);">Part 2 &mdash; Workshop</h4>
+      <p><strong>Build Your Website</strong></p>
+      <ul>
+        <li>Why every nonprofit needs a site</li>
+        <li>Free builder comparison</li>
+        <li>Step-by-step demo</li>
+        <li>AI tools for copy &amp; design</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.8em;">
+    <p><strong>Readings:</strong> Worth (2020) Ch. 8 &amp; 11 &middot; Dicke &amp; Ott (1999) &middot; Gazley &amp; Brudney (2007) &middot; Smith (2008) &middot; Young (2000, 2002)</p>
+  </div>
+  <aside class="notes">
+    Here is the plan. Part 1 covers the conceptual material — how nonprofits relate to government and business. Part 2 is entirely hands-on: we walk through building a website step by step using free tools. Your workbook task this week is to actually build the site and submit the URL.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 3: THREE SECTORS ========== -->
+<section>
+  <span class="label label--outline">Part 1 &middot; Theory</span>
+  <h2>Three Sectors, One Ecosystem</h2>
+  <div class="card-row">
+    <div class="card" style="text-align: center;">
+      <h4>Government</h4>
+      <p style="font-size: 0.55em;">Policy, regulation, funding (grants &amp; contracts), public accountability</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <h4>Business</h4>
+      <p style="font-size: 0.55em;">Capital, expertise, CSR, sponsorships, market-based solutions</p>
+    </div>
+    <div class="card" style="text-align: center; border-color: var(--gold); border-width: 2px;">
+      <h4>Nonprofit</h4>
+      <p style="font-size: 0.55em;">Mission-driven service, advocacy, community trust, volunteer labor</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.7em;">
+    <p><strong>Key insight (Worth, Ch. 8):</strong> Your nonprofit will not operate in isolation. Every organization exists within a web of cross-sector relationships that shape its strategy, funding, and legitimacy.</p>
+  </div>
+  <p style="font-size: 0.62em; color: var(--gray-600); margin-top: 0.5em;">Think about your capstone nonprofit &mdash; which sector relationships matter most?</p>
+  <aside class="notes">
+    Worth Chapter 8 lays out this fundamental idea: nonprofits don't exist in a vacuum. They are embedded in relationships with government and business. Government provides funding and sets the rules. Business provides capital, partnerships, and expertise. The nonprofit sector fills gaps that neither government nor business addresses effectively. As you build your capstone nonprofit, you need to think strategically about these relationships from day one.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 4: GOVERNMENT-NONPROFIT ========== -->
+<section>
+  <span class="label label--outline">Part 1</span>
+  <h2>Government-Nonprofit Partnerships</h2>
+  <div class="two-col">
+    <div>
+      <p style="font-size: 0.62em;"><strong>Mechanisms of collaboration:</strong></p>
+      <ul>
+        <li><strong>Grants</strong> &mdash; competitive funding for specific programs</li>
+        <li><strong>Contracts</strong> &mdash; fee-for-service delivery on behalf of government</li>
+        <li><strong>Policy advocacy</strong> &mdash; nonprofits as voice of constituents</li>
+        <li><strong>Co-production</strong> &mdash; joint program design and implementation</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size: 0.62em;"><strong>Tensions &amp; risks:</strong></p>
+      <ul>
+        <li>Mission drift from funder priorities</li>
+        <li>Administrative burden &amp; compliance costs</li>
+        <li>Revenue dependency on a single source</li>
+        <li>Loss of advocacy independence</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.6em;">
+    <p><strong>Gazley &amp; Brudney (2007):</strong> Government-nonprofit partnerships can be effective but are often asymmetric &mdash; government holds the purse strings, and nonprofits bear the risk of shifting political priorities.</p>
+  </div>
+  <p style="font-size: 0.58em; color: var(--gray-600); margin-top: 0.3em;">See also: Dicke &amp; Ott (1999) on accountability challenges in contracting; Smith (2008) on the evolving contract regime.</p>
+  <aside class="notes">
+    Gazley and Brudney's 2007 study is essential reading here. They found that while both government and nonprofit managers generally view their partnerships positively, the relationships are often unequal. Government sets the terms. Nonprofits adapt. Dicke and Ott raise the accountability problem: when government outsources service delivery, who is really accountable to the public? Smith's work traces how the contracting regime has evolved and what it means for nonprofit autonomy. For your capstone nonprofit, the question is: will you seek government funding? If so, what are the trade-offs?
+  </aside>
+</section>
+
+<!-- ========== SLIDE 5: BUSINESS-NONPROFIT ========== -->
+<section>
+  <span class="label label--outline">Part 1</span>
+  <h2>Business-Nonprofit Relations</h2>
+  <div class="two-col">
+    <div>
+      <p style="font-size: 0.62em;"><strong>Types of engagement:</strong></p>
+      <ul>
+        <li><strong>Corporate philanthropy</strong> &mdash; direct donations, foundation grants</li>
+        <li><strong>Sponsorships</strong> &mdash; event/program support for brand visibility</li>
+        <li><strong>Cause marketing</strong> &mdash; sales-linked donations (e.g., "buy one, give one")</li>
+        <li><strong>Pro bono services</strong> &mdash; professional expertise at no cost</li>
+        <li><strong>Social enterprise partnerships</strong> &mdash; joint ventures for impact</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size: 0.62em;"><strong>Watch out for:</strong></p>
+      <ul>
+        <li>"Greenwashing" or "causewashing" &mdash; brand use without real impact</li>
+        <li>Values misalignment (e.g., tobacco company funding health nonprofit)</li>
+        <li>Over-reliance on a single corporate partner</li>
+        <li>Loss of organizational identity</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.6em;">
+    <p><strong>Young (2002):</strong> Business influence on nonprofits is pervasive and complex. The "businesslike" ethos can improve efficiency but risks displacing mission-centered values with market logic.</p>
+  </div>
+  <aside class="notes">
+    Young's 2002 work examines how business thinking has penetrated the nonprofit sector. On one hand, business partnerships bring resources, expertise, and visibility. On the other hand, when nonprofits adopt too much of a business mindset, they risk losing what makes them distinctive — their mission focus and public trust. Worth Chapter 11 extends this discussion to social enterprise and earned revenue. For your capstone nonprofit, think carefully: what kind of corporate partnerships make sense, and where would you draw the line?
+  </aside>
+</section>
+
+<!-- ========== SLIDE 6: COLLABORATION MODELS ========== -->
+<section>
+  <span class="label label--outline">Part 1</span>
+  <h2>Cross-sector Collaboration Models</h2>
+  <p style="font-size: 0.62em; color: var(--gray-600); margin-bottom: 0.4em;">Young (2000) identifies three models of government-nonprofit relations:</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Supplementary</h4>
+      <p>Nonprofits fill gaps where government falls short. They provide services government cannot or will not offer.</p>
+      <p style="margin-top: 0.4em;"><em>Example: food banks supplementing SNAP benefits</em></p>
+    </div>
+    <div class="card">
+      <h4>Complementary</h4>
+      <p>Nonprofits deliver services <em>on behalf of</em> government. Partners in implementation through contracts and grants.</p>
+      <p style="margin-top: 0.4em;"><em>Example: Head Start programs run by nonprofits</em></p>
+    </div>
+    <div class="card">
+      <h4>Adversarial</h4>
+      <p>Nonprofits challenge government through advocacy, lobbying, and public pressure. Watchdog and reform role.</p>
+      <p style="margin-top: 0.4em;"><em>Example: ACLU suing government agencies</em></p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.6em;">
+    <p><strong>Your capstone question:</strong> Which model(s) describe your nonprofit's relationship with government? With business? Most organizations operate in more than one model simultaneously.</p>
+  </div>
+  <aside class="notes">
+    Young's 2000 framework is one of the most cited in our field. The supplementary model is the classic market-failure argument — nonprofits exist because government cannot satisfy all demands. The complementary model reflects the partnership reality — government funds, nonprofits deliver. The adversarial model is about advocacy and accountability. Most real-world nonprofits operate across all three models simultaneously. For your workbook task, I want you to think about where your capstone nonprofit fits. It's rarely just one model.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 7: WORKBOOK TASK ========== -->
+<section>
+  <span class="label label--gold">Workbook Task</span>
+  <h2>Map Your Cross-sector Partners</h2>
+  <p style="font-size: 0.65em; margin-bottom: 0.5em;">In your workbook, create a partner map for your capstone nonprofit.</p>
+  <div class="card-row">
+    <div class="card">
+      <h4>Government</h4>
+      <ul>
+        <li>Which agencies relate to your mission?</li>
+        <li>Are there grants or contracts you could pursue?</li>
+        <li>What regulations affect your work?</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Business</h4>
+      <ul>
+        <li>Which companies share your values?</li>
+        <li>What kind of sponsorship fits?</li>
+        <li>Any pro bono opportunities?</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Other Nonprofits</h4>
+      <ul>
+        <li>Who is doing similar work?</li>
+        <li>Coalition or referral partners?</li>
+        <li>Shared resources or infrastructure?</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.6em;">
+    <p><strong>Deliverable:</strong> Identify 2&ndash;3 potential cross-sector partners. For each, explain: (1) who they are, (2) what model of collaboration applies (supplementary, complementary, or adversarial), and (3) what value they bring to your nonprofit.</p>
+  </div>
+  <aside class="notes">
+    This is the conceptual portion of your workbook for this week. Identify at least 2-3 partners across sectors. Be specific — name actual agencies, companies, or organizations. Don't just say "the government." Say "Orange County Department of Social Services" or "Florida Department of Children and Families." Specificity shows you've done your homework and are thinking strategically about your nonprofit's ecosystem.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 8: PART 2 DIVIDER ========== -->
+<section class="part-divider">
+  <span class="label label--gold">Part 2 &middot; Workshop</span>
+  <h2>Why Your Nonprofit<br>Needs a Website</h2>
+  <div style="display: flex; gap: 20px; justify-content: center; margin-top: 0.8em;">
+    <div style="text-align: center;">
+      <p style="font-size: 1.8em; font-family: 'DM Mono', monospace; font-weight: 700; color: var(--dark); margin: 0;">75%</p>
+      <p style="font-size: 0.55em; color: var(--gray-600); margin: 0;">of donors research a nonprofit's website before giving</p>
+    </div>
+    <div style="text-align: center;">
+      <p style="font-size: 1.8em; font-family: 'DM Mono', monospace; font-weight: 700; color: var(--dark); margin: 0;">97%</p>
+      <p style="font-size: 0.55em; color: var(--gray-600); margin: 0;">of funders expect a web presence in grant applications</p>
+    </div>
+    <div style="text-align: center;">
+      <p style="font-size: 1.8em; font-family: 'DM Mono', monospace; font-weight: 700; color: var(--dark); margin: 0;">#1</p>
+      <p style="font-size: 0.55em; color: var(--gray-600); margin: 0;">way people find and evaluate nonprofits today</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.8em;">
+    <p>Your website is your <strong>public face</strong>, your <strong>credibility signal</strong>, and in this course, your <strong>portfolio</strong>. Every week, you will add content to it as you build your nonprofit.</p>
+  </div>
+  <aside class="notes">
+    Let's shift gears. Part 2 is entirely hands-on. Your nonprofit website is not optional — it is how donors, funders, board members, and community partners evaluate whether you are legitimate. In this capstone, your website also serves as your portfolio. Each week as you develop governance documents, programs, budgets, and marketing plans, they will live on your site. By the end of the semester, you'll have a complete, professional nonprofit presence online.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 9: FREE WEBSITE BUILDERS ========== -->
+<section>
+  <span class="label label--dark">Workshop</span>
+  <h2>Free Website Builder Options</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Ease</th>
+        <th>Design</th>
+        <th>Free Tier</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Google Sites</strong> <span class="rec">REC</span></td>
+        <td>Easiest</td>
+        <td>Basic</td>
+        <td>100% free, no branding</td>
+        <td>Lowest barrier; integrates with Google Workspace</td>
+      </tr>
+      <tr>
+        <td><strong>Carrd.co</strong> <span class="rec">REC</span></td>
+        <td>Easy</td>
+        <td>Beautiful</td>
+        <td>Free (1 site, 1 page)</td>
+        <td>Best-looking option for a simple site</td>
+      </tr>
+      <tr>
+        <td><strong>Wix.com</strong></td>
+        <td>Easy</td>
+        <td>Good</td>
+        <td>Free with Wix branding</td>
+        <td>Drag-and-drop; lots of templates</td>
+      </tr>
+      <tr>
+        <td><strong>WordPress.com</strong></td>
+        <td>Moderate</td>
+        <td>Flexible</td>
+        <td>Free with WP branding</td>
+        <td>Most customizable; steeper learning curve</td>
+      </tr>
+      <tr>
+        <td><strong>GitHub Pages</strong></td>
+        <td>Advanced</td>
+        <td>Full control</td>
+        <td>100% free, no branding</td>
+        <td>Most professional; requires HTML knowledge</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top: 0.5em;">
+    <p><strong>My recommendation:</strong> Use <strong>Google Sites</strong> if you want simple and fast. Use <strong>Carrd</strong> if you want polished and modern. Either is fine for this course &mdash; what matters is that you <em>publish</em> something this week.</p>
+  </div>
+  <aside class="notes">
+    Here is a comparison of free options. I am recommending Google Sites or Carrd for most students. Google Sites is the lowest barrier — if you have a Google account, you can have a site live in 15 minutes. Carrd produces beautiful one-page sites that look professional. Wix and WordPress are also fine. GitHub Pages gives you the most control but requires basic HTML, though AI tools can help generate that. The key message: don't get stuck choosing. Pick one and start building.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 10: GOOGLE SITES DEMO ========== -->
+<section>
+  <span class="label label--gold">Demo</span>
+  <h2>Step-by-Step: Google Sites</h2>
+  <div style="margin-top: 0.3em;">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">Go to <strong>sites.google.com</strong> and click the <strong>"+"</strong> button to create a blank site. Sign in with your UCF or personal Google account.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>Name your site</strong> with your nonprofit's name. This becomes the page title and the URL slug (e.g., <code>sites.google.com/view/your-nonprofit</code>).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Add a hero section:</strong> Insert a large banner image + your mission statement as the headline. Use the title text area for your tagline.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text"><strong>Create pages:</strong> In the right panel under "Pages," add: <strong>Home, About, Board, Team, Programs, Donate, Advocacy</strong>. Content comes later &mdash; set up the structure now.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-text"><strong>Publish:</strong> Click "Publish" in the top right. Choose a clean URL. Share your link with the class!</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.3em;">
+    <p><strong>Time estimate:</strong> 15&ndash;20 minutes to set up the basic structure. You can refine design and content throughout the week.</p>
+  </div>
+  <aside class="notes">
+    Let me walk through this step by step. First, go to sites.google.com. You'll see a gallery of templates — ignore those and click the blank "+" button. Name it with your nonprofit's name. Step 3 is the most important for first impressions: add a large hero image and put your mission statement front and center. For images, use Unsplash.com for free professional photos. Step 4: create the page structure. You don't need all the content yet — just create placeholder pages. Step 5: publish it. You now have a live URL you can share. Total time: about 15-20 minutes for the basic structure.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 11: AI COPY DEMO ========== -->
+<section>
+  <span class="label label--gold">AI Demo</span>
+  <h2>Generate Your Website Copy</h2>
+  <p style="font-size: 0.62em; color: var(--gray-600); margin-bottom: 0.3em;">Use Claude or ChatGPT to draft professional content for your site. Try this prompt:</p>
+  <div class="prompt-box">
+    I'm building a website for my nonprofit <span class="highlight">[Name]</span>.<br>
+    Our mission is <span class="highlight">[mission statement]</span>.<br>
+    Our target population is <span class="highlight">[population]</span>.<br><br>
+    Write website copy for:<br>
+    1. Homepage hero section (2-3 sentences, inspiring)<br>
+    2. About Us page (200 words)<br>
+    3. Our Mission section (100 words)<br><br>
+    Tone: professional, warm, action-oriented.<br>
+    Avoid jargon. Write for a general audience.
+  </div>
+  <div class="callout" style="margin-top: 0.5em;">
+    <p><strong>Critical step:</strong> AI gives you a <em>starting point</em>. You must edit, personalize, and verify every word. Your voice and your nonprofit's identity must come through. Do not submit generic AI output.</p>
+  </div>
+  <aside class="notes">
+    AI is a powerful drafting tool. Go to claude.ai or chatgpt.com and paste this prompt, filling in your nonprofit's specifics. The output will give you a solid first draft. But here is the critical point: you must personalize it. AI-generated copy is generic by nature. Your job is to inject your nonprofit's unique voice, your community's specific needs, and your personal passion. I will be able to tell if you submit raw AI output without editing. Use AI as a starting point, not a finished product.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 12: AI LOGO & VISUAL IDENTITY ========== -->
+<section>
+  <span class="label label--gold">AI Demo</span>
+  <h2>Create Your Logo &amp; Visual Identity</h2>
+  <div class="two-col">
+    <div>
+      <p style="font-size: 0.65em; font-weight: 600;">Logo with Canva:</p>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Go to <strong>canva.com</strong> (free account)</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Search <strong>"logo"</strong> in templates</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Use <strong>Magic Design</strong> &mdash; enter your nonprofit name + keywords describing your mission</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Select a design and <strong>customize</strong> colors, fonts, and icons</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text">Download as <strong>PNG</strong> (transparent background)</div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size: 0.65em; font-weight: 600;">Brand Kit Basics:</p>
+      <ul>
+        <li><strong>2&ndash;3 brand colors</strong> &mdash; a primary, a secondary, and a neutral. Use <a href="https://coolors.co" style="color: var(--blue);">coolors.co</a> to generate palettes.</li>
+        <li><strong>1&ndash;2 fonts</strong> &mdash; one for headings, one for body. Google Fonts is free.</li>
+        <li><strong>Consistent imagery</strong> &mdash; use <a href="https://unsplash.com" style="color: var(--blue);">unsplash.com</a> for free, high-quality photos related to your cause.</li>
+      </ul>
+      <div class="callout" style="margin-top: 0.5em;">
+        <p>Save your brand colors and fonts in Canva's <strong>Brand Kit</strong> so every future document matches.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    Visual identity matters more than you think. A professional logo and consistent colors signal legitimacy. Canva's free tier is more than sufficient. Use Magic Design — enter your nonprofit name and a few keywords about your mission, and Canva will generate logo options. Pick one, customize the colors and fonts, and download it. Then choose 2-3 brand colors and 1-2 fonts. Save these in Canva's Brand Kit feature so that every document you create going forward — slides, reports, social media posts — has a consistent look. Use coolors.co to generate a harmonious color palette and Unsplash for free professional photography.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 13: WEBSITE CHECKLIST ========== -->
+<section>
+  <span class="label label--red">Due This Week</span>
+  <h2>Your Website Checklist</h2>
+  <p style="font-size: 0.62em; color: var(--gray-600); margin-bottom: 0.3em;">By end of Week 3, your website must include:</p>
+  <ul class="checklist">
+    <li><strong>Organization name and logo</strong> displayed on your homepage</li>
+    <li><strong>Mission statement</strong> prominently featured on the homepage</li>
+    <li><strong>"About Us" page</strong> with your nonprofit concept from Week 1</li>
+    <li><strong>Placeholder pages</strong> for Board, Team, Programs, Donate, Advocacy</li>
+    <li><strong>Published and accessible</strong> via a public URL</li>
+  </ul>
+  <div class="callout" style="margin-top: 0.5em;">
+    <p><strong>This is the foundation.</strong> Every week going forward, you will add content to your website as you develop governance documents, programs, budgets, and marketing materials. Think of it as a living portfolio of your capstone work.</p>
+  </div>
+  <p style="font-size: 0.58em; color: var(--gray-600); margin-top: 0.4em;"><strong>Submit:</strong> Your website URL in the workbook. Make sure the link works and the site is set to <strong>public</strong>.</p>
+  <aside class="notes">
+    This is what I need from you by the end of this week. Five things. An organization name and logo on the homepage. Your mission statement front and center. An About Us page that draws from your Week 1 concept paper. Placeholder pages for the sections you'll fill in throughout the semester. And most importantly: a published, publicly accessible URL. Submit that URL in your workbook. I will click every single link. If it doesn't work, if it's set to private, or if it's empty, that's a problem. Get it up, get it live, and start building.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 14: NEXT WEEK PREVIEW ========== -->
+<section>
+  <span class="label label--outline">Looking Ahead</span>
+  <h2>Week 4 &mdash; Boards &amp; Governance</h2>
+  <div class="card-row">
+    <div class="card" style="border-left: 4px solid var(--red);">
+      <h4>First Graded Deliverables</h4>
+      <ul>
+        <li><strong>Board Governance Policy</strong> &mdash; 10 pts</li>
+        <li><strong>Mentor Interview Report</strong> &mdash; 10 pts</li>
+      </ul>
+      <p style="margin-top: 0.5em; font-size: 0.55em; color: var(--red); font-weight: 600;">Heavy week &mdash; start now.</p>
+    </div>
+    <div class="card">
+      <h4>Readings for Week 4</h4>
+      <ul>
+        <li>Worth (2020) Ch. 4</li>
+        <li>Board governance literature</li>
+        <li>BoardSource best practices</li>
+      </ul>
+      <p style="margin-top: 0.5em; font-size: 0.55em; color: var(--gray-600);">Check the course schedule for the full reading list.</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top: 0.6em;">
+    <p><strong>Mentor Interview:</strong> If you haven't identified and contacted your nonprofit mentor yet, do it <em>this week</em>. You need to complete the interview before Week 4.</p>
+  </div>
+  <aside class="notes">
+    Next week is a big one. Week 4 is your first graded deliverable beyond the workbook. You will submit a board governance policy for your nonprofit and a report from your mentor interview. Both are worth 10 points. The governance policy requires you to research best practices from BoardSource and adapt them for your nonprofit. The mentor interview requires you to have already identified a nonprofit professional and conducted a conversation with them. If you haven't reached out to a mentor yet, do it today — not next week. Worth Chapter 4 covers board governance. Read it before next week's session.
+  </aside>
+</section>
+
+<!-- ========== SLIDE 15: QUESTIONS ========== -->
+<section>
+  <span class="label label--gold">Let's Connect</span>
+  <h2>Questions?</h2>
+  <p style="font-size: 0.72em; margin-top: 0.8em;">Share your website URL in the discussion forum!</p>
+  <p style="font-size: 0.62em; color: var(--gray-600); margin-top: 0.3em;">Let's see what everyone is building.</p>
+  <div style="margin-top: 1.2em; padding: 1em; border: 2px dashed var(--gray-400); border-radius: 8px;">
+    <p style="font-size: 0.6em; color: var(--gray-600); margin: 0;"><strong>This week's to-do list:</strong></p>
+    <p style="font-size: 0.58em; color: var(--gray-600); margin: 0.3em 0 0 0;">
+      1. Complete cross-sector partner map in workbook<br>
+      2. Build your nonprofit website (publish it!)<br>
+      3. Start reading Worth Ch. 4 for next week<br>
+      4. Contact your mentor if you haven't yet
+    </p>
+  </div>
+  <p style="font-size: 0.55em; color: var(--gray-400); margin-top: 1.2em; font-family: 'DM Mono', monospace;">
+    Dr. Seongho An &middot; University of Central Florida &middot; PAD 6149
+  </p>
+  <aside class="notes">
+    That's it for today. Two big things this week: the partner mapping exercise in your workbook, and building your website. The website is the priority — get something live, even if it's imperfect. You'll improve it every week. Post your URL in the discussion forum so classmates can see each other's work. And seriously, reach out to a mentor this week if you haven't already. You'll need that interview done before Week 4. See you next week for boards and governance. Good luck building!
+  </aside>
+</section>
+
+</div><!-- end slides -->
+</div><!-- end reveal -->
+
+<!-- Footer -->
+<div class="footer">
+  <span>PAD 6149 &ndash; Build Your Nonprofit &ensp;|&ensp; Week 3 &ensp;|&ensp; Dr. Seongho An</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    showNotes: false,
+    width: 1100,
+    height: 700,
+    margin: 0.08,
+    center: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    pdfSeparateFragments: false,
+  });
+</script>
+
+</body>
+</html>

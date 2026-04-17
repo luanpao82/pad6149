@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 10: Managing Nonprofit Performance</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+
+  .flow-step {
+    background: var(--ucf-gold-light);
+    border: 1px solid var(--ucf-gold);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.4em;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .flow-arrow {
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+  }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Week 10</span>
+  <h1>Managing Nonprofit<br>Performance</h1>
+  <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    October 26, 2026
+  </div>
+  <aside class="notes">
+    Welcome to Week 10. We are now past the midpoint of the semester, and this week marks a critical shift: from building your nonprofit's structure to measuring its effectiveness. Performance management is one of the most challenging aspects of nonprofit administration because unlike the private sector, we don't have a single bottom line. We have multiple stakeholders, competing definitions of success, and a persistent tension between mission fulfillment and measurable outcomes. This week you'll submit your Program Evaluation Framework — a 5-to-7-page document that draws directly on your PAD 6327 program evaluation coursework. Let's get into it.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <span class="label">Week 10</span>
+  <h2>Agenda</h2>
+  <ol>
+    <li>Performance Management in Nonprofits</li>
+    <li>Accountability and Performance</li>
+    <li>Productivity Enhancement Strategies</li>
+    <li>The Logic Model</li>
+    <li>Evaluation Questions</li>
+    <li>Your Program Evaluation Framework (C2: 10 pts)</li>
+    <li>AI Demo: Build a Logic Model</li>
+    <li>AI Demo: Design a Survey</li>
+    <li>Website Update: "Programs" Page</li>
+  </ol>
+
+  <div class="gold-bg">
+    <p><strong>Readings:</strong> Worth Ch. 6 · Hudson Ch. 2 (pg. 41–80) · Benjamin (2008) · Berman & West (1998)</p>
+    <p><strong>Due:</strong> C2: Program Evaluation Framework (10 pts) · NASPAA Competency 2</p>
+  </div>
+
+  <aside class="notes">
+    Here's our roadmap. We'll start with the big picture — why is performance management harder in nonprofits than in business? Then we'll look at two important research contributions: Benjamin's 2008 work on accountability and Berman and West's 1998 study on productivity enhancement. The core of today is the logic model and how to frame evaluation questions — skills you developed in PAD 6327 that you now apply to your capstone nonprofit. I'll walk through the assignment requirements, show two AI demos — one for building a logic model and one for designing survey instruments — and close with the website update. Let's begin.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: PERFORMANCE MANAGEMENT ==================== -->
+<section>
+  <span class="label">Foundations</span>
+  <h2>Performance Management in Nonprofits</h2>
+
+  <p>Why is performance management <strong>harder</strong> in the nonprofit sector?</p>
+
+  <ul>
+    <li><strong>Multiple bottom lines:</strong> Financial health, mission impact, constituent satisfaction, community benefit — no single metric captures success</li>
+    <li><strong>Diverse stakeholders:</strong> Funders want accountability; boards want oversight; staff want autonomy; constituents want results</li>
+    <li><strong>Mission vs. metrics tension:</strong> Not everything that matters can be measured, and not everything measured matters</li>
+    <li><strong>Attribution problems:</strong> Social change is long-term, complex, and involves many actors — isolating your organization's contribution is difficult</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Worth Ch. 6:</strong> Managing for performance requires balancing accountability demands with organizational learning. The goal is not just to prove impact — it's to <strong>improve</strong> it.</p>
+  </div>
+
+  <aside class="notes">
+    Worth's Chapter 6 lays the foundation here. In the private sector, performance management is relatively straightforward — revenue, profit, market share. In nonprofits, we face what scholars call the "multiple bottom lines" problem. Your organization might be financially healthy but failing its mission. It might have outstanding programs but terrible governance. Performance management in this sector requires thinking holistically. The tension between mission and metrics is especially important: funders increasingly demand quantifiable outcomes, but the most meaningful changes — shifts in community wellbeing, empowerment, systemic change — are often the hardest to measure. Hudson's Chapter 2 reinforces this by showing how organizational effectiveness depends on aligning internal capacity with external expectations.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: ACCOUNTABILITY AND PERFORMANCE ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Accountability and Performance</h2>
+
+  <h3>Benjamin (2008) — Administration & Society</h3>
+
+  <p>Nonprofits are <strong>bearing more risk for results</strong> than ever before.</p>
+
+  <ul>
+    <li><strong>Performance-based contracts:</strong> Government and foundation funding increasingly tied to measurable outcomes</li>
+    <li><strong>Accountability shapes measurement:</strong> Organizations measure what funders require, not necessarily what matters most for mission</li>
+    <li><strong>Upward vs. downward accountability:</strong> Most accountability flows up (to funders and boards) — rarely down (to constituents and communities)</li>
+    <li><strong>Compliance vs. learning:</strong> When accountability is punitive, organizations focus on looking good rather than getting better</li>
+  </ul>
+
+  <p><strong>Key takeaway:</strong> Design your evaluation framework to serve <em>your</em> organization's learning needs — not just funder reporting requirements.</p>
+
+  <aside class="notes">
+    Benjamin's 2008 article is essential reading for understanding the accountability landscape nonprofits operate in today. The shift toward performance-based contracting means nonprofits bear more risk — if you don't hit your targets, you lose funding. This creates perverse incentives: organizations cherry-pick easier-to-serve populations, focus on short-term outputs over long-term outcomes, and measure what's convenient rather than what's meaningful. Benjamin draws the critical distinction between upward accountability — answering to funders and government — and downward accountability — answering to the communities you serve. Most nonprofits are heavy on the former and weak on the latter. As you design your evaluation framework, think about who you are accountable to and whether your metrics actually capture what matters to your constituents.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: PRODUCTIVITY ENHANCEMENT ==================== -->
+<section>
+  <span class="label">Research</span>
+  <h2>Productivity Enhancement Strategies</h2>
+
+  <h3>Berman & West (1998)</h3>
+
+  <p>What strategies do public and nonprofit organizations actually use to improve productivity?</p>
+
+  <div class="two-col">
+    <div>
+      <p><strong>Management-Driven Strategies</strong></p>
+      <ul>
+        <li>Total Quality Management (TQM)</li>
+        <li>Benchmarking against peers</li>
+        <li>Performance measurement systems</li>
+        <li>Process reengineering</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>People-Driven Strategies</strong></p>
+      <ul>
+        <li>Employee involvement and empowerment</li>
+        <li>Training and professional development</li>
+        <li>Team-based structures</li>
+        <li>Incentive and recognition programs</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><strong>Finding:</strong> The most effective organizations use <em>both</em> management and people strategies together. Systems alone don't work without culture change.</p>
+
+  <aside class="notes">
+    Berman and West's 1998 study surveyed public and nonprofit organizations about their productivity enhancement strategies. They found two broad categories: management-driven approaches like TQM, benchmarking, and formal performance measurement systems; and people-driven approaches like employee empowerment, training, and team-based work. The key finding is that neither category alone is sufficient. Organizations that implemented management systems without investing in their people saw limited gains. And organizations that focused only on people strategies without systematic measurement couldn't sustain improvements. For your nonprofit, this means your evaluation framework needs to be embedded in an organizational culture that values learning and improvement — not just compliance. Think about how you'll actually use the data you collect to make decisions.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: THE LOGIC MODEL ==================== -->
+<section>
+  <span class="label">Core Framework</span>
+  <h2>The Logic Model</h2>
+
+  <p>The foundation of program evaluation — a visual map of how your program works.</p>
+
+  <div class="flow">
+    <div class="flow-step"><strong>Inputs</strong><br>Resources<br>invested</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step"><strong>Activities</strong><br>What you<br>do</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step"><strong>Outputs</strong><br>What you<br>produce</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step"><strong>Outcomes</strong><br>Changes that<br>result</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step"><strong>Impact</strong><br>Long-term<br>change</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Component</th><th>Example: Youth Mentoring Program</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Inputs</td><td>Staff, trained mentors, curriculum, meeting space, funding</td></tr>
+      <tr><td>Activities</td><td>Weekly 1:1 mentoring sessions, group workshops, parent meetings</td></tr>
+      <tr><td>Outputs</td><td>150 youth served, 40 mentors trained, 600 sessions delivered</td></tr>
+      <tr><td>Outcomes</td><td>Improved school attendance, higher self-efficacy scores, stronger adult relationships</td></tr>
+      <tr><td>Impact</td><td>Reduced high school dropout rate in target community over 5 years</td></tr>
+    </tbody>
+  </table>
+
+  <aside class="notes">
+    You all built logic models in PAD 6327 — this is review but it's critical review because the logic model is the backbone of your evaluation framework assignment. The logic model maps the theory of change behind your program. Inputs are the resources you invest. Activities are what you do with those resources. Outputs are the direct products — countable things. Outcomes are the changes that result from your outputs. And impact is the long-term, population-level change you're ultimately trying to achieve. The most common mistake I see is confusing outputs with outcomes. Serving 150 youth is an output. Improved school attendance is an outcome. Your logic model needs to clearly articulate the causal chain — why do you believe your activities will lead to your intended outcomes?
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: EVALUATION QUESTIONS ==================== -->
+<section>
+  <span class="label">Evaluation Design</span>
+  <h2>Evaluation Questions</h2>
+
+  <p>What do you want to know? What decisions will this information inform?</p>
+
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Asks</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Process Evaluation</strong></td><td>Are we doing what we said we'd do?</td><td>Are mentoring sessions being delivered as planned? Are mentors following the curriculum?</td></tr>
+      <tr><td><strong>Outcome Evaluation</strong></td><td>Are participants changing as expected?</td><td>Did participants' school attendance improve? Did self-efficacy scores increase?</td></tr>
+      <tr><td><strong>Impact Evaluation</strong></td><td>Did we cause the change?</td><td>Is the improvement in attendance attributable to our program, or would it have happened anyway?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>For your assignment:</strong> Focus on process and outcome evaluation questions. Impact evaluation requires experimental or quasi-experimental designs that are beyond a startup nonprofit's immediate capacity.</p>
+  </div>
+
+  <aside class="notes">
+    Evaluation questions drive everything. Before you decide what data to collect, you need to know what questions you're trying to answer. Process evaluation asks whether you're implementing your program as designed — fidelity questions. Outcome evaluation asks whether participants are changing in the ways your logic model predicts. Impact evaluation asks the hardest question: did YOUR program cause the change, or would it have happened anyway? For your assignment, I want you to focus on process and outcome evaluation. Impact evaluation requires control groups, counterfactuals, and sophisticated research designs — that's important work, but it's not realistic for a startup nonprofit in its first year. What IS realistic is setting up systems to track whether you're delivering your program as planned and whether you're seeing the short-term and intermediate outcomes your logic model predicts.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: ASSIGNMENT ==================== -->
+<section>
+  <span class="label">Assignment</span>
+  <h2>C2: Program Evaluation Framework</h2>
+
+  <h3>NASPAA Competency 2 — Analyze, synthesize, think critically, solve problems</h3>
+
+  <p><strong>5–7 pages</strong> | 10 points | Builds on PAD 6327 Program Evaluation Plan</p>
+
+  <table>
+    <thead>
+      <tr><th>Section</th><th>What to Include</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Program Description</td><td>1–2 paragraphs describing your primary program, target population, and theory of change</td></tr>
+      <tr><td>Logic Model</td><td>Visualized diagram — inputs through impact. Can use a table, flowchart, or graphic</td></tr>
+      <tr><td>Evaluation Questions</td><td>3–5 process and outcome questions your evaluation will answer</td></tr>
+      <tr><td>Data Collection Plan</td><td>What data you'll collect, from whom, how often, using what instruments</td></tr>
+      <tr><td>Performance Indicators</td><td>3–5 specific indicators with measurable targets (e.g., "80% of participants complete the program")</td></tr>
+      <tr><td>Reporting Plan</td><td>How and to whom you'll report findings — board, funders, community</td></tr>
+    </tbody>
+  </table>
+
+  <aside class="notes">
+    This is your second competency assignment, worth 10 points, and it maps to NASPAA Competency 2: the ability to analyze, synthesize, think critically, and solve problems. You developed program evaluation skills in PAD 6327 — now you apply them to the nonprofit you've been building all semester. Six sections, 5 to 7 pages. The program description should be concise — one to two paragraphs that clearly describe what your program does, who it serves, and why you believe it will work. The logic model should be visualized — don't just describe it in narrative, show it in a diagram or table. Your evaluation questions should be specific and answerable. The data collection plan needs to be realistic for a startup — you won't have a research department, so think about what a small team can actually collect. Performance indicators need measurable targets — not "improve attendance" but "80 percent of participants attend at least 75 percent of sessions." And the reporting plan should address multiple audiences: your board, your funders, and your community.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: AI DEMO — LOGIC MODEL ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Build a Logic Model</h2>
+
+  <p>Use AI to <strong>draft</strong> logic model components for your specific program — then refine with your expertise.</p>
+
+  <div class="prompt-box"><span class="prompt-label">ChatGPT / Claude Prompt</span>I'm developing a nonprofit program that [brief description of your program, target population, and intended outcomes].
+
+Help me draft a logic model with the following components:
+- Inputs (resources needed)
+- Activities (what the program does)
+- Outputs (countable products/services)
+- Short-term outcomes (1-6 months)
+- Intermediate outcomes (6-18 months)
+- Long-term impact (3-5 years)
+
+For each component, provide 3-5 specific items. Make sure the causal chain is logical — each level should clearly lead to the next.</div>
+
+  <p><strong>Important:</strong> AI gives you a starting point. <em>You</em> refine it based on your knowledge of the community, evidence from the literature, and feedback from stakeholders.</p>
+
+  <aside class="notes">
+    Here's your first AI demo for the week. This prompt asks the AI to draft logic model components for your specific program. The key is in the last instruction — "make sure the causal chain is logical." AI is actually pretty good at generating plausible logic model components, but it tends to be generic. Your job is to take the output and make it specific to your context. Does the AI's list of inputs match what you actually have or can realistically obtain? Are the outcomes evidence-based — does the literature support the claim that your activities lead to these outcomes? Use AI to get the structure right, then apply your own expertise and the research to make it rigorous. I'd recommend running this prompt, reviewing the output, then revising it before you put it in your assignment.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: AI DEMO — SURVEY DESIGN ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Design a Survey</h2>
+
+  <p>Draft survey questions for program participants, then implement in Google Forms (free).</p>
+
+  <div class="prompt-box"><span class="prompt-label">ChatGPT / Claude Prompt</span>I need to create a brief survey (10-15 questions) for participants in my nonprofit program: [description].
+
+My evaluation questions are:
+1. [Your evaluation question 1]
+2. [Your evaluation question 2]
+3. [Your evaluation question 3]
+
+For each evaluation question, draft 2-4 survey items using:
+- Likert scale (strongly disagree to strongly agree)
+- Short-answer for qualitative data
+- Demographic questions (age, gender, zip code)
+
+Keep language at an 8th grade reading level. Avoid double-barreled or leading questions.</div>
+
+  <p><strong>Next step:</strong> Copy the questions into Google Forms — free, accessible, and it auto-generates a spreadsheet for analysis.</p>
+
+  <aside class="notes">
+    This second demo shows how to use AI to draft survey instruments. The prompt is structured around your evaluation questions — which means you need to have those questions clear before you use this. The AI will generate draft survey items, but you need to check them carefully. Are the Likert scale anchors appropriate? Are the questions actually measuring what you think they're measuring? Are they written at an accessible reading level for your target population? Once you're satisfied with the questions, put them into Google Forms. It's free, it's easy to share, and it automatically creates a Google Sheets spreadsheet with responses. For your assignment, you don't need to actually administer the survey — but you should describe the instrument in your data collection plan. Having a draft survey ready shows you've thought concretely about implementation.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: WEBSITE UPDATE ==================== -->
+<section>
+  <span class="label">Website</span>
+  <h2>Website Update: Programs Page</h2>
+
+  <p>Add a <strong>"Programs"</strong> page to your nonprofit website — the public-facing version of your evaluation framework.</p>
+
+  <table>
+    <thead>
+      <tr><th>Section</th><th>Content</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Program Name</td><td>Clear, descriptive name for your primary program</td></tr>
+      <tr><td>The Problem</td><td>1–2 sentences on the community need your program addresses</td></tr>
+      <tr><td>Theory of Change</td><td>Brief explanation of HOW your program creates change — simplified logic model</td></tr>
+      <tr><td>Target Outcomes</td><td>3–5 outcomes you expect to achieve — written for a general audience</td></tr>
+      <tr><td>Who We Serve</td><td>Target population description</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>Tip:</strong> Your evaluation framework assignment is the technical version. Your website is the public version. Same content, different audience — donors and community members want to know your impact story, not your methodology.</p>
+  </div>
+
+  <aside class="notes">
+    This week's website update is to add a Programs page. Think of this as the public-facing translation of your evaluation framework. Your assignment goes into technical detail — logic models, evaluation questions, data collection plans. Your website should tell the same story but in language that resonates with donors, community members, and potential partners. Lead with the problem your program addresses. Explain your theory of change in plain language. List the outcomes you expect — not in evaluation jargon, but in concrete terms that a prospective donor would find compelling. "We help youth stay in school and build relationships with caring adults" is more powerful on a website than "We improve school attendance rates and self-efficacy scores." Same substance, different framing.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: NEXT WEEK ==================== -->
+<section>
+  <span class="label">Looking Ahead</span>
+  <h2>Next Week: Leadership Case Study</h2>
+
+  <p><strong>Week 11</strong> focuses on sustainability and nonprofit leadership.</p>
+
+  <ul>
+    <li><strong>Readings:</strong> Worth Ch. 5 · Hudson Ch. 5 (pg. 151–180) · Wolf Ch. 10 · Gottlieb (2009) pp. 203–274</li>
+    <li><strong>Due:</strong> Leadership Case Study — <strong>20 points</strong> (the biggest single assignment)</li>
+    <li><strong>No workbook task</strong> next week — focus entirely on the case study</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Start early.</strong> The Leadership Case Study is worth 20% of your grade. Read the case carefully, identify stakeholders, apply leadership theories from the readings, and propose evidence-based solutions. This is not a summary — it's an analysis.</p>
+  </div>
+
+  <aside class="notes">
+    Next week is a big one. The Leadership Case Study is the single highest-value assignment in this course at 20 points. There is no workbook task next week precisely because I want you to devote your full attention to the case study. Start reading the case now if you haven't already. Successful case study analyses go beyond describing what happened — they apply theoretical frameworks, consider multiple stakeholder perspectives, and propose solutions that are realistic and grounded in evidence. We'll talk more about how to approach it next week, but don't wait until then to start. You have the case, you have the readings — begin your analysis this week.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 13: QUESTIONS ==================== -->
+<section>
+  <span class="label">Week 10</span>
+  <h2>Questions?</h2>
+
+  <p>Reminders for this week:</p>
+
+  <ul>
+    <li><strong>Submit:</strong> C2: Program Evaluation Framework (10 pts)</li>
+    <li><strong>Update:</strong> Website — add "Programs" page with theory of change and outcomes</li>
+    <li><strong>Start:</strong> Reading the Leadership Case Study for next week (20 pts)</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>Office hours:</strong> By appointment via Webcourses. Don't hesitate to reach out if you have questions about the evaluation framework — this is technical work and I'm happy to review drafts.</p>
+  </div>
+
+  <aside class="notes">
+    That's a wrap for Week 10. Three things to keep track of: submit your program evaluation framework, update your website with a Programs page, and start working on the leadership case study for next week. If you have questions about the evaluation framework — especially around logic models, evaluation questions, or data collection plans — reach out. This draws on your PAD 6327 work, but applying it to your own organization is different from the academic exercises you did in that course. I'm here to help. See you next week.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 · Dr. Seongho An · UCF</span>
+  <span>Week 10</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    transition: 'none',
+    showNotes: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08
+  });
+</script>
+</body>
+</html>

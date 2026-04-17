@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAD 6149 – Week 11: Sustainability & Nonprofit Leadership</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+<style>
+  :root {
+    --ucf-gold: #FFC904;
+    --ucf-dark: #1C1917;
+    --ucf-bg: #FAFAF7;
+    --ucf-gray: #57534E;
+    --ucf-light-gray: #E7E5E4;
+    --ucf-gold-light: #FFF8DC;
+  }
+
+  .reveal-viewport {
+    background: var(--ucf-bg);
+  }
+
+  .reveal {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-size: 32px;
+  }
+
+  .reveal .slides section {
+    border-top: 4px solid var(--ucf-gold);
+    padding-top: 32px;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ucf-dark);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal h1 { font-size: 1.8em; line-height: 1.15; }
+  .reveal h2 { font-size: 1.25em; line-height: 1.2; }
+  .reveal h3 { font-size: 1.0em; line-height: 1.3; color: var(--ucf-gray); font-weight: 600; }
+
+  .reveal p, .reveal li {
+    font-size: 0.65em;
+    line-height: 1.6;
+    color: var(--ucf-gray);
+  }
+
+  .reveal ul, .reveal ol {
+    display: block;
+    margin-left: 0;
+    padding-left: 1.2em;
+  }
+
+  .reveal li { margin-bottom: 0.4em; }
+
+  .reveal strong { color: var(--ucf-dark); font-weight: 600; }
+
+  .reveal em { font-style: italic; }
+
+  .reveal .mono {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .reveal .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ucf-gray);
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .reveal .gold-accent {
+    color: var(--ucf-gold);
+  }
+
+  .reveal .gold-bg {
+    background: var(--ucf-gold-light);
+    border-left: 3px solid var(--ucf-gold);
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .reveal .gold-bg p, .reveal .gold-bg li {
+    font-size: 0.6em;
+  }
+
+  .reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.5em;
+    margin: 12px 0;
+  }
+
+  .reveal table th {
+    background: var(--ucf-dark);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .reveal table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--ucf-light-gray);
+    color: var(--ucf-gray);
+  }
+
+  .reveal table tr:nth-child(even) {
+    background: rgba(0,0,0,0.02);
+  }
+
+  /* Title slide */
+  .reveal .title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .reveal .title-slide h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .reveal .title-slide .subtitle {
+    font-size: 0.7em;
+    color: var(--ucf-gray);
+    margin-bottom: 1.5em;
+    font-weight: 400;
+  }
+
+  .reveal .title-slide .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+    line-height: 1.8;
+  }
+
+  .reveal .brand-bar {
+    width: 60px;
+    height: 4px;
+    background: var(--ucf-gold);
+    margin-bottom: 24px;
+  }
+
+  /* Footer */
+  .slide-footer {
+    position: fixed;
+    bottom: 16px;
+    left: 40px;
+    right: 40px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #A8A29E;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Prompt box */
+  .prompt-box {
+    background: var(--ucf-dark);
+    color: #E7E5E4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.45em;
+    line-height: 1.6;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt-box .prompt-label {
+    color: var(--ucf-gold);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+
+  .two-col p, .two-col li {
+    font-size: 0.9em;
+  }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+
+  .flow-step {
+    background: var(--ucf-gold-light);
+    border: 1px solid var(--ucf-gold);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.4em;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .flow-arrow {
+    font-size: 0.5em;
+    color: var(--ucf-gray);
+  }
+
+  /* Alert box */
+  .alert-box {
+    background: #FEF2F2;
+    border-left: 3px solid #DC2626;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 4px;
+  }
+
+  .alert-box p {
+    font-size: 0.6em;
+    color: #991B1B;
+  }
+
+  .alert-box strong {
+    color: #7F1D1D;
+  }
+
+  /* Override reveal transitions */
+  .reveal .slides section .fragment {
+    transition: none;
+  }
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="title-slide">
+  <div class="brand-bar"></div>
+  <span class="label">Fall 2026 · Week 11</span>
+  <h1>Sustainability &<br>Nonprofit Leadership</h1>
+  <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+  <div class="meta">
+    Dr. Seongho An<br>
+    School of Public Administration<br>
+    University of Central Florida<br>
+    November 2, 2026
+  </div>
+  <aside class="notes">
+    Welcome to Week 11. This is one of the most important weeks of the semester for two reasons. First, we're tackling the big questions about nonprofit leadership and organizational sustainability — what makes a nonprofit last, and what kind of leader does it take to get there? Second, the Leadership Case Study is due this week. At 20 points, it's the single largest assignment in this course. There's no workbook task this week because I want all of your attention on the case study. Let's dig into leadership and sustainability, and then I'll walk you through how to approach the case study effectively.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 2: AGENDA ==================== -->
+<section>
+  <span class="label">Week 11</span>
+  <h2>Agenda</h2>
+  <ol>
+    <li>What Is Nonprofit Leadership?</li>
+    <li>Leadership Challenges in Nonprofits</li>
+    <li>Building Sustainable Organizations</li>
+    <li>The Pollyanna Principles Revisited</li>
+    <li>Leadership Styles in Practice</li>
+    <li>The Leadership Case Study (20 pts)</li>
+    <li>How to Approach the Case Study</li>
+    <li>AI Demo: Analyzing a Case Study</li>
+    <li>Connecting Leadership to Your Nonprofit</li>
+  </ol>
+
+  <div class="gold-bg">
+    <p><strong>Readings:</strong> Worth Ch. 5 · Hudson Ch. 5 (pg. 151–180) · Wolf Ch. 10 · Gottlieb (2009) pp. 203–274</p>
+    <p><strong>Due:</strong> Leadership Case Study (20 pts) · Prior coursework demonstrated: PAD 6149 (C4)</p>
+  </div>
+
+  <aside class="notes">
+    Here's our agenda. We have four substantial readings this week, each approaching leadership and sustainability from a different angle. Worth gives us the theoretical foundations of nonprofit leadership. Hudson addresses the practical challenges of leading in complex organizations. Wolf focuses on what makes nonprofits sustainable — and it's not just money. And Gottlieb's Pollyanna Principles, which we encountered earlier in the semester, return with a focus on creating transformative futures. After we work through the concepts, I'll spend significant time on the case study: what it requires, how to approach it, and how AI can help you think through it — without writing it for you. Let's start with the fundamentals.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 3: WHAT IS NONPROFIT LEADERSHIP ==================== -->
+<section>
+  <span class="label">Foundations</span>
+  <h2>What Is Nonprofit Leadership?</h2>
+
+  <h3>Worth Ch. 5 — Leadership is different from management</h3>
+
+  <div class="two-col">
+    <div>
+      <p><strong>Management</strong></p>
+      <ul>
+        <li>Plans and budgets</li>
+        <li>Organizes and staffs</li>
+        <li>Controls and solves problems</li>
+        <li>Produces predictability and order</li>
+        <li>Focuses on <em>how</em></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Leadership</strong></p>
+      <ul>
+        <li>Sets direction and vision</li>
+        <li>Aligns and inspires people</li>
+        <li>Motivates and energizes</li>
+        <li>Produces change and movement</li>
+        <li>Focuses on <em>why</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <p><strong>Transformational leadership</strong> inspires followers to transcend self-interest for the organization's mission. <strong>Transactional leadership</strong> relies on exchanges — rewards for performance. Effective nonprofit leaders use both.</p>
+
+  <aside class="notes">
+    Worth's Chapter 5 draws the classic distinction between management and leadership. Management is about doing things right — planning, organizing, controlling. Leadership is about doing the right things — vision, direction, inspiration. This distinction matters enormously in nonprofits because the work is inherently mission-driven. Your staff and volunteers are often there because they believe in the cause, not because of the paycheck. That means leadership in this sector is fundamentally about connecting people to purpose. The transformational versus transactional distinction is important here. Transformational leaders inspire people to go beyond their job descriptions because they believe in the mission. Transactional leaders motivate through clear expectations and rewards. Both are necessary — you need the inspiration AND the systems. The best nonprofit leaders know when to use each approach.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 4: LEADERSHIP CHALLENGES ==================== -->
+<section>
+  <span class="label">Challenges</span>
+  <h2>Leadership Challenges in Nonprofits</h2>
+
+  <h3>Hudson Ch. 5 — Leading in complexity</h3>
+
+  <ul>
+    <li><strong>Multiple stakeholders:</strong> Board members, funders, staff, volunteers, constituents, government agencies, partner organizations — each with different expectations and definitions of success</li>
+    <li><strong>Resource constraints:</strong> Leading with less — smaller budgets, fewer staff, higher burnout rates than the private sector</li>
+    <li><strong>Mission tension:</strong> When financial sustainability requires compromising on mission priorities. Revenue-generating programs vs. high-need, low-revenue services</li>
+    <li><strong>Board-ED relationship:</strong> The most complex leadership dynamic in nonprofits. Governance vs. management boundaries are constantly negotiated</li>
+    <li><strong>Succession and turnover:</strong> Nonprofit leadership transitions are often poorly planned, creating organizational instability</li>
+  </ul>
+
+  <p><strong>Hudson's key insight:</strong> Nonprofit leaders must be skilled at managing <em>ambiguity</em> — the work is rarely clear-cut, and the right answer often depends on who's asking.</p>
+
+  <aside class="notes">
+    Hudson's Chapter 5 is honest about how difficult nonprofit leadership actually is. You're leading organizations with multiple principals — unlike a CEO who ultimately answers to shareholders, a nonprofit ED answers to the board, the funders, the staff, the community, and sometimes the government simultaneously. These stakeholders often want different things. Resource constraints are real — you're asking people to do more with less, and burnout is endemic in this sector. The mission tension is perhaps the hardest challenge: when you need revenue to survive but the programs that generate revenue aren't the ones your mission calls you to prioritize. And the board-ED relationship is where many nonprofit leaders struggle most. Where does governance end and management begin? That line is constantly being negotiated, and when it breaks down, organizations suffer. Hudson's point about ambiguity is crucial — if you need everything to be clear and well-defined, nonprofit leadership will frustrate you.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 5: SUSTAINABLE ORGANIZATIONS ==================== -->
+<section>
+  <span class="label">Sustainability</span>
+  <h2>Building Sustainable Organizations</h2>
+
+  <h3>Wolf Ch. 10 — It's not just about money</h3>
+
+  <p>Sustainability has <strong>three dimensions</strong>:</p>
+
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>What It Means</th><th>Key Questions</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Financial</strong></td><td>Diversified revenue, adequate reserves, sound fiscal management</td><td>Can you survive losing your largest funder?</td></tr>
+      <tr><td><strong>Programmatic</strong></td><td>Programs that deliver results, adapt to changing needs, and maintain quality at scale</td><td>Are your programs evidence-based and responsive?</td></tr>
+      <tr><td><strong>Leadership</strong></td><td>Distributed leadership, succession planning, organizational culture that outlasts any individual</td><td>Could your organization survive losing its ED tomorrow?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="gold-bg">
+    <p><strong>The sustainability test:</strong> A truly sustainable nonprofit can weather financial shocks, adapt its programs to new realities, and transition its leadership without losing its identity or effectiveness.</p>
+  </div>
+
+  <aside class="notes">
+    Wolf's Chapter 10 pushes us beyond the common assumption that sustainability equals financial sustainability. Yes, financial health matters — diversified revenue, adequate reserves, responsible fiscal management. But organizations also need programmatic sustainability: are your programs actually working, can they adapt as community needs change, and can you maintain quality as you grow? And perhaps most importantly, leadership sustainability: if your founding ED leaves tomorrow, does the organization survive? Too many nonprofits are built around a single charismatic leader, and when that person leaves, the organization collapses. True sustainability means building systems, culture, and distributed leadership capacity so the organization's mission outlasts any individual. For your capstone nonprofits, think about all three dimensions. Your budget from Week 7 addressed financial sustainability. Your evaluation framework from last week addressed programmatic sustainability. This week, think about leadership.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 6: POLLYANNA PRINCIPLES ==================== -->
+<section>
+  <span class="label">Vision</span>
+  <h2>The Pollyanna Principles Revisited</h2>
+
+  <h3>Gottlieb (2009) — Creating the future, pp. 203–274</h3>
+
+  <p>Leadership as <strong>community creation</strong>, not just organizational management.</p>
+
+  <ul>
+    <li><strong>Systems thinking:</strong> Your nonprofit exists within a complex web of community systems. Effective leaders see the whole system, not just their piece of it</li>
+    <li><strong>Abundance mindset:</strong> Move from "we don't have enough" to "how do we leverage what we have?" Scarcity thinking limits possibility</li>
+    <li><strong>Community-driven change:</strong> The community is not your client — the community is your <em>partner</em>. Leadership means creating conditions for collective action</li>
+    <li><strong>Visionary pragmatism:</strong> Hold bold vision AND take practical, incremental steps. Transformation doesn't happen overnight, but it won't happen at all without a compelling picture of the future</li>
+  </ul>
+
+  <p><strong>How can leadership be transformative rather than transactional?</strong></p>
+
+  <aside class="notes">
+    We encountered Gottlieb earlier in the semester, and we return to her now because the later chapters — pages 203 through 274 — focus on how leaders create transformative futures for their communities. Gottlieb challenges the deficit-based thinking that pervades much of the nonprofit sector. Instead of starting from problems and scarcity, she argues for starting from assets and possibility. This isn't naive optimism — it's a strategic reframe. When leaders think in systems, they see opportunities for leverage and collaboration that problem-focused thinking misses. When leaders adopt an abundance mindset, they find resources and partnerships that scarcity thinking makes invisible. And when leaders position the community as partner rather than client, they build the collective ownership that sustains change long after any single organization's involvement ends. For your leadership philosophy, consider where you fall on the transactional-to-transformative spectrum.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 7: LEADERSHIP STYLES ==================== -->
+<section>
+  <span class="label">Practice</span>
+  <h2>Leadership Styles in Practice</h2>
+
+  <p>Which style fits your nonprofit — and you?</p>
+
+  <table>
+    <thead>
+      <tr><th>Style</th><th>Core Idea</th><th>Best Suited For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Servant Leadership</strong></td><td>Leader serves others first; power flows from service, not position</td><td>Community-based organizations, faith-based nonprofits</td></tr>
+      <tr><td><strong>Adaptive Leadership</strong></td><td>Diagnose the situation, mobilize people to tackle tough challenges</td><td>Orgs facing complex, ambiguous problems with no clear solutions</td></tr>
+      <tr><td><strong>Collaborative Leadership</strong></td><td>Lead across boundaries; build coalitions and shared ownership</td><td>Coalition-based advocacy, collective impact initiatives</td></tr>
+      <tr><td><strong>Social Entrepreneurship</strong></td><td>Innovate, take calculated risks, create market-based solutions</td><td>Social enterprises, earned-revenue models</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Reality:</strong> Most effective leaders draw from multiple styles depending on context. The key is self-awareness about your defaults and the ability to adapt.</p>
+
+  <aside class="notes">
+    These four leadership styles appear frequently in the nonprofit leadership literature, and each has its place. Servant leadership, rooted in Greenleaf's work, is powerful in organizations where trust and community are central. Adaptive leadership, from Heifetz, is particularly useful when the problems are complex and there are no technical solutions — which describes most social problems. Collaborative leadership is essential for anyone working in coalitions or collective impact frameworks. And social entrepreneurship brings a business-oriented lens to social problems. None of these are mutually exclusive, and the most effective leaders I've observed are fluent in multiple styles. Think about which style resonates with you naturally — that's your default. Then think about what your organization and community actually need. There may be a gap between your preference and the situation's demands, and closing that gap is part of your leadership development.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 8: CASE STUDY ASSIGNMENT ==================== -->
+<section>
+  <span class="label">Assignment</span>
+  <h2>Leadership Case Study — 20 Points</h2>
+
+  <h3>The biggest single assignment in this course</h3>
+
+  <p>Evaluate a common leadership situation that nonprofit managers face. Identify problems, analyze root causes, and propose solutions.</p>
+
+  <ul>
+    <li><strong>Identify the core problem(s):</strong> What went wrong? What structural, cultural, or leadership factors contributed?</li>
+    <li><strong>Stakeholder analysis:</strong> Who is affected? What are their interests and perspectives?</li>
+    <li><strong>Apply leadership theories:</strong> Use the frameworks from this week's readings — transformational/transactional, adaptive, servant, etc.</li>
+    <li><strong>Consider ethical dimensions:</strong> What values are in tension? What are the implications of different courses of action?</li>
+    <li><strong>Propose realistic solutions:</strong> Evidence-based, actionable, and grounded in the literature</li>
+  </ul>
+
+  <div class="alert-box">
+    <p><strong>Worth 20% of your grade.</strong> This is an analysis, not a summary. Describing what happened in the case is necessary background, but the bulk of your paper should be analysis and recommendations.</p>
+  </div>
+
+  <aside class="notes">
+    Let me be direct about the stakes: this assignment is worth 20 points, making it the single largest graded component in this course. It demonstrates the prior coursework you've developed throughout PAD 6149. The case study presents a real-world leadership challenge in a nonprofit setting. Your job is not to summarize what happened — I've read the case, I know what happened. Your job is to analyze WHY it happened, what leadership and organizational factors contributed, who is affected and how, and what should be done about it. The most common mistake is spending too much space on description and not enough on analysis. I'd recommend no more than one page of case summary. The rest should be your analysis: applying theoretical frameworks, examining stakeholder perspectives, considering ethical implications, and proposing solutions that are realistic and grounded in evidence from the readings.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 9: HOW TO APPROACH ==================== -->
+<section>
+  <span class="label">Strategy</span>
+  <h2>How to Approach the Case Study</h2>
+
+  <div class="flow">
+    <div class="flow-step"><strong>1. Read</strong><br>Read the case<br>at least twice</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step"><strong>2. Identify</strong><br>Core problems<br>& stakeholders</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step"><strong>3. Theorize</strong><br>Apply leadership<br>frameworks</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step"><strong>4. Analyze</strong><br>Root causes &<br>ethical tensions</div>
+    <span class="flow-arrow">&#8594;</span>
+    <div class="flow-step"><strong>5. Recommend</strong><br>Evidence-based<br>solutions</div>
+  </div>
+
+  <ul>
+    <li><strong>Read the case twice:</strong> First for the story, second for the underlying dynamics</li>
+    <li><strong>Map the stakeholders:</strong> Who has power? Who is affected? Where do interests conflict?</li>
+    <li><strong>Choose 2–3 theoretical frameworks:</strong> Don't try to use everything — pick the frameworks that best illuminate the case</li>
+    <li><strong>Ground your solutions in evidence:</strong> Cite the readings. "The literature suggests..." is stronger than "I think..."</li>
+    <li><strong>Be specific:</strong> "Implement quarterly board-ED check-ins using a structured agenda" is better than "improve communication"</li>
+  </ul>
+
+  <aside class="notes">
+    Here's my recommended approach. Read the case at least twice. The first reading is for comprehension — what happened? The second reading is analytical — why did it happen? What patterns do you see? After reading, identify the core problems and map the stakeholders. Then choose your theoretical frameworks. Don't try to apply every theory from every reading — pick two or three that genuinely illuminate the situation. If it's a case about board-ED conflict, adaptive leadership and governance theory are probably more useful than social entrepreneurship. If it's about organizational change resistance, transformational leadership and change management frameworks make sense. Ground everything in the literature — cite your sources. And when you get to recommendations, be specific. Vague recommendations like "improve communication" or "provide more training" don't demonstrate the analytical thinking this assignment is designed to assess. Tell me exactly what you'd do, why, and what evidence supports your approach.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 10: AI DEMO ==================== -->
+<section>
+  <span class="label">AI Demo</span>
+  <h2>Analyzing a Case Study</h2>
+
+  <p>Use AI as a <strong>thinking partner</strong> — not as a ghostwriter.</p>
+
+  <div class="prompt-box"><span class="prompt-label">Claude / ChatGPT Prompt — Analytical Framework</span>Help me create an analytical framework for a nonprofit leadership case involving [brief description of the situation — e.g., "a board-ED conflict over strategic direction in a growing human services organization"].
+
+What leadership theories should I consider?
+What stakeholder perspectives should I examine?
+What ethical dimensions are at play?
+What are the common root causes in situations like this?
+
+Do NOT write my analysis. Help me think through HOW to analyze this.</div>
+
+  <div class="gold-bg">
+    <p><strong>The line:</strong> AI helps you <em>structure</em> your thinking and identify relevant frameworks. <em>You</em> apply those frameworks to the specific case, draw on the readings, and develop your own argument. The analysis must be yours.</p>
+  </div>
+
+  <aside class="notes">
+    This is an important demo because it illustrates the ethical use of AI on a major assignment. The prompt specifically asks for an analytical framework — not for the analysis itself. Notice the last line: "Do NOT write my analysis. Help me think through HOW to analyze this." The AI will suggest relevant theories, stakeholder perspectives to consider, and common patterns in similar situations. That's valuable — it's like having a study partner who's read a lot of management literature. But the actual analysis — applying those frameworks to the specific case, interpreting the evidence, developing your argument, proposing your solutions — that has to be your work. If I read a case study analysis that sounds like ChatGPT wrote it — generic, surface-level, not grounded in our specific readings — I will know. Use AI to sharpen your thinking, not to replace it.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 11: CONNECTING TO YOUR NONPROFIT ==================== -->
+<section>
+  <span class="label">Application</span>
+  <h2>Connecting Leadership to Your Nonprofit</h2>
+
+  <p>Three questions to add to your workbook reflection:</p>
+
+  <ul>
+    <li><strong>How will YOU lead?</strong> What is your default leadership style? Is it the right fit for your organization's mission and community context?</li>
+    <li><strong>What challenges do you anticipate?</strong> Board dynamics, resource constraints, mission drift, burnout, stakeholder conflicts — what keeps you up at night?</li>
+    <li><strong>What is your leadership philosophy?</strong> In 2–3 sentences, articulate what you believe about leadership in the nonprofit sector. Ground it in the readings, but make it personal.</li>
+  </ul>
+
+  <div class="gold-bg">
+    <p><strong>No formal workbook task this week.</strong> But use these reflection questions as you work on the case study. The case study will make you think about leadership failures and challenges — use that thinking to inform how you'll lead your own organization.</p>
+  </div>
+
+  <aside class="notes">
+    Even though there's no formal workbook task this week, I want you to reflect on these three questions as you work through the case study. The case study forces you to analyze someone else's leadership — the reflection brings it back to you. What kind of leader will you be? Every nonprofit you've been building in this course will need leadership, and that leader is you — at least hypothetically. Are you a servant leader? An adaptive leader? A social entrepreneur? What challenges do you anticipate — and how will you prepare for them? Writing a brief leadership philosophy is a powerful exercise. Two to three sentences that capture what you believe about leading in this sector. It should be grounded in what you've read but personal enough that it's genuinely yours. Tuck this into your workbook — it'll inform your final pitch in a few weeks.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 12: NEXT WEEK ==================== -->
+<section>
+  <span class="label">Looking Ahead</span>
+  <h2>Next Week: Capacity Building & Managing Change</h2>
+
+  <ul>
+    <li><strong>Readings:</strong> Worth Ch. 7 (pg. 198–208) · Hudson Ch. 1 & Ch. 3 · Millesen, Carman & Bies (2010) · Wolf Ch. 10 · Gottlieb pp. 279–324 · Guo & Acar (2005) · Strichman, Bickel & Marshood (2008)</li>
+    <li><strong>Due:</strong> Workbook task — capacity building plan</li>
+    <li><strong>Topic:</strong> Organizational capacity, inter-organizational collaboration, adaptive capacity, managing change</li>
+  </ul>
+
+  <p>It's a heavy reading week — seven sources. Start early. The workbook task asks you to think about what your organization needs to build capacity for growth from Year 1 to Year 3.</p>
+
+  <aside class="notes">
+    Next week is Week 12 — capacity building and managing change. It's a reading-heavy week with seven sources, so I'd encourage you to start early. The readings cover a range of perspectives: organizational capacity, why nonprofits engage in capacity building, how collaboration builds capacity, adaptive capacity in changing environments, and managing organizational change. The workbook task will ask you to develop a capacity building plan for your nonprofit — what infrastructure, systems, and partnerships do you need to grow from a startup to a mature organization? It's an important bridge between where your nonprofit is now on paper and where you want it to be in three to five years. But this week, focus on the case study. Get it done well. It's worth 20 percent of your grade.
+  </aside>
+</section>
+
+<!-- ==================== SLIDE 13: QUESTIONS ==================== -->
+<section>
+  <span class="label">Week 11</span>
+  <h2>Questions?</h2>
+
+  <p>Reminders for this week:</p>
+
+  <ul>
+    <li><strong>Submit:</strong> Leadership Case Study — 20 points (the biggest assignment)</li>
+    <li><strong>Reflect:</strong> Your leadership philosophy and anticipated challenges</li>
+    <li><strong>Start:</strong> Next week's readings (7 sources — start early)</li>
+  </ul>
+
+  <div class="alert-box">
+    <p><strong>Withdrawal Deadline:</strong> Friday, November 6, 2026. If you are considering withdrawing from this course, this is the last day to do so without academic penalty. Please reach out to me or your advisor before making this decision.</p>
+  </div>
+
+  <aside class="notes">
+    That's Week 11. The most important thing this week is the Leadership Case Study — 20 points, the largest single assignment. Give it the time and thought it deserves. Use the analytical framework we discussed, ground your analysis in the readings, and be specific in your recommendations. One important administrative note: the withdrawal deadline is Friday, November 6. If any of you are considering withdrawing, please talk to me or your advisor first. I'd rather help you develop a plan to finish strong than see you withdraw if it's avoidable. But if withdrawal is the right decision for you, this is the deadline. Alright — questions? Otherwise, I'll see you next week for capacity building and managing change.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<div class="slide-footer">
+  <span>PAD 6149 · Dr. Seongho An · UCF</span>
+  <span>Week 11</span>
+</div>
+
+<script type="module">
+  import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+  Reveal.initialize({
+    hash: true,
+    transition: 'none',
+    showNotes: false,
+    width: 1200,
+    height: 700,
+    margin: 0.08
+  });
+</script>
+</body>
+</html>

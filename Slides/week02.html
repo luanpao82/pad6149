@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 2 — Understanding the Nonprofit Sector &amp; Organizations | PAD 6149</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/white.css">
+
+  <style>
+    :root {
+      --ucf-gold: #FFC904;
+      --ucf-dark: #1C1917;
+      --ucf-bg: #FAFAF7;
+      --ucf-muted: #57534E;
+      --ucf-light-border: #E7E5E4;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    .reveal-viewport {
+      background: var(--ucf-bg);
+    }
+
+    .reveal {
+      font-family: var(--font-body);
+      font-size: 32px;
+      color: var(--ucf-dark);
+    }
+
+    .reveal .slides section {
+      border-top: 4px solid var(--ucf-gold);
+      padding-top: 1.2em;
+      text-align: left;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      font-family: var(--font-body);
+      color: var(--ucf-dark);
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: -0.01em;
+      text-align: left;
+    }
+
+    .reveal h1 {
+      font-size: 1.8em;
+      margin-bottom: 0.1em;
+    }
+
+    .reveal h2 {
+      font-size: 1.3em;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal h3 {
+      font-size: 1.0em;
+      color: var(--ucf-muted);
+      font-weight: 600;
+      margin-bottom: 0.4em;
+    }
+
+    .reveal p,
+    .reveal li {
+      font-size: 0.72em;
+      line-height: 1.6;
+      color: var(--ucf-dark);
+    }
+
+    .reveal ul,
+    .reveal ol {
+      display: block;
+      margin-left: 0.6em;
+    }
+
+    .reveal ul li,
+    .reveal ol li {
+      margin-bottom: 0.35em;
+    }
+
+    .reveal strong {
+      font-weight: 600;
+    }
+
+    .reveal em {
+      font-style: italic;
+      color: var(--ucf-muted);
+    }
+
+    .reveal .slide-footer {
+      position: fixed;
+      bottom: 16px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ucf-muted);
+      letter-spacing: 0.02em;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Title slide */
+    .reveal .title-slide {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .reveal .title-slide h1 {
+      font-size: 2.0em;
+      line-height: 1.15;
+      margin-bottom: 0.15em;
+    }
+
+    .reveal .title-slide .subtitle {
+      font-size: 0.72em;
+      color: var(--ucf-muted);
+      margin-bottom: 1.5em;
+      font-weight: 400;
+    }
+
+    .reveal .title-slide .meta {
+      font-family: var(--font-mono);
+      font-size: 0.48em;
+      color: var(--ucf-muted);
+      line-height: 1.8;
+    }
+
+    .reveal .title-slide .meta span {
+      display: block;
+    }
+
+    /* Label tag */
+    .label {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.55em;
+      font-weight: 500;
+      color: var(--ucf-muted);
+      background: #F5F5F0;
+      border: 1px solid var(--ucf-light-border);
+      border-radius: 4px;
+      padding: 2px 10px;
+      margin-bottom: 0.6em;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    /* Gold accent left border for callouts */
+    .callout {
+      border-left: 4px solid var(--ucf-gold);
+      padding: 0.5em 0.8em;
+      background: rgba(255, 201, 4, 0.06);
+      margin: 0.6em 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .callout p {
+      margin: 0;
+    }
+
+    /* AI demo styling */
+    .prompt-box {
+      font-family: var(--font-mono);
+      font-size: 0.58em;
+      background: #292524;
+      color: #FAFAF7;
+      padding: 0.7em 1em;
+      border-radius: 6px;
+      margin: 0.5em 0;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* Stat grid */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1em;
+      margin: 0.8em 0;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 0.6em;
+      border: 1px solid var(--ucf-light-border);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .stat-card .number {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: var(--ucf-dark);
+      display: block;
+    }
+
+    .stat-card .desc {
+      font-family: var(--font-mono);
+      font-size: 0.48em;
+      color: var(--ucf-muted);
+      display: block;
+      margin-top: 0.2em;
+    }
+
+    /* Two-column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2em;
+      margin-top: 0.5em;
+    }
+
+    .two-col > div > p:first-child,
+    .two-col > div > h3:first-child {
+      margin-top: 0;
+    }
+
+    /* Timeline */
+    .timeline-item {
+      display: flex;
+      gap: 0.6em;
+      margin-bottom: 0.5em;
+      font-size: 0.68em;
+      line-height: 1.5;
+    }
+
+    .timeline-item .era {
+      font-family: var(--font-mono);
+      font-weight: 500;
+      color: var(--ucf-muted);
+      min-width: 5.5em;
+      flex-shrink: 0;
+      font-size: 0.85em;
+    }
+
+    /* Questions slide */
+    .reveal .questions-slide {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .reveal .questions-slide h1 {
+      text-align: center;
+      font-size: 2.2em;
+    }
+
+    .reveal .questions-slide .contact-info {
+      font-family: var(--font-mono);
+      font-size: 0.48em;
+      color: var(--ucf-muted);
+      line-height: 2.0;
+      margin-top: 1em;
+    }
+
+    /* Override reveal.js defaults */
+    .reveal .slides section .fragment.visible {
+      opacity: 1;
+    }
+
+    .reveal .progress {
+      color: var(--ucf-gold);
+      height: 3px;
+    }
+
+    .reveal .controls {
+      color: var(--ucf-muted);
+    }
+
+    /* Reading reference style */
+    .reading-ref {
+      font-family: var(--font-mono);
+      font-size: 0.50em;
+      color: var(--ucf-muted);
+      margin-top: 0.8em;
+      padding-top: 0.4em;
+      border-top: 1px solid var(--ucf-light-border);
+    }
+
+    /* Due date badge */
+    .due-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.55em;
+      font-weight: 500;
+      color: #92400E;
+      background: #FEF3C7;
+      border: 1px solid #FDE68A;
+      border-radius: 4px;
+      padding: 2px 10px;
+      margin-bottom: 0.4em;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+
+    <!-- Persistent Footer -->
+    <div class="slide-footer">PAD 6149 – Build Your Nonprofit &nbsp;|&nbsp; Week 2 &nbsp;|&nbsp; Dr. Seongho An</div>
+
+    <div class="slides">
+
+      <!-- SLIDE 1: Title -->
+      <section class="title-slide">
+        <div class="label">Week 2 — August 31, 2026</div>
+        <h1>Understanding the Nonprofit Sector &amp; Organizations</h1>
+        <p class="subtitle">PAD 6149 – Nonprofit Administration: Build Your Nonprofit</p>
+        <div class="meta">
+          <span>Dr. Seongho An</span>
+          <span>University of Central Florida</span>
+          <span>Master of Nonprofit Management</span>
+        </div>
+        <aside class="notes">
+          Welcome to Week 2. This week we build the foundational knowledge you need to understand the nonprofit sector — its legal structure, scope, theoretical justifications, and history. Everything this week connects to YOUR nonprofit concept.
+        </aside>
+      </section>
+
+      <!-- SLIDE 2: Agenda -->
+      <section>
+        <div class="label">Agenda</div>
+        <h2>What We Cover Today</h2>
+        <ol>
+          <li>What is the nonprofit sector?</li>
+          <li>Legal foundations and organizational types</li>
+          <li>Size and scope of the sector</li>
+          <li>Why do nonprofits exist? Theoretical perspectives</li>
+          <li>Historical context</li>
+          <li>Rethinking assumptions: The Pollyanna Principles</li>
+          <li>Connecting to <strong>your</strong> nonprofit concept</li>
+          <li>This week's assignment and workbook tasks</li>
+        </ol>
+        <aside class="notes">
+          Here is our roadmap for the week. We are covering a lot of ground because you need this conceptual foundation before you can make smart design decisions about your own organization. Every reading this week is purposeful — it gives you a lens for understanding the sector your nonprofit will operate in.
+        </aside>
+      </section>
+
+      <!-- SLIDE 3: What Is the Nonprofit Sector? -->
+      <section>
+        <div class="label">Foundations</div>
+        <h2>What Is the Nonprofit Sector?</h2>
+        <div class="two-col">
+          <div>
+            <h3>The Three-Sector Model</h3>
+            <ul>
+              <li><strong>Government</strong> — public goods, regulation, redistribution</li>
+              <li><strong>Business</strong> — private goods, profit-driven, market exchange</li>
+              <li><strong>Nonprofit</strong> — mission-driven, voluntary, tax-exempt</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Key Characteristics</h3>
+            <ul>
+              <li>Organized and institutional</li>
+              <li>Private (separate from government)</li>
+              <li>Non-profit-distributing</li>
+              <li>Self-governing</li>
+              <li>Voluntary in nature</li>
+              <li>Governed by a board of directors</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reading-ref">Worth (2020), Ch. 1 — "An Overview of the Nonprofit Sector"</div>
+        <aside class="notes">
+          Worth lays out the structural-operational definition of nonprofit organizations. The nondistribution constraint is the legal cornerstone — nonprofits can generate surplus revenue, but they cannot distribute it to owners or shareholders. This is what fundamentally distinguishes a nonprofit from a for-profit business. Also emphasize that "nonprofit" does not mean "no money" — it means no private inurement. These organizations need revenue to survive. The five characteristics listed here come from the Johns Hopkins Comparative Nonprofit Sector Project.
+        </aside>
+      </section>
+
+      <!-- SLIDE 4: Size & Scope -->
+      <section>
+        <div class="label">Scale</div>
+        <h2>Size &amp; Scope of the Sector</h2>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="number">~1.8M</span>
+            <span class="desc">Registered nonprofits in the U.S.</span>
+          </div>
+          <div class="stat-card">
+            <span class="number">$2.62T</span>
+            <span class="desc">Annual revenue</span>
+          </div>
+          <div class="stat-card">
+            <span class="number">12.5M</span>
+            <span class="desc">Paid employees (3rd largest workforce)</span>
+          </div>
+        </div>
+        <ul>
+          <li>Nonprofits account for approximately <strong>5.7% of GDP</strong></li>
+          <li>Sector has grown faster than both business and government over the past 25 years</li>
+          <li>Over 60 million Americans volunteer annually (~$195 billion in estimated value)</li>
+          <li>Roughly 1 in 10 U.S. workers is employed by a nonprofit</li>
+        </ul>
+        <div class="reading-ref">Sherlock &amp; Gravelle (2009); Worth (2020), Ch. 2</div>
+        <aside class="notes">
+          These numbers matter because they establish that the nonprofit sector is not a marginal part of the economy — it is massive. When students say they want to "start a nonprofit," they are entering a sector with substantial infrastructure, regulation, and competition. The Sherlock and Gravelle report provides the tax policy context: the sector's growth has prompted ongoing debates about whether tax exemption is still justified across all types of nonprofits. Note that these figures include hospitals and universities, which account for a disproportionate share of revenue.
+        </aside>
+      </section>
+
+      <!-- SLIDE 5: Types of Nonprofit Organizations -->
+      <section>
+        <div class="label">Legal Structure</div>
+        <h2>Types of Nonprofit Organizations</h2>
+        <div class="two-col">
+          <div>
+            <h3>501(c)(3) — Tax-Exempt, Tax-Deductible</h3>
+            <ul>
+              <li><strong>Public charities</strong> — broad public support (e.g., food banks, schools, hospitals)</li>
+              <li><strong>Private foundations</strong> — typically single-source funding (e.g., Gates Foundation)</li>
+              <li>Donations are tax-deductible for donors</li>
+              <li>Limited lobbying; no partisan political activity</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Other 501(c) Types</h3>
+            <ul>
+              <li><strong>501(c)(4)</strong> — Social welfare orgs (e.g., advocacy groups)</li>
+              <li><strong>501(c)(6)</strong> — Business leagues, chambers of commerce</li>
+              <li><strong>501(c)(7)</strong> — Social and recreational clubs</li>
+              <li>29 total categories under Section 501(c)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <p><strong>For your nonprofit:</strong> What NTEE code best describes your organization? What 501(c) classification would you seek? Most of you will be 501(c)(3) public charities — but know why.</p>
+        </div>
+        <aside class="notes">
+          The NTEE (National Taxonomy of Exempt Entities) is the classification system used by the IRS and Candid/GuideStar to categorize nonprofits. Students should look up the NTEE codes and identify where their proposed nonprofit fits. This matters for benchmarking — when they later research comparable organizations, they will use NTEE codes to find peers. Emphasize the public charity vs. private foundation distinction: the public support test determines classification, and it affects governance, grantmaking, and donor relations.
+        </aside>
+      </section>
+
+      <!-- SLIDE 6: Why Do Nonprofits Exist? -->
+      <section>
+        <div class="label">Theory</div>
+        <h2>Why Do Nonprofits Exist?</h2>
+        <ul>
+          <li><strong>Market failure theory</strong> (Weisbrod) — markets underproduce public goods; nonprofits fill the gap</li>
+          <li><strong>Government failure theory</strong> (Weisbrod) — government serves the median voter; nonprofits serve heterogeneous demand</li>
+          <li><strong>Contract failure theory</strong> (Hansmann) — when consumers cannot easily evaluate quality, the nondistribution constraint signals trustworthiness</li>
+          <li><strong>Voluntary failure theory</strong> (Salamon) — nonprofits are the default; government steps in when voluntary action fails</li>
+        </ul>
+        <div class="callout">
+          <p><strong>Chang &amp; Tuckman (1996):</strong> Nonprofits produce public goods, quasi-public goods, and private goods with positive externalities. The mix matters — and it shapes how you fund your work.</p>
+        </div>
+        <div class="reading-ref">Chang &amp; Tuckman (1996); Worth (2020), Ch. 3</div>
+        <aside class="notes">
+          This is the most conceptually dense slide of the week. The key insight for students: there is no single theory that explains why nonprofits exist. Each theory highlights a different rationale, and most real-world nonprofits draw on multiple justifications simultaneously. Chang and Tuckman's contribution is practical — by classifying the types of goods nonprofits produce, they help us understand revenue strategy. If your nonprofit primarily produces public goods, you will rely on donations and grants. If you produce private goods with positive externalities, you can charge fees. This connects directly to their business model decisions later in the course.
+        </aside>
+      </section>
+
+      <!-- SLIDE 7: Historical Context -->
+      <section>
+        <div class="label">History</div>
+        <h2>Nonprofits in American History</h2>
+        <div class="timeline-item">
+          <span class="era">Colonial</span>
+          <span>Mutual aid societies, churches, and charitable trusts — community self-governance before the state</span>
+        </div>
+        <div class="timeline-item">
+          <span class="era">1800s</span>
+          <span>Tocqueville's "voluntary associations" — hospitals, universities, and reform movements emerge</span>
+        </div>
+        <div class="timeline-item">
+          <span class="era">Progressive</span>
+          <span>Professionalization of charity — social work, foundations (Carnegie, Rockefeller), and the Community Chest</span>
+        </div>
+        <div class="timeline-item">
+          <span class="era">1950s–70s</span>
+          <span>Great Society expansion — government contracts with nonprofits to deliver social services at scale</span>
+        </div>
+        <div class="timeline-item">
+          <span class="era">1980s–00s</span>
+          <span>Reagan-era devolution, rise of "nonprofit management" as a field, accountability and outcomes focus</span>
+        </div>
+        <div class="timeline-item">
+          <span class="era">2010s–Now</span>
+          <span>Social enterprise, collective impact, racial equity reckoning, tech-enabled philanthropy</span>
+        </div>
+        <div class="callout">
+          <p><strong>Key point:</strong> The sector is always evolving. Your nonprofit enters a <em>living</em> tradition, not a static system.</p>
+        </div>
+        <div class="reading-ref">Hammack (2002) — "Nonprofits in American History"</div>
+        <aside class="notes">
+          Hammack's essay is essential for understanding that the nonprofit sector is not a natural or inevitable feature of American life — it was constructed over centuries through legal decisions, cultural norms, and political choices. The key turning points: the Dartmouth College case (1819) establishing the legal independence of charitable corporations; the creation of the income tax and charitable deduction (1913/1917); and the massive expansion of government-nonprofit contracting in the 1960s–70s. Students should understand that their nonprofit will be shaped by this history whether they know it or not.
+        </aside>
+      </section>
+
+      <!-- SLIDE 8: The Pollyanna Principles -->
+      <section>
+        <div class="label">Rethinking Assumptions</div>
+        <h2>The Pollyanna Principles</h2>
+        <p>Gottlieb (2009) challenges conventional nonprofit thinking:</p>
+        <ul>
+          <li><strong>Create the future</strong>, not just react to the past</li>
+          <li>The <strong>end</strong> you are working toward must be <strong>visionary</strong>, not incremental</li>
+          <li>Everyone in a healthy community is a <strong>contributor</strong>, not just a recipient</li>
+          <li><strong>"Ordinary people"</strong> are capable of extraordinary impact</li>
+          <li>Nonprofits must be guided by what <strong>creates the most good</strong>, not what raises the most money</li>
+        </ul>
+        <div class="callout">
+          <p><strong>For your nonprofit:</strong> Is your mission statement about <em>fixing a problem</em> or <em>creating a future</em>? There is a difference — and it shapes everything from your programs to your fundraising pitch.</p>
+        </div>
+        <div class="reading-ref">Gottlieb (2009), pp. 1–117 — The Pollyanna Principles</div>
+        <aside class="notes">
+          Gottlieb's work is the counterweight to the more technical readings this week. She argues that most nonprofits are trapped in a deficit-based mindset — defining themselves by the problems they fight rather than the futures they are building. This is a powerful reframe for students designing new organizations. Push them to ask: Does my mission statement describe a world I want to create, or just a problem I want to reduce? The practical implication is real — asset-based framing attracts different funders, different board members, and different community partners than deficit-based framing.
+        </aside>
+      </section>
+
+      <!-- SLIDE 9: Connecting to Your Nonprofit -->
+      <section>
+        <div class="label">Application</div>
+        <h2>Connecting to Your Nonprofit</h2>
+        <p>Pull out your concept statement from Week 1 and think through:</p>
+        <ul>
+          <li><strong>Sector placement:</strong> Where does your org fit in the three-sector model?</li>
+          <li><strong>Legal structure:</strong> Will you be a 501(c)(3) public charity? Why?</li>
+          <li><strong>NTEE classification:</strong> What code best describes your work?</li>
+          <li><strong>Theoretical justification:</strong> Which failure theory best explains why your nonprofit needs to exist?</li>
+          <li><strong>Ecosystem:</strong> Who else is already doing this work? Are they competitors, collaborators, or both?</li>
+        </ul>
+        <div class="callout">
+          <p><strong>This week's workbook:</strong> Research 2–3 existing organizations in your space. Identify your <strong>role-model org</strong> — the one you most want to learn from.</p>
+        </div>
+        <aside class="notes">
+          This is the bridge slide. Everything conceptual from the first half of the deck now gets applied to their specific nonprofit. Give students 5–10 minutes to work through these questions independently or in breakout rooms. The ecosystem question is critical — many students assume they are the first to think of their idea. The workbook task forces them to discover who is already in the space and learn from them. Emphasize: finding existing organizations doing similar work is a good thing, not a threat. It validates demand.
+        </aside>
+      </section>
+
+      <!-- SLIDE 10: Assignment — Interview Plan -->
+      <section>
+        <div class="due-badge">Due this week — 2 pts</div>
+        <h2>Assignment: Interview Plan</h2>
+        <p>Submit your interview plan for the nonprofit leader interview:</p>
+        <ul>
+          <li><strong>Who</strong> will you contact? (Name, title, organization)</li>
+          <li><strong>Why</strong> this person or organization? (Connection to your nonprofit concept)</li>
+          <li><strong>8–10 interview questions</strong> covering:
+            <ul>
+              <li>Origin story and mission</li>
+              <li>Funding model and financial sustainability</li>
+              <li>Governance and leadership structure</li>
+              <li>Biggest challenges and lessons learned</li>
+              <li>Advice for someone starting a new nonprofit</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">
+          <p><strong>Tip:</strong> Choose someone whose organization resembles what you want to build. The closer the fit, the more useful the conversation.</p>
+        </div>
+        <div class="reading-ref">Case: Rowe &amp; Conway Dato-On (2013), Chapter 1</div>
+        <aside class="notes">
+          The interview plan is a low-stakes assignment designed to get students moving on their primary research early. The case reading from Rowe and Conway Dato-On provides a model for how social entrepreneurs research and learn from existing organizations. Common student mistakes: choosing someone too famous or too distant to actually interview; writing vague questions; not explaining why this particular person matters. Push them to be specific and strategic. The outreach email they draft in the workbook task is the practical companion to this assignment.
+        </aside>
+      </section>
+
+      <!-- SLIDE 11: AI Demo — Research -->
+      <section>
+        <div class="label">AI Demo</div>
+        <h2>Researching Your Role-Model Org</h2>
+        <p>Use <strong>Perplexity.ai</strong> to research a nonprofit you admire:</p>
+        <div class="prompt-box">Tell me about [Organization Name]: their mission, annual
+budget, key programs, leadership team, major funding
+sources, and any recent news or challenges.</div>
+        <p style="margin-top: 0.6em;"><strong>Then verify:</strong></p>
+        <ul>
+          <li>Check <strong>GuideStar/Candid</strong> (candid.org) for Form 990 data — actual revenue, expenses, executive compensation</li>
+          <li>Visit the <strong>organization's website</strong> for current programs and leadership</li>
+          <li>Search <strong>ProPublica Nonprofit Explorer</strong> for financial trends</li>
+        </ul>
+        <div class="callout">
+          <p><strong>Rule:</strong> AI is a starting point, not an endpoint. Always verify financial data and leadership names against primary sources.</p>
+        </div>
+        <aside class="notes">
+          Walk through a live demo if possible. Pick a well-known nonprofit — say, Feeding America or Habitat for Humanity — and run the Perplexity query. Then open Candid and show students how to find the 990 data. The point is not that AI is unreliable — it is actually quite useful for this kind of research — but that financial figures and personnel details must be verified. This is also a good moment to introduce students to Form 990 as a public document. Many students do not know that nonprofit financial data is publicly available.
+        </aside>
+      </section>
+
+      <!-- SLIDE 12: AI Demo — Outreach Email -->
+      <section>
+        <div class="label">AI Demo</div>
+        <h2>Drafting Your Outreach Email</h2>
+        <p>Use <strong>Claude.ai</strong> to draft a professional interview request:</p>
+        <div class="prompt-box">Help me write a professional email to [Name],
+[Title] at [Organization], requesting a 30-minute
+informational interview. I'm a graduate student in
+UCF's Master of Nonprofit Management program
+building a nonprofit focused on [your topic].
+I want to learn about their experience with
+[specific aspect].</div>
+        <p style="margin-top: 0.6em;"><strong>After you get the draft:</strong></p>
+        <ul>
+          <li><strong>Personalize it</strong> — reference something specific about their work</li>
+          <li><strong>Be concrete</strong> — propose specific dates and a time limit (30 min)</li>
+          <li><strong>Be professional</strong> — use your UCF email address</li>
+          <li><strong>Follow up</strong> — if no response in 5–7 days, send one polite follow-up</li>
+        </ul>
+        <aside class="notes">
+          This is a practical skill-building moment. Many graduate students have never written a cold outreach email to a professional, and they are often anxious about it. Show the Claude output, then model how to revise it: add a specific reference to the person's work, adjust the tone to sound like a real human, and cut any generic flattery. Emphasize that AI-generated emails sound AI-generated if you do not edit them. The goal is to use AI as a drafting tool, not a replacement for your own voice. Also remind students: most nonprofit professionals are generous with their time when a graduate student asks respectfully.
+        </aside>
+      </section>
+
+      <!-- SLIDE 13: Workbook Task -->
+      <section>
+        <div class="label">Workbook</div>
+        <h2>This Week's Workbook Tasks</h2>
+        <ol>
+          <li><strong>Research 2–3 existing organizations</strong> in your issue area
+            <ul>
+              <li>What is their mission? Who do they serve?</li>
+              <li>How are they funded? What is their approximate budget?</li>
+              <li>What can you learn from their model?</li>
+            </ul>
+          </li>
+          <li><strong>Identify your role-model organization</strong>
+            <ul>
+              <li>The one org you most want to learn from and emulate</li>
+              <li>Write a brief rationale: why this org?</li>
+            </ul>
+          </li>
+          <li><strong>Draft your outreach email</strong>
+            <ul>
+              <li>Use AI to generate a first draft, then personalize it</li>
+              <li>Send it this week — do not wait</li>
+            </ul>
+          </li>
+        </ol>
+        <aside class="notes">
+          The workbook is the running document where students build their nonprofit piece by piece throughout the semester. This week's tasks are about environmental scanning — understanding who else is in the space and beginning to build relationships. Remind students that identifying existing organizations is not about competition; it is about learning, potential collaboration, and demonstrating to future funders that you understand the landscape. The outreach email connects directly to the Interview Plan assignment.
+        </aside>
+      </section>
+
+      <!-- SLIDE 14: Next Week Preview -->
+      <section>
+        <div class="label">Looking Ahead</div>
+        <h2>Next Week: Cross-Sector Collaborations + Build Your Website</h2>
+        <div class="two-col">
+          <div>
+            <h3>Week 3 Topics</h3>
+            <ul>
+              <li>Cross-sector collaborations and partnerships</li>
+              <li>Government–nonprofit relationships</li>
+              <li>Collective impact frameworks</li>
+            </ul>
+            <p style="margin-top: 0.6em;"><strong>Readings:</strong> Worth (2020), Ch. 8 &amp; 11</p>
+          </div>
+          <div>
+            <h3>Hands-On Workshop</h3>
+            <ul>
+              <li>You will <strong>build your nonprofit's website</strong></li>
+              <li>No coding experience required</li>
+              <li>Come ready with: your mission, a brief description, and your role-model org research</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <p><strong>Note:</strong> Labor Day is September 7 — no classes that week for face-to-face courses. We are online, so our schedule is unaffected, but enjoy the long weekend.</p>
+        </div>
+        <aside class="notes">
+          Build excitement for Week 3. The website workshop is a high-engagement activity — students will leave that week with a live website for their nonprofit. For the readings, Worth chapters 8 and 11 cover collaboration models and advocacy, which provide the conceptual foundation for thinking about how their nonprofit will work with other organizations, including government. Remind students to have their outreach email sent before next week.
+        </aside>
+      </section>
+
+      <!-- SLIDE 15: Questions -->
+      <section class="questions-slide">
+        <h1>Questions?</h1>
+        <div class="contact-info">
+          <span>Dr. Seongho An</span><br>
+          <span>seongho.an@ucf.edu</span><br>
+          <span>Office Hours: By appointment via Webcourses</span><br>
+          <span>PAD 6149 – Nonprofit Administration: Build Your Nonprofit</span>
+        </div>
+        <aside class="notes">
+          Open the floor for questions. If this is asynchronous, remind students to post questions in the discussion board or email directly. Reiterate the key takeaway: you now understand the sector you are entering. Use this knowledge to make smart decisions about your nonprofit's structure, positioning, and mission framing. Get your outreach email sent this week.
+        </aside>
+      </section>
+
+    </div><!-- .slides -->
+  </div><!-- .reveal -->
+
+  <script type="module">
+    import Reveal from 'https://unpkg.com/reveal.js@5.1.0/dist/reveal.esm.js';
+
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      showSlideNumber: 'all',
+      transition: 'none',
+      center: false,
+      width: 1120,
+      height: 700,
+      margin: 0.08,
+      pdfSeparateFragments: false,
+    });
+  </script>
+</body>
+</html>
