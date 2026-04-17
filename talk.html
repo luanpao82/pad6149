@@ -266,6 +266,197 @@ html, body { background: var(--bg); }
 .s-pivot .lead { font-size: 22px; max-width: 820px; }
 .s-pivot .lead em { color: var(--gold); font-family: var(--font-serif); }
 
+/* ─── Shifts slide (architecture overview) ─── */
+.s-shifts { padding: 48px 96px 56px; }
+.s-shifts .head { margin-bottom: 20px; }
+.s-shifts h2 {
+  font-size: 44px;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+.s-shifts .sub {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 820px;
+}
+.s-shifts .sub em { font-family: var(--font-serif); font-style: italic; color: var(--text); }
+
+.shift-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+}
+.s-shift {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.s-shift::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 22px; bottom: 22px;
+  width: 3px;
+  background: var(--gold);
+  border-radius: 0 2px 2px 0;
+}
+.s-shift .sn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.s-shift .sk {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-dk);
+}
+.s-shift h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 2px 0 4px;
+}
+.s-shift h3 em { color: var(--gold-dk); font-style: italic; }
+.s-shift .sfromto {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  padding: 8px 10px;
+  background: var(--subtle);
+  border-radius: 6px;
+  border-left: 2px solid var(--gold);
+}
+.s-shift .sfromto .from { display: block; color: var(--muted); }
+.s-shift .sfromto .from::before {
+  content: 'Before · ';
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.s-shift .sfromto .to { display: block; color: var(--text); margin-top: 4px; font-weight: 500; }
+.s-shift .sfromto .to::before {
+  content: 'Now · ';
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dk);
+}
+
+/* Signature elements for each shift */
+.s-shift .schips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
+.s-shift .schip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+}
+.s-shift .schip.strike {
+  color: var(--muted);
+  text-decoration: line-through;
+  background: transparent;
+}
+.s-shift .schip.gold { background: var(--gold-soft); border-color: var(--gold); }
+.s-shift .cap {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Board ladder for shift 2 */
+.s-shift .sladder { margin-top: auto; display: flex; flex-direction: column; gap: 6px; }
+.s-shift .slad {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--subtle);
+  position: relative;
+}
+.s-shift .slad.prize {
+  background: var(--dark);
+  color: var(--bg);
+  border-color: var(--dark);
+}
+.s-shift .slad .lw {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.s-shift .slad.prize .lw { color: var(--gold); }
+.s-shift .slad .ll {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.35;
+}
+.s-shift .slad.prize .ll { color: var(--gold); font-family: var(--font-serif); font-size: 16px; font-weight: 400; }
+.s-shift .slad .propose {
+  position: absolute;
+  top: -6px; right: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 2px 6px;
+  background: var(--gold);
+  color: var(--dark);
+  border-radius: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* NASPAA list for shift 3 */
+.s-shift .snaspaa { margin-top: auto; display: flex; flex-direction: column; gap: 4px; }
+.s-shift .snrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--subtle);
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--text);
+}
+.s-shift .snrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
 /* ─── Arc slide (7 phases with fragments) ─── */
 .s-arc { padding: 56px 96px 56px; }
 .s-arc .head { margin-bottom: 18px; }
@@ -847,7 +1038,7 @@ html, body { background: var(--bg); }
     <p class="kill-line fragment fade-in">
       A course that <em>reviews</em>, not one that <em>produces</em>.
     </p>
-    <div class="deck-footer">Slide 2 / 9</div>
+    <div class="deck-footer">Slide 2 / 10</div>
   </div>
 </section>
 
@@ -860,11 +1051,96 @@ html, body { background: var(--bg); }
     <p class="lead" style="margin-top: 28px;">
       What if, instead of reflecting on past work, students spent the semester <strong>building a real nonprofit</strong> — and everything they'd learned across the program became raw material for that <em>one</em> organization?
     </p>
-    <div class="deck-footer">Slide 3 / 9</div>
+    <div class="deck-footer">Slide 3 / 10</div>
   </div>
 </section>
 
-<!-- ========== 4. SEMESTER ARC (7 phase fragments) ========== -->
+<!-- ========== 4. THREE STRUCTURAL SHIFTS ========== -->
+<section>
+  <div class="frame s-shifts">
+    <div class="head">
+      <div class="tag">The architecture</div>
+      <h2>Three shifts. One redesign.</h2>
+      <p class="sub">Three decisions — about <em>what students do</em>, <em>who's in the room</em>, and <em>what the degree proves</em> — reshape the semester.</p>
+    </div>
+
+    <div class="shift-cols">
+
+      <!-- Shift 1 -->
+      <div class="s-shift">
+        <div class="sn">01</div>
+        <div class="sk">Pedagogy</div>
+        <h3>Writing about, to <em>building</em> with AI.</h3>
+        <div class="sfromto">
+          <span class="from">Writing-focused deliverables, AI <em>prohibited</em>.</span>
+          <span class="to">Action-building with a <em>required</em> AI skill set.</span>
+        </div>
+        <div class="cap">From ban to required toolkit</div>
+        <div class="schips">
+          <span class="schip strike">Reflection paper</span>
+          <span class="schip strike">Discussion posts</span>
+          <span class="schip strike">ePortfolio</span>
+        </div>
+        <div class="schips" style="margin-top: 6px;">
+          <span class="schip gold">Governance policy</span>
+          <span class="schip gold">Year-1 budget</span>
+          <span class="schip gold">Live website</span>
+          <span class="schip gold">Pitch video</span>
+        </div>
+      </div>
+
+      <!-- Shift 2 -->
+      <div class="s-shift">
+        <div class="sn">02</div>
+        <div class="sk">Partnership</div>
+        <h3>Advisory board, to <em>teaching</em> partner.</h3>
+        <div class="sfromto">
+          <span class="from">Board met separately; rarely encountered students.</span>
+          <span class="to">A mentor pool, a judging panel, a real seed grant.</span>
+        </div>
+        <div class="sladder">
+          <div class="slad">
+            <div class="lw">Wk 2</div>
+            <div class="ll">Mentor pool — each student chooses a board mentor.</div>
+          </div>
+          <div class="slad">
+            <span class="propose">Proposed</span>
+            <div class="lw">Wk 14</div>
+            <div class="ll">Judging panel — board votes on the final pitches.</div>
+          </div>
+          <div class="slad prize">
+            <span class="propose">Proposed</span>
+            <div class="lw">Award</div>
+            <div class="ll">$1,000 seed grant to incorporate the winner.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shift 3 -->
+      <div class="s-shift">
+        <div class="sn">03</div>
+        <div class="sk">Accreditation</div>
+        <h3>Reviewing past work, to <em>remaking</em> it.</h3>
+        <div class="sfromto">
+          <span class="from">ePortfolio collected prior assignments as proof.</span>
+          <span class="to">Prior coursework reactivated as new competency evidence.</span>
+        </div>
+        <div class="cap">NASPAA five competencies · remade as new evidence</div>
+        <div class="snaspaa">
+          <div class="snrow">Lead &amp; manage in the public interest</div>
+          <div class="snrow">Contribute to the policy process</div>
+          <div class="snrow">Analyze, synthesize &amp; decide</div>
+          <div class="snrow">Apply a public service perspective</div>
+          <div class="snrow">Communicate with diverse publics</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="deck-footer">Slide 4 / 10</div>
+  </div>
+</section>
+
+<!-- ========== 5. SEMESTER ARC (7 phase fragments) ========== -->
 <section>
   <div class="frame s-arc" id="arc-frame">
     <div class="head">
@@ -890,11 +1166,11 @@ html, body { background: var(--bg); }
     <span class="fragment" data-phase="4"></span>
     <span class="fragment" data-phase="5"></span>
     <span class="fragment" data-phase="6"></span>
-    <div class="deck-footer">Slide 4 / 9 · Press → to advance through phases</div>
+    <div class="deck-footer">Slide 5 / 10 · Press → to advance through phases</div>
   </div>
 </section>
 
-<!-- ========== 5. WEBSITE BUILD (4 state fragments) ========== -->
+<!-- ========== 6. WEBSITE BUILD (4 state fragments) ========== -->
 <section>
   <div class="frame s-site" id="site-frame">
     <div class="head">
@@ -942,11 +1218,11 @@ html, body { background: var(--bg); }
     <span class="fragment" data-state="1"></span>
     <span class="fragment" data-state="2"></span>
     <span class="fragment" data-state="3"></span>
-    <div class="deck-footer">Slide 5 / 9 · Press → to fill the site</div>
+    <div class="deck-footer">Slide 6 / 10 · Press → to fill the site</div>
   </div>
 </section>
 
-<!-- ========== 6. TOOLS ========== -->
+<!-- ========== 7. TOOLS ========== -->
 <section>
   <div class="frame s-tools">
     <div class="tag">The tool stack</div>
@@ -986,11 +1262,11 @@ html, body { background: var(--bg); }
         <div class="t-use">Edit the final YouTube pitch — trim, caption, clean audio.</div>
       </div>
     </div>
-    <div class="deck-footer">Slide 6 / 9</div>
+    <div class="deck-footer">Slide 7 / 10</div>
   </div>
 </section>
 
-<!-- ========== 7. GRADING ========== -->
+<!-- ========== 8. GRADING ========== -->
 <section>
   <div class="frame dark s-grading">
     <div class="tag">Assessment</div>
@@ -1016,11 +1292,11 @@ html, body { background: var(--bg); }
       <div class="row"><span class="swatch" style="background:#1C1917; border: 1px solid #444"></span>Leadership · AI · Advocacy <span class="pt">28</span></div>
       <div class="row"><span class="swatch" style="background:#FFC904"></span>Final Pitch Presentation <span class="pt">14</span></div>
     </div>
-    <div class="deck-footer">Slide 7 / 9</div>
+    <div class="deck-footer">Slide 8 / 10</div>
   </div>
 </section>
 
-<!-- ========== 8. OUTCOMES ========== -->
+<!-- ========== 9. OUTCOMES ========== -->
 <section>
   <div class="frame s-outcomes">
     <div class="tag">What students take with them</div>
@@ -1058,11 +1334,11 @@ html, body { background: var(--bg); }
         <p>Rubric-aligned demonstration across all five competencies, on newly-produced work — not reflections on past courses.</p>
       </div>
     </div>
-    <div class="deck-footer">Slide 8 / 9</div>
+    <div class="deck-footer">Slide 9 / 10</div>
   </div>
 </section>
 
-<!-- ========== 9. CLOSING ========== -->
+<!-- ========== 10. CLOSING ========== -->
 <section>
   <div class="frame dark s-closing">
     <h2>Build something <span class="em">real.</span></h2>

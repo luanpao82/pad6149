@@ -298,6 +298,268 @@ a { color: inherit; text-decoration: none; }
   margin-left: -12px;
 }
 
+/* ─── SECTION: Three structural shifts ─── */
+.shifts {
+  background: var(--subtle);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.shifts h2 {
+  font-size: clamp(40px, 5.5vw, 72px);
+  margin-bottom: 20px;
+}
+.shifts .lead { margin-bottom: 0; }
+.shift-grid {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.shift-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 44px 48px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.2,.7,.3,1);
+}
+.shift-card.in { opacity: 1; transform: translateY(0); }
+.shift-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 44px; bottom: 44px;
+  width: 3px;
+  background: var(--gold);
+  border-radius: 0 2px 2px 0;
+}
+.shift-card .shift-num {
+  position: absolute;
+  top: 28px; right: 36px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+}
+.shift-card .shift-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold-dk);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+}
+.shift-card h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  max-width: 820px;
+}
+.shift-card h3 em { font-style: italic; color: var(--gold-dk); }
+
+.shift-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.sc-col {
+  padding: 22px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--subtle);
+}
+.sc-col.sc-after {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, #FFFDF1 0%, var(--surface) 100%);
+}
+.sc-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.sc-after .sc-tag { color: var(--gold-dk); }
+.sc-body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.sc-body em { font-family: var(--font-serif); font-style: italic; }
+.sc-body:last-child { margin-bottom: 0; }
+.sc-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.sc-chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+}
+.sc-chip.strike {
+  color: var(--muted);
+  text-decoration: line-through;
+  background: transparent;
+}
+.sc-chip.gold { background: var(--gold-soft); border-color: var(--gold); }
+.sc-arrow {
+  align-self: center;
+  font-family: var(--font-serif);
+  font-size: 36px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+/* Shift 2: Board flow diagram */
+.board-flow {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr 28px 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+.bf-step {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+.bf-step.bf-prize {
+  background: var(--dark);
+  color: var(--bg);
+  border-color: var(--dark);
+}
+.bf-when {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.bf-prize .bf-when { color: var(--gold); }
+.bf-what {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--text);
+  margin: 2px 0 4px;
+}
+.bf-prize .bf-what { color: var(--gold); }
+.bf-desc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.bf-prize .bf-desc { color: rgba(250,250,247,0.75); }
+.bf-badge {
+  position: absolute;
+  top: -8px; right: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  background: var(--gold);
+  color: var(--dark);
+  border-radius: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.bf-link {
+  align-self: center;
+  justify-self: center;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--gold);
+}
+
+/* Shift 3: NASPAA grid */
+.naspaa-grid {
+  margin-top: 28px;
+  background: var(--subtle);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 24px 4px;
+}
+.np-cap {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-dk);
+  margin-bottom: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.np-row {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 20px;
+  padding: 12px 0;
+  border-top: 1px dashed var(--line);
+  align-items: center;
+}
+.np-row:first-of-type { border-top: none; }
+.np-pill {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.np-pill::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.np-src {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.np-src .np-code {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  margin-left: 4px;
+  border-radius: 8px;
+  background: var(--gold-soft);
+  color: var(--gold-dk);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+@media (max-width: 820px) {
+  .shift-card { padding: 32px 28px; }
+  .shift-card .shift-num { top: 20px; right: 20px; }
+  .shift-compare { grid-template-columns: 1fr; gap: 14px; }
+  .sc-arrow { transform: rotate(90deg); justify-self: start; }
+  .board-flow { grid-template-columns: 1fr; gap: 10px; }
+  .bf-link { transform: rotate(90deg); }
+  .np-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
 /* ─── SECTION: Timeline (sticky scrub) ─── */
 .arc {
   position: relative;
@@ -956,6 +1218,130 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- ============ THREE STRUCTURAL SHIFTS ============ -->
+<section class="section shifts">
+  <div class="inner">
+    <div class="tag reveal">The architecture</div>
+    <h2 class="display reveal d1">Three shifts.<br>One redesign.</h2>
+    <p class="lead reveal d2" style="margin-top: 28px;">
+      Three decisions — about <em>what students do</em>, <em>who's in the room</em>, and <em>what the degree proves</em> — reshape the semester.
+    </p>
+
+    <div class="shift-grid">
+
+      <!-- Shift 1: Writing → Action-building with AI -->
+      <article class="shift-card reveal-shift">
+        <div class="shift-num">01</div>
+        <div class="shift-kicker">Pedagogy · What students do</div>
+        <h3>From <em>writing about</em> nonprofit management to <em>building</em> one — with AI.</h3>
+        <div class="shift-compare">
+          <div class="sc-col sc-before">
+            <div class="sc-tag">Before</div>
+            <div class="sc-body">Writing-focused deliverables with AI <em>prohibited</em>.</div>
+            <div class="sc-chips">
+              <span class="sc-chip strike">Reflection paper</span>
+              <span class="sc-chip strike">Discussion posts</span>
+              <span class="sc-chip strike">ePortfolio upload</span>
+            </div>
+          </div>
+          <div class="sc-arrow" aria-hidden="true">→</div>
+          <div class="sc-col sc-after">
+            <div class="sc-tag">Now</div>
+            <div class="sc-body">Action-building across fifteen weeks with a <em>required</em> AI skill set.</div>
+            <div class="sc-chips">
+              <span class="sc-chip gold">Governance policy</span>
+              <span class="sc-chip gold">Year-1 budget</span>
+              <span class="sc-chip gold">Live website</span>
+              <span class="sc-chip gold">Pitch video</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Shift 2: MNM Board Involvement -->
+      <article class="shift-card reveal-shift">
+        <div class="shift-num">02</div>
+        <div class="shift-kicker">Partnership · Who's in the room</div>
+        <h3>From an advisory board that meets <em>about</em> the program to one that teaches <em>inside</em> it.</h3>
+        <div class="shift-compare">
+          <div class="sc-col sc-before">
+            <div class="sc-tag">Before</div>
+            <div class="sc-body">The MNM Advisory Board met separately. Students rarely encountered a board member as part of the degree.</div>
+          </div>
+          <div class="sc-arrow" aria-hidden="true">→</div>
+          <div class="sc-col sc-after">
+            <div class="sc-tag">Now</div>
+            <div class="sc-body">Two direct touchpoints with students — a <em>mentor pool</em> at the start, a <em>judging panel</em> at the finish — and a real seed grant on the other side.</div>
+          </div>
+        </div>
+        <div class="board-flow">
+          <div class="bf-step">
+            <div class="bf-when">Week 2</div>
+            <div class="bf-what">Mentor pool</div>
+            <div class="bf-desc">Board members opt in as mentors. Each student selects one and meets with them through the semester for sector-grounded feedback.</div>
+          </div>
+          <div class="bf-link" aria-hidden="true">→</div>
+          <div class="bf-step">
+            <span class="bf-badge">Proposed</span>
+            <div class="bf-when">Week 14</div>
+            <div class="bf-what">Judging panel</div>
+            <div class="bf-desc">Board members review the class's final pitches and vote on the capstone award — sector leaders evaluating student-built organizations.</div>
+          </div>
+          <div class="bf-link" aria-hidden="true">→</div>
+          <div class="bf-step bf-prize">
+            <span class="bf-badge">Proposed</span>
+            <div class="bf-when">Award</div>
+            <div class="bf-what">$1,000 seed grant</div>
+            <div class="bf-desc">Funds the legal filing and start-up costs to actually incorporate the winning nonprofit — a credential that leaves campus as a registered entity.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Shift 3: NASPAA competencies reactivated -->
+      <article class="shift-card reveal-shift">
+        <div class="shift-num">03</div>
+        <div class="shift-kicker">Accreditation · What the degree proves</div>
+        <h3>From <em>reviewing</em> past coursework to <em>remaking</em> it as fresh competency evidence.</h3>
+        <div class="shift-compare">
+          <div class="sc-col sc-before">
+            <div class="sc-tag">Before</div>
+            <div class="sc-body">The ePortfolio collected prior assignments — evidence that a student had been in the room across the program.</div>
+          </div>
+          <div class="sc-arrow" aria-hidden="true">→</div>
+          <div class="sc-col sc-after">
+            <div class="sc-tag">Now</div>
+            <div class="sc-body">Prior coursework becomes <em>raw material</em>: reactivated via NotebookLM, transformed for the student's own organization, and published as newly-produced evidence across all five NASPAA competencies.</div>
+          </div>
+        </div>
+        <div class="naspaa-grid">
+          <div class="np-cap">NASPAA Five Competencies · reactivated as new evidence</div>
+          <div class="np-row">
+            <div class="np-pill">Lead &amp; manage in the public interest</div>
+            <div class="np-src">Governance Policy<span class="np-code">PAD 6237</span> · HR &amp; Staffing Plan<span class="np-code">PAD 6417</span> · Leadership Case</div>
+          </div>
+          <div class="np-row">
+            <div class="np-pill">Participate in &amp; contribute to the policy process</div>
+            <div class="np-src">Policy Advocacy Plan<span class="np-code">PAD 6142</span> · Public-Comment Draft<span class="np-code">PAD 6142</span></div>
+          </div>
+          <div class="np-row">
+            <div class="np-pill">Analyze, synthesize &amp; make evidence-informed decisions</div>
+            <div class="np-src">Program Evaluation Framework<span class="np-code">PAD 6327</span> · Year-1 Budget<span class="np-code">PAD 6208</span></div>
+          </div>
+          <div class="np-row">
+            <div class="np-pill">Articulate &amp; apply a public service perspective</div>
+            <div class="np-src">Mission &amp; Strategic Plan<span class="np-code">PAD 6335</span> · Volunteer Engagement<span class="np-code">PAD 5145</span></div>
+          </div>
+          <div class="np-row">
+            <div class="np-pill">Communicate &amp; interact with a diverse workforce &amp; citizenry</div>
+            <div class="np-src">Live Website · Fundraising &amp; Donor Copy<span class="np-code">PAD 5146</span> · Pitch Video</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============ 14-WEEK ARC (sticky) ============ -->
 <section class="section arc">
   <div class="arc-head">
@@ -1200,6 +1586,19 @@ a { color: inherit; text-decoration: none; }
     });
   }, { threshold: 0.2 });
   toolCards.forEach(el => tio.observe(el));
+
+  // ─── Shift cards stagger ───
+  const shiftCards = document.querySelectorAll('.reveal-shift');
+  const sio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = [...shiftCards].indexOf(e.target);
+        setTimeout(() => e.target.classList.add('in'), idx * 140);
+        sio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  shiftCards.forEach(el => sio.observe(el));
 
   // ─── Outcome tiles stagger ───
   const outs = document.querySelectorAll('.out-anim');
