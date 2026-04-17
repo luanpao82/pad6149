@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a Nonprofit — PAD 6149 Capstone Redesign</title>
+<meta name="description" content="A scrollable introduction to the redesigned MNM capstone at UCF.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #FFC904;
+  --gold-dk: #D4A900;
+  --gold-soft: rgba(255,201,4,0.15);
+  --dark: #1C1917;
+  --dark-2: #292524;
+  --bg: #FAFAF7;
+  --surface: #FFFFFF;
+  --text: #1C1917;
+  --muted: #78716C;
+  --line: #E7E5E4;
+  --subtle: #F5F5F0;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+  --w: 1100px;
+  --narrow: 720px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── Progress bar ─── */
+.progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: rgba(255,201,4,0.15);
+  z-index: 100;
+}
+.progress .fill {
+  height: 100%;
+  background: var(--gold);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ─── Sections base ─── */
+.section {
+  padding: 120px 32px;
+  position: relative;
+}
+.section.dark { background: var(--dark); color: var(--bg); }
+.section .inner {
+  max-width: var(--w);
+  margin: 0 auto;
+}
+.section .narrow { max-width: var(--narrow); margin: 0 auto; }
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.section.dark .tag { color: rgba(255,201,4,0.85); }
+
+.display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.section.dark .display { color: var(--bg); }
+
+.lead {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 640px;
+  font-weight: 400;
+}
+.section.dark .lead { color: rgba(250,250,247,0.7); }
+.section.dark .lead strong { color: var(--bg); font-weight: 500; }
+
+.accent { color: var(--gold); font-style: italic; font-family: var(--font-serif); }
+.italic { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+
+/* ─── Reveal on scroll ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s cubic-bezier(.2,.7,.3,1),
+              transform 0.9s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.d1 { transition-delay: 0.12s; }
+.reveal.d2 { transition-delay: 0.24s; }
+.reveal.d3 { transition-delay: 0.36s; }
+.reveal.d4 { transition-delay: 0.48s; }
+.reveal.d5 { transition-delay: 0.60s; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  padding: 120px 32px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--dark);
+  color: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, #FFE27A 50%, var(--gold) 100%);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -180px; right: -180px;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,201,4,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero .inner { max-width: var(--w); margin: 0 auto; width: 100%; }
+.hero .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 56px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero .eyebrow::before {
+  content: '';
+  width: 32px; height: 2px; background: var(--gold);
+  display: inline-block;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(48px, 8vw, 104px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.hero h1 em { font-style: italic; color: rgba(250,250,247,0.65); }
+.hero h1 .gold-text {
+  color: var(--gold);
+  font-style: italic;
+}
+.hero .sub {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  color: rgba(250,250,247,0.6);
+  margin-top: 28px;
+  max-width: 560px;
+  line-height: 1.6;
+}
+.hero .meta {
+  margin-top: 64px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(250,250,247,0.4);
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+}
+.scroll-hint {
+  position: absolute;
+  bottom: 32px; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(250,250,247,0.5);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.scroll-hint .line {
+  width: 1px; height: 32px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scroll-pulse 2s infinite ease-in-out;
+}
+@keyframes scroll-pulse {
+  0%, 100% { transform: scaleY(0.4); transform-origin: top; opacity: 0.4; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+}
+
+/* ─── SECTION: Inherited course ─── */
+.inherited h2 {
+  font-size: clamp(40px, 5.5vw, 72px);
+  margin-bottom: 28px;
+}
+.old-bars {
+  margin: 64px 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 860px;
+}
+.old-bar {
+  display: grid;
+  grid-template-columns: 240px 1fr 60px;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.old-bar .label { color: var(--text); }
+.old-bar .track {
+  height: 16px;
+  background: var(--subtle);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.old-bar .fill {
+  position: absolute;
+  inset: 0;
+  background: var(--muted);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.2s cubic-bezier(.2,.8,.3,1);
+}
+.old-bar.in .fill { transform: scaleX(var(--w)); }
+.old-bar .pct {
+  text-align: right;
+  color: var(--muted);
+  font-weight: 500;
+}
+.kill-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--text);
+  margin-top: 48px;
+  padding-left: 20px;
+  border-left: 3px solid var(--gold);
+  max-width: 700px;
+  line-height: 1.35;
+}
+
+/* ─── SECTION: Pivot ─── */
+.pivot {
+  padding: 160px 32px;
+}
+.pivot h2 {
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 1.05;
+  margin-bottom: 40px;
+  max-width: 1000px;
+}
+.pivot .lead {
+  font-size: 24px;
+  max-width: 780px;
+}
+.pivot .quote-mark {
+  font-family: var(--font-serif);
+  font-size: 140px;
+  line-height: 0.5;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 24px;
+  margin-left: -12px;
+}
+
+/* ─── SECTION: Timeline (sticky scrub) ─── */
+.arc {
+  position: relative;
+  padding: 0;
+}
+.arc-track {
+  /* 7 phases at ~65vh each */
+  height: 450vh;
+  position: relative;
+}
+.arc-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  max-width: var(--w);
+  margin: 0 auto;
+  padding: 80px 32px;
+  align-items: center;
+  gap: 60px;
+}
+.arc-head {
+  position: absolute;
+  top: 60px; left: 32px; right: 32px;
+  max-width: var(--w);
+  margin: 0 auto;
+}
+.arc-detail {
+  align-self: center;
+}
+.arc-detail .tag {
+  transition: color 0.4s ease;
+}
+.arc-detail h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  min-height: 120px;
+}
+.arc-detail p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.arc-detail .tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.arc-detail .chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.arc-detail .chip.gold { background: var(--gold-soft); border-color: var(--gold); }
+
+.arc-rail {
+  position: relative;
+  height: 420px;
+  margin-left: auto;
+  width: 280px;
+}
+.arc-rail .rail-line {
+  position: absolute;
+  left: 20px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--line);
+}
+.arc-rail .rail-fill {
+  position: absolute;
+  left: 20px; top: 8px;
+  width: 2px;
+  background: var(--gold);
+  height: 0%;
+  transition: height 0.2s ease-out;
+}
+.arc-rail .phase {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  transition: color 0.3s ease;
+  width: 100%;
+}
+.arc-rail .phase .dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  margin-left: 13px;
+  flex-shrink: 0;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+.arc-rail .phase.done .dot {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.arc-rail .phase.active .dot {
+  background: var(--dark);
+  border-color: var(--gold);
+  transform: scale(1.4);
+  box-shadow: 0 0 0 6px rgba(255,201,4,0.2);
+}
+.arc-rail .phase.active { color: var(--text); font-weight: 500; }
+
+/* ─── SECTION: Website build (sticky) ─── */
+.site-build {
+  background: var(--bg);
+  position: relative;
+}
+.site-track {
+  /* 4 states at ~75vh each */
+  height: 320vh;
+}
+.site-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  max-width: var(--w);
+  margin: 0 auto;
+  padding: 80px 32px;
+  align-items: center;
+  gap: 60px;
+}
+.site-text .tag { margin-bottom: 24px; }
+.site-text h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.site-text p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 400px;
+}
+.site-text .week-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 4px 12px;
+  background: var(--dark);
+  color: var(--gold);
+  border-radius: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.site-mock {
+  background: var(--surface);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 24px 60px rgba(0,0,0,0.08);
+  overflow: hidden;
+  max-width: 520px;
+  width: 100%;
+  justify-self: center;
+}
+.site-mock .bar {
+  background: var(--subtle);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.site-mock .dot-red { width: 11px; height: 11px; border-radius: 50%; background: #FF6058; }
+.site-mock .dot-yellow { width: 11px; height: 11px; border-radius: 50%; background: #FFBD2E; }
+.site-mock .dot-green { width: 11px; height: 11px; border-radius: 50%; background: #28C840; }
+.site-mock .url {
+  margin-left: 12px;
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.site-mock .body {
+  min-height: 340px;
+  position: relative;
+}
+.site-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+.site-layer.visible { opacity: 1; }
+
+/* individual website "layers" */
+.site-hero {
+  background: var(--dark);
+  color: var(--bg);
+  padding: 24px;
+}
+.site-hero .nav {
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 28px;
+}
+.site-hero h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.site-hero .tagline {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+}
+.site-hero .cta {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 6px 14px;
+  border-radius: 3px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.site-board {
+  position: absolute;
+  bottom: 14px; left: 14px; right: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 6px;
+  padding-top: 180px;
+}
+.site-board .member {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: 3px;
+  padding: 8px 6px;
+  font-size: 9px;
+  line-height: 1.2;
+}
+.site-board .member .name { font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+.site-board .member .role { color: var(--muted); font-size: 8px; }
+
+.site-programs {
+  position: absolute;
+  bottom: 14px; left: 14px; right: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  padding-top: 180px;
+}
+.site-programs .prog {
+  background: var(--subtle);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px;
+}
+.site-programs .prog .p-title {
+  font-size: 11px; font-weight: 700; color: var(--dark);
+  margin-bottom: 6px;
+}
+.site-programs .prog .lines {
+  display: flex; flex-direction: column; gap: 3px;
+}
+.site-programs .prog .ln {
+  height: 3px; border-radius: 1px; background: #C8C2BD;
+}
+.site-programs .prog .ln:nth-child(2) { width: 60%; }
+
+.site-video {
+  position: absolute;
+  bottom: 14px; left: 14px; right: 14px;
+  padding-top: 180px;
+}
+.site-video .player {
+  background: var(--dark);
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.site-video .play-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255,201,4,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-video .play-btn::after {
+  content: '';
+  border-left: 12px solid var(--dark);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-left: 4px;
+}
+.site-video .badge {
+  position: absolute;
+  top: 8px; right: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  background: #FF0000;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+
+/* ─── SECTION: Tool Stack ─── */
+.tools-sec h2 {
+  font-size: clamp(40px, 5.5vw, 72px);
+  margin-bottom: 20px;
+}
+.tools-sec .lead { margin-bottom: 56px; }
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  transition: transform 0.25s cubic-bezier(.2,.7,.3,1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease,
+              opacity 0.8s ease;
+  cursor: default;
+  opacity: 0;
+  transform: translateY(18px);
+}
+.tool-card.in { opacity: 1; transform: translateY(0); }
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-color: var(--gold);
+}
+.tool-card .t-name {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.tool-card .t-kind {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.tool-card .t-use {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.tool-card.primary {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, #FFFDF1 0%, var(--surface) 100%);
+}
+
+/* ─── SECTION: Grading chart ─── */
+.grading {
+  background: var(--dark);
+  color: var(--bg);
+}
+.grading h2 {
+  font-size: clamp(40px, 5.5vw, 72px);
+  color: var(--bg);
+  margin-bottom: 16px;
+}
+.grading .lead { color: rgba(250,250,247,0.7); margin-bottom: 56px; }
+
+.grade-bar-big {
+  display: flex;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  margin-bottom: 40px;
+}
+.grade-bar-big .gseg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(.2,.8,.3,1),
+              filter 0.2s ease;
+}
+.grade-bar-big.in .gseg { transform: scaleX(1); }
+.grade-bar-big .gseg:hover { filter: brightness(1.1) saturate(1.15); }
+.grade-bar-big .gseg:nth-child(1) { transition-delay: 0.0s; }
+.grade-bar-big .gseg:nth-child(2) { transition-delay: 0.1s; }
+.grade-bar-big .gseg:nth-child(3) { transition-delay: 0.2s; }
+.grade-bar-big .gseg:nth-child(4) { transition-delay: 0.3s; }
+.grade-bar-big .gseg:nth-child(5) { transition-delay: 0.4s; }
+.grade-bar-big .gseg:nth-child(6) { transition-delay: 0.5s; }
+.grade-bar-big .gseg:nth-child(7) { transition-delay: 0.6s; }
+
+.grade-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: rgba(250,250,247,0.8);
+}
+.grade-rows .row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+.grade-rows .swatch {
+  width: 14px; height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.grade-rows .row .pt { color: var(--gold); margin-left: auto; font-weight: 600; font-size: 15px; }
+
+/* ─── SECTION: Outcomes ─── */
+.outcomes h2 {
+  font-size: clamp(40px, 5.5vw, 72px);
+  margin-bottom: 16px;
+}
+.outcomes .lead { margin-bottom: 56px; }
+.out-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.out-tile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: 8px;
+  padding: 24px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.7,.3,1);
+}
+.out-tile.in { opacity: 1; transform: translateY(0); }
+.out-tile .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+.out-tile h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.15;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.out-tile p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ─── SECTION: Closing CTA ─── */
+.closing {
+  padding: 140px 32px;
+  text-align: center;
+  background: var(--dark);
+  color: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.closing::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), #FFE27A, var(--gold));
+}
+.closing h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.closing .em { color: var(--gold); font-style: italic; }
+.closing p {
+  color: rgba(250,250,247,0.6);
+  font-size: 20px;
+  max-width: 540px;
+  margin: 0 auto 48px;
+  line-height: 1.55;
+}
+.closing .actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+.btn-gold { background: var(--gold); color: var(--dark); font-weight: 600; }
+.btn-gold:hover { background: #FFD43E; transform: translateY(-2px); }
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+.closing .signature {
+  margin-top: 72px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(250,250,247,0.4);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ─── Small screens: collapse sticky sections ─── */
+@media (max-width: 820px) {
+  .section { padding: 80px 24px; }
+  .hero { padding: 80px 24px 40px; }
+  .arc-sticky, .site-sticky {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    height: auto;
+    position: static;
+  }
+  .arc-track, .site-track { height: auto; }
+  .arc-rail { width: 100%; margin-left: 0; }
+  .old-bar { grid-template-columns: 1fr 40px; }
+  .old-bar .label { grid-column: 1 / -1; }
+  .tool-grid, .out-grid { grid-template-columns: 1fr; }
+  .grade-rows { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><div class="fill" id="progress-fill"></div></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="inner">
+    <span class="eyebrow">PAD 6149 · MNM Capstone · Fall 2026</span>
+    <h1>
+      They don't write <em>about</em><br>
+      nonprofit management.<br>
+      <br>
+      They <span class="gold-text">build</span> one.
+    </h1>
+    <p class="sub">A ground-up redesign of the UCF Master of Nonprofit Management capstone — from reflection papers to a published organization.</p>
+    <div class="meta">
+      Dr. Seongho An · School of Public Administration<br>
+      University of Central Florida
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ============ INHERITED ============ -->
+<section class="section inherited">
+  <div class="inner">
+    <div class="narrow">
+      <div class="tag reveal">Before</div>
+      <h2 class="display reveal d1">The capstone we inherited.</h2>
+      <p class="lead reveal d2" style="margin-top: 32px;">
+        For years, PAD 6149 was a review semester. Students posted in discussion boards, uploaded past assignments, and wrote reflection papers. AI tools were <em>explicitly prohibited</em>.
+      </p>
+    </div>
+
+    <div class="old-bars">
+      <div class="old-bar reveal d1" style="--w: 0.5;">
+        <span class="label">Discussion Board Participation</span>
+        <div class="track"><div class="fill"></div></div>
+        <span class="pct">50%</span>
+      </div>
+      <div class="old-bar reveal d2" style="--w: 0.3;">
+        <span class="label">ePortfolio Assignment</span>
+        <div class="track"><div class="fill"></div></div>
+        <span class="pct">30%</span>
+      </div>
+      <div class="old-bar reveal d3" style="--w: 0.2;">
+        <span class="label">Leadership Case Study</span>
+        <div class="track"><div class="fill"></div></div>
+        <span class="pct">20%</span>
+      </div>
+    </div>
+
+    <p class="kill-line reveal d4">
+      A course that <em>reviews</em>, not one that <em>produces</em>.
+    </p>
+  </div>
+</section>
+
+<!-- ============ PIVOT ============ -->
+<section class="section dark pivot">
+  <div class="inner narrow">
+    <div class="tag reveal">The redesign</div>
+    <span class="quote-mark reveal d1">&ldquo;</span>
+    <h2 class="display reveal d1">
+      So we flipped<br>the question.
+    </h2>
+    <p class="lead reveal d2" style="margin-top: 36px;">
+      What if, instead of reflecting on past work, students spent the semester <strong>building a real nonprofit</strong> — and everything they'd learned across the program became raw material for that <em>one</em> organization?
+    </p>
+  </div>
+</section>
+
+<!-- ============ 14-WEEK ARC (sticky) ============ -->
+<section class="section arc">
+  <div class="arc-head">
+    <div class="tag reveal">The semester arc</div>
+    <h2 class="display reveal d1" style="font-size: clamp(36px, 5vw, 60px); max-width: 860px;">
+      Fifteen weeks. One organization.<br>Built week by week.
+    </h2>
+  </div>
+  <div class="arc-track" id="arc-track">
+    <div class="arc-sticky">
+      <div class="arc-detail" id="arc-detail">
+        <div class="tag" id="arc-tag">Phase 1 · Wk 1–2</div>
+        <h3 id="arc-title">Concept &amp; Interview Plan</h3>
+        <p id="arc-desc">Students define the cause, draft their mission, and identify a practicing nonprofit leader they'll interview.</p>
+        <div class="tools" id="arc-tools">
+          <span class="chip gold">ChatGPT · Claude</span>
+        </div>
+      </div>
+      <div class="arc-rail">
+        <div class="rail-line"></div>
+        <div class="rail-fill" id="rail-fill"></div>
+        <!-- Phases rendered by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEBSITE BUILD (sticky) ============ -->
+<section class="section site-build">
+  <div class="site-track" id="site-track">
+    <div class="site-sticky">
+      <div class="site-text">
+        <div class="tag">Integrating artifact</div>
+        <span class="week-pill" id="site-week">Week 3</span>
+        <h3 id="site-title">The site launches.</h3>
+        <p id="site-body">A mission, an About Us, and placeholder pages go live. The student's organization has a public address on the internet.</p>
+      </div>
+      <div class="site-mock">
+        <div class="bar">
+          <div class="dot-red"></div>
+          <div class="dot-yellow"></div>
+          <div class="dot-green"></div>
+          <div class="url">yourorg.org</div>
+        </div>
+        <div class="body">
+          <!-- Hero layer (always on from state 0) -->
+          <div class="site-layer site-hero visible" id="layer-hero">
+            <div class="nav">
+              <span>About</span><span>Programs</span><span>Impact</span><span>Give</span>
+            </div>
+            <h4>Your Nonprofit</h4>
+            <div class="tagline">Mission statement goes here.</div>
+            <span class="cta">Donate</span>
+          </div>
+          <div class="site-layer site-board" id="layer-board">
+            <div class="member"><div class="name">A. Lopez</div><div class="role">Board Chair</div></div>
+            <div class="member"><div class="name">J. Kim</div><div class="role">Treasurer</div></div>
+            <div class="member"><div class="name">M. Park</div><div class="role">Secretary</div></div>
+            <div class="member"><div class="name">T. Nguyen</div><div class="role">At-Large</div></div>
+          </div>
+          <div class="site-layer site-programs" id="layer-programs">
+            <div class="prog">
+              <div class="p-title">Programs</div>
+              <div class="lines"><div class="ln"></div><div class="ln"></div><div class="ln"></div></div>
+            </div>
+            <div class="prog">
+              <div class="p-title">Impact</div>
+              <div class="lines"><div class="ln"></div><div class="ln"></div><div class="ln"></div></div>
+            </div>
+            <div class="prog">
+              <div class="p-title">Strategy</div>
+              <div class="lines"><div class="ln"></div><div class="ln"></div><div class="ln"></div></div>
+            </div>
+          </div>
+          <div class="site-layer site-video" id="layer-video">
+            <div class="player">
+              <div class="play-btn"></div>
+              <div class="badge">LIVE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section class="section tools-sec">
+  <div class="inner">
+    <div class="tag reveal">The tool stack</div>
+    <h2 class="display reveal d1">AI is required, not prohibited.</h2>
+    <p class="lead reveal d2">
+      Practicing nonprofit leaders already use AI for grant writing, donor communications, and program evaluation. Prohibiting it leaves graduates unprepared. Requiring it — with a documented ethical framework — prepares them.
+    </p>
+
+    <div class="tool-grid">
+      <div class="tool-card primary reveal-card">
+        <div class="t-name">ChatGPT <span style="color: var(--muted)">·</span> Claude</div>
+        <div class="t-kind">Writing · Reasoning</div>
+        <div class="t-use">Drafting, revision, and critique across all fourteen weeks — mission statements, policies, budget narratives, donor communications, pitch scripts.</div>
+      </div>
+      <div class="tool-card primary reveal-card">
+        <div class="t-name">NotebookLM</div>
+        <div class="t-kind">Reactivation</div>
+        <div class="t-use">Upload prior PAD coursework — Governance (6237), HR (6417), Budgeting (6208), Fundraising (5146), Strategy (6335), Evaluation (6327), Advocacy (6142) — and adapt it for the new organization.</div>
+      </div>
+      <div class="tool-card primary reveal-card">
+        <div class="t-name">Canva</div>
+        <div class="t-kind">Visual Design</div>
+        <div class="t-use">Logos, org charts, budget visualizations, strategy infographics, donor graphics, social content, pitch video title cards.</div>
+      </div>
+      <div class="tool-card reveal-card">
+        <div class="t-name">Gemini</div>
+        <div class="t-kind">Research</div>
+        <div class="t-use">Current-events grounding and research depth when drafting strategic plans and policy briefs.</div>
+      </div>
+      <div class="tool-card reveal-card">
+        <div class="t-name">Web Builders</div>
+        <div class="t-kind">Site Platform · Wk 3</div>
+        <div class="t-use">Wix, Squarespace, WordPress, or Google Sites. The student's choice — graded on content, not tooling.</div>
+      </div>
+      <div class="tool-card reveal-card">
+        <div class="t-name">CapCut <span style="color: var(--muted)">·</span> Descript</div>
+        <div class="t-kind">Video · Wk 14</div>
+        <div class="t-use">Edit the final YouTube pitch video — trim, title, add captions, clean audio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GRADING CHART ============ -->
+<section class="section grading">
+  <div class="inner">
+    <div class="tag reveal" style="color: var(--gold);">Assessment</div>
+    <h2 class="display reveal d1">100 points. 15 deliverables.</h2>
+    <p class="lead reveal d2">
+      No discussion board grade. No standalone ePortfolio. The website and the pitch video <em>are</em> the portfolio.
+    </p>
+
+    <div class="grade-bar-big" id="grade-bar">
+      <div class="gseg" style="flex: 4; background: #F5F5F0; color: #1C1917">4</div>
+      <div class="gseg" style="flex: 8; background: #E7E5E4; color: #1C1917">8</div>
+      <div class="gseg" style="flex: 22; background: #C8C2BD; color: #1C1917">22</div>
+      <div class="gseg" style="flex: 6; background: #A8A29E; color: #fff">6</div>
+      <div class="gseg" style="flex: 18; background: #78716C; color: #fff">18</div>
+      <div class="gseg" style="flex: 28; background: #1C1917; color: #fff; border: 1px solid #333">28</div>
+      <div class="gseg" style="flex: 14; background: #FFC904; color: #1C1917">14</div>
+    </div>
+
+    <div class="grade-rows">
+      <div class="row"><span class="swatch" style="background:#F5F5F0"></span>Foundation <span class="pt">4</span></div>
+      <div class="row"><span class="swatch" style="background:#E7E5E4"></span>Practitioner Grounding <span class="pt">8</span></div>
+      <div class="row"><span class="swatch" style="background:#C8C2BD"></span>Structure <span class="pt">22</span></div>
+      <div class="row"><span class="swatch" style="background:#A8A29E"></span>Resources <span class="pt">6</span></div>
+      <div class="row"><span class="swatch" style="background:#78716C"></span>Strategy &amp; Programs <span class="pt">18</span></div>
+      <div class="row"><span class="swatch" style="background:#1C1917; border: 1px solid #444"></span>Leadership · AI · Advocacy <span class="pt">28</span></div>
+      <div class="row"><span class="swatch" style="background:#FFC904"></span>Final Pitch Presentation <span class="pt">14</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTCOMES ============ -->
+<section class="section outcomes">
+  <div class="inner">
+    <div class="tag reveal">What students take with them</div>
+    <h2 class="display reveal d1">Six durable artifacts.</h2>
+    <p class="lead reveal d2">
+      Not a transcript. Not a reflection paper. Real things they can point a hiring manager at.
+    </p>
+
+    <div class="out-grid">
+      <div class="out-tile out-anim">
+        <div class="num">01</div>
+        <h4>A complete organizational blueprint</h4>
+        <p>Mission, governance, staffing, budget, strategy, programs, evaluation, fundraising, advocacy — for an organization of their own design.</p>
+      </div>
+      <div class="out-tile out-anim">
+        <div class="num">02</div>
+        <h4>A live public website</h4>
+        <p>Shareable, indexable, linkable from a résumé. Functions as a portfolio piece for employers and funders.</p>
+      </div>
+      <div class="out-tile out-anim">
+        <div class="num">03</div>
+        <h4>A final pitch video</h4>
+        <p>A YouTube-hosted pitch presenting the organization to potential supporters — interview artifact or writing sample.</p>
+      </div>
+      <div class="out-tile out-anim">
+        <div class="num">04</div>
+        <h4>Documented AI fluency</h4>
+        <p>Critical AI use across fourteen weeks of professional deliverables — a growing sector requirement.</p>
+      </div>
+      <div class="out-tile out-anim">
+        <div class="num">05</div>
+        <h4>A practitioner network connection</h4>
+        <p>A completed mentor interview and relationship with a working nonprofit leader in their focus area.</p>
+      </div>
+      <div class="out-tile out-anim">
+        <div class="num">06</div>
+        <h4>Fresh NASPAA evidence</h4>
+        <p>Rubric-aligned demonstration across all five competencies, on newly-produced work — not reflections on past courses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="section closing">
+  <div class="inner narrow">
+    <h2>Build something <span class="em">real.</span></h2>
+    <p>PAD 6149 · Fall 2026 · Master of Nonprofit Management · University of Central Florida</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="Slides/overview.html">View the full briefing →</a>
+      <a class="btn btn-ghost" href="PAD6149_Syllabus_Fall2026.pdf">Syllabus (PDF)</a>
+      <a class="btn btn-ghost" href="index.html">Course site</a>
+    </div>
+    <div class="signature">Dr. Seongho An · UCF School of Public Administration</div>
+  </div>
+</section>
+
+<script>
+(function() {
+  // ─── Reveal on scroll ───
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal, .old-bar').forEach(el => io.observe(el));
+
+  // ─── Tool cards stagger ───
+  const toolCards = document.querySelectorAll('.reveal-card');
+  const tio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = [...toolCards].indexOf(e.target);
+        setTimeout(() => e.target.classList.add('in'), idx * 100);
+        tio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  toolCards.forEach(el => tio.observe(el));
+
+  // ─── Outcome tiles stagger ───
+  const outs = document.querySelectorAll('.out-anim');
+  const oio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = [...outs].indexOf(e.target);
+        setTimeout(() => e.target.classList.add('in'), idx * 120);
+        oio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  outs.forEach(el => oio.observe(el));
+
+  // ─── Grade bar animation trigger ───
+  const gradeBar = document.getElementById('grade-bar');
+  const gio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        gradeBar.classList.add('in');
+        gio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  if (gradeBar) gio.observe(gradeBar);
+
+  // ─── Progress bar ───
+  const progressFill = document.getElementById('progress-fill');
+  function updateProgress() {
+    const h = document.documentElement;
+    const pct = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    progressFill.style.width = (pct * 100) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  // ─── Sticky arc timeline (7 phases) ───
+  const PHASES = [
+    {
+      tag: 'Phase 1 · Weeks 1–2',
+      title: 'Concept & Interview Plan',
+      desc: 'Students define the cause, draft a working mission, and identify a practicing nonprofit leader in their focus area to interview.',
+      tools: [['ChatGPT · Claude', true]],
+    },
+    {
+      tag: 'Phase 2 · Weeks 3–4',
+      title: 'Website & Governance',
+      desc: 'The website launches on the student\'s chosen platform. A Board Governance Policy — reactivated from PAD 6237 — publishes to the Leadership page.',
+      tools: [['ChatGPT · Claude', true], ['NotebookLM', true], ['Canva', true], ['Web Builder', false]],
+    },
+    {
+      tag: 'Phase 3 · Weeks 5–6',
+      title: 'HR, Volunteers, Identity',
+      desc: 'Staffing and volunteer plan (from PAD 6417 + 5145) goes live. Brand refresh, board profiles, ED bio land on the Our Team page.',
+      tools: [['ChatGPT · Claude', true], ['NotebookLM', true], ['Canva', true]],
+    },
+    {
+      tag: 'Phase 4 · Weeks 7–8',
+      title: 'Budget & Fundraising',
+      desc: 'Year-1 budget (reactivated from PAD 6208) publishes to Transparency. Fundraising plan (PAD 5146) becomes the Donate page.',
+      tools: [['ChatGPT · Claude', true], ['NotebookLM', true], ['Canva', true]],
+    },
+    {
+      tag: 'Phase 5 · Weeks 9–10',
+      title: 'Strategy & Evaluation',
+      desc: 'A fresh Strategic Plan (rebuilt from PAD 6335) and a Program Evaluation Framework (from PAD 6327) — published as Our Strategy and Programs.',
+      tools: [['ChatGPT · Claude', true], ['NotebookLM', true], ['Canva', true]],
+    },
+    {
+      tag: 'Phase 6 · Weeks 11–13',
+      title: 'Leadership, AI, Advocacy',
+      desc: 'Leadership case study, AI-powered social media and contact presence, and a Policy Advocacy Plan (reactivated from PAD 6142) round out the organization.',
+      tools: [['ChatGPT · Claude', true], ['NotebookLM', true], ['Canva', true], ['DALL·E', false]],
+    },
+    {
+      tag: 'Phase 7 · Week 14',
+      title: 'The Final Pitch',
+      desc: 'A polished YouTube pitch video summarizes the full organization — embedded on the homepage. The student leaves with a complete, shareable blueprint.',
+      tools: [['ChatGPT · Claude', true], ['Canva Video', false], ['CapCut · Descript', false]],
+    },
+  ];
+
+  // Build the rail
+  const rail = document.querySelector('.arc-rail');
+  if (rail) {
+    PHASES.forEach((p, i) => {
+      const el = document.createElement('div');
+      el.className = 'phase';
+      el.style.top = `${(i / (PHASES.length - 1)) * 100}%`;
+      el.style.transform = 'translateY(-50%)';
+      el.innerHTML = `<span class="dot"></span><span>Wk ${['1–2','3–4','5–6','7–8','9–10','11–13','14'][i]}</span>`;
+      rail.appendChild(el);
+    });
+  }
+
+  const arcTrack = document.getElementById('arc-track');
+  const arcTag = document.getElementById('arc-tag');
+  const arcTitle = document.getElementById('arc-title');
+  const arcDesc = document.getElementById('arc-desc');
+  const arcTools = document.getElementById('arc-tools');
+  const railFill = document.getElementById('rail-fill');
+  const phaseEls = () => rail.querySelectorAll('.phase');
+
+  function renderPhase(idx) {
+    const p = PHASES[idx];
+    arcTag.textContent = p.tag;
+    arcTitle.textContent = p.title;
+    arcDesc.textContent = p.desc;
+    arcTools.innerHTML = p.tools.map(([name, gold]) =>
+      `<span class="chip${gold ? ' gold' : ''}">${name}</span>`
+    ).join('');
+    phaseEls().forEach((el, i) => {
+      el.classList.toggle('active', i === idx);
+      el.classList.toggle('done', i < idx);
+    });
+    const pct = (idx / (PHASES.length - 1)) * 100;
+    railFill.style.height = pct + '%';
+  }
+
+  function onArcScroll() {
+    if (!arcTrack) return;
+    const rect = arcTrack.getBoundingClientRect();
+    const h = window.innerHeight;
+    const total = rect.height - h;
+    const scrolled = -rect.top;
+    if (scrolled < 0 || scrolled > total) return;
+    const pct = scrolled / total;
+    const idx = Math.min(PHASES.length - 1, Math.floor(pct * PHASES.length));
+    renderPhase(idx);
+  }
+
+  window.addEventListener('scroll', onArcScroll, { passive: true });
+  renderPhase(0);
+
+  // ─── Sticky website build (5 states) ───
+  const BUILD_STATES = [
+    {
+      week: 'Week 3',
+      title: 'The site launches.',
+      body: 'A mission, an About Us, and placeholder pages go live. The student\'s organization has a public address on the internet.',
+      layers: ['layer-hero'],
+    },
+    {
+      week: 'Week 4',
+      title: 'Governance goes public.',
+      body: 'The Board Governance Policy publishes to the Leadership page. Bios, roles, and meeting cadence all public.',
+      layers: ['layer-hero', 'layer-board'],
+    },
+    {
+      week: 'Weeks 9–10',
+      title: 'Strategy and programs.',
+      body: 'The Strategic Plan becomes the Our Strategy page. Program descriptions and logic models move onto the Programs page.',
+      layers: ['layer-hero', 'layer-programs'],
+    },
+    {
+      week: 'Week 14',
+      title: 'A pitch video on the homepage.',
+      body: 'The final YouTube pitch embeds above the fold — a 3-minute tour of the organization for funders and employers.',
+      layers: ['layer-hero', 'layer-video'],
+    },
+  ];
+
+  const siteTrack = document.getElementById('site-track');
+  const siteWeek = document.getElementById('site-week');
+  const siteTitle = document.getElementById('site-title');
+  const siteBody = document.getElementById('site-body');
+  const ALL_LAYERS = ['layer-hero', 'layer-board', 'layer-programs', 'layer-video'];
+
+  function renderBuild(idx) {
+    const s = BUILD_STATES[idx];
+    siteWeek.textContent = s.week;
+    siteTitle.textContent = s.title;
+    siteBody.textContent = s.body;
+    ALL_LAYERS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('visible', s.layers.includes(id));
+    });
+  }
+
+  function onSiteScroll() {
+    if (!siteTrack) return;
+    const rect = siteTrack.getBoundingClientRect();
+    const h = window.innerHeight;
+    const total = rect.height - h;
+    const scrolled = -rect.top;
+    if (scrolled < 0 || scrolled > total) return;
+    const pct = scrolled / total;
+    const idx = Math.min(BUILD_STATES.length - 1, Math.floor(pct * BUILD_STATES.length));
+    renderBuild(idx);
+  }
+
+  window.addEventListener('scroll', onSiteScroll, { passive: true });
+  renderBuild(0);
+
+})();
+</script>
+
+</body>
+</html>
