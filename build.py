@@ -13,7 +13,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 ASSIGN = ROOT / "Assignments"
+EPORTFOLIO = ASSIGN / "ePortfolio"
 TEMPLATE = (ROOT / "_template.html").read_text()
+
+# Track folders: (source dir, slug prefix). "" = Option B (Build), "a" = Option A (ePortfolio).
+TRACKS = [(ASSIGN, ""), (EPORTFOLIO, "a")]
 
 CALLOUT_CLASS = {
     "warning": "card card-warn",
@@ -24,21 +28,24 @@ CALLOUT_CLASS = {
     "example": "card card-example",
 }
 
-def parse_filename(md_path):
-    """'Week 4a Mentor Interview Report.md' -> ('week04a', '04a')."""
+def parse_filename(md_path, prefix=""):
+    """'Week 4a Mentor Interview Report.md' -> ('week04a', '04a'); prefix 'a' -> 'aweek04a'."""
     m = re.match(r"Week\s+(\d+)([a-z]?)\s", md_path.stem)
     num, suf = int(m.group(1)), m.group(2)
-    return f"week{num:02d}{suf}", f"{num:02d}{suf}"
+    return f"{prefix}week{num:02d}{suf}", f"{num:02d}{suf}"
 
 def build_wikilink_map():
-    """Map '[[Week 4b Board Governance Policy]]' display + href."""
+    """Map '[[Week 4b Board Governance Policy]]' display + href, across both tracks."""
     mapping = {}
-    for md in ASSIGN.glob("Week *.md"):
-        slug, _ = parse_filename(md)
-        key = md.stem  # "Week 4a Mentor Interview Report"
-        # Display = strip "Week N[a-z] " prefix
-        display = re.sub(r"^Week\s+\d+[a-z]?\s+", "", key)
-        mapping[key] = (f"{slug}.html", display)
+    for src, prefix in TRACKS:
+        if not src.exists():
+            continue
+        for md in src.glob("Week *.md"):
+            slug, _ = parse_filename(md, prefix)
+            key = md.stem  # "Week 4a Mentor Interview Report"
+            # Display = strip "Week N[a-z] " prefix
+            display = re.sub(r"^Week\s+\d+[a-z]?\s+", "", key)
+            mapping[key] = (f"{slug}.html", display)
     return mapping
 
 def replace_wikilinks(text, wmap):
@@ -90,8 +97,8 @@ def parse_subtitle(line):
             items[m.group(1).strip().lower()] = m.group(2).strip()
     return items
 
-def build_one(md_path, wmap):
-    slug, num = parse_filename(md_path)
+def build_one(md_path, wmap, prefix=""):
+    slug, num = parse_filename(md_path, prefix)
     raw = md_path.read_text()
     lines = raw.splitlines()
 
@@ -155,14 +162,16 @@ def build_one(md_path, wmap):
 def main():
     target = sys.argv[1] if len(sys.argv) > 1 else None
     wmap = build_wikilink_map()
-    mds = sorted(ASSIGN.glob("Week *.md"))
     built = 0
-    for md in mds:
-        slug, _ = parse_filename(md)
-        if target and slug != target:
+    for src, prefix in TRACKS:
+        if not src.exists():
             continue
-        build_one(md, wmap)
-        built += 1
+        for md in sorted(src.glob("Week *.md")):
+            slug, _ = parse_filename(md, prefix)
+            if target and slug != target:
+                continue
+            build_one(md, wmap, prefix)
+            built += 1
     print(f"\nBuilt {built} page(s).")
 
 if __name__ == "__main__":
