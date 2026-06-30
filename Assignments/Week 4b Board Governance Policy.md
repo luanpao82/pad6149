@@ -1,6 +1,6 @@
 # Week 4: Board Governance Policy
 
-**Due:** September 14, 2026 | **Points:** 8 pts | **Length:** 5–7 pages
+**Due:** September 14, 2026 | **Points:** 7 pts | **Length:** 5–7 pages
 **NASPAA Competency 4:** Articulate and apply a public service perspective emphasizing the role of civil society in democratic governance
 **Source coursework:** PAD 6237 – Ethics and Governance in Nonprofit Organizations (Governance Case Study)
 

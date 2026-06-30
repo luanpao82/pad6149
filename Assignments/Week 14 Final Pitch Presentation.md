@@ -1,6 +1,6 @@
 # Week 14: Final Pitch Presentation
 
-**Due:** December 3, 2026 | **Points:** 14 pts | **Length:** 5–8 minute video
+**Due:** December 3, 2026 | **Points:** 13 pts | **Length:** 5–8 minute video
 
 ---
 
@@ -146,12 +146,12 @@ This is the final piece of your website. After this, your homepage has: mission 
 
 ---
 
-## Grading Rubric (14 pts)
+## Grading Rubric (13 pts)
 
 | Criteria | Points |
 |---|---|
 | Presenter appears on camera and narrates in their own voice — delivery is confident, natural, and engaging | 3 pts |
-| Content covers all required elements (problem, mission, approach, team, financials, evaluation, advocacy, call to action) | 4 pts |
+| Content covers all required elements (problem, mission, approach, team, financials, evaluation, advocacy, call to action) | 3 pts |
 | Video demonstrates genuine understanding of the organization built over 14 weeks — not surface-level, but substantive | 3 pts |
 | Production quality is professional — good lighting, clear audio, intentional editing, effective use of visuals | 2 pts |
 | Creative approach — video goes beyond a basic slide presentation; uses storytelling, location, visuals, or other creative elements | 2 pts |

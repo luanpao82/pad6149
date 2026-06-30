@@ -1,7 +1,10 @@
 # Week 11: Leadership Case Study
 
-**Due:** November 2, 2026 | **Points:** 15 pts | **Length:** 2,000–2,500 words
+**Due:** November 2, 2026 | **Points:** 20 pts | **Length:** 2,000–2,500 words
 **NASPAA Competency 1:** Lead and manage in a dynamic, mission-driven nonprofit sector
+
+> [!info] Required of Both Capstone Paths
+> The Leadership Case Study is the one assignment **every student completes, regardless of path.** **Option B (Build Your Nonprofit)** students analyze the issue their organization addresses and publish an "Our Approach" page (below). **Option A (ePortfolio)** students analyze a leadership challenge facing a nonprofit in their field of interest and include the essay as Competency 1 evidence with a reflection — the website page is optional for this path.
 
 ---
 
@@ -22,7 +25,7 @@ This assignment asks you to find and analyze **3–5 recent news articles** abou
 
 This is not a current events report. It's a **leadership exercise**: reading the landscape, identifying patterns, finding the gaps, and articulating how your organization responds. Funders, partners, and board members expect nonprofit leaders to be fluent in the public discourse around their issue — and to have a point of view.
 
-This is the largest single assignment in the course (15 pts). It requires analytical depth — not summary.
+This is the largest single assignment in the course (20 pts) and the one requirement shared by both capstone paths. It requires analytical depth — not summary.
 
 ---
 
@@ -148,15 +151,15 @@ The essay is your academic analysis. The website page is its **public-facing tra
 
 ---
 
-## Grading Rubric (15 pts)
+## Grading Rubric (20 pts)
 
 | Criteria | Points |
 |---|---|
-| Articles are well-selected (diverse sources, recent, relevant) and the essay demonstrates pattern analysis — not article-by-article summary | 3 pts |
-| Root cause analysis integrates MNM coursework frameworks, uses local data, and goes beyond what the articles themselves say | 4 pts |
-| Stakeholder analysis identifies real local organizations with specific, researched assessment of their strategies and gaps | 2 pts |
-| "What's missing" analysis is sharp, specific, and clearly connects to your organization's reason for existing | 3 pts |
-| Leadership strategy is concrete, operational, and connected to your Strategic Plan (Week 9) | 3 pts |
+| Articles are well-selected (diverse sources, recent, relevant) and the essay demonstrates pattern analysis — not article-by-article summary | 4 pts |
+| Root cause analysis integrates MNM coursework frameworks, uses local data, and goes beyond what the articles themselves say | 5 pts |
+| Stakeholder analysis identifies real local organizations with specific, researched assessment of their strategies and gaps | 3 pts |
+| "What's missing" analysis is sharp, specific, and clearly connects to your organization's reason for existing | 4 pts |
+| Leadership strategy is concrete, operational, and connected to your Strategic Plan (Week 9) | 4 pts |
 
 ---
 
@@ -215,6 +218,6 @@ IPHONE VOICEOVER:
 
 ## Looking Ahead
 
-**Next week (Week 12):** Capacity Building (ungraded). You'll assess your organization's readiness to grow — identifying gaps in infrastructure, technology, and organizational systems. Your website gets a polish pass in preparation for the final weeks.
+**Next week (Week 12):** AI Content Creation & Social Media (5 pts). You'll use AI tools to produce launch-ready content and a social media presence for your organization, and give your website a polish pass before the final weeks.
 
-**Week 13:** Policy Advocacy Plan (10 pts). **Week 14:** Final Pitch Presentation (15 pts). The finish line is in sight.
+**Week 13:** Policy Advocacy Plan (8 pts). **Week 14:** Final Pitch Presentation (13 pts). The finish line is in sight.

@@ -241,6 +241,6 @@ IPHONE VOICEOVER:
 
 ## Looking Ahead
 
-**Next week (Week 13):** Policy Advocacy Plan (10 pts). You'll design an advocacy strategy for a policy issue affecting your population, drawing on your PAD 6142 coursework. Your website gets an "Advocacy / Take Action" page.
+**Next week (Week 13):** Policy Advocacy Plan (8 pts). You'll design an advocacy strategy for a policy issue affecting your population, drawing on your PAD 6142 coursework. Your website gets an "Advocacy / Take Action" page.
 
-**Week 14 (Dec 3):** Final Pitch Presentation (15 pts). You'll walk through your entire website live, presenting your nonprofit to the class as if pitching to a funder or partner. Everything you've built leads to this.
+**Week 14 (Dec 3):** Final Pitch Presentation (13 pts). You'll walk through your entire website live, presenting your nonprofit to the class as if pitching to a funder or partner. Everything you've built leads to this.

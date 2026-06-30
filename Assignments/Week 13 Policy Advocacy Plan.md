@@ -285,6 +285,6 @@ IPHONE VOICEOVER:
 
 ## Looking Ahead
 
-**Next week: Thanksgiving Break (November 23–28).** No class, no deliverables. Rest and prepare.
+**Next week: Thanksgiving Break (November 23–27).** No class, no deliverables. Rest and prepare.
 
-**Week 14 (Dec 3):** Final Pitch Presentation (15 pts). You'll present your entire nonprofit to the class — walking through your website as if pitching to a funder, board member, or community partner. This is the culmination of everything you've built. Start rehearsing.
+**Week 14 (Dec 3):** Final Pitch Presentation (13 pts). You'll present your entire nonprofit to the class — walking through your website as if pitching to a funder, board member, or community partner. This is the culmination of everything you've built. Start rehearsing.

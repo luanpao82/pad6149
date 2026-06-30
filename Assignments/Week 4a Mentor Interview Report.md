@@ -1,6 +1,6 @@
 # Week 4: Mentor Interview Report
 
-**Due:** September 14, 2026 | **Points:** 8 pts | **Length:** 4–5 pages
+**Due:** September 14, 2026 | **Points:** 6 pts | **Length:** 4–5 pages
 
 > [!warning] This is one of two assignments due this week.
 > The other is the [[Week 4b Board Governance Policy]] (10 pts). Plan your time accordingly — this is 20% of your total grade in a single week.

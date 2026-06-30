@@ -200,16 +200,41 @@ You already have your Concept Statement from Week 1. AI can help expand it into 
 
 ## Useful AI & Online Tools This Week
 
-| Tool | What It's Good For | How to Use It |
+Every tool below has a genuine free path for college students — either an always-free tier, a verified-student discount, or an education program your university may already provide. Always verify current access at the provider's site; vendor promotions change quickly.
+
+### AI assistants (writing, research, planning)
+
+| Tool | Free for Students | What to Know |
 |---|---|---|
-| **[Canva AI](https://canva.com)** | Logo, banner images, social media graphics | Use Magic Design or Text to Image to generate visuals; download as PNG with transparent background |
-| **[Coolors.co](https://coolors.co)** | Color palette generation | Enter one color you like → Coolors generates a harmonious palette with hex codes; lock colors you want and regenerate the rest |
-| **Google Fonts** (fonts.google.com) | Typography pairing | Search by style (serif, sans-serif) → preview with your org name; pair a display font (headings) with a body font (paragraphs) |
-| **Unsplash / Pexels** | Free, high-quality stock photos | Search for images related to your mission — these are free for commercial use with no attribution required (Unsplash) |
-| **[ChatGPT](https://chatgpt.com) / [Claude](https://claude.ai)** | Website copy and content | Use the prompts in this assignment to generate homepage and About Us text; always revise to match your voice |
-| **Hemingway Editor** (hemingwayapp.com) | Simplifying your web copy | Paste your text in — it highlights complex sentences and passive voice; web copy should read at a Grade 8–10 level |
-| **WAVE** (wave.webaim.org) | Accessibility checker | Enter your published URL → WAVE scans for accessibility issues (missing alt text, low contrast, missing headings); fix what it flags |
-| **Favicon.io** (favicon.io) | Browser tab icon | Generate a simple favicon from your org's initials or logo; upload to your site so the browser tab looks professional |
+| **[ChatGPT](https://chatgpt.com)** (OpenAI) | Always-free tier (GPT-5 Instant, unlimited; limited GPT-5 heavy). No standalone US student discount in 2026. Check if UCF provides **ChatGPT Edu** — some universities give full access to enrolled students for free. | Best all-purpose assistant for drafting website copy, About Us text, and brainstorming taglines. |
+| **[Claude](https://claude.ai)** (Anthropic) | Always-free tier (generous daily limit). **Claude for Education** gives free Pro access at partner universities — sign in with your UCF email to check. [Claude Campus](https://claude.com/programs/campus) offers free Pro + API credits to selected students. | Best for longer, more thoughtful writing — mission statements, About Us narratives, grant-style prose. |
+| **[Google Gemini](https://gemini.google/students/)** | **1-month free trial of Google AI Pro** for verified students, then **$9.99/mo student rate** for up to 12 months (50% off). Includes Gemini 3.1 Pro, NotebookLM Plus, 2TB Google One storage. Use a personal Google account — not your UCF Workspace account — and verify via SheerID. | Strongest for current-events research (built-in web grounding) and integrates with Google Sites/Docs/Drive. |
+| **[NotebookLM](https://notebooklm.google.com)** | Free for everyone (personal Google account). NotebookLM Plus included in Google AI Pro student plan. | Upload your Week 1 Concept Statement + nonprofit examples → NotebookLM synthesizes them into website copy, audio briefings, and FAQs. |
+| **[Microsoft Copilot](https://copilot.microsoft.com)** | Free tier for everyone. UCF students get **Copilot in Microsoft 365 Education** through the university Office license — sign in with your UCF email. | Useful if you're already drafting in Word; generates text directly in your documents. |
+| **[Perplexity](https://perplexity.ai)** | Always-free tier with citations. Perplexity Pro occasionally free for students via campus promotions (check university emails / student portals). | Best for quickly finding cited examples of peer nonprofits' mission language and program pages. |
+
+### Design, visuals, and branding
+
+| Tool | Free for Students | What to Know |
+|---|---|---|
+| **[Canva](https://canva.com)** | **Canva for Education** — fully free Pro-tier access for verified students and teachers (includes Magic Design, background remover, premium templates). Apply with your UCF email. | Use for logo, hero banner, social graphics. Download logos as transparent PNG. |
+| **[Figma](https://figma.com/education)** | **Figma for Education** — free Professional plan for verified students (2-year renewable). | Use only if you want to mock up your site before building; overkill for Google Sites users. |
+| **[Coolors](https://coolors.co)** | Always free. | Generate a 3–5 color palette; lock what you like, regenerate the rest. Export hex codes. |
+| **[Google Fonts](https://fonts.google.com)** | Always free. | Pair one display font (headings) + one body font. Works directly inside Google Sites and Wix. |
+| **[Unsplash](https://unsplash.com) / [Pexels](https://pexels.com)** | Always free (commercial use, no attribution required on Unsplash). | Search for authentic photos of your community; avoid generic stock-photo aesthetics. |
+| **[Favicon.io](https://favicon.io)** | Always free. | Generate a favicon from your org's initials or logo so browser tabs look professional. |
+
+### Editing, accessibility, and polish
+
+| Tool | Free for Students | What to Know |
+|---|---|---|
+| **[Grammarly](https://grammarly.com/edu)** | Always-free tier (grammar, spelling, clarity). Grammarly Premium **free at partner universities** — check UCF's software portal. | Catch typos and tighten sentences before publishing. |
+| **[Hemingway Editor](https://hemingwayapp.com)** | Free in-browser version. | Paste web copy → aim for Grade 8–10 readability. Web visitors scan; short sentences win. |
+| **[WAVE](https://wave.webaim.org)** | Always free. | Run your live URL through it; fix missing alt text, low-contrast text, and broken heading structure. Required for this assignment. |
+| **[Wolfram Alpha](https://wolframalpha.com)** | Free tier. Wolfram Alpha Pro free for students at many schools via institutional licenses. | Useful later in the semester (Week 7 Financial Plan) for budget math and data calculations. |
+
+> [!tip] Start with what UCF already gives you
+> Before paying for any AI tool, check the **UCF IT services portal** and your **Knights Email** inbox — the university may already provide Microsoft 365 Copilot, Claude for Education, ChatGPT Edu, or Canva for Education at no cost. Using the tools your tuition already covers is both cheaper and often more powerful than the public free tier.
 
 ---
 

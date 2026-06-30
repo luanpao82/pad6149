@@ -1,6 +1,6 @@
 # Week 5: HR & Volunteer Management Plan
 
-**Due:** September 21, 2026 | **Points:** 8 pts | **Length:** 5–7 pages
+**Due:** September 21, 2026 | **Points:** 7 pts | **Length:** 5–7 pages
 **NASPAA Competency 3:** Communicate and interact productively with a diverse and changing workforce and citizenry
 **Source coursework:**
 - PAD 6417 – Human Resource Management (HR Case Study)
