@@ -1,9 +1,9 @@
 # Leadership Case Study
 
-**Due:** November 2, 2026 | **Points:** 20 pts | **Length:** 2,000–2,500 words
+**Due:** November 2, 2026 | **Points:** 30 pts | **Length:** 2,500–3,000 words
 
 > [!info] Required of every student — both capstone paths
-> The Leadership Case Study is the one assignment everyone completes, whichever path you chose. **Build Your Nonprofit (Option B)** students analyze the issue their own organization addresses and publish an "Our Approach" page. **ePortfolio (Option A)** students analyze a leadership challenge in a field that interests them and add the essay as Competency 1 evidence with a short reflection. The core analytical essay below is identical for both.
+> The Leadership Case Study is the one assignment everyone completes, whichever path you chose, and it is the **single largest assignment in the course**. **Build the Petco Love Lost Start-Up (Option B)** students analyze the lost-and-found-pet issue their start-up addresses and publish an "Our Approach" page. **ePortfolio (Option A)** students analyze a leadership challenge in a field that interests them and add the essay as Competency 1 evidence with a short reflection. The core analytical essay below is identical for both.
 
 ---
 
@@ -11,7 +11,7 @@
 
 Nonprofit leaders don't operate in a vacuum. The challenges organizations face — financial instability, rising demand, workforce shortages, shifting policy — are playing out in real time in the news and in your community. This assignment asks you to find and analyze **3–5 recent news articles** about a nonprofit issue, read across them for patterns, and translate that analysis into a leadership argument.
 
-This is not a current-events report. It is a **leadership exercise**: reading the landscape, identifying patterns and gaps, and articulating how a nonprofit leader responds. It is the largest single assignment in the course (20 pts) and is completed independently.
+This is not a current-events report. It is a **leadership exercise**: reading the landscape, identifying patterns and gaps, and articulating how a nonprofit leader responds. It is the largest single assignment in the course (30 pts) and is completed independently.
 
 ## Step 1: Find Your Articles
 
@@ -21,7 +21,7 @@ Select **3–5 news articles** published in the past two years (2024–2026) dir
 - **Geographic mix:** at least one local/regional and one national article.
 - **Topical range:** different dimensions of the issue (funding, service delivery, policy, workforce, community impact) — not five articles saying the same thing.
 
-## Part I: Essay (2,000–2,500 words)
+## Part I: Essay (2,500–3,000 words)
 
 Analyze your articles as a **body of evidence**, not one by one. Address five questions:
 
@@ -35,20 +35,20 @@ Cite all articles and sources in **APA 7th edition** (in-text + reference list; 
 
 ## Part II: Path-Specific Component
 
-- **Build Your Nonprofit (Option B):** Add an "Our Approach" page to your organization's website with four sections — The Issue, What's Missing, How We Work (3–4 principles), and Our Partners.
+- **Build the Petco Love Lost Start-Up (Option B):** Add an "Our Approach" page to the start-up's website with four sections — The Issue, What's Missing, How We Work (3–4 principles), and Our Partners.
 - **ePortfolio (Option A):** Add the finished essay to your portfolio's Competency 1 section and include a 2–3 page reflection on how your strategic plan and this case study together demonstrate leadership and management.
 
 ---
 
-## Grading Rubric (20 pts)
+## Grading Rubric (30 pts)
 
 | Criteria | Points |
 |---|---|
-| Articles are well-selected (diverse, recent, relevant); essay demonstrates pattern analysis — not article-by-article summary | 4 pts |
-| Root-cause analysis integrates MNM frameworks and local data; goes beyond the articles | 5 pts |
-| Stakeholder analysis identifies real organizations with specific, researched assessment | 3 pts |
-| "What's missing" analysis is sharp, specific, and evidence-grounded | 4 pts |
-| Leadership strategy is concrete and operational; path-specific component complete | 4 pts |
+| Articles are well-selected (diverse, recent, relevant); essay demonstrates pattern analysis — not article-by-article summary | 6 pts |
+| Root-cause analysis integrates MNM frameworks and local data; goes beyond the articles | 8 pts |
+| Stakeholder analysis identifies real organizations with specific, researched assessment | 4 pts |
+| "What's missing" analysis is sharp, specific, and evidence-grounded | 6 pts |
+| Leadership strategy is concrete and operational; path-specific component complete | 6 pts |
 
 ---
 
@@ -57,5 +57,5 @@ Cite all articles and sources in **APA 7th edition** (in-text + reference list; 
 
 ## Submission
 
-- **Format:** Word (.docx), 2,000–2,500 words, double-spaced, APA 7th edition
+- **Format:** Word (.docx), 2,500–3,000 words, double-spaced, APA 7th edition
 - **File name:** `[YourLastName]_LeadershipCaseStudy.docx`

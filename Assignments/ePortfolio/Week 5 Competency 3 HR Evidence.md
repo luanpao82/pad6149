@@ -1,6 +1,6 @@
 # Week 5: Competency 3 — HR Case Study Evidence
 
-**Due:** September 21, 2026 | **Points:** 7 pts | **Length:** 1 evidence artifact + caption
+**Due:** September 21, 2026 | **Points:** 5 pts | **Length:** 1 evidence artifact + caption
 **NASPAA Competency 3:** Communicate and interact productively with a diverse and changing workforce and citizenry
 
 ---
@@ -31,12 +31,12 @@ Curate the artifact onto your Competency 3 page with a **3–4 sentence caption*
 
 ---
 
-## Grading Rubric (7 pts)
+## Grading Rubric (5 pts)
 
 | Criteria | Points |
 |---|---|
-| HR case study is relevant, complete, and properly curated onto the portfolio page | 3 pts |
-| Caption makes a clear competency claim (analysis + solution for a diverse workforce) | 3 pts |
+| HR case study is relevant, complete, and properly curated onto the portfolio page | 2 pts |
+| Caption makes a clear competency claim (analysis + solution for a diverse workforce) | 2 pts |
 | Professional presentation and writing | 1 pt |
 
 ---
@@ -52,4 +52,4 @@ Curate the artifact onto your Competency 3 page with a **3–4 sentence caption*
 
 ## Looking Ahead
 
-**Next week (Week 6):** Competency 3 — Communication Reflection (3 pts). Drawing on the marketing & images module, you'll reflect on how nonprofits communicate with diverse constituencies.
+**Next week (Week 6):** Competency 3 — Communication Reflection (2 pts). Drawing on the marketing & images module, you'll reflect on how nonprofits communicate with diverse constituencies.

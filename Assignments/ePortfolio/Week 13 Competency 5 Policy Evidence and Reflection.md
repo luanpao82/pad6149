@@ -1,6 +1,6 @@
 # Week 13: Competency 5 — Policy Evidence & Reflection
 
-**Due:** November 16, 2026 | **Points:** 8 pts | **Length:** 2 evidence artifacts + 2–3 page reflection
+**Due:** November 16, 2026 | **Points:** 5 pts | **Length:** 2 evidence artifacts + 2–3 page reflection
 **NASPAA Competency 5:** Participate in and contribute to the policy process
 
 ---
@@ -40,13 +40,13 @@ Add 1–2 scholarly sources via **Google Scholar**; cite in APA 7th.
 
 ---
 
-## Grading Rubric (8 pts)
+## Grading Rubric (5 pts)
 
 | Criteria | Points |
 |---|---|
-| Both policy artifacts curated with clear competency captions | 2 pts |
-| Reflection integrates both artifacts and engages the policy process seriously | 3 pts |
-| Genuine grasp of the legal/ethical limits of nonprofit advocacy | 2 pts |
+| Both policy artifacts curated with clear competency captions | 1 pt |
+| Reflection integrates both artifacts and engages the policy process seriously | 2 pts |
+| Genuine grasp of the legal/ethical limits of nonprofit advocacy | 1 pt |
 | Scholarly grounding, APA 7th, professional writing | 1 pt |
 
 ---
@@ -63,4 +63,4 @@ Add 1–2 scholarly sources via **Google Scholar**; cite in APA 7th.
 
 ## Looking Ahead
 
-**Next week (Week 14):** Final ePortfolio Assembly & Presentation (13 pts). All five competencies are now evidenced and reflected — you assemble, polish, and present the finished portfolio.
+**Next week (Week 14):** Final ePortfolio Assembly & Presentation (8 pts). All five competencies are now evidenced and reflected — you assemble, polish, and present the finished portfolio.

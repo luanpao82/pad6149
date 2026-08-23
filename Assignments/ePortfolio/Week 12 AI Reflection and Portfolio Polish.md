@@ -1,6 +1,6 @@
 # Week 12: AI Reflection & Portfolio Polish
 
-**Due:** November 9, 2026 | **Points:** 5 pts | **Length:** 2–3 page reflection + polish pass
+**Due:** November 9, 2026 | **Points:** 4 pts | **Length:** 2–3 page reflection + polish pass
 
 ---
 
@@ -42,12 +42,12 @@ Review every section for:
 
 ---
 
-## Grading Rubric (5 pts)
+## Grading Rubric (4 pts)
 
 | Criteria | Points |
 |---|---|
 | Reflection is honest and specific about where AI helped and where it failed | 2 pts |
-| Reflection articulates a clear, defensible ethic of professional AI use | 2 pts |
+| Reflection articulates a clear, defensible ethic of professional AI use | 1 pt |
 | Evidence of a genuine polish pass across the portfolio | 1 pt |
 
 ---
@@ -63,4 +63,4 @@ Review every section for:
 
 ## Looking Ahead
 
-**Next week (Week 13):** Competency 5 — Policy Evidence + Reflection (8 pts). The final competency section: advocacy and the policy process.
+**Next week (Week 13):** Competency 5 — Policy Evidence + Reflection (5 pts). The final competency section: advocacy and the policy process.

@@ -1,6 +1,6 @@
 # Week 14: Final ePortfolio Assembly & Presentation
 
-**Due:** December 3, 2026 | **Points:** 13 pts | **Length:** Complete ePortfolio + 5–8 minute presentation
+**Due:** December 3, 2026 | **Points:** 8 pts | **Length:** Complete ePortfolio + 5–8 minute presentation
 
 ---
 
@@ -43,14 +43,14 @@ This is your professional introduction. Treat it like the final round of a job i
 
 ---
 
-## Grading Rubric (13 pts)
+## Grading Rubric (8 pts)
 
 | Criteria | Points |
 |---|---|
-| All six sections complete: evidence + captions + reflections, nothing missing | 4 pts |
-| Portfolio is cohesive, professional, and well-designed | 3 pts |
-| Presentation is on-camera, in your own voice, confident and clear | 3 pts |
-| Synthesis demonstrates genuine self-understanding as a nonprofit leader | 2 pts |
+| All six sections complete: evidence + captions + reflections, nothing missing | 2 pts |
+| Portfolio is cohesive, professional, and well-designed | 2 pts |
+| Presentation is on-camera, in your own voice, confident and clear | 2 pts |
+| Synthesis demonstrates genuine self-understanding as a nonprofit leader | 1 pt |
 | Production quality — clear audio, intentional, polished | 1 pt |
 
 ---

@@ -1,6 +1,6 @@
 # Week 10: Competency 2 — Program Evaluation Evidence & Reflection
 
-**Due:** October 26, 2026 | **Points:** 8 pts | **Length:** 1 evidence artifact + 2–3 page reflection
+**Due:** October 26, 2026 | **Points:** 5 pts | **Length:** 1 evidence artifact + 2–3 page reflection
 **NASPAA Competency 2:** Analyze, synthesize, think critically, solve problems, and make decisions
 
 ---
@@ -37,13 +37,13 @@ Add 1–2 scholarly sources via **Google Scholar**; cite in APA 7th.
 
 ---
 
-## Grading Rubric (8 pts)
+## Grading Rubric (5 pts)
 
 | Criteria | Points |
 |---|---|
-| Program evaluation plan curated with a clear competency caption | 2 pts |
-| Reflection integrates both C2 artifacts and articulates an analytical method | 3 pts |
-| Genuine insight on decision-making under competing values / imperfect information | 2 pts |
+| Program evaluation plan curated with a clear competency caption | 1 pt |
+| Reflection integrates both C2 artifacts and articulates an analytical method | 2 pts |
+| Genuine insight on decision-making under competing values / imperfect information | 1 pt |
 | Scholarly grounding, APA 7th, professional writing | 1 pt |
 
 ---
@@ -60,4 +60,4 @@ Add 1–2 scholarly sources via **Google Scholar**; cite in APA 7th.
 
 ## Looking Ahead
 
-**Next week (Week 11):** Leadership Case Study (20 pts) — the common requirement for *both* capstone paths. You'll write the analytical case essay and add the C1 reflection that completes Competency 1.
+**Next week (Week 11):** Leadership Case Study (30 pts) — the common requirement for *both* capstone paths. You'll write the analytical case essay and add the C1 reflection that completes Competency 1.

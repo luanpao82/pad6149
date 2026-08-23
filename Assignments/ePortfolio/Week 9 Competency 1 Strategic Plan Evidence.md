@@ -1,6 +1,6 @@
 # Week 9: Competency 1 — Strategic Plan Evidence
 
-**Due:** October 19, 2026 | **Points:** 10 pts | **Length:** 1 evidence artifact + 2-page analysis
+**Due:** October 19, 2026 | **Points:** 7 pts | **Length:** 1 evidence artifact + 2-page analysis
 **NASPAA Competency 1:** Lead and manage in a dynamic, mission-driven nonprofit sector
 
 ---
@@ -16,7 +16,7 @@
 
 ## What Is This Section?
 
-Competency 1 — leadership and management — is the spine of the capstone. The strategic plan is one of the **strongest, most comprehensive artifacts** in your portfolio, so this week carries real weight (10 pts). You add it as evidence and write a focused analysis of it. (The second C1 piece — your Leadership Case Study — comes in Week 11, with the full C1 reflection.)
+Competency 1 — leadership and management — is the spine of the capstone. The strategic plan is one of the **strongest, most comprehensive artifacts** in your portfolio, so this week carries real weight (7 pts). You add it as evidence and write a focused analysis of it. (The second C1 piece — your Leadership Case Study — comes in Week 11, with the full C1 reflection.)
 
 ## Evidence to Include
 
@@ -35,13 +35,13 @@ Rather than a full reflection (that comes Week 11), write a focused **analysis o
 
 ---
 
-## Grading Rubric (10 pts)
+## Grading Rubric (7 pts)
 
 | Criteria | Points |
 |---|---|
-| Strategic plan curated with a clear competency caption | 2 pts |
-| Analysis explains the strategic choices and stakeholder/board consensus-building | 3 pts |
-| Analysis addresses responsiveness to a changing environment | 2 pts |
+| Strategic plan curated with a clear competency caption | 1 pt |
+| Analysis explains the strategic choices and stakeholder/board consensus-building | 2 pts |
+| Analysis addresses responsiveness to a changing environment | 1 pt |
 | Critical hindsight on what to strengthen — evidence of managerial growth | 2 pts |
 | Professional writing, APA 7th where sources are used | 1 pt |
 
@@ -58,4 +58,4 @@ Rather than a full reflection (that comes Week 11), write a focused **analysis o
 
 ## Looking Ahead
 
-**Next week (Week 10):** Competency 2 — Program Evaluation Evidence + C2 Reflection (8 pts). You'll add your program evaluation plan and write the full analytical-competency reflection.
+**Next week (Week 10):** Competency 2 — Program Evaluation Evidence + C2 Reflection (5 pts). You'll add your program evaluation plan and write the full analytical-competency reflection.

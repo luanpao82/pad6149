@@ -1,6 +1,6 @@
 # Week 11: Leadership Case Study & C1 Reflection
 
-**Due:** November 2, 2026 | **Points:** 20 pts | **Length:** 2,000–2,500 word essay + 2–3 page reflection
+**Due:** November 2, 2026 | **Points:** 30 pts | **Length:** 2,000–2,500 word essay + 2–3 page reflection
 **NASPAA Competency 1:** Lead and manage in a dynamic, mission-driven nonprofit sector
 
 > [!info] Common requirement — both paths
@@ -38,16 +38,16 @@ Add the finished essay to your portfolio's Competency 1 page alongside your stra
 
 ---
 
-## Grading Rubric (20 pts)
+## Grading Rubric (30 pts)
 
 | Criteria | Points |
 |---|---|
-| Articles well-selected; essay shows pattern analysis, not summary | 4 pts |
-| Root-cause analysis integrates MNM frameworks and local data | 5 pts |
-| Stakeholder analysis identifies real organizations with specific assessment | 3 pts |
-| "What's missing" is sharp and evidence-grounded | 3 pts |
-| C1 reflection meaningfully connects strategic plan + case study to the competency | 3 pts |
-| APA 7th, professional writing | 2 pts |
+| Articles well-selected; essay shows pattern analysis, not summary | 6 pts |
+| Root-cause analysis integrates MNM frameworks and local data | 7 pts |
+| Stakeholder analysis identifies real organizations with specific assessment | 5 pts |
+| "What's missing" is sharp and evidence-grounded | 4 pts |
+| C1 reflection meaningfully connects strategic plan + case study to the competency | 5 pts |
+| APA 7th, professional writing | 3 pts |
 
 > [!warning] Independent Work
 > This assignment is completed independently. Do not discuss the case or your essay with other students.
@@ -67,4 +67,4 @@ Add the finished essay to your portfolio's Competency 1 page alongside your stra
 
 ## Looking Ahead
 
-**Next week (Week 12):** AI Reflection & Portfolio Polish (5 pts). You'll document how you used AI across the portfolio and reflect critically on it — then do a polish pass on every section.
+**Next week (Week 12):** AI Reflection & Portfolio Polish (4 pts). You'll document how you used AI across the portfolio and reflect critically on it — then do a polish pass on every section.

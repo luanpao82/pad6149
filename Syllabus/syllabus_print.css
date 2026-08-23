@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+@page { size: letter; margin: 0.85in 0.8in; }
+
+:root {
+  --text: #1C1917; --muted: #57534E; --accent: #FFC904; --accent-dk: #B8890B;
+  --border: #E7E5E4; --surface-alt: #F5F5F0; --nav: #1C1917;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 10.5pt; line-height: 1.5; color: var(--text);
+  max-width: 7.2in; margin: 0 auto;
+}
+
+h1 {
+  font-size: 20pt; line-height: 1.15; letter-spacing: -0.01em;
+  margin: 0 0 2pt; padding-bottom: 6pt; border-bottom: 3px solid var(--accent);
+}
+h2 {
+  font-size: 13.5pt; margin: 18pt 0 7pt; padding-left: 9pt;
+  border-left: 4px solid var(--accent); line-height: 1.25;
+  page-break-after: avoid;
+}
+h3 { font-size: 11.5pt; margin: 13pt 0 4pt; page-break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 10pt 0 3pt; page-break-after: avoid; }
+p { margin: 0 0 7pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 18pt; }
+li { margin-bottom: 3pt; }
+a { color: var(--accent-dk); text-decoration: none; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16pt 0; }
+
+table {
+  width: 100%; border-collapse: collapse; margin: 8pt 0 12pt;
+  font-size: 9pt; page-break-inside: avoid;
+}
+th {
+  background: var(--nav); color: #fff; text-align: left;
+  padding: 4pt 6pt; font-family: 'DM Mono', monospace; font-size: 8pt;
+  font-weight: 500; text-transform: uppercase; letter-spacing: 0.03em;
+}
+td { padding: 4pt 6pt; border-bottom: 1px solid var(--border); vertical-align: top; }
+tbody tr:nth-child(even) td { background: var(--surface-alt); }
+
+blockquote {
+  border-left: 4px solid var(--accent); background: #FFFDF3;
+  padding: 6pt 12pt; margin: 8pt 0; border-radius: 3px;
+}
+
+code { font-family: 'DM Mono', monospace; font-size: 9pt; }
+
+/* First table after each H2 (meta blocks) stays compact */
+h1 + table td { border: none; padding: 2pt 6pt; }

@@ -14,13 +14,13 @@
 
 ## What Is This Assignment?
 
-An ePortfolio is an *electronic* portfolio — a website that presents your evidence and reflections in one professional place you can share with employers. This week you build the shell. You'll fill it with evidence and reflections over Weeks 4–13.
+An ePortfolio is an *electronic* portfolio — a website that presents your evidence and reflections in one professional place you can share with employers. This week — your **first graded submission** — you build the shell and fold in the welcome statement and competency self-assessment you drafted during orientation. You'll fill it with evidence and reflections over Weeks 4–13.
 
 ## Build the Structure
 
 Create a site with these pages (or sections):
 
-1. **Welcome** — your Week 1 statement + resume link
+1. **Welcome** — your welcome statement (from orientation) + resume link
 2. **Competency 1** — Lead and manage *(placeholder)*
 3. **Competency 2** — Analyze & solve problems *(placeholder)*
 4. **Competency 3** — Communicate with a diverse workforce *(placeholder)*
@@ -61,4 +61,4 @@ Each competency page should already include a one-line statement of the competen
 
 ## Looking Ahead
 
-**Next week (Week 4):** Competency 4 — Governance & Ethics (13 pts). Your first full competency section: two pieces of evidence plus a 2–3 page reflection on the public-service perspective. This is the largest weekly submission, so start early.
+**Next week (Week 4):** Competency 4 — Governance & Ethics (7 pts). Your first full competency section: two pieces of evidence plus a 2–3 page reflection on the public-service perspective. It's one of the heavier weekly submissions, so start early.

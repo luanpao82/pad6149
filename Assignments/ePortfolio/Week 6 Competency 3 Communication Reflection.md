@@ -1,6 +1,6 @@
 # Week 6: Competency 3 — Communication Reflection
 
-**Due:** September 28, 2026 | **Points:** 3 pts | **Length:** 1–2 pages
+**Due:** September 28, 2026 | **Points:** 2 pts | **Length:** 1–2 pages
 **NASPAA Competency 3:** Communicate and interact productively with a diverse and changing workforce and citizenry
 
 ---
@@ -30,12 +30,11 @@ This is a reflective piece — first-person, evidence-grounded, concise.
 
 ---
 
-## Grading Rubric (3 pts)
+## Grading Rubric (2 pts)
 
 | Criteria | Points |
 |---|---|
-| Reflection engages the module material on nonprofit communication and image | 1 pt |
-| A specific, concrete example of communicating across difference is analyzed | 1 pt |
+| Reflection engages the module material and analyzes a specific, concrete example of communicating across difference | 1 pt |
 | Clear connection to Competency 3; professional writing | 1 pt |
 
 ---
@@ -51,4 +50,4 @@ This is a reflective piece — first-person, evidence-grounded, concise.
 
 ## Looking Ahead
 
-**Next week (Week 7):** Competency 3 — Financial Evidence + C3 Reflection (3 pts). You'll add your financial/budget analysis as the second piece of C3 evidence and write the full competency reflection.
+**Next week (Week 7):** Competency 3 — Financial Evidence + C3 Reflection (2 pts). You'll add your financial/budget analysis as the second piece of C3 evidence and write the full competency reflection.

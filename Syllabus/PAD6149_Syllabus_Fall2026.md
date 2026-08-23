@@ -50,9 +50,9 @@ This capstone is where you demonstrate that you can do the work of nonprofit man
 
 - **Option A — ePortfolio.** You assemble and reflect on the strongest evidence from across your MNM program, curating a professional ePortfolio that documents your mastery of each core competency. This path suits students who want to consolidate, reflect on, and present the body of work they have already produced as they enter the job market.
 
-- **Option B — Build Your Nonprofit.** You spend the semester building a complete, real nonprofit organization from the ground up — mission, board, staffing plan, programs, budget, marketing identity, financials, and advocacy strategy — adapting your prior MNM coursework into a living organizational blueprint and public website. This path suits students who want to apply everything they have learned to a venture they may actually launch.
+- **Option B — Build the Petco Love Lost Start-Up.** You spend the semester building a real start-up nonprofit — jointly created by **Halifax Humane Society** and **Petco Love** — whose single purpose is to operate the **Petco Love Lost** free, AI-powered lost-and-found-pet program well across Volusia County. You design its board, staffing plan, programs, budget, brand identity, financials, and advocacy strategy, adapting your prior MNM coursework into a living organizational blueprint and public website. The organization is fictional, but the partners, the problem, and the data are real — and after the semester, completed sites are shared with Halifax Humane Society and Petco Love and may inform how the program is actually operated. This path suits students who want to apply everything they have learned to a venture with a real client.
 
-Both paths follow the **same weekly readings and lectures**, are graded against the **same competency rubric**, and carry **identical point values**. One assignment — the **Leadership Case Study** — is required of everyone, regardless of path. You choose your path at the start of the term and keep it for the semester. The best way to learn nonprofit management is to *do* it: whether you build a new organization or curate the evidence of work you have already done, you finish this course with a professional artifact you can show the sector.
+Both paths follow the **same weekly readings and lectures**, are graded against the **same standards**, and carry **identical point values**. One assignment — the **Leadership Case Study (30 pts)** — is required of everyone, regardless of path. Graded work begins in **Week 3** (Weeks 1–2 are for orientation, readings, and choosing your path), and both paths end with a **live website and a 5–8 minute video due December 3**. You choose your path before Week 3 and keep it for the semester. The best way to learn nonprofit management is to *do* it: whether you build the start-up or curate the evidence of work you have already done, you finish this course with a professional artifact you can show the sector.
 
 This course also treats artificial intelligence as a core professional competency. Nonprofit leaders today use AI tools to write grants, communicate with donors, analyze program data, and develop strategy. Rather than prohibiting these tools, this course requires students to use them — and to reflect critically on what AI can and cannot do in the service of a mission-driven organization. Students on both paths will document their AI use throughout the semester, developing the kind of thoughtful, ethical AI fluency that the nonprofit sector increasingly demands.
 
@@ -95,31 +95,31 @@ At the completion of this course students will be able to:
 
 ## Course Requirements and Evaluation
 
-Grading is **identical across both paths**: a common **Leadership Case Study (20 pts)** required of everyone, plus **80 pts** of weekly deliverables on your chosen path. Both paths total **100 points**, and each week's deliverable carries the same point value regardless of path — so the two paths are equivalent in workload and weight. The weekly readings and lectures are shared; only the deliverable differs.
+Grading is **identical across both paths**: a common **Leadership Case Study (30 pts)** required of everyone, plus **50 pts** of weekly deliverables on your chosen path. Both paths total **80 points**, and each week's deliverable carries the same point value regardless of path — so the two paths are equivalent in workload and weight. **Graded work begins in Week 3**; Weeks 1–2 are for orientation, readings, and choosing your path. The weekly readings and lectures are shared; only the deliverable differs.
 
-| Wk | Module Topic | **Option A** — ePortfolio | **Option B** — Build Your Nonprofit | Pts |
+| Wk | Module Topic | **Option A** — ePortfolio | **Option B** — Petco Love Lost Start-Up | Pts |
 |---|---|---|---|---|
-| 1 | Intro & the nonprofit sector | Welcome: career narrative + resume | Nonprofit Concept Statement | 2 |
-| 2 | Understanding the sector | Competency self-assessment & evidence plan | Interview Plan | 2 |
-| 3 | Cross-sector collaboration | Set up your ePortfolio site | Build Your Website | 3 |
-| 4 | Boards & governance | C4: Governance/Ethics evidence + reflection | Mentor Interview Report + Board Governance Policy | 13 |
-| 5 | Human resources management | C3: HR Case Study evidence | HR & Volunteer Management Plan | 7 |
-| 6 | Marketing & images | C3: Communication/identity reflection | Confirming Identity | 3 |
-| 7 | Financial management | C3: Financial/Budget Analysis evidence + reflection | Financial Plan & Budget | 3 |
-| 8 | Resources development | C2: Volunteer Case Study evidence | Fundraising Strategy | 3 |
-| 9 | Strategic planning | C1: Strategic Plan evidence | Strategic Plan | 10 |
-| 10 | Managing performance | C2: Program Evaluation evidence + reflection | Program Evaluation Framework | 8 |
-| 11 | Sustainability & leadership | 🔒 **Leadership Case Study** (+ C1 reflection) | 🔒 **Leadership Case Study** | 20 |
-| 12 | AI content & social media | AI-use reflection + portfolio polish | AI Content Creation & Social Media | 5 |
-| 13 | Effectiveness & policy advocacy | C5: Policy Advocacy + Policy Process evidence + reflection | Policy Advocacy Plan | 8 |
-| 14 | Putting it together | Final ePortfolio assembly + presentation | Final Pitch Presentation (YouTube) | 13 |
-| | | | **Total (both paths)** | **100** |
+| 1–2 | Intro, the sector & choosing a path | *Orientation — no graded deliverable* | *Orientation — no graded deliverable* | — |
+| 3 | Cross-sector collaboration | Build Your ePortfolio Site | Build Your Website | 3 |
+| 4 | Boards & governance | C4: Governance & Ethics evidence + reflection | Board & Governance | 6\* |
+| 5 | Human resources management | C3: HR evidence | HR & Volunteers | 5 |
+| 6 | Marketing & images | C3: Communication evidence | Confirming Your Identity | 2 |
+| 7 | Financial management | C3: Financial evidence + reflection | Financial Plan | 2 |
+| 8 | Resources development | C2: Volunteer Management evidence | Fundraising Strategy | 2 |
+| 9 | Strategic planning | C1: Strategic Planning & Leadership evidence | Strategic Plan | 7 |
+| 10 | Managing performance | C2: Program Evaluation evidence + reflection | Program Evaluation | 5 |
+| 11 | Sustainability & leadership | 🔒 **Leadership Case Study** (+ C1 reflection) | 🔒 **Leadership Case Study** | 30 |
+| 12 | AI content & social media | AI Reflection + portfolio polish | AI Content & Social Media | 4 |
+| 13 | Effectiveness & policy advocacy | C5: Policy Advocacy evidence + reflection | Policy Advocacy | 5 |
+| 14 | Putting it together | Final ePortfolio & Presentation Video | Final Pitch Video | 8/9\* |
+| | | | **Total (both paths)** | **80** |
 
 🔒 = **common requirement**, identical for both paths.
+\* Week 4 is 7 pts on Option A and 6 pts on Option B; Week 14 is 8 pts on Option A and 9 pts on Option B. All other weeks are identical, and both paths total 80.
 
 ### Choosing Your Path
 
-You will declare your path (Option A or Option B) by the end of **Week 1** on the "Choose Your Capstone Path" page in Webcourses. The choice is binding for the semester. If you are unsure, Option A is the natural fit if you have a strong body of completed MNM coursework you want to present professionally; Option B is the natural fit if you have a cause or organization you want to develop and possibly launch. Both satisfy every program competency and lead to the same degree outcome.
+You will declare your path (Option A or Option B) **before Week 3** on the "Choose Your Capstone Path" page in Webcourses. The choice is binding for the semester. If you are unsure, Option A is the natural fit if you have a strong body of completed MNM coursework you want to present professionally; Option B is the natural fit if you want the hands-on experience of assembling every piece of a real start-up (and want work you can point to in an interview — an organizational plan and pitch built from a real partnership case, seen by the partners themselves). Both satisfy every program competency and lead to the same degree outcome.
 
 ### Final grades will be determined on the following scale:
 
@@ -152,9 +152,9 @@ Detailed instructions, rubrics, and AI tool recommendations for each assignment 
 
 ---
 
-### Common Requirement: Leadership Case Study (20 pts) — required of everyone
+### Common Requirement: Leadership Case Study (30 pts) — required of everyone
 
-Every student, regardless of path, completes the **Leadership Case Study** in Week 11. This is a **general case analysis**: you evaluate a realistic leadership situation a nonprofit manager faces, identify the underlying problems, and propose well-reasoned, evidence-based solutions grounded in the leadership and management literature. It is the single shared deliverable that anchors both paths to the program's core competency in leadership and management (C1), and it is worth 20% of the course grade.
+Every student, regardless of path, completes the **Leadership Case Study** in Week 11. This is a **general case analysis**: you evaluate a realistic leadership situation a nonprofit manager faces, identify the underlying problems, and propose well-reasoned, evidence-based solutions grounded in the leadership and management literature. It is the **single largest assignment in the course** and the shared deliverable that anchors both paths to the program's core competency in leadership and management (C1). At 30 of the 80 course points, it is worth over a third of the grade.
 
 ---
 
@@ -164,34 +164,35 @@ The ePortfolio is a retrospective capstone: you curate and reflect on the strong
 
 | Phase | Weeks | What you submit |
 |---|---|---|
-| Foundation | 1–3 | Welcome (career narrative + resume), competency self-assessment & evidence plan, ePortfolio site setup |
+| Orientation | 1–2 | Readings, path selection, and a welcome statement + competency self-assessment (ungraded, folded into the Week 3 site build) |
+| Site setup | 3 | Build your ePortfolio site |
 | Competency evidence + reflections | 4–13 | One competency measurement (evidence + 2–3 page reflection) per week, on that week's topic |
-| Capstone | 14 | Final ePortfolio assembly + presentation |
+| Capstone | 14 | Final ePortfolio assembly + a 5–8 minute presentation video |
 
 Each competency section requires **two measurements of evidence** plus a **2–3 page reflection** connecting the evidence to the competency. The Welcome section also includes your resume documenting relevant nonprofit work or volunteer experience.
 
-### Option B — Build Your Nonprofit
+### Option B — Build the Petco Love Lost Start-Up
 
-This path designs and develops a complete nonprofit organization over the semester. Every assignment produces a document submitted to Webcourses and a corresponding page or update on the organization's public website. Prior MNM coursework is adapted and applied to your own organization.
+This path designs and develops a real start-up nonprofit over the semester — jointly created by **Halifax Humane Society** and **Petco Love** to operate the **Petco Love Lost** free AI photo-matching program across Volusia County. Every assignment produces a document submitted to Webcourses and a corresponding page or update on the organization's public website; each week you pull one piece of your prior MNM coursework and adapt it to this real case, with each week's page walking you through the specific AI tools, prompts, and check-and-revise steps for that deliverable.
 
 #### How Your Website Grows Each Week
 
-| Week | Assignment | Website Page | Source Coursework |
+| Week | Assignment | Website Component | Adapts |
 |---|---|---|---|
-| 3 | Build Your Website | Site launch: Home + About Us + placeholder pages | — |
-| 4 | Mentor Interview Report + Board Governance Policy | Board / Leadership | PAD 6237 |
-| 5 | HR & Volunteer Management Plan | Our Team + Get Involved | PAD 6417, PAD 5145 |
-| 6 | Confirming Identity | Full brand refresh + ED profile on Team page | — |
-| 7 | Financial Plan & Budget | Transparency / Financials | PAD 6208 |
-| 8 | Fundraising Strategy | Donate / Support Us | PAD 5146 |
-| 9 | Strategic Plan | Our Strategy | PAD 6335 |
-| 10 | Program Evaluation Framework | Programs | PAD 6327 |
+| 3 | Build Your Website | Home + About Us + placeholder pages | — |
+| 4 | Board & Governance | Leadership | PAD 6237 |
+| 5 | HR & Volunteers | Team + Get Involved | PAD 6417, PAD 5145 |
+| 6 | Confirming Your Identity | Identity / brand (applied across the site) | — |
+| 7 | Financial Plan | Financials | PAD 6208 |
+| 8 | Fundraising Strategy | Donate | PAD 5146 |
+| 9 | Strategic Plan | Strategy | PAD 6335 |
+| 10 | Program Evaluation | Programs | PAD 6327 |
 | 11 | *(Leadership Case Study — common requirement)* | Our Approach | — |
-| 12 | AI Content Creation & Social Media | Contact page + LinkedIn post | — |
-| 13 | Policy Advocacy Plan | Advocacy / Take Action | PAD 6142, PAD 5146 |
-| 14 | Final Pitch Presentation | YouTube video embedded on Home page | — |
+| 12 | AI Content & Social Media | Social / content | — |
+| 13 | Policy Advocacy | Advocacy | PAD 6142, PAD 5146 |
+| 14 | Final Pitch Video | 5–8 min video on Home | — |
 
-By Week 14, Option B students have a fully functional nonprofit website with governance documents, staffing plans, financial projections, program descriptions, evaluation frameworks, advocacy plans, and a pitch video — a complete organizational blueprint that demonstrates mastery across all five NASPAA competencies.
+By Week 14, Option B students have a fully functional website for the start-up — with governance documents, staffing plans, financial projections, program descriptions, evaluation frameworks, advocacy plans, and a pitch video — a complete organizational blueprint that demonstrates mastery across all five NASPAA competencies. Completed sites are shared with Halifax Humane Society and Petco Love after the term.
 
 #### Assignment Format (Option B)
 
@@ -210,11 +211,11 @@ Both paths demonstrate the same five competencies; they differ only in *how*. Op
 
 | Competency | **Option A** — prior-coursework evidence (+ reflection) | **Option B** — newly built artifact |
 | --- | --- | --- |
-| **C1:** Lead and manage in a dynamic, mission-driven nonprofit sector | PAD 6335 Strategic Plan; PAD 6149 Leadership Case Study | Strategic Plan (W9), Leadership Case Study (W11), Final Pitch (W14) |
-| **C2:** Analyze, synthesize, think critically, solve problems, and make decisions | PAD 6327 Program Evaluation Plan; PAD 5145 Volunteer Case Study | Program Evaluation Framework (W10) |
-| **C3:** Communicate and interact productively with a diverse and changing workforce and citizenry | PAD 6417 HR Case Study; **PAD 6208 Financial/Budget Analysis** | HR & Volunteer Management Plan (W5), Financial Plan & Budget (W7) |
-| **C4:** Articulate and apply a public service perspective emphasizing the role of civil society | PAD 6237 Governance Case Study; PAD 5145 Volunteer Motivation Literature Review Paper | Board Governance Policy (W4) |
-| **C5:** Participate in and contribute to the policy process | PAD 6142 Policy Advocacy Plan; PAD 5146 Policy Process Paper | Policy Advocacy Plan (W13) |
+| **C1:** Lead and manage in a dynamic, mission-driven nonprofit sector | PAD 6335 Strategic Plan; PAD 6149 Leadership Case Study | Strategic Plan (W9), Leadership Case Study (W11), Final Pitch Video (W14) |
+| **C2:** Analyze, synthesize, think critically, solve problems, and make decisions | PAD 6327 Program Evaluation Plan; PAD 5145 Volunteer Case Study | Program Evaluation (W10) |
+| **C3:** Communicate and interact productively with a diverse and changing workforce and citizenry | PAD 6417 HR Case Study; **PAD 6208 Financial/Budget Analysis** | HR & Volunteers (W5), Financial Plan (W7) |
+| **C4:** Articulate and apply a public service perspective emphasizing the role of civil society | PAD 6237 Governance Case Study; PAD 5145 Volunteer Motivation Literature Review Paper | Board & Governance (W4) |
+| **C5:** Participate in and contribute to the policy process | PAD 6142 Policy Advocacy Plan; PAD 5146 Policy Process Paper | Policy Advocacy (W13) |
 
 *The Leadership Case Study (W11) is the common requirement and counts toward C1 for both paths.*
 
@@ -319,21 +320,21 @@ Integrity, scholarship, community, creativity, and excellence are the core value
 
 | Week | Dates | Course Topic | Required Reading | Assignments Due |
 |---|---|---|---|---|
-| 1 | Aug 24 | **Introduction to the course and syllabus** | Fletcher (2005) *NVSQ 34*(4): 433–447; Mirabella (2007) *NVSQ 36*(4): 11S–27S | Financial Aid Attendance (DUE 5:00pm Aug 24th) + **A:** Welcome (narrative + resume) · **B:** Concept Statement (2 pts) |
-| 2 | Aug 31 | **Understanding the nonprofit sector & organizations** | Worth (2020) Ch. 1–3; Hudson (2005) Resource A (pg. 235–240); Wolf (2012) Ch. 1; Gottlieb (2009) pp: 1–117; Hammack (2002) *ABS 45*(11): 1638–1674; Chang & Tuckman (1996) *PFR 24*(1): 25–43; Sherlock & Gravele (2009) CRS | Case: Rowe & Conway Dato-On (2013) Ch. 1 + **A:** Self-assessment & evidence plan · **B:** Interview Plan (2 pts) |
+| 1 | Aug 24 | **Introduction to the course and syllabus** | Fletcher (2005) *NVSQ 34*(4): 433–447; Mirabella (2007) *NVSQ 36*(4): 11S–27S | Financial Aid Attendance (DUE 5:00pm Aug 24th) + **choose your capstone path** — orientation only, no graded deliverable |
+| 2 | Aug 31 | **Understanding the nonprofit sector & organizations** | Worth (2020) Ch. 1–3; Hudson (2005) Resource A (pg. 235–240); Wolf (2012) Ch. 1; Gottlieb (2009) pp: 1–117; Hammack (2002) *ABS 45*(11): 1638–1674; Chang & Tuckman (1996) *PFR 24*(1): 25–43; Sherlock & Gravele (2009) CRS | Case: Rowe & Conway Dato-On (2013) Ch. 1 — orientation only, no graded deliverable |
 | 3 | Sep 7 | **Cross-sector collaborations: government, business, & nonprofit relations** | Worth (2020) Ch. 8, 11; Dicke & Ott (1999) *PPMR 22*(4): 502–516; Gazley & Brudney (2007) *NVSQ 36*(3): 389–415; Smith (2008) *PAR 68*: s132–145; Young (2002) *ARPA 32*(1): 3–19; Young (2000) *NVSQ 29*(1): 149–172 | **A:** Set up ePortfolio site · **B:** Build Your Website (3 pts) |
-| 4 | Sep 14 | **Boards of directors & nonprofit governance** | Worth (2020) Ch. 4; Hudson (2005) Ch. 6 (pg. 181–207); Wolf (2012) Ch. 2; Gottlieb (2009) pp: 119–200; Abzug & Galaskiewicz (2001) *NVSQ 30*(1): 51–57; Hall & Kennedy (2008) *ARPA 38*(3): 307–321; Miller-Millesen (2003) *NVSQ 32*(4): 521–547; Stone & Ostrower (2007) *NVSQ 36*(3): 416–438 | **A:** C4 Governance evidence + reflection · **B:** Mentor Interview Report + Board Governance Policy (13 pts) |
-| 5 | Sep 21 | **Assembling the workforce: Human resources management** | Worth (2020) Ch. 9; Dicke & Ott (2003) *RPPA 23*(2): 97–113; "Challenges for Nonprofit Managers" *NML 11*(1): 49–63; Handy, Mook & Quarter (2008) *NVSQ 37*(1): 76–92 | **A:** C3 HR Case evidence · **B:** HR & Volunteer Management Plan (7 pts) |
-| 6 | Sep 28 | **Marketing: Images of nonprofit organizations** | Worth (2020) Ch. 10; Pope, Isely & Asamoa-Tutu (2009) *JNPSM 21*(2): 184–201; Wolf (2012) Ch. 5; Stater (2009) *JNPSM 21*(2): 202–224 | **A:** C3 communication reflection · **B:** Confirming Identity (3 pts) |
-| 7 | Oct 5 | **Financial Management & Accountability** | Worth (2020) Ch. 12, 14, 15; Benjamin (2008) *NVSQ 37*(2): 201–223; Wolf (2012) Ch. 6 & 7; Yan, Denison & Butler (2008) *PFR 37*(1): 1–21 | **A:** C3 Financial Analysis evidence + reflection · **B:** Financial Plan & Budget (3 pts) |
-| 8 | Oct 12 | **Resources Development & Management** | Worth (2020) Ch. 13; Hudson (2005) Ch. 4 (pg. 121–150); Wolf (2012) Ch. 8; Thornton (2006) *NVSQ 35*(2): 204–224; Van Slyke, Ashley & Johnson (2007) *ARPA 37*(3): 278–305; Barman (2008) *NVSQ 37*(1): 39–56; Stephenson, Schnitzer & Arroyave (2008) *ARPA 39*(1): 43–59; Tuckman & Chang (1998) *NML 9*(2): 211–221 | **A:** C2 Volunteer Case evidence · **B:** Fundraising Strategy (3 pts) |
-| 9 | Oct 19 | **Strategic planning & management** | Worth (2020) Ch. 7 (pg. 181–198 only); Wolf (2012) Ch. 9; Stone, Bigelow & Crittenden (1999) *A&S 31*(3): 378–423 | **A:** C1 Strategic Plan evidence · **B:** Strategic Plan (10 pts) |
-| 10 | Oct 26 | **Managing Nonprofit Performance** | Worth (2020) Ch. 6; Hudson (2005) Ch. 2 (pg. 41–80); Benjamin (2008) *A&S 39*(8): 959–983; Berman & West (1998) *PPMR 22*(2): 207–219 | **A:** C2 Program Eval evidence + reflection · **B:** Program Evaluation Framework (8 pts) |
-| 11 | Nov 2 | **Sustainability & Nonprofit Leadership** | Worth (2020) Ch. 5; Hudson (2005) Ch. 5 (pg. 151–180); Wolf (2012) Ch. 10; Gottlieb (2009) pp: 203–274 | 🔒 **Leadership Case Study** — required of all paths (20 pts) |
-| 12 | Nov 9 | **AI Content Creation & Social Media** *(Veterans Day — Nov 11)* | Worth (2020) Ch. 7 (pg. 198–208 only); Hudson (2005) Ch. 1 (pg. 1–40) & Ch. 3 (pg. 81–120) | **A:** AI-use reflection + portfolio polish · **B:** AI Content Creation & Social Media (5 pts) |
-| 13 | Nov 16 | **Nonprofit Effectiveness & Policy Advocacy** | Worth (2020) Ch. 16; Herman & Renz (2004) *PAR 64*(6): 694–704; Sawhill & Williamson (2001) *NML 11*(3): 371–386; Wolf (2012) Ch. 11; Herman & Renz (2008) *NML 18*(4): 399–416; Rhode & Packel (2009) *SSIR*: 28–35 | **A:** C5 Policy evidence + reflection · **B:** Policy Advocacy Plan (8 pts) |
+| 4 | Sep 14 | **Boards of directors & nonprofit governance** | Worth (2020) Ch. 4; Hudson (2005) Ch. 6 (pg. 181–207); Wolf (2012) Ch. 2; Gottlieb (2009) pp: 119–200; Abzug & Galaskiewicz (2001) *NVSQ 30*(1): 51–57; Hall & Kennedy (2008) *ARPA 38*(3): 307–321; Miller-Millesen (2003) *NVSQ 32*(4): 521–547; Stone & Ostrower (2007) *NVSQ 36*(3): 416–438 | **A:** C4 Governance & Ethics evidence + reflection (7 pts) · **B:** Board & Governance (6 pts) |
+| 5 | Sep 21 | **Assembling the workforce: Human resources management** | Worth (2020) Ch. 9; Dicke & Ott (2003) *RPPA 23*(2): 97–113; "Challenges for Nonprofit Managers" *NML 11*(1): 49–63; Handy, Mook & Quarter (2008) *NVSQ 37*(1): 76–92 | **A:** C3 HR evidence · **B:** HR & Volunteers (5 pts) |
+| 6 | Sep 28 | **Marketing: Images of nonprofit organizations** | Worth (2020) Ch. 10; Pope, Isely & Asamoa-Tutu (2009) *JNPSM 21*(2): 184–201; Wolf (2012) Ch. 5; Stater (2009) *JNPSM 21*(2): 202–224 | **A:** C3 Communication evidence · **B:** Confirming Your Identity (2 pts) |
+| 7 | Oct 5 | **Financial Management & Accountability** | Worth (2020) Ch. 12, 14, 15; Benjamin (2008) *NVSQ 37*(2): 201–223; Wolf (2012) Ch. 6 & 7; Yan, Denison & Butler (2008) *PFR 37*(1): 1–21 | **A:** C3 Financial evidence + reflection · **B:** Financial Plan (2 pts) |
+| 8 | Oct 12 | **Resources Development & Management** | Worth (2020) Ch. 13; Hudson (2005) Ch. 4 (pg. 121–150); Wolf (2012) Ch. 8; Thornton (2006) *NVSQ 35*(2): 204–224; Van Slyke, Ashley & Johnson (2007) *ARPA 37*(3): 278–305; Barman (2008) *NVSQ 37*(1): 39–56; Stephenson, Schnitzer & Arroyave (2008) *ARPA 39*(1): 43–59; Tuckman & Chang (1998) *NML 9*(2): 211–221 | **A:** C2 Volunteer Management evidence · **B:** Fundraising Strategy (2 pts) |
+| 9 | Oct 19 | **Strategic planning & management** | Worth (2020) Ch. 7 (pg. 181–198 only); Wolf (2012) Ch. 9; Stone, Bigelow & Crittenden (1999) *A&S 31*(3): 378–423 | **A:** C1 Strategic Planning & Leadership evidence · **B:** Strategic Plan (7 pts) |
+| 10 | Oct 26 | **Managing Nonprofit Performance** | Worth (2020) Ch. 6; Hudson (2005) Ch. 2 (pg. 41–80); Benjamin (2008) *A&S 39*(8): 959–983; Berman & West (1998) *PPMR 22*(2): 207–219 | **A:** C2 Program Evaluation evidence + reflection · **B:** Program Evaluation (5 pts) |
+| 11 | Nov 2 | **Sustainability & Nonprofit Leadership** | Worth (2020) Ch. 5; Hudson (2005) Ch. 5 (pg. 151–180); Wolf (2012) Ch. 10; Gottlieb (2009) pp: 203–274 | 🔒 **Leadership Case Study** — required of all paths (30 pts) |
+| 12 | Nov 9 | **AI Content Creation & Social Media** *(Veterans Day — Nov 11)* | Worth (2020) Ch. 7 (pg. 198–208 only); Hudson (2005) Ch. 1 (pg. 1–40) & Ch. 3 (pg. 81–120) | **A:** AI Reflection + portfolio polish · **B:** AI Content & Social Media (4 pts) |
+| 13 | Nov 16 | **Nonprofit Effectiveness & Policy Advocacy** | Worth (2020) Ch. 16; Herman & Renz (2004) *PAR 64*(6): 694–704; Sawhill & Williamson (2001) *NML 11*(3): 371–386; Wolf (2012) Ch. 11; Herman & Renz (2008) *NML 18*(4): 399–416; Rhode & Packel (2009) *SSIR*: 28–35 | **A:** C5 Policy Advocacy evidence + reflection · **B:** Policy Advocacy (5 pts) |
 | — | Nov 23–27 | **Thanksgiving Break** | — | — |
-| 14 | Dec 3 | **Putting It Together: Final Pitch** | Worth (2020) Ch. 17; Hudson (2005) Ch. 7 (pg. 209–234); Gottlieb (2009) pp: 329–355 | **A:** Final ePortfolio assembly + presentation · **B:** Final Pitch (YouTube) (13 pts) |
+| 14 | Dec 3 | **Putting It Together: Final Pitch** | Worth (2020) Ch. 17; Hudson (2005) Ch. 7 (pg. 209–234); Gottlieb (2009) pp: 329–355 | **A:** Final ePortfolio & Presentation Video (8 pts) · **B:** Final Pitch Video (9 pts) — live site + 5–8 min video |
 
 *Withdrawal Deadline: Friday, October 30, 2026 at 11:59 PM*
 

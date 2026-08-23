@@ -1,6 +1,6 @@
 # Week 7: Competency 3 — Financial Evidence & Reflection
 
-**Due:** October 5, 2026 | **Points:** 3 pts | **Length:** 1 evidence artifact + 2–3 page reflection
+**Due:** October 5, 2026 | **Points:** 2 pts | **Length:** 1 evidence artifact + 2–3 page reflection
 **NASPAA Competency 3:** Communicate and interact productively with a diverse and changing workforce and citizenry
 
 ---
@@ -41,13 +41,12 @@ Add 1–2 scholarly sources via **Google Scholar**; cite in APA 7th.
 
 ---
 
-## Grading Rubric (3 pts)
+## Grading Rubric (2 pts)
 
 | Criteria | Points |
 |---|---|
 | Financial/budget analysis curated with a clear competency caption | 1 pt |
-| Reflection integrates both C3 artifacts with genuine insight | 1 pt |
-| Scholarly grounding, APA 7th, professional writing | 1 pt |
+| Reflection integrates both C3 artifacts with genuine insight; scholarly grounding, APA 7th, professional writing | 1 pt |
 
 ---
 
@@ -63,4 +62,4 @@ Add 1–2 scholarly sources via **Google Scholar**; cite in APA 7th.
 
 ## Looking Ahead
 
-**Next week (Week 8):** Competency 2 — Volunteer Case Study Evidence (3 pts). You'll add the first piece of evidence for your analytical and problem-solving competency.
+**Next week (Week 8):** Competency 2 — Volunteer Case Study Evidence (2 pts). You'll add the first piece of evidence for your analytical and problem-solving competency.

@@ -1,6 +1,6 @@
 # Week 8: Competency 2 — Volunteer Case Study Evidence
 
-**Due:** October 12, 2026 | **Points:** 3 pts | **Length:** 1 evidence artifact + caption
+**Due:** October 12, 2026 | **Points:** 2 pts | **Length:** 1 evidence artifact + caption
 **NASPAA Competency 2:** Analyze, synthesize, think critically, solve problems, and make decisions
 
 ---
@@ -31,13 +31,12 @@ Curate the artifact with a **3–4 sentence caption** that names the problem you
 
 ---
 
-## Grading Rubric (3 pts)
+## Grading Rubric (2 pts)
 
 | Criteria | Points |
 |---|---|
 | Volunteer case study is relevant, complete, and curated onto the portfolio page | 1 pt |
-| Caption foregrounds analysis, problem-solving, and decision-making | 1 pt |
-| Professional presentation and writing | 1 pt |
+| Caption foregrounds analysis, problem-solving, and decision-making; professional presentation and writing | 1 pt |
 
 ---
 
@@ -52,4 +51,4 @@ Curate the artifact with a **3–4 sentence caption** that names the problem you
 
 ## Looking Ahead
 
-**Next week (Week 9):** Competency 1 — Strategic Plan Evidence (10 pts). Your strategic plan is one of the strongest artifacts in your portfolio — give it a substantial, well-argued presentation.
+**Next week (Week 9):** Competency 1 — Strategic Plan Evidence (7 pts). Your strategic plan is one of the strongest artifacts in your portfolio — give it a substantial, well-argued presentation.

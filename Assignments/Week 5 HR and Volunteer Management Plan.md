@@ -1,6 +1,6 @@
 # Week 5: HR & Volunteer Management Plan
 
-**Due:** September 21, 2026 | **Points:** 7 pts | **Length:** 5–7 pages
+**Due:** September 21, 2026 | **Points:** 5 pts | **Length:** 5–7 pages
 **NASPAA Competency 3:** Communicate and interact productively with a diverse and changing workforce and citizenry
 **Source coursework:**
 - PAD 6417 – Human Resource Management (HR Case Study)
@@ -14,15 +14,17 @@
 | What | Where | Format |
 |---|---|---|
 | HR & Volunteer Management Plan | Webcourses → Assignments → Week 5 | Word (.docx), 5–7 pages, double-spaced |
-| Website update | Your live website | "Our Team" page + "Get Involved" page with summaries + PDF download links |
+| Website update | Your live website | "Team" page + "Get Involved" page with summaries + PDF download links |
 
 ---
 
 ## What Is This Assignment?
 
-Your nonprofit has a mission, a website, and a board. Now it needs people — both paid staff and volunteers.
+Your start-up has a mission, a website, and a board. Now it needs people — both paid staff and volunteers — to actually run the Petco Love Lost program in Volusia County.
 
-In PAD 6417, you conducted an **HR Case Study** — analyzing a real nonprofit's position management, recruitment, compensation, training, and performance systems. In PAD 5145, you studied **volunteer management** — motivation, program design, and best practices. This assignment asks you to take that knowledge and build the people infrastructure for your own organization.
+Remember the scope of the operation. The Petco Love Lost database is a free, AI-powered photo-matching tool: someone uploads a photo, and it searches a national pool of lost and found pets in seconds. Nationally it is used by more than 3,000 shelters and rescues, with over 300,000 pets registered and more than 100,000 reunions to date. Your start-up — jointly created by Halifax Humane Society and Petco Love — has one job: make that program work well locally, in the first coordinated countywide deployment. Halifax already shelters, treats, and rehomes nearly 15,000 animals a year and serves nine Volusia County municipalities. As Halifax's CEO puts it, the technology "can help reunite lost pets within minutes — without them ever having to enter a shelter." Delivering on that promise takes staff to run the platform and coordinate partners, and a volunteer corps to do the on-the-ground intake, registration, outreach, and reunion work.
+
+In PAD 6417, you conducted an **HR Case Study** — analyzing a real nonprofit's position management, recruitment, compensation, training, and performance systems. In PAD 5145, you studied **volunteer management** — motivation, program design, and best practices. This assignment asks you to take that knowledge and build the people infrastructure for your organization.
 
 The deliverable is a formal HR & Volunteer Management Plan. The website update: a "Team" page and a "Get Involved" page that would make a real visitor want to apply or volunteer.
 
@@ -33,7 +35,7 @@ The deliverable is a formal HR & Volunteer Management Plan. The website update: 
 Same pattern as Week 4:
 
 ### Step 1: Revisit Your Prior Coursework
-Pull up your PAD 6417 HR Case Study and your PAD 5145 Volunteer Case Study and Literature Review. What did you learn about effective HR practices? What problems did you identify? What recommendations did you make?
+Pull up your PAD 6417 HR Case Study and your PAD 5145 Volunteer Case Study and Literature Review. What did you learn about effective HR practices? What problems did you identify? What recommendations did you make? Which of those lessons apply to a small, tech-enabled start-up that lives or dies by its partnerships with shelters and rescues?
 
 ### Step 2: Upload to NotebookLM and Discuss
 
@@ -44,21 +46,25 @@ Pull up your PAD 6417 HR Case Study and your PAD 5145 Volunteer Case Study and L
 > ```
 > Based on my HR case study from PAD 6417, what were the most
 > significant HR challenges I identified? How would I design HR
-> systems for a new nonprofit to avoid those problems from the start?
+> systems from the start for a new nonprofit that operates an
+> AI photo-matching lost-and-found platform and coordinates with
+> a shelter and nine municipal shelters/rescues?
 > ```
 >
 > ```
-> My PAD 5145 volunteer case study analyzed [organization's] volunteer
-> program. What worked well and what didn't? How should I design a
-> volunteer program for a nonprofit serving immigrant communities
-> where language barriers and cultural norms affect volunteer
-> recruitment and management?
+> My PAD 5145 volunteer case study analyzed [organization's]
+> volunteer program. What worked well and what didn't? How should
+> I design a volunteer program for an organization whose volunteers
+> do photo-intake for lost/found pets, run microchip and registration
+> drives at community events, and help reunite pets with owners
+> across nine municipalities in Volusia County, FL?
 > ```
 >
 > ```
 > In my volunteer motivation literature review, I found that [key
-> finding]. How should this inform the volunteer recruitment and
-> retention strategy for my organization?
+> finding]. How should this inform recruitment and retention for
+> episodic, event-based volunteers (registration drives, adoption
+> and community events) versus ongoing weekly volunteers?
 > ```
 
 ### Step 3: Draft Your HR & Volunteer Management Plan
@@ -75,30 +81,36 @@ A **5–7 page, double-spaced** HR & Volunteer Management Plan covering:
 ### 1. Organizational Chart
 A visual representation of your staff and volunteer structure. Use Canva AI to create a clean org chart.
 
-For a startup nonprofit, this will be small — and that's fine. A typical early-stage structure might include:
+For a start-up nonprofit, this will be small — and that's fine. A tech-enabled program like this leans on a lean paid team plus a large, well-organized volunteer corps. A typical early-stage structure might include:
 - Executive Director (1 FTE)
-- Program Manager/Coordinator (1 FTE)
-- Administrative/Development support (1 PT or volunteer)
-- Volunteers in program delivery roles
+- Program & Partnerships Manager / Shelter Liaison (1 FTE)
+- Data & Platform Administrator (1 FTE or PT)
+- Community Outreach & Volunteer Coordinator (1 PT)
+- Volunteers across photo-intake, registration drives, outreach, and reunion support
 
-> [!example] Running Example: Asian Bridge Orlando — Org Chart
+> [!example] The Case: Petco Love Lost Start-Up — Org Chart
 > ```
-> Board of Directors (9 members)
+> Board of Directors
+> (jointly appointed by Halifax Humane Society + Petco Love)
 >        |
 > Executive Director
 >        |
-> ├── Program Director
-> │     ├── Community Navigator (bilingual, FT)
-> │     ├── Community Navigator (bilingual, FT)
-> │     └── Program Volunteers (10-15)
+> ├── Program & Partnerships Manager (FT)
+> │     ├── Shelter & Rescue Coordinator (liaison to Halifax
+> │     │     + the 9 Volusia municipal shelters/rescues)
+> │     └── Reunion Support Specialist (PT)
 > │
-> ├── Development & Communications Coordinator (PT)
-> │     └── Event Volunteers (5-10)
+> ├── Data & Platform Administrator (FT)
+> │     └── manages the AI photo-matching database, uploads,
+> │         match review, and data quality
 > │
-> └── Administrative Assistant (PT)
+> └── Community Outreach & Volunteer Coordinator (PT)
+>       └── Volunteers (60-80 active):
+>           photo-intake · microchip/registration drives ·
+>           community outreach · reunion support
 > ```
 >
-> *Year 1 budget supports 3 FTE and 2 PT positions. Volunteer program targets 20-25 active volunteers providing community navigation, event support, and translation services.*
+> *This is one plausible version, not a fixed requirement. A lean paid team (roughly 3 FTE + 1–2 PT) keeps the platform running and the nine-municipality partnership coordinated, while a larger volunteer corps does the high-touch community work. You decide the exact staffing your budget and program design can support — just make it realistic and justify it.*
 
 ### 2. Three Key Staff Position Descriptions
 For each position, include:
@@ -107,34 +119,34 @@ For each position, include:
 - Key responsibilities (5–7 bullet points)
 - Required qualifications
 - Preferred qualifications
-- Salary range (research comparable positions on **Indeed**, **Idealist**, and **Glassdoor** — check at least 5 postings per role for your area). For standard job classification details and required competencies, look up the position on **O*NET OnLine** (onetonline.org)
+- Salary range (research comparable positions on **Indeed**, **Idealist**, and **Glassdoor** — check at least 5 postings per role for the Daytona Beach / Volusia County area). For standard job classification details and required competencies, look up the position on **O*NET OnLine** (onetonline.org)
 
-> [!example] Running Example: Asian Bridge Orlando — Position Description
-> **Title:** Community Navigator
-> **Reports to:** Program Director
+> [!example] The Case: Petco Love Lost Start-Up — Position Description
+> **Title:** Shelter & Rescue Coordinator
+> **Reports to:** Program & Partnerships Manager
 > **Classification:** Full-time, exempt
-> **Salary range:** $38,000–$45,000
+> **Salary range:** $42,000–$50,000 (Daytona Beach / Volusia County area — verify against current postings)
 >
 > **Responsibilities:**
-> - Provide one-on-one navigation support to immigrant families accessing healthcare, legal, educational, and social services
-> - Conduct community intake assessments in client's preferred language
-> - Maintain case files and track service outcomes using organizational database
-> - Facilitate group workshops on topics including healthcare enrollment, school registration, and civic participation
-> - Build and maintain relationships with partner agencies and service providers
-> - Participate in community outreach events and presentations
+> - Serve as day-to-day liaison to Halifax Humane Society and the shelters and rescues in the nine Volusia County municipalities
+> - Onboard partner shelters onto the Petco Love Lost platform and train their staff on uploading found-pet photos and reviewing matches
+> - Coordinate a consistent countywide intake workflow so lost and found reports move quickly across jurisdictions
+> - Monitor match activity, follow up on likely matches, and route confirmed matches to reunion support
+> - Track partner participation and platform usage; troubleshoot gaps in coverage across municipalities
+> - Represent the start-up at inter-agency and municipal animal-services meetings
 >
 > **Required qualifications:**
-> - Bachelor's degree in social work, human services, public administration, or related field
-> - Fluency in English and at least one additional language spoken by the community served (Mandarin, Vietnamese, Burmese/Karen, Nepali, or Hindi)
-> - Experience working with immigrant or refugee populations
-> - Valid driver's license and reliable transportation
+> - Bachelor's degree in nonprofit management, public administration, animal science, or related field
+> - Experience coordinating across multiple partner organizations or government agencies
+> - Comfort with web-based databases and basic data review
+> - Valid driver's license and reliable transportation (regular travel across the county)
 >
 > **Preferred qualifications:**
-> - Master's degree in social work or related field
-> - Lived experience as an immigrant or first-generation American
-> - Knowledge of Central Florida's social service landscape
+> - Experience in animal welfare, sheltering, or a humane society
+> - Familiarity with Volusia County's municipalities and animal-services landscape
+> - Bilingual (English/Spanish) to serve the county's Spanish-speaking residents
 >
-> *Note: This position description was informed by my PAD 6417 case study, where I found that the organization I analyzed lacked clear position descriptions for direct service roles, leading to role confusion and burnout. Asian Bridge Orlando's descriptions are designed to set clear expectations from day one.*
+> *Note: This description was informed by my PAD 6417 case study, where I found that the organization I analyzed lacked clear position descriptions for cross-functional roles, leading to role confusion. For a start-up whose core value is coordination across ten-plus separate shelters and rescues, defining that liaison role precisely from day one is essential.*
 
 ### 3. Volunteer Program Design
 - Volunteer roles and descriptions (what will volunteers actually do?)
@@ -143,35 +155,41 @@ For each position, include:
 - Training outline (initial orientation + ongoing development)
 - Recognition and retention approach
 
+Think about the real volunteer work this program requires: getting clear photos of lost and found pets into the database, running microchip and registration drives so more pets are searchable before they ever go missing, spreading the word across all nine municipalities, and helping owners and finders complete a reunion once the AI flags a likely match. Some of this is ongoing weekly work; much of it is episodic, event-based work tied to registration and community events — and the two kinds of volunteers are recruited and retained differently.
+
 > [!tip] AI Tip: Volunteer Role Descriptions
 > Use **ChatGPT or Claude** to draft a starting point:
 > ```
-> Design 3 volunteer roles for a nonprofit that provides community
-> navigation services to Asian American and immigrant families. For
-> each role, include: title, time commitment, responsibilities,
-> required skills, and training provided. Consider that many
-> volunteers may themselves be members of the community served.
+> Design 4 volunteer roles for a start-up nonprofit that operates the
+> Petco Love Lost AI photo-matching database for lost and found pets in
+> Volusia County, FL, in partnership with Halifax Humane Society and nine
+> municipal shelters/rescues. The roles should cover: (1) photo-intake of
+> lost/found pets, (2) microchip and pet-registration drives at community
+> events, (3) community outreach and awareness, and (4) reunion support.
+> For each role include: title, time commitment, whether it is ongoing or
+> episodic/event-based, responsibilities, required skills, and training
+> provided.
 > ```
-> Then browse **VolunteerMatch** (volunteermatch.org) to see how similar nonprofits describe their volunteer roles in practice — real listings are a better benchmark than AI-generated templates.
+> Then browse **VolunteerMatch** (volunteermatch.org) to see how real animal-welfare and shelter nonprofits describe their volunteer roles in practice — real listings are a better benchmark than AI-generated templates.
 
 ### 4. DEI Statement and Hiring Commitment
 - How will your organization build and maintain a diverse team?
 - What specific commitments will you make in hiring practices?
-- How does your DEI approach connect to your mission and the population you serve?
+- How does your DEI approach connect to your mission and the community you serve?
 
-This is especially important for organizations serving specific cultural or ethnic communities. Your hiring practices should reflect and respect the community you serve — not just in demographics, but in cultural competency, language capacity, and lived experience.
+The program has to reach every corner of a nine-municipality county — including renters, lower-income households, Spanish-speaking residents, and neighborhoods with less access to veterinary care, who are often the ones most affected when a pet goes missing and has no microchip. Your hiring and volunteer-recruitment practices should reflect that reach: language capacity, cultural competency, and volunteers who are trusted in the specific communities you need to enroll.
 
 ### 5. Conflict Resolution and HR Policies
 - Key workplace policies (anti-harassment, grievance process, at-will employment)
-- How will conflicts between staff, between staff and volunteers, or between staff and community members be handled?
+- How will conflicts between staff, between staff and volunteers, or between your team and partner shelters be handled?
 - Keep it concise — 1 page of key policies is sufficient at this stage
 
-For sample policy language, **SHRM** (shrm.org) offers free articles and toolkits on anti-harassment policies, performance reviews, and employee handbooks that are widely used across the sector. Adapt, don't copy — your policies should reflect the size and culture of your specific organization.
+Because this start-up works inside a web of partner shelters and rescues, pay attention to boundary and data policies too: who can access owner contact information, how a disputed match or a contested pet ownership is escalated, and how disagreements with a partner municipality are resolved. For sample policy language, **SHRM** (shrm.org) offers free articles and toolkits on anti-harassment policies, performance reviews, and employee handbooks that are widely used across the sector. Adapt, don't copy — your policies should reflect the size and culture of your specific organization.
 
 ### 6. Supervision and Performance Review Process
 - How will staff be supervised? (frequency of check-ins, reporting structure)
 - What does the performance review process look like?
-- How will volunteer performance be monitored and supported?
+- How will volunteer performance be monitored and supported — including the episodic, event-based volunteers who may only serve a few times a year?
 
 ---
 
@@ -179,30 +197,31 @@ For sample policy language, **SHRM** (shrm.org) offers free articles and toolkit
 
 Add two pages to your website:
 
-**"Our Team" page:**
-- Brief introduction to your organizational structure
+**"Team" page:**
+- Brief introduction to your organizational structure and how a lean paid team plus volunteers runs the program
 - Staff profiles (fictional for now — name, title, 1-sentence bio, photo placeholder)
 - Org chart graphic (export from Canva)
 - Download link: "View our full HR & Staffing Plan (PDF)"
 
 **"Get Involved" or "Volunteer" page:**
-- Why volunteer with your organization (connect to mission)
+- Why volunteer with your organization (connect to the mission of reuniting lost pets)
 - Available volunteer roles with brief descriptions
-- Time commitment expectations
+- Time commitment expectations (note which roles are ongoing vs. event-based)
 - A call to action ("Interested? Contact us at...")
 - Download link: "View our Volunteer Program Guide (PDF)"
 
-> [!example] Running Example: Asian Bridge Orlando — Get Involved Page
+> [!example] The Case: Petco Love Lost Start-Up — Get Involved Page
 > **Page title:** Get Involved
 >
-> **Intro:** "Asian Bridge Orlando relies on dedicated volunteers who share our commitment to serving Central Florida's Asian American and immigrant communities. Whether you speak a second language, have professional skills to share, or simply want to make a difference — there's a role for you."
+> **Intro:** "Every year, millions of dogs and cats go missing. Our free, AI-powered database can reunite a lost pet with its family in minutes — but only if the right photo makes it into the system, and only if word reaches every neighborhood in Volusia County. That's where you come in. Whether you can give a few hours a week or a few Saturdays a year, there's a role for you."
 >
 > **Volunteer Roles:**
-> - 🌐 **Community Navigator Volunteer** — Help immigrant families access services (bilingual required, 4-6 hrs/week)
-> - 📋 **Administrative Support** — Assist with data entry, phone calls, and office coordination (2-4 hrs/week)
-> - 🎉 **Event Volunteer** — Support community events, workshops, and cultural celebrations (as needed)
+> - 📷 **Photo-Intake Volunteer** — Help shelters and residents get clear, searchable photos of lost and found pets into the Petco Love Lost database (ongoing, 3–5 hrs/week)
+> - 🐾 **Registration Drive Volunteer** — Staff microchip and pet-registration events so more pets are searchable before they ever go missing (episodic, event-based)
+> - 📣 **Community Outreach Volunteer** — Spread the word at events across the nine Volusia municipalities (episodic, as needed)
+> - 🏠 **Reunion Support Volunteer** — Help owners and finders confirm matches and coordinate a safe reunion (ongoing, flexible)
 >
-> **What We Provide:** Orientation training, ongoing support, flexible scheduling, professional development opportunities, and the chance to make a meaningful impact in your community.
+> **What We Provide:** Orientation and platform training, ongoing support, flexible scheduling, a direct role in reuniting lost pets with their families, and the chance to help make Volusia County a model for the rest of the country.
 >
 > 📄 [Download our Volunteer Program Guide (PDF)]
 
@@ -212,25 +231,26 @@ Add two pages to your website:
 
 | Tool | What It's Good For | How to Use It |
 |---|---|---|
-| **[Google NotebookLM](https://notebooklm.google.com)** | Adapting your PAD 6417 and PAD 5145 coursework | Upload both assignments → ask how to adapt your HR and volunteer findings for a startup nonprofit |
-| **[Indeed](https://indeed.com) / [Idealist](https://idealist.org)** | Salary benchmarking | Search for comparable positions in your area to set realistic salary ranges — *"Community Navigator Orlando FL"* — check 5–10 postings for a range |
-| **[Glassdoor](https://glassdoor.com)** | Nonprofit salary and benefits data | Look up salaries for ED, Program Director, and coordinator roles at similarly-sized nonprofits in your region |
-| **[ChatGPT](https://chatgpt.com) / [Claude](https://claude.ai)** | Drafting position descriptions and policies | *"Write a job description for a bilingual Community Navigator at a nonprofit serving immigrant families. Include responsibilities, qualifications, and salary range for the Orlando area."* |
+| **[Google NotebookLM](https://notebooklm.google.com)** | Adapting your PAD 6417 and PAD 5145 coursework | Upload both assignments → ask how to adapt your HR and volunteer findings for a lean, tech-enabled, partnership-driven start-up |
+| **[Indeed](https://indeed.com) / [Idealist](https://idealist.org)** | Salary benchmarking | Search comparable roles for the Daytona Beach / Volusia County area — *"nonprofit program coordinator Daytona Beach FL"*, *"database administrator nonprofit"* — check 5–10 postings for a range |
+| **[Glassdoor](https://glassdoor.com)** | Nonprofit salary and benefits data | Look up salaries for ED, program manager, and coordinator roles at similarly-sized nonprofits and animal-welfare organizations in your region |
+| **[ChatGPT](https://chatgpt.com) / [Claude](https://claude.ai)** | Drafting position descriptions and policies | *"Write a job description for a Shelter & Rescue Coordinator at a start-up nonprofit running the Petco Love Lost photo-matching database, coordinating with a humane society and nine municipal shelters in Volusia County, FL. Include responsibilities, qualifications, and a salary range for that area."* |
 | **[Canva AI](https://canva.com)** | Org chart design | Search "org chart" templates → edit with your actual positions → export as PNG for your website |
-| **[VolunteerMatch](https://volunteermatch.org)** | Understanding volunteer role design | Browse real volunteer listings from similar nonprofits to see how they describe roles, time commitments, and requirements |
+| **[VolunteerMatch](https://volunteermatch.org)** | Understanding volunteer role design | Browse real animal-welfare and shelter volunteer listings to see how they describe roles, time commitments, and requirements |
 | **[SHRM](https://shrm.org)** | HR policy guidance | Browse free articles and toolkits on anti-harassment policies, performance reviews, and employee handbooks — some templates require membership, but the free content is substantial |
 | **[O*NET OnLine](https://onetonline.org)** | Position classification and competencies | Look up standard job descriptions, required skills, and education levels for the positions you're creating |
 
 ---
 
-## Grading Rubric (8 pts)
+## Grading Rubric (5 pts)
 
 | Criteria | Points |
 |---|---|
-| Organizational chart and position descriptions are clear, realistic, and informed by prior coursework | 2 pts |
-| Volunteer program design is thoughtful — roles, recruitment, training, and retention are addressed | 2 pts |
-| DEI statement, HR policies, and supervision process are substantive and appropriate | 2 pts |
-| Document demonstrates meaningful application of PAD 6417/5145 learning to current HR and volunteer design | 2 pts |
+| Organizational chart and three staff position descriptions are clear, realistic for a lean tech-enabled start-up, and informed by prior coursework | 1 pt |
+| Volunteer program design is thoughtful — photo-intake, registration drives, outreach, and reunion support roles, plus recruitment, training, and retention, are addressed | 1 pt |
+| DEI statement, HR policies (including partner/data boundaries), and supervision process are substantive and appropriate to this case | 1 pt |
+| Document demonstrates meaningful application of PAD 6417 / PAD 5145 learning to this organization's HR and volunteer design | 1 pt |
+| Website "Team" and "Get Involved" pages are complete, professional, and would move a real visitor to apply or volunteer | 1 pt |
 
 ---
 
@@ -252,14 +272,14 @@ SCREEN RECORDING (Cmd+Shift+5, no audio):
 1. Open browser → go to canva.com
 2. Search "org chart" in templates
 3. Select a clean template
-4. Edit: replace placeholder names with org positions (Executive Director, Program Director, Community Navigator, etc.)
+4. Edit: replace placeholder names with org positions (Executive Director, Program & Partnerships Manager, Shelter & Rescue Coordinator, Data & Platform Administrator, Community Outreach & Volunteer Coordinator)
 5. Adjust colors to match brand palette
-6. Show how to add/remove boxes for different org sizes
+6. Show how to add/remove boxes for different org sizes and add the volunteer tier
 7. Click "Share" → Download as PNG
 8. Switch to Google Sites → upload the org chart image to the Team page
 
 IPHONE VOICEOVER:
-"Let's build an org chart in Canva. Search for org chart templates — pick one that's clean and professional. Now I'll replace the placeholder text with our actual positions. Notice I'm keeping it realistic for a startup — three full-time staff, two part-time, and a volunteer tier. I'll adjust the colors to match our brand palette. Download as PNG, then upload directly to your website's Team page. Total time: about 10 minutes."
+"Let's build an org chart in Canva for our Petco Love Lost start-up. Search for org chart templates — pick one that's clean and professional. Now I'll replace the placeholder text with our actual positions. Notice I'm keeping it realistic for a start-up — a small paid team that runs the platform and coordinates with Halifax and the nine municipal shelters, plus a large volunteer tier underneath for photo-intake, registration drives, outreach, and reunion support. I'll adjust the colors to match our brand palette. Download as PNG, then upload directly to your website's Team page. Total time: about 10 minutes."
 -->
 
 *Video coming soon.*
@@ -268,6 +288,6 @@ IPHONE VOICEOVER:
 
 ## Looking Ahead
 
-**Next week (Week 6):** Confirming Identity — no graded deliverable, but a critical week. You'll verify your organization name, finalize your mission and vision, lock in your brand identity, and put yourself on the website as Executive Director. This is where your brand comes together — and your website gets a visual refresh.
+**Next week (Week 6): Confirming Your Identity — 2 pts.** You'll lock in your organization's name, mission, and vision, and finalize the brand identity for your Petco Love Lost start-up — the logo, colors, and voice that will carry across every page of your website. This is where the organization you've been building on paper gets a face, and your website gets a visual refresh.
 
-After this week, you'll have completed **35 points** (Concept 3 + Interview Plan 2 + Mentor Report 10 + Board Governance 10 + HR Plan 10). You're more than a third of the way through, and your nonprofit already has governance, a team, and a web presence.
+After this week, you'll have completed **14 points** (Build Your Website 3 + Board & Governance 6 + HR Plan 5). Your start-up already has a web presence, a governance structure, and now a staffing and volunteer plan — the people and systems needed to actually run the program in Volusia County.
